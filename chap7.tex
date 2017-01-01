@@ -1,4 +1,5 @@
-\chapter{Error Sources Affecting Relative Quantification of CEUS} 
+\chapter{Error Sources Affecting Relative Quantification of CEUS}
+\label{chapter:PLOSONE}
 
 % \section{Abstract}
 % Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
@@ -15,8 +16,12 @@
 % These include data intrinsic characteristics, i.e.~noise level, exam duration, sampling time; as well as quantification strategy, i.e.~analysis scale, estimation method, reference tissue selection.
 
 \section{Introduction}
-Quantification models
-Simulations
+In Chapter~\ref{chapter:IUS} we studied the impact of inter-exam changes on perfusion parameters estimated from CEUS data, whether occurring at the experimental or physiological level.
+Additionally, a simulation study addressing the issue of recirculation in CEUS quantification was presented in Chapter~\ref{chapter:IRBM}.
+In these studies we showed the superiority of the one-compartment reference tissue model in terms of reproducibility.
+In particular, the linear formulation of this model and its regularized version yielded the most reproducible and robust perfusion parameters among the investigated methods.
+In this Chapter we investigate other potential sources of error affecting quantification using these two models through a series of simulation experiment with varying factors, and by assessing the accuracy and precision of the estimated perfusion parameters.
+These include data intrinsic characteristics, i.e.~noise level, exam duration, sampling time; as well as quantification strategy, i.e.~analysis scale, estimation method, reference tissue selection.
 
 \section{Theory}
 \subsection{Simulation models}
@@ -304,8 +309,18 @@ rE_{\theta} = 100 \times \frac{\theta_{est}-\theta_{sim}}{\theta_{sim}}
 i.e.~the difference between the estimated parameter $\theta_{est}$ and the simulated parameter $\theta_{sim}$, normalized by the simulated value.
 
 \section{Results}
+In this section we present the results of our simulation experiments.
+Figure~\ref{fig:gridIndices} provides the correspondance between regions, depending on the type of data to be presented.
+Indeed, color-coded bullseyes were used when a single value had to be represented per region, but grids of plots were used to show the regional results as a function of a simulation parameter, i.e.~noise level, exam duration, and sampling period.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{gridIndices.eps}
+\caption{Correspondance of the regions between bullseye (left) and grid (right) representation.}
+\label{fig:gridIndices}
+\end{figure}
+
 \paragraph{Noise level}
-Figures~\ref{fig:noise_rV} to \ref{fig:noise_kR} show the relative estimation error of the relative tissue blood volume ($rV$, Figure~\ref{fig:noise_rV}), relative tissue blood flow (Figure~\ref{fig:noise_rF}), and rate constants in the tumor (Figure~\ref{fig:noise_kT}) and reference  (Figure~\ref{fig:noise_kR}) tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
+Figures~\ref{fig:noise_rV} to \ref{fig:noise_kR} show the relative estimation error of the relative tissue blood volume (Figure~\ref{fig:noise_rV}), relative tissue blood flow (Figure~\ref{fig:noise_rF}), and rate constants in the tumor (Figure~\ref{fig:noise_kT}) and reference  (Figure~\ref{fig:noise_kR}) tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
 
 Expectedly, for the four parameters of both models, the interquartile range of the relative estimation bias increased with the noise level, and no relation was found between the noise level and the median value of the relative estimation error.
 In terms of relative tissue blood volume (see Figure~\ref{fig:noise_rV}), the two models were hardly differenciable.
@@ -354,7 +369,7 @@ Comparably, the relative blood flow (see Figure~\ref{fig:examDuration_rF}) was s
 The estimates of $rF$ given by the \textbf{rLin} were found more sensitive to the duration of the exam, and generally overestimated $rF$ for very short exams, the bias decreasing with exam duration.
 And then, past some duration threshold, which variable from one region to another, the bias increased linearly with the exam duration.
 Regarding the rate constant in the tumor (see Figure~\ref{fig:examDuration_kT}), the \textbf{rLin} model was unable to accurately estimate the parameter for incomplete exams, and exhibited strong biases in short exams, again varying from one exam to another. 
-The \textbf{rReg} model was able to steadily and uniformely estimate parameter $k_T$, despite a tendency of the median relative estimation error to slightly decrease with the exam duration for exams lasting more than 100 seconds.
+The \textbf{rReg} model was able to steadily and uniformely estimate parameter $k_T$, despite the tendency of the median relative estimation error to slightly decrease with the exam duration for exams lasting more than 100 seconds.
 Moreover, the estimation of $k_T$ was more precise using the \textbf{rReg} model.
 For both models, the bias in the estimation of $k_R$, the rate constant in the reference tissue (see Figure~\ref{fig:examDuration_kR}), was strongly correlated to the bias in the estimation of $k_T$.
 
@@ -477,11 +492,6 @@ In case of fixed $k_R$ values, using lower values of both $F_R$ and $V_R$ yielde
 
 
 \paragraph{Number of regions}
-% Theoretically, the number of regions included in the analysis should not have any impact on the parameter of the \textbf{rLin} model as every kinetic is analyzed individually.
-% It should however reveal the importance of regularizing parameter $k_R$ across tumor regions, as introduced by the \textbf{rReg} model, by comparison with the \textbf{rLin} model.
-% This study does not account for the variations of the signal to noise ratio depending on the size of the region.
-% Instead it investigates solely the impact of the number of regions included in the analysis on the accuracy and precision of the estimates depending on whether the approach is regularized for parameter $k_R$ by keeping the noise level constant regardless of the number of regions.
-
 The impact of varying the number of regions on the accuracy and precision of the estimates of the \textbf{rLin} and \textbf{rReg} models is shown in Figures~\ref{fig:region_rV_rLin} to \ref{fig:region_kR_rReg}.
 Indeed, each figure corresponds to a parameter, and the first line represent the accuracy of the estimation through the median relative estimation error, while the second line represent the precision of the estimation through the standard deviation of the relative estimation error.
 The relative tissue blood volume $rV$ (see Figure~\ref{fig:region_rV}) from the \textbf{rLin} and \textbf{rReg} models were slightly underestimated using both methods, the latter however yielded more homogeneous median biases across regions.
@@ -532,7 +542,54 @@ The $k_R$ estimates of the \textbf{rReg} model exhibit a slight negative bias, w
 
 
 \section{Discussion}
-Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+In \citeyear{Logan:2001ip}, \citet{Logan:2001ip} investigated strategies to remove the bias in the graphical analysis of positron emission tomography data, which is basically a resolution method for the \textbf{OVC} model, i.e.~with a known arterial input function, but the study was also extended to the \textbf{rOVC} model, i.e.~with a reference tissue.
+The linear formulation of the \textbf{rOVC} model, named \textbf{rLin} in this study, was assessed through simulation experiments with various noise levels, and various strategies were proposed to reduce the estimation bias of the distribution volume ratio, which is the generalization for the relative tissue blood volume when addressing non-intravascular tracers.
+We first proposed the \textbf{rReg} model in \cite{Doury:2016fi} as a new strategy to improve parameter reproducibility in a test-retest preclinical study, and here we investigated the ability of the method to remove the bias in the resolution of the \textbf{rOVC} model by taking advantage of the functional heterogeneity among the studied tissues.
+
+Theoretically, the number of regions included in the analysis should not have any impact on the parameters of the \textbf{rLin} model as every regional enhancement curve is modeled individually. 
+In practice, increasing the number of regions resulted in even more biased parameters.
+Nevertheless, varying the number of regions reveals the importance of regularizing parameter $k_R$ across tumor regions, as implemented by the \textbf{rReg} model, by comparison with the \textbf{rLin} model.
+In this study, simulations did not account for the variations of the signal to noise ratio depending on the size of the region.
+Instead it investigates solely the impact of the number of regions included in the analysis on the accuracy and precision of the estimates depending on whether the approach is regularized for parameter $k_R$ by keeping the noise level constant regardless of the number of regions.
+
+The regularization greatly improved the homogeneity of the estimation across regions.
+In some cases the regularization actually induced stronger bias in the estimation, however the biases are more homogeneous across regions, allowing meaningful regional comparison of the perfusion parameters.
+Moreover, the \textbf{rLin} approach was largely outperformed by the \textbf{rReg}, especially regarding the estimates of the rate constant parameters, $k_T$ and $k_R$, but also regarding the relative tissue blood volume and flow parameters, $rV$ and $rF$.
+The regularization also made the estimation more robust to the acquisition settings over the investigated range, including the exam duration and the sampling period.
+
+Different simulation studies should be conducted to investigate the applicability of the \textbf{rReg} models to contrast-enhanced images acquired using other imaging modalities in case of intravascular tracers, or in permeability-limited and flow-limited conditions with diffusing tracers, i.e.~when permeability or blood flow is much larger than the other one~\cite{Tofts:1999ih}, or when the data only reflects one of the processes~\cite{Balvay:2005ca}. 
+Indeed, the range of investigated parameters should be adapted to the imaging modality of interest, for instance the sampling period and the exam duration are usually longer in other modalities than in ultrasound.
+Additionally, the multiplicative noise model used for simulation is specific of ultrasound data, and the data was simulated using the \textbf{OVC} model to reflect the intravascular characteristics of ultrasound contrast agents. 
+
+The rate constant in the tumor, $k_T$, appears to be related to the bias in the estimation of perfusion parameters using both models.
+In particular for the \textbf{rReg} model, the region with a simulated $k_T$ value larger than $k_R$, and more generally regions with large $k_T$ values, yielded estimates of $k_T$ more biased than the other regions.
+This phenomenon was investigated by \citet{CardenasRodriguez:2013em} in a simulation study assessing the ability of the \textbf{rLin} model to accurately quantify perfusion in contrast-enhanced magnetic resonance imaging data.
+Oppositely, regions with large $k_T$ values yielded accurate estimates of $rV$, while regions with small $k_T$ values yielded more biased estimates of the parameter.
+Our experiments also reveal that estimation biases can either be positive or negative in a given region, depending on the value of $k_R$.
+
+Our study revealed that the choice of the reference tissue plays a crucial role in the accuracy and precision of the perfusion parameters estimated using the \textbf{rReg} model, it should therefore be further investigated.
+Indeed, it is necessary to identify the ideal reference tissue in order to improve the robustness of the estimation.
+A deeper and finer understanding of the relations between the characteristics of the reference tissue and the estimated perfusion parameters would allow correction of the estimation bias in case the ideal reference tissue does not exist in the image.
+Our study reveals that halving $V_R$ or doubling $F_R$, which both result in doubling $k_R$, has almost the same impact on the estimation bias.
+Actually, the least biased estimation overall was obtained using two thirds of the original $k_R$ value, i.e.~$k_R = \frac{2}{3} \times 0.0693 = 0.0462$.
+Additionally, increasing the values of both $V_R$ and $F_R$, while enforcing fixed values of $k_R$, increased the accuracy of the estimates of the \textbf{rReg} model.
+This suggests that a well perfused tissue should be prefered, i.e.~a tissue with a high tissue blood flow and high tissue blood volume.
+
 
 \section{Conclusion}
-Sed non aliquet felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo justo ac dui pretium imperdiet. Sed suscipit iaculis mi at feugiat. Ut neque ipsum, luctus id lacus ut, laoreet scelerisque urna. Phasellus venenatis, tortor nec vestibulum mattis, massa tortor interdum felis, nec pellentesque metus tortor nec nisl. Ut ornare mauris tellus, vel dapibus arcu suscipit sed. Nam condimentum sem eget mollis euismod. Nullam dui urna, gravida venenatis dui et, tincidunt sodales ex. Nunc est dui, sodales sed mauris nec, auctor sagittis leo. Aliquam tincidunt, ex in facilisis elementum, libero lectus luctus est, non vulputate nisl augue at dolor.
+A simulation study based on preclinical contrast-enhanced ultrasound experiments was conducted to assess and compare the accuracy and precision of two estimation methods for the \textbf{rOVC} model, a one-compartment reference tissue model.
+The \textbf{rLin} model relies on the linear formulation of the \textbf{rOVC} model, and estimates perfusion parameters in each region of analysis individually.
+A limitation of this approach lies in the existence of a perfusion parameter that characterizes the reference tissue, i.e.~its rate constant $k_R$, which can be derived from the perfusion parameters estimated in each tumor region.
+However, since the same reference tissue is used to analyse all the regions, this parameter should be homogeneous across the regions of analysis.
+The \textbf{rReg} model is based on the \textbf{rLin} model, but it takes advantage of the functional diversity of the regions of analysis, and ensures that the rate constant of the reference tissue is the same across all regions of analysis.
+
+These simulation studies demonstrated the superiority of the \textbf{rReg} model in terms of accuracy and precision.
+The regularization of $k_R$ also made the biases more homogeneouse across regions, making comparison of regional parameters more meaningful.
+Additionally, the \textbf{rReg} model relaxes the requirements for temporal resolution and exam duration, allowing accurate estimation of perfusion parameters in shorter and degraded data.
+Our experiments suggest that the regularization improve the accuracy and precision of the estimation if at least four regions are included in the analysis.
+Regarding the number and the size of the regions of analysis, a compromise should be made to reveal the spatial heterogeneity of the tissue, while limiting the noise level to ensure accurate estimation of the perfusion parameters.
+
+Indeed the choice of the reference tissue is crucial as it has a significant impact on the accuracy of the estimation, and should be further investigated.
+We were however able to draw some recommendations regarding its selection.
+The rate constant parameter is critical when selecting the reference tissue, a region exhibiting a rate constant larger than the rate constants in the regions of analysis yielded more accurate parameters in our experiments, however an optimal value of $k_R$ seems to exist.
+Furthermore, using a well perfused reference tissue, i.e.~a tissue with high tissue blood volume and tissue blood flow, yields more accurate perfusion parameters.

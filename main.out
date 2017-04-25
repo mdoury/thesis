@@ -1,0 +1,73 @@
+\BOOKMARK [0][-]{Doc-Start}{Cover page}{}% 1
+\BOOKMARK [0][-]{section*.1}{Abstract}{}% 2
+\BOOKMARK [0][-]{section*.2}{Acknowledgments}{}% 3
+\BOOKMARK [0][-]{chapter.1}{1 Introduction to cancer monitoring and perfusion imaging}{}% 4
+\BOOKMARK [1][-]{section.1.1}{1.1 Context}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.1}{1.1.1 Cancer and tumor microenvironment}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.2}{1.1.2 Treatment of cancer}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.3}{1.1.3 Cancer monitoring}{section.1.1}% 8
+\BOOKMARK [1][-]{section.1.2}{1.2 Perfusion imaging}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.2.1}{1.2.1 Generalities on perfusion imaging}{section.1.2}% 10
+\BOOKMARK [2][-]{subsection.1.2.2}{1.2.2 Nuclear Medicine}{section.1.2}% 11
+\BOOKMARK [2][-]{subsection.1.2.3}{1.2.3 Magnetic resonance \(MR\)}{section.1.2}% 12
+\BOOKMARK [2][-]{subsection.1.2.4}{1.2.4 X-ray computed tomography \(CT\)}{section.1.2}% 13
+\BOOKMARK [2][-]{subsection.1.2.5}{1.2.5 Contrast-enhanced ultrasound \(CEUS\)}{section.1.2}% 14
+\BOOKMARK [0][-]{chapter.2}{2 Quantification of perfusion exams: A review}{}% 15
+\BOOKMARK [1][-]{section.2.1}{2.1 Semi-quantitative methods}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Generalities}{section.2.1}% 17
+\BOOKMARK [2][-]{subsection.2.1.2}{2.1.2 Nuclear medicine}{section.2.1}% 18
+\BOOKMARK [2][-]{subsection.2.1.3}{2.1.3 Radiography}{section.2.1}% 19
+\BOOKMARK [2][-]{subsection.2.1.4}{2.1.4 Magnetic resonance imaging}{section.2.1}% 20
+\BOOKMARK [2][-]{subsection.2.1.5}{2.1.5 Ultrasound imaging}{section.2.1}% 21
+\BOOKMARK [1][-]{section.2.2}{2.2 Deconvolution methods}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.3}{2.3 Compartmental models}{chapter.2}% 23
+\BOOKMARK [0][-]{chapter.3}{3 Quantification of tumor perfusion using DCE-US: impact of mathematical modeling}{}% 24
+\BOOKMARK [1][-]{section.3.1}{3.1 Abstract}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{3.2 Introduction}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.3}{3.3 Materials}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Animals}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2 Image acquisition}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.3}{3.3.3 Data pre-processing}{section.3.3}% 30
+\BOOKMARK [1][-]{section.3.4}{3.4 Methods}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.4.1}{3.4.1 Quantification of tumor perfusion}{section.3.4}% 32
+\BOOKMARK [2][-]{subsection.3.4.2}{3.4.2 Data analysis}{section.3.4}% 33
+\BOOKMARK [1][-]{section.3.5}{3.5 Results}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.5.1}{3.5.1 Model comparison through quality of fit criteria}{section.3.5}% 35
+\BOOKMARK [2][-]{subsection.3.5.2}{3.5.2 Model comparison through coefficients of variation}{section.3.5}% 36
+\BOOKMARK [1][-]{section.3.6}{3.6 Discussion}{chapter.3}% 37
+\BOOKMARK [1][-]{section.3.7}{3.7 Conclusion}{chapter.3}% 38
+\BOOKMARK [1][-]{section.3.8}{3.8 Acknowledgments}{chapter.3}% 39
+\BOOKMARK [0][-]{chapter.4}{4 Regularized Linear Resolution of a One-Compartment Model to Improve the Reproducibility of Perfusion Parameters in CEUS}{}% 40
+\BOOKMARK [1][-]{section.4.1}{4.1 Abstract}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.2}{4.2 Introduction}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.3}{4.3 Materials}{chapter.4}% 43
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Animals}{section.4.3}% 44
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Image acquisition}{section.4.3}% 45
+\BOOKMARK [1][-]{section.4.4}{4.4 Methods}{chapter.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 Data pre-processing}{section.4.4}% 47
+\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Definition of the four models}{section.4.4}% 48
+\BOOKMARK [2][-]{subsection.4.4.3}{4.4.3 Data analysis}{section.4.4}% 49
+\BOOKMARK [1][-]{section.4.5}{4.5 Results}{chapter.4}% 50
+\BOOKMARK [1][-]{section.4.6}{4.6 Discussion}{chapter.4}% 51
+\BOOKMARK [1][-]{section.4.7}{4.7 Conclusion}{chapter.4}% 52
+\BOOKMARK [0][-]{chapter.5}{5 Impact of Recirculation in Dynamic Contrast-Enhanced Ultrasound: a Simulation Study}{}% 53
+\BOOKMARK [1][-]{section.5.1}{5.1 Abstract}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.2}{5.2 Introduction}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.3}{5.3 Theory}{chapter.5}% 56
+\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 One-compartment vascular model}{section.5.3}% 57
+\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 Simplified recirculation model}{section.5.3}% 58
+\BOOKMARK [2][-]{subsection.5.3.3}{5.3.3 Noise model}{section.5.3}% 59
+\BOOKMARK [2][-]{subsection.5.3.4}{5.3.4 Perfusion quantification methods}{section.5.3}% 60
+\BOOKMARK [1][-]{section.5.4}{5.4 Experimental design}{chapter.5}% 61
+\BOOKMARK [2][-]{subsection.5.4.1}{5.4.1 Simulations}{section.5.4}% 62
+\BOOKMARK [2][-]{subsection.5.4.2}{5.4.2 Data analysis}{section.5.4}% 63
+\BOOKMARK [1][-]{section.5.5}{5.5 Results}{chapter.5}% 64
+\BOOKMARK [2][-]{subsection.5.5.1}{5.5.1 Model M1}{section.5.5}% 65
+\BOOKMARK [2][-]{subsection.5.5.2}{5.5.2 Model M2}{section.5.5}% 66
+\BOOKMARK [2][-]{subsection.5.5.3}{5.5.3 Model M3}{section.5.5}% 67
+\BOOKMARK [2][-]{subsection.5.5.4}{5.5.4 Model M4}{section.5.5}% 68
+\BOOKMARK [2][-]{subsection.5.5.5}{5.5.5 Model M5}{section.5.5}% 69
+\BOOKMARK [2][-]{subsection.5.5.6}{5.5.6 Model M6}{section.5.5}% 70
+\BOOKMARK [1][-]{section.5.6}{5.6 Discussion}{chapter.5}% 71
+\BOOKMARK [1][-]{section.5.7}{5.7 Conclusion}{chapter.5}% 72
+\BOOKMARK [0][-]{appendix.A}{A Abbreviations and reference data}{}% 73

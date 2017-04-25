@@ -1,0 +1,363 @@
+%!TeX root = ../main.tex
+\chapter{Quantification of perfusion exams: A review}\label{chapter:review}
+
+Generally speaking, quantification of perfusion consists in deriving parameters from blood flow measurements, regardless of the method used for the measure. 
+This topic has been on the table, and continuously evolving, long before perfusion imaging existed. 
+Indeed, G.N.~Stewart introduced indicator dilution theory, starting with the founding paper published in the Journal of Physiology in 1897~\cite{Stewart:1897dz}. 
+W.F.~Hamilton went further, corrected the approximations made by Stewart.
+Even before Stewart and Hamilton, hemodynamics of the heart had been studied  through indirect measurements and reported in German language by Volkmann~\cite{Volkmann:1850us} and Vierordt~\cite{Vierordt:82xUDMVI} in the 1850s, and later through direct measurements by Stolnikow~\cite{Stolnikow:1886wm} and Tigerstedt~\cite{Tigerstedt:1891wn}.
+
+This chapter fundamentally aims to review the various methods used to quantify perfusion exams acquired using one of the imaging modality described in Chapter~\ref{sec:IntroPerfusionImaging}. 
+Realistically, this review of perfusion quantification techniques cannot be close to comprehensive, instead it tackles the subject from the three angles mentioned thereafter, and emphasis the major landmarks of the perfusion quantification landscape.
+
+Section~\ref{sec:SQMethods} presents semi-quantitative methods, extracting parameters directly either from raw or noise-filtered enhancement curves. 
+Then Section~\ref{sec:DeconvolutionMethods} presents deconvolution-based quantification methods, estimating the vascular transfer function in the tissue of interest by means of blind or regularized deconvolution.
+Finally, compartmental models accounting for the various interactions of the contrast agent with the tissue are presented in Section~\ref{sec:CompartmentalModels}. 
+
+\section{Semi-quantitative methods}
+\label{sec:SQMethods}
+\subsection{Generalities}
+Semi-quantitative methods are probably among the most intuitive as they extract perfusion-related parameters directly from raw, interpolated, or noise-filtered enhancement curves.
+They are however not directly related to any physiological function and are prone to changes in experimental or physiological conditions.
+They are therefore often used as relative indicators of perfusion and contrast agent transit time~\cite{Miles:1991et}, allowing intra-exam comparisons.
+
+Examples of semi-quantitative parameters include the peak enhancement~\cite{Norman:1978ji,Nally:1985te,Pettersson:1987ft,Erlemann:1989ib}, the time to peak enhancement~\cite{Norman:1978ji,Erlemann:1989ib,Dietrich:2012kw}, maximum upslope gradient, also known as wash-in rate~\cite{Nally:1985te,Erlemann:1989ib}, the area under the enhancement curve~\cite{Dietrich:2012kw}, but also perfusion parameters based on indicator dilution theory based on the previously cited parameters~\cite{Hilson:1978us,Peters:1987fa,Peters:1987vx,Miles:1991et,Miles:1991ei,Miles:1993cq,Blomley:1995vs,Koenig:1998ir}.
+Figure~\ref{fig:SQParameters} shows graphical representations of the above mentioned semi-quantitative parameters. 
+
+\subsection{Nuclear medicine}
+\label{sec:SQNM}
+Semi-quantitative parameters have been used to differentiate stenosed from healthy kidney in scintigraphy exams, i.e.~a nuclear medicine technique using a gamma camera, following bolus injection of $\left[^{99m}Tc\right]$DTPA.
+
+For instance, Hilson et al.~and later Peters et al.~both proposed an enhancement-based perfusion index, which is commonly defined as the ratio of the tissue blood flow to the cardiac output. 
+On the one hand, Hilson et al.~defined the perfusion index as the ratio of the area under the arterial curve to the area under the renal curve, both curves are integrated up to the arterial peak~\cite{Hilson:1978us}.
+On the other hand, Peters et al.~defined the perfusion index as the ratio of the maximum upslope of the renal curve normalized for the injected quantity to the maximum upslope of the integrated arterial curve normalized for the area under the arterial enhancement curve, and multiplied by a constant converting the gamma camera into a unit of activity~\cite{Peters:1987fa,Peters:1987vx}. 
+
+Nally et al.~reported significant differences in the wash-in rate, curve width at 75\% of the peak enhancement, and maximum enhancement in normal and stenosed kidney in a canine model~\cite{Nally:1985te}. 
+
+
+\subsection{Radiography}
+\label{sec:SQRadiography}
+Derived from the work of Peters et al., semi-quantitative parameters were also proposed by Miles et al.~in 1991 to quantify renal cortical and medullary perfusion in X-ray computed tomography with bolus injection of Iodine~\cite{Miles:1991et,Miles:1991ei}. 
+The proposed perfusion index was defined as the ratio of the maximum slope in the tissue curve and the peak enhancement of the arterial curve. 
+The method was successively used to quantify perfusion in the pancreas~\cite{Miles:2014ea}, solitary pulmonary nodules~\cite{Zhang:1997bi}, lymphoma masses~\cite{Dugdale:1999co}, lung adenocarcinoma~\cite{Tateishi:2001fz}, and more generally to study tumor angiogenesis~\cite{Tateishi:2001fz,Miles:2002eu}.
+
+Miles et al.~also adapted the method to account for both arterial and venous perfusion of the liver, using the splenic enhancement as venous input because the portal vein was not present in the image~\cite{Miles:1993cq}.
+Arterial perfusion was calculated using the maximum slope before peak splenic enhancement, while venous perfusion was calculated using the maximum slope after peak splenic enhancement.
+
+In 1995 Blomley et al.~proposed the liver subtraction method to quantify liver perfusion~\cite{Blomley:1995vs}. 
+Instead of estimating the upslope in the late liver enhancement curve, they first subtracted the splenic enhancement curve multiplied by the ratio of arterial to splenic arterial perfusion, i.e. the ratio of the maximum slope in the early liver enhancement curve to the maximum slope in the spleen. 
+The maximum slope of the corrected enhancement curve is then used to calculate portal perfusion.
+In this study, the time and value of peak enhancement were obtained using a gamma-variate fit, allowing a finer estimation of these parameters.
+Whenever possible the authors used the enhancement curve in the portal vein instead of the splenic vein.
+Authors demonstrated the use of portal perfusion in one patient with metastatic livers, as well as in four patients with cirrhotic livers.
+Facing the small number of cases in the previous study, a collaborating group extended the application of the method in cirrhotic livers with more cases~\cite{Tsushima:1999vc}.
+They estimated arterial and portal perfusion in a group of twenty patients with viral-induced cirrhosis and in fourteen controls. 
+While arterial perfusion did not differ between groups, they found a significant reduction in portal perfusion among patients compared to controls, and a strong correlation between portal perfusion and the prothrombin ratio which is an indicator of hepatic parenchymal damage.
+
+Inspired by the work of Miles et al., the method was adapted by Koenig et al.~in 1998 to quantify perfusion in the brain in order to detect and assess cerebral ischemia in acute stroke~\cite{Koenig:1998ir}. 
+While arterial enhancement could be estimated from small vessels present in the image, it was not used due to peak attenuation by partial volume effects. 
+Instead, the peak venous enhancement in the superior sagittal sinus was used. 
+The authors reported relatively small approximation error, with slightly flattened enhancement curves, explained by the short transit time of the contrast agent in brain tissues.
+The cerebral blood flow, commonly noted CBF, is the equivalent of the perfusion index in brain tissues. 
+The authors defined it as the ratio of the maximum slope of the tissue enhancement curve to the peak enhancement in the superior sagittal sinus.
+The fractional cerebral blood volume, commonly noted CBV, was defined as the ratio of the peak tissue enhancement to the peak enhancement in the superior sagittal sinus. 
+In a following study~\cite{Klotz:1999ef}, the authors assess the linearity, the spatial resolution, and the sensitivity to noise of CBF through simulations and phantom study, and investigated the relative CBF estimated using large hemispherically mirrored regions of interest using follow-up CT and MR data. 
+They reported a systematic underestimation of CBF correlated with the cardiac output of the patient, a good linearity of relative CBF, and recommend using the relative parameter as a predictor of the reversibility of an ischemic stroke.
+
+
+\subsection{Magnetic resonance imaging}
+\label{sec:SQMR}
+Following the methodological developments of Gadolinium-DTPA complex (Gd-DTPA) by \citet{Weinmann:1984gv,Brasch:1984cz}, and \citet{Wesbey:1984is} in \citeyear{Weinmann:1984gv} supported by qualitative visual analysis, various applications of the technique emerged in the field of oncology.
+
+Quantification attempts started with the work of \citet{Felix:1985fv} in 1985 using Gd-DTPA enhanced images acquired 5 minutes after injection of the contrast agent. 
+Results were compared with pre-contrast MR images obtained using various acquisition sequences and X-ray computed tomography imaging with injection of a iodinated contrast agent. 
+They obtained accurate contours of brain tumor and necrosis with no significant enhancement in the region exhibiting peritumoral edema.
+They also attempted to differentiate the various types of tumor included in their study based on the contrast index before and after injection of Gd-DTPA. 
+The index is defined as the ratio of signal intensity in the tumor tissue to the signal intensity in normal brain tissue. 
+It is the first semi-quantitative parameter used for Gd-DTPA enhanced MRI. % Felix:1985fv
+
+\citet{Revel:1986ix} assessed the difference in signal intensity between the pre-contrast and 25-minute post-contrast images acquired in the largest section of subcutaneous human breast tumors implanted in mice.
+Signal intensity in the tissue were normalized by the signal intensity in a corn-oil phantom visible in every image. 
+Limited by the temporal resolution of their acquisition, authors do not comment on the temporal evolution of signal intensity, despite intermediate acquisitions performed respectively 5 and 15 minutes after Gd-DTPA injection. % Revel:1986ix
+
+\citet{Pettersson:1987ft} performed repeated acquisitions of multiple MR sequences in rabbits subcutaneously implanted with a Vx2 tumor model, and additional induced hemorrhage in surrounding muscle tissue. 
+Temporal evolution of enhancement is assessed more finely than in previous studies, acquiring an image every 2.5 minutes for the first 10 minutes after injection of Gd-DTPA and then every 5 minutes for the following 20 minutes.
+This allowed the authors to observe that no substantial enhancement occurred in abnormal tissues after 10 minutes, however they only reported on variations of peak signal intensity. % Pettersson:1987ft
+
+In \citeyear{Erlemann:1989ib}, \citet{Erlemann:1989ib} investigated dynamic contrast-enhanced MRI using a T1-weighted spin-echo sequence every 20 seconds following bolus injection of Gd-DTPA as a tool to differentiate tumors from healthy tissue in musculoskeletal lesions.
+Their primary result was an increase in contrast-to-noise ratio between tumor and muscle compared to T2-weighted images, and a decrease in contrast-to-noise ratio between tumor and bone marrow or fatty tissue compared to non-enhanced T1-weighted images. 
+Additionally, they estimated the baseline signal intensity, the maximum signal intensity, and the time-lapse between the start of the injection and the point of maximum signal intensity. 
+Using these estimates, the defined the signal intensity ratio as the percentage of increase over the baseline signal intensity, as well as the relative enhancement slope.
+They observed an increase of the signal intensity ratios and relative enhancement slope in malignant tumors compared to benign tumors, the latter showing smaller overlap between malignant and benign groups.
+Enhancement slope enabled malignancy prediction with an accuracy of 79.7\% using a cutoff value of 30\%/min.
+They also reported lower peak intensity ratios and wash-in rates in areas with necrosis or peritumoral edema. % Erlemann:1989ib
+
+\citet{Verstraete:1994iw} also reported on the ability to differentiate benign from malignant musculoskeletal lesions, using imaging and quantification techniques similar to those used by \citet{Erlemann:1989ib}.
+Despite the higher temporal resolution of 2.41 seconds possible in their study, their findings are likewise nuanced because of the overlap of parameters between highly vascularized benign lesions and the malignant ones. % Verstraete:1994iw
+
+\citet{Baur:1997ur} reported higher signal intensity ratios after injection of Gd-DTPA in patients with intermediate-grade and high-grade diffuse malignant bone marrow infiltration in the spine compared to healthy patients.
+Nonetheless, they were unable to detect low-grade lesions using this technique, and reported large variabilities in all patient groups. % Baur1997
+
+\subsection{Ultrasound imaging}
+\label{sec:SQCEUS}
+The current section addresses the semi-quantitative methods used to quantify perfusion using ultrasound.
+Refer to Section~\ref{sec:IntroCEUS} for more information on contrast-enhanced ultrasound as a perfusion imaging modality, including the nature of the contrast-agent, the image formation processes, as well as the various injection techniques.
+Methods assessing perfusion using bolus injection are first presented, followed by methods specific to continuous infusion injection.
+
+As a foreword to this section, indicator dilution theory as first formalized by \citet{Stewart:1897dz} and later by \citet{Hamilton:1932ww} is valid under the condition that the mass of contrast-agent is conserved through the time of the acquisition. 
+Since \citeyear{Butler:1979wu}, it a known that a portion of the intravenously injected microbubbles are filtrated through the lungs~\cite{Butler:1979wu} 
+% Butler:1979wu, Journal of Applied Physiology, The lung as a filter for microbubbles
+, i.e.~before their first pass in the tissue of interest.
+Moreover, a portion of the following passes is filtered by the Kupffer cells in the liver~\cite{Kindberg:2003iq,Yanagisawa:2007bu}.
+% Kindberg:2003iq, Hepatic clearance of Sonazoid perfluorobutane microbubbles by Kupffer cells does not reduce the ability of liver to phagocytose or degrade albumin microspheres
+% Yanagisawa:2007bu, PHAGOCYTOSIS  OF  ULTRASOUND  CONTRAST  AGENT MICROBUBBLES  BY  KUPFFER CELLS
+Additionally, \citet{Lampaskis:2010fj} % Lampaskis:2010fj, Investigation of the the relationship of nonlinear backscattered ultrasound intensity with microbubble concentration at low MI. 
+confirmed that imaging using a high mechanical index disrupts a non-negligible number of microbubbles, and demonstrated that most of the microbubbles disrupted during imaging at a low mechanical-index are actually naturally disrupted. 
+The mass conservation condition is therefore usually not respected in contrast-enhanced ultrasound, even in first-pass studies.
+Semi-quantitative methods based on indicator dilution theory were nonetheless extensively used to quantify perfusion in contrast-enhanced ultrasound exams.
+
+\subsubsection{Bolus injection}
+\paragraph{\em{Model-free quantification methods}\\}
+
+From an historical standpoint, \citet{Bommer:1978eu} were the first to report indicator-dilution curves using contrast-enhanced ultrasound data in an abstract published in The American Journal of Cardiology in \citeyear{Bommer:1978eu}. % Bommer:1978eu, Indicator-dilution curves obtained by photometric analysis of two-dimension echo-contrast studies
+Authors used a photometer to quantify the evolution of signal intensity, as visualized on the screen of the monitor.
+The enhancement resulted from the venous injection of a bolus of microbubbles, obtained by microcavitations through rapid injection of dextrose in water. 
+The indicator-dilution curves were quantified in terms of time from peak enhancement to 50\% decay, and to 90\% decay. 
+The latter was found correlated to the cardiac-output, and enabled the differenciation of patients with low and normal cardiac index. 
+In the same issue of The American Journal of Cardiology, the same group applied the same technique to produce indicator-dilution curves in another cardiac study~\cite{DeMaria:1978il}. % DeMaria:1978il, Combined peripheral venous injection and cross-sectional echocardiography in the evaluation of cardiac disease
+They used the ultrasound images themselves to identify patients with intracardiac shunts, but also the mean clearance time of the indicator-dilution curves to identify patients with tricuspid regurgitation, and severe congestive failure.
+
+At the same period, \citet{Hagler:1982hs} presented early data of videodensitometry data for the quantification of left-to-right shunts using echographic acquisitions with direct injection of a bolus of ultrasound contrast-agent (i.e.~indocyanine green dye) in the left ventricule. % Hagler:1982hs, Videodensitometric Quantitation of Left-to-Right Shunts with Contrast Echocardiography
+They estimated the ratio of left-to-right shunt, which they defined as the ratio of the area under the curve in the right ventricule to the area under the curve in the left ventricule, and showed an strong correlation of echographic measurements with both indicator-dilution and dye measurements.
+\citet{Meltzer:1982vt} extended this work and investigated the relevance of a mono-exponential model to fit the wash-out curve, as suggested by indicator-dilution theory. % Meltzer:1982vt, Videodensitometric processing of contrast two-dimensional echocardiographic data.
+This was assessed by fitting a linear model to the log-transformed time-density wash-out curve, exhibiting excellent correlation with experimental data. 
+They therefore concluded on the relevance of the slope in the linear model, and established its relation to the contrast agent disapearance rate. 
+
+Following the early work of \citet{Armstrong:1982tq} and \citet{Tei:1983ul}, \citet{TenCate:1984hl} investigated the use of contrast-enhanced echography for the assessment of myocardial perfusion following intracoronary injection of a bolus injection of microbubbles in a canine study with varying coronary artery flow (using a hydraulic occluder) to simulate ischemia, and with injection of Dipyridamole to dilate the coronary bed and therefore simulate hyperemia.
+% Armstrong:1982tq, Assessment of myocardial perfusion abnormalities with contrast-enhanced two-dimensional echocardiography.
+% Tei:1983ul, Myocardial contrast echocardiography: a reproducible technique of myocardial opacification for identifying regional perfusion deficits.
+% TenCate:1984hl, Myocardial contrast two-dimensional echocardiography: experimental examination at different coronary flow levels.
+The microbubbles in this study were investigated in a previous study of the same group, ensuring they were small enough to circulate through capillaries without getting trapped~\cite{Feinstein:1984gk}. 
+% Feinstein:1984gk, Two-Dimensional Contrast Echocardiography. I. In Vitro Development and Quantitative Analysis of Echo Contrast Agents
+Semi-quantitative functional parameters were extracted from log-compressed time-intensity curves, i.e.~the half wash-in time, half wash-out time (ignoring recirculation fitting a mono-exponential model), peak intensity time and value, and total curve duration.
+They found significant changes in total curve duration, and in half wash-in and wash-out times, for both ischemia and hyperemia in comparison with control measurements.
+Interobserver and intraobserver variability, as well as injection reproducibility was assessed for the half wash-out time, with respective correlation coefficients of 0.98, 0.86, and 0.78.
+In addition, the relative systolic wall thickening was also estimated, and while it correlated well with the coronary artery flow measured by an electromagnetic flowmeter placed directly on the artery, no correlation was foud with the half wash-out time. 
+
+A few years later, \citet{Vandenberg:1989bza} performed a similar canine study with induced ischemia and hyperemia, intending to predict myocardial blood flow from semi-quantitative parameters derived from contrast-enhanced ultrasound time-intensity curves. 
+% Vandenberg:1989bza, Quantitation of myocardial perfusion by contrast echocardiography: Analysis of contrast gray level appearance variables and intracyclic variability
+In addition to peak intensity time and value, they investigated the use of the wash-in rate. 
+Peak intensity value and wash-in rate were found correlated to myocardial blood flow, however correlations were moderate ($r = 0.67$ and $0.51$ respectively).
+However, the relative changes of the wash-in rate exhibited a stronger correlation ($r = 0.77$) with the relative changes of the myocardial blood flow, i.e.~with induced ischemia and hyperemia.
+
+In a clinical study, \citet{TenCate:1987vw} estimated the total curve duration, the area under the curve, and the half wash-out time from time-intensity curves obtained in the ventricular septum from end-diastolic images.
+% TenCate:1987vw, Quantitative assessment of myocardial blood flow by contrast two-dimensional echocardiography: initial clinical observations.
+They performed multiple regression analysis between the parameters extracted from contrast-enhanced ultrasound data to angiographic parameters, i.e.~the percentage of coronary area stenosis, and the minimal lumen area, derived from data acquired using the protocol described in~\cite{Wijns:1985wz}.
+% Wijns:1985wz, Quantitative angiography of the left anterior descending coronary artery: correlations with pressure gradient and results of exercise thallium scintigraphy
+Authors reported relations of various natures between the above-mentioned parameters, i.e.~linear, inverse, exponential, and logarithmic.
+In particular, the strongest correlation was found between the area under the curve and the percentage of coronary area stenosis (exponential relation). 
+Additionally, while all correlation were found significant, this couple of parameters was the only one with a strong correlation ($r \geq 0.8$). 
+Noting the discrepencies between the pre-clinical and the clinical results, the authors suggest they found their sources in modifications of the experimental setup, i.e.~the injection method or the nature of the ultrasound contrast agent.
+
+In \citeyear{Bleeker:1990uy}, \citet{Bleeker:1990uy} evaluated the stability, size, and ultrasonic properties of multiple ultrasond contrast agents, and investigated the feasibility of blood flow estimation through in-vitro experiments.
+% Bleeker:1990uy, On the application of ultrasonic contrast agents for blood flowmetry and assessment of cardiac perfusion.
+Their findings were in favor of the Albunex contrast agent, which were the only microbubbles exhibiting sufficiently longlasting stability (i.e.~in size and number) when exposed to ultrasound waves.
+In addition, a linear relation between the concentration of microbubbles and both backscatter coefficient (i.e.~reflected power) and attenuation coefficient (i.e.~transmitted power) was reported for low concentrations.
+They also found strong linear relations between the ultrasonic properties of the contrast agent and the flow estimated using an indicator-dilution theory.  
+They emphasis the questionability of using grey-levels from ultrasond images to characterize blood flow, and instead recommend using attenuation based on transmission techniques, or backscattering after proper correction of signal attenuation.
+While in-vitro experiments show strong relations between the ultrasonic properties of Albunex contrast agent and the flow estimated using indicator-dilution theory, one must consider the mass conservation principle which is rarely respected in-vivo.
+
+A somehow similar in-vitro study was conducted a few years later by \citet{Heidenreich:1993ji}, however the proposed quantification model makes use of an input function as a reference instead of the injected quantity used by \citet{Bleeker:1990uy}, and extends the indicator-dilution model to estimate the tissue blood volume and mean transit time, in addition to the tissue blood flow. 
+% Heidenreich:1993ji, In vitro calculation of flow by use of contrast ultrasonography.
+The model is based on the estimation of the area under the curve and mean transit time for both input and studied tissues.
+The ratio of the area under the curve in the studied tissue to the input yields the tissue blood volume, the system mean transit time is approximated as twice the difference in mean transit times, and the tissue blood flow was classically defined as the ratio of tissue blood volume to system mean transit time.
+In-vitro calibration data revealed the log-compressed nature of the data in the experimental system, allowing linearization of the video intensity for low to moderate concentrations, and therefore conversion to volumetric concentration of microbubbles.
+Excellent agreement was found between measured and estimated flow rates, using 39 measurements at low concentration.
+Authors report on the difficulty to find a pure blood pool in the ultrasound imaging plane, but also to image both tissue and input with sufficient sensitivity and without saturation artifacts respectively because of the limited dynamic range of commercial ultrasound scanners.
+Additionally they comment on the simplicity of the model which allows to alleviate the signal attenuation artifacts which are often non-negligible in-vivo, and on the impossibility to ensure conservation of the contrast agent quantity and properties throughout the acquisition. 
+
+\citet{Aronson:1993wsa}, from the same research group, later assessed the model described above in-vivo, in an attempt to quantify kidney perfusion in a canine study. 
+% Aronson:1993wsa, Assessment of renal blood flow with contrast ultrasonography.
+A total of 58 bolus injections of microbubbles with varying concentrations (23 for aortic measurements, and 35 for cortical measurements), and 93 bolus injections with modulated blood flow (57 reduction, 10 increase, and 26 controls), were performed in 9 dogs.
+Blood flow was controled by means of a renal artery occluder for flow reduction, and dopamine or fenoldopam infusion for flow increase. 
+A major limitation of this study lies in the fact that renal and aortic data did not originate from the same injection, as a different dose of contrast-agents was used to extract the time-intensity curves in the two regions of interest.
+Additionally, the injected doses were ajusted empirically in order to obtain complete opacification of the region of interest, without reaching the signal saturation threshold.
+Direct measurements of blood flow were performed using an electromagnetic flowmeter, for comparison with the value estimated using contrast-enhanced ultrasound.
+The major findings of this study are the evidence of a strong correlation between the injected concentration and the pixel intensity, for both cortical and aortic measurements, and strong correlation of the estimated blood flow with in-situ flow measurements with a tendency to overestimate blood flow. 
+Authors discuss the various pitfalls of contrast-enhanced ultrasound that could influence the accuracy of the method, including possible changes in blood volume in the modulated flow experiments, signal attenuation, and electronic thresholding.
+They finally conclude on the inability to perform absolute quantification of blood flow with the existing apparatus, stating that the major requirements lie in increased linearity and dynamic range.
+
+\citet{Schwarz:1993wp} investigated the use of the wash-out rate from log-transformed time-intensity curves following bolus injection, as well as the ratio of the wash-out rates from two bolus injections with varying flow rates. 
+% Schwarz:1993wp, Volumetric arterial flow quantification using echo contrast. An in vitro comparison of three ultrasonic intensity methods: radio frequency, video and Doppler.
+Time-intensity curves were obtained using various backscatter intensity techniques, i.e.~radio frequency, video intensity, pulsed wave Doppler, and intravascular Doppler.
+Authors obtained strong correlations of the wash-out rate with the in-vitro flow rate, however they reported different slopes in two chambers with varying mixing volume.
+The relative wash-out rate not only exhibited excellent correlations with the relative flow rate, it also yielded a good agreement of the slopes obtained in the two mixing chambers.
+These results suggest the independence of the relative wash-out rate to the mixing volume, and the ability of this parameter to accurately characterize changes in blood flow.
+
+\citet{Wiencek:1993hr} investigated the various steps necessary to achieve accurate quantification of contrast echocardiography using indicator-dilution theory. 
+% Wiencek:1993hr, Pitfalls in Quantitative Contrast Echocardiography: The Steps to Quantitation of Perfusion
+The proposed approach relies on the knowledge of an arterial input function, i.e.~the time-intensity curve in a pure blood pool like the aortic root or in the left ventricle, in order to relax the need for standardized injection and physiological conditions.
+Authors ackowledge the difficulty of estimating the input function using a single injection, and suggest performing two separate injections to avoid saturation and non-linearities caused by high contrast-agent concentrations.
+They emphasis the necessity for a consistent and confined range of microbubble size, as the intensity of the signal backscattered by a single bubble is non-linearly proportional to the diameter of the bubble.
+The importance of conservation of contrast-agent quantity and properties throughout the acquisition of the ultrasound images was outlined, and the impact of hydrostatic pressure and gas saturation level of the solution as reported in the litterature was investigated.
+The choice of the representation of the time-intensity curves, i.e.~video intensity, log-transformed intensity, or concentration from calibration data, and its impact on the estimated parameters were discussed.
+A possible explaination for undetected changes when using peak height as an indicator of blood flow was proposed, authors related it to signal saturation and illustrate this phenomenum in simple cases where the changes in blood flow are caused by a change in blood volume only or in transit time only.
+Additionally, electronic issues resulting from signal acquisition, signal processing, and electronic thresholding were discussed.
+Physiological factors like tissue-dependant hematocrit were also investigated.
+Finally, methods which showed promising results in preliminary studies at the time of the review (i.e.~\citeyear{Wiencek:1993hr}) were reported, including various alternative imaging schemes (e.g.~acoustic velocity, radiofrequency data, second harmonic imaging).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LIMITATIONS OF EARLY MODEL-FREE QUANTIFICATION METHODS        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% - bubble stability
+% - varying bubble size
+% - destructive imaging (high mechanical index)
+% - non contrast-specific imaging
+% - low sampling frequency
+% - estimation from non filtered time-intensity curves
+
+\paragraph{\em{Model-based quantification methods}\\}
+
+% Kaul:1989il, Assessment of regional myocardial blood flow with myocardial contrast two-dimensional echocardiography
+In \citeyear{Kaul:1989il}, \citet{Kaul:1989il} proposed a first-order gamma-variate model to quantify blood flow using consecutive contrast-enhanced echocardiography acquisitions in an open-chest canine study with varying blood flow. 
+They compared their results in the myocardium and in the coronary bed with the transmural myocardial blood flow measured using radiolabelled microspheres, and to direct coronary flow measurements obtained by an electromagnetic flowmeter. 
+They studied the influence of the injection site by performing their experiments in two groups of eight dogs. 
+In the first group, dogs were injected a bolus of microbubbles in the circumflex artery, while in the second group they were injected in the left main coronary.
+Authors reported a good correlation of both myocardial and coronary blood flow measurements with the parameter of the gamma-variate which influences the curve width, $\alpha$, for both groups (mean $r = 0.81$ and $0.96$ respectively), but a poor correlation of the peak intensity (mean $r = 0.63$ and $0.39$ respectively). 
+Pooling estimates from the eight dogs did not affect the correlation with $\alpha$ for the first group ($r = 0.80$), however for the second group, pooling data considerably dropped the correlation ($r = 0.23$).
+Scattered plots reveal the varying slopes obtained in the different dogs, emphasizing the impact of the injection site.
+Indeed, when injecting in the left main coronary the contrast agent is dispersed throught the coronary tree, making quantification of myocardial blood flow intrinsically relative.
+Authors suggested that absolute quantification of myocardial blood flow may be possible, injecting closer to the branches of the coronary tree, but were well aware that the proposed semi-quantitative parameters are not absolute themselves.
+
+
+\citet{Tiemann:2000wl} investigated the ability of harmonic power Doppler imaging to yield quantitative perfusion parameters, as this modality inherently destroys microbubble to produce contrast-specific images~\cite{Tiemann:1997vj}, through in vitro experiments, and ex vivo experiments in a porcine heart.
+% Tiemann:2000wl, Are microbubbles free flowing tracers through the Myocardium? Comparison of indicator-dilution curves obtained from dye dilution and echo contrast using harmonic power Doppler imaging.
+% Tiemann:1997vj, Stimulated Acoustic Emission Nonbackscatter Contrast Effect of Microbubbles Seen with Harmonic Power Doppler Imaging.
+They compared the time-intensity curves obtained from harmonic power Doppler, and the time-concentration curves of ICG measured with an extravascular densitometer, to direct flow measurements from a calibrated ultrasonic flowmeter. 
+Authors fitted a log-normal model to the experimental curves, since this model has been commonly used to fit indicator-dilution curves~\cite{Stow:1954ty,Wise:1966ji},
+% Stow:1954ty, An empirical formula for indicator-dilution curves as obtained in human beings
+% Wise:1966ji, The geometry of log-normal and related distributions and an application to tracer-dilution curves
+and was later applied in cardiology studies~\cite{Linton:1995ij,Band:1997ib}.
+% Linton:1995ij, A new method of analyzing indicator dilution curves
+% Band:1997ib, The shape of indicator dilution curves used for cardiac output measurement in man
+The area under the curve and the mean transit time of the fitted model were estimated for both modalities. 
+While the area under the curve expectedly correlated with the injected quantity of ultrasound contrast agent, the inverse of the mean transit time obtained using microbubbles and ICG measurements exhibited very strong correlation to the direct flow measurements in both in vitro and ex vivo setups.
+% Fisher2002, Myocardial and microcirculatory kinetics of BR14, a novel third-generation intravenous ultrasound contrast agent.
+% Lagged-normal model for CEUS, estimation of relative peak intensity
+However, the mean transit time obtained with harmonic power Doppler time concentration curves was slightly lower than with ICG densitometry, especially for high flow rates.
+While most studies used electromagnetic flowmeters as ground truth, this one used an ultrasonic transit-time flowmeter. 
+The presence of ultrasonic microbubbles could therefore influence the ground truth flow measurement, and possibly affect the correlation between ultrasonic measurements, however measurements were in accordance with densitometric ICG measurements which alleviates the suspicion.
+
+% Postert:2000kda, Contrast agent specific imaging modes for the ultrasonic assessment of parenchymal cerebral echo contrast enhancement.
+In \citeyear{Postert:2000kda}, \citet{Postert:2000kda} proposed an empirical model for the quantification of cerebral perfusion time-intensity curves following intravenous injection of a bolus of microbbubles, imaged through the acoustic temporal bone window using phase-inversion harmonic ultrasound imaging, contrast burst imaging, and time variance imaging for comparison. 
+The model accounts for the baseline-intensity and for the maximum change in intensity, i.e.~the peak-intensity minus the baseline-intensity. 
+Moreover, the wash-in of the bolus is modeled by a logistic curve with adjustable steepness and delay, despite authors describe it as step function, and the destruction of microbubbles is modeled by an exponential decay.
+However, none of the model parameters is directly related to the physiology or to physical measurements. 
+Authors used the peak-intensity, as well as the time to peak-intensity extracted parameters from the modeled time-intensity curves as semi-quantitative parameters to compare the values obtained using the three modalities of contrast-enhanced ultrasond cited above, and in four regions of interest of nine healthy patients. 
+The study concludes by stating the higher sensitivity of contrast burst imaging and time variance imaging compared to phase-inversion harmonic imaging.
+
+% Eyding:2003bo, Parameters of cerebral perfusion in phase-inversion harmonic imaging (PIHI) ultrasound examinations.
+However, three years later, a study by \citet{Eyding:2003bo} to which Postert collaborated, investigated the 90\% peak width as an additional parameters to characterize time-intensity curves from phase-inversion harmonic imaging fitted with this model.
+Semi-quantitative parameters were evaluated in five regions of interest of the established unilateral view, i.e.~with an imaging depth of 100 mm, and nine regions of interest using a novel the bilateral view including both hemishperes, i.e.~with an imaging depth of 150 mm, of fourteen healthy patients. 
+Consecutive transtemporal acquisitions following intravenous injection of two different ultrasound contrast agents were performed in each view of each patient, with twenty minute intervals, with for comparison purposes.
+The authors reported the sensitivity of peak-intensity to depth, and the ability to differentiate arteries using either time parameter.
+
+% Krogias:2005hs, Semiquantitative analysis of ultrasonic cerebral perfusion imaging.
+In a following study~\cite{Krogias:2005hs}, the same group performed another transtemporal contrast-enhanced ultrasound study using the bilateral approach with a single bolus injection in twenty healthy patients.
+A total of fourteen regions of interest was delineated in both hemishperes, yielding as many time-intensity curves, from which were estimated the same three semi-quantitative parameters after fitting the empirical model described above. 
+Peak intensity was once again excluded from further analysis because of the strong variations among patients.
+Because of the small amount of corresponding regions in the study, only descriptive data is presented in the form of aligned boxplots, as if all patients exhibited the same median value. 
+The authors recommended the use of the time parameters, in particular the time to peak intensity, as estimated with the bilateral protocol.
+They believe it could be a relevant indicator to help characterize lesions in patients with acute strokes, provided that one of the hemispheres is unaffected and can be used as a reference.
+
+% Elie2014, Method and system for quantification of tumoral vascularization (US PATENT: US 8847960 B2)
+% IGR custom model
+In 2006, members of the \em{Institut Gustave Roussy}, also known as IGR, filed a patent application for quantification approach developped specifically for contrast-enhanced ultrasound~\cite{Elie2014}.
+The formulation of the mathematical medel is empirical, and is inspired from the model first proposed by \citet{Eyding:2003bo}, replacing both the numerator and the denominator terms by sigmoid functions. 
+A long list of semi-quantitative parameters that can be derived from the fitted model for vascularization and tumoral angiogenesis detection are listed by the authors, i.e.~peak-intensity time and value, wash-in time, mean transit time, area under the curve, wash-in rate, area under the wash-in, and under the wash-out. 
+
+% Lavisse:2008gc, Early quantitative evaluation of a tumor vasculature disruptive agent AVE8062 using dynamic contrast-enhanced ultrasonography.
+The group later used the patented model in an early attempt to assess the efficacy of a disruptive anti-angiogenic treatment~\cite{Lavisse:2008gc}.
+The group assessed tumor vasculature through the peak-intensity time and value, as well as the full-width at half maximum, in four groups of ten mice, respectively imaged at both 5 and 15 minutes, one hour, six hours, and twenty-four hours after treatment injection, and compared the post-treatment contrast-enhanced ultrasound results to pre-treatment results, but also to power Doppler and histology findings.
+They reported a progressive decrease in peak-intensity value reaching its minimum six hours after injection of the anti-angiogenic treatement, and opposite effects in time to peak-intensity and in the full-width at half maximum.
+
+% Mischi2003, Videodensitometric Methods for Cardiac Output Measurements
+% Local Density Random Walk (LDRW) gives a physical interpretation of the dilution process, authors proposed the application of this diffusion with drift model to estimate the area under the curve and the mean transit time, which are then used to obtain tissue blood flow and tissue blood volume using indicator-dilution theory
+
+
+% Mischi2008, On the physical and stochastic representation of an indicator dilution curve as a gamma variate
+% Physical and stochastic explaination of the Gamma-Variate model, comparison with LDRW
+
+% Mannaris2013, In vitro localized release of thermosensitive liposomes with ultrasound-induced hyperthermia.
+% Error function fitted to the wash-in phase of CEUS TICs to estimate the wash-in time
+
+
+
+\subsubsection{Infusion injection}
+In 1998, \citet{Wei:1998jd} proposed an explicit model to quantify myocardial perfusion. % Wei:1998jd, Quantificatin of myocardial blood flow with ultrasound-induced destruction of microbubbles administered as a constant venous infusion
+For this method, microbubbles were injected as a continuous infusion.
+When the micro-bubble concentration reached a steady state, high mechanical index ultrasound pulses were used to disrupt microbubbles in the myocardium with increasing pulsing interval.
+This technique is known as intermittent imaging.
+The video intensity, which was assumed proportional to the concentration in microbubbles, was plotted as a function of the pulsing interval. 
+Then an exponential function with plateau value $A$ and rate constant $\beta$ was fitted. 
+Assuming a constant beam elevation, \citet{Wei:1998jd} demonstrated that blood flow $F$ was proportional to the slope at the origin, i.e.~$A\beta$.
+The authors validated their approach in vitro, but also ex vivo and in vivo in a canine study.
+The method was later validated for perfusion quantification of the kidney, estimating both cortical and medullary blood flow in another canine study~\cite{Wei:2001id}. % Wei:2001id, Quantification of renal blood flow with contrast-enhanced ultrasound
+
+The development of power pulse inversion imaging by \citet{Simpson:1997jn} in 1997, % Simpson:1997jn, Pulse inversion Doppler: A new method for detecting nonlinear echoes from microbubble contrast agents
+allowing real-time imaging of low microbubble concentration at low mechanical index~\cite{Tiemann:1999vy}. % Tiemann:1999vy, Real-time contrast echo assessment of myocardial perfusion at low emission power: First experimental and clinical results using power pulse inversion imaging
+\citet{Tiemann:2000wn} in \citeyear{Tiemann:2000wn} % Tiemann:2000wn, Real-time assessment of tissue perfusion following bubble destruction at low emission power –first experimental results using power pulse inversion imaging
+and \citet{Masugata:2001vg} in \citeyear{Masugata:2001vg} % Masugata:2001vg, Quantitative Assessment of Myocardial Perfusion During Graded Coronary Stenosis by Real-Time Myocardial Contrast Echo Refilling Curves
+demonstrated the use of power pulse inversion to image the replenishment of tissue following a single series of microbubble-disrupting pulses in real-time.
+Both study also reveal that the model proposed by Wei et al.~could be used to accurately fit real-time replenishment curves.
+
+In \citeyear{Schlosser:2001vv}, \citet{Schlosser:2001vv} applied the same model to quantify renal perfusion, % Schlosser:2001vv, Feasibility of the flash-replenishment concept in renal tissue: which parameters affect the assessment of the contrast replenishment?
+and compared the estimated parameters according to the acquisition sequence, i.e.~power pulse inversion~\cite{Simpson:1997jn} vs.~pulse inversion~\cite{Burns:2000tl}. % Burns:2000tl, Pulse inversion imaging of liver blood flow: improved method for characterizing focal masses with microbubble contrast
+The authors disclosed highly different perfusion parameter values according to the acquisition scheme, which yielded significantly different values of both parameters.
+However, they were able to distinguish large arteries in the renal hilum from smaller arteries in the renal cortex, using either of the schemes, and either of the parameters.
+
+In \citeyear{Krix:2003tq}, ~\citet{Krix:2003tq} presented a hyperbolic model to quantify perfusion using either intermittent or real-time imaging, relying on physiological considerations, and accounting for the distribution of blood velocities in the tissue. % Krik2003b, A multivessel model describing replenishment kinetics of ultrasound contrast agent for quantification of tissue perfusion 
+The model assumes a spherical distribution of blood vessel directions with varying blood velocity.
+This assumption yields an initial linear increase of the concentration until the vessels perpendicular to the imaging plane with the highest velocity are fully refilled. 
+After the initial linear increase in signal intensity, the fully filled vessels do not contribute to signal increase anymore. This yields a non-linear increase until only the vessels with the lowest velocity remain to be fully filled. 
+Finally, all the vessels present in the imaging plane are fully filled and a plateau intensity is reached. 
+Authors describe an iterative method to estimate the instant of maximum and mean velocity.
+They state the slope of the replenishment curve observed at these times can be used to evaluate the maximum blood velocity in the region of interest, assuming the width of the ultrasound beam is known.
+The influence on the width of the blood velocity distribution is visually described.
+The method was evaluated in a murine study with continuous infusion and intermittent imaging, followed by a bolus injection and intermittent imaging as well~\cite{Krix:2003wh}. % Comparison of intermittent-bolus contrast imaging with conventional power Doppler sonography: quantification of tumour perfusion in small animals
+
+\citet{Potdevin:2004eq} investigated the misfit of the exponential model to refill curves and proposed the use of the error function instead.
+They introduced a time-delay parameter in their model in order to better reflect experimental data. 
+They also investigated the impact of observing multiple blood velocities in the region of interest, as well as the effect of the point spread function of the imaging system through a simulation study and concluded that replenishment curves contain more information that just mean transit time. % Potdevin:2004eq, Analysis of refill curve shape in ultrasound contrast agent studies
+For instance they were able to reveal the presence of abnormal vascular structures, such as shunting, i.e.~direct flow from the arterial system to the venous system without passing through the capillary bed.
+In a latter study, they proposed an adaptation of the model to quantify local replenishment curves in tissues with complex vascular structures.
+Replenishment curves are first normalized according to the estimated depth-dependent pixel intensity in a pixel containing only blood.
+The model accounts for the specific angles, lengths, and velocities of the various vascular structures in the studied tissue~\cite{Potdevin:2006fs}. % Potdevin:2006fs, Refill model of rabbit kidney vasculature
+They also used their model as a tissue classifier tool, determining tissue type as the predefined vascular model that best fitted the enhancement curve in the least squares sense.
+However, applying the simpler exponential model with the average tissue mean transit time on normalized data yielded accurate tissue classification maps, suggesting that the major factor differentiating the replenishment curves of the various tissue types is actually mean transit time.
+The additional information could be used to characterize vascular properties more finely.
+In spite, while their is no physical evidence why the exponential model should fit replenishment curves, it remains a good approximation and allow accurate differentiation among tissue types.
+This is especially true when applied to noisy replenishment curves.
+
+\citet{Arditi:2006ip} introduced a new formalism for the quantification of real-time destruction-replenishment acquisitions using a low mechanical index. % Arditi:2006ip, A new formalism for the quantification of tissue perfusion by the destruction-replenishment method in contrast ultrasound imaging 
+The authors emphasize the importance of linearizing ultrasound data according to the type and settings of the imaging equipment, as opposed to grey levels intensities directly extracted from the log-compressed images visible on the monitor.
+More importantly, they present a perfusion model accounting for the variety in blood flow velocity and direction, assuming a model accurately describing the distribution of transit times is known (e.g.~log-normal distribution).
+The method achieves a better description of the S-shaped replenishment curves that can be observed.
+
+In \citeyear{Quaia:2009fs}, \citet{Quaia:2009fs} proposed a model reflecting the drag (related to flow) and diffusion (not related to flow) of microbubbles in blood, and accounting for the variety of blood velocities and directions. % Quaia:2009fs, ASSESSMENT OF A NEW MATHEMATICAL MODEL FOR THE COMPUTATION OF NUMERICAL PARAMETERS RELATED TO RENAL CORTICAL BLOOD FLOW AND FRACTIONAL BLOOD VOLUME BY CONTRAST-ENHANCED ULTRASOUND
+This variety is modeled as the sum of a variable number of piecewise linear replenishment curves.
+The model was validated through in vitro experiments using a dialysis cartridge with tubular capillaries, and in vivo experiments in the renal cortex of 12 healthy volunteers, separated in two age groups. 
+While it achieved a significantly better fit than the exponential model using a Wilcoxon signed-rank test, whether the proposed model was using two, three, or four different tracts, the differences in the mean squared error remained extremely small and exhibited non-negligible overlap.
+Furthermore, while the authors report a significant difference in the initial replenishment slope among the two age groups using the proposed model, based a Mann-Whitney U-test, they do not report on the slope differences obtained using the exponential model, nor on the apparent concordance of the plateau values obtained using the two models.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COMMENTS ON INFUSION MODELS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Deconvolution methods}
+\label{sec:DeconvolutionMethods}
+\section{Compartmental models}
+\label{sec:CompartmentalModels}
+
+\bibliographystyle{plainnat}
+\bibliography{Bibliography/chap2}

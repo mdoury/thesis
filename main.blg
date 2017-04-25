@@ -1,0 +1,125 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: cover.aux
+A level-1 auxiliary file: contents.aux
+A level-1 auxiliary file: chap1.aux
+The style file: plainnat.bst
+A level-1 auxiliary file: chap2.aux
+Illegal, another \bibstyle command---line 342 of file chap2.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chap3.aux
+Illegal, another \bibstyle command---line 141 of file chap3.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 142 of file chap3.aux
+ : \bibdata
+ :         {Bibliography/chap3}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chap4.aux
+Illegal, another \bibstyle command---line 74 of file chap4.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 75 of file chap4.aux
+ : \bibdata
+ :         {Bibliography/chap4}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chap5.aux
+Illegal, another \bibstyle command---line 126 of file chap5.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 127 of file chap5.aux
+ : \bibdata
+ :         {Bibliography/chap5}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: appa.aux
+Database file #1: Bibliography/chap2.bib
+Warning--I didn't find a database entry for "Arditi:2006ip"
+Warning--I didn't find a database entry for "Wei1998tc"
+Warning--I didn't find a database entry for "Dietrich2012kw"
+Warning--I didn't find a database entry for "Strouthos2010it"
+Warning--I didn't find a database entry for "Tang2011fj"
+Warning--I didn't find a database entry for "Tofts1999ih"
+Warning--I didn't find a database entry for "Wedam2006bi"
+Warning--I didn't find a database entry for "OConnor2007ku"
+Warning--I didn't find a database entry for "Doury2016tk"
+Warning--I didn't find a database entry for "Gauthier2012vc"
+Warning--I didn't find a database entry for "Jirik2014hv"
+Warning--I didn't find a database entry for "Dizeux2016cd"
+Warning--I didn't find a database entry for "Payen2013jc"
+Warning--I didn't find a database entry for "Tudorica2002at"
+Warning--I didn't find a database entry for "Gunn2001gr"
+Warning--I didn't find a database entry for "Patlak1983id"
+Warning--I didn't find a database entry for "Yankeelov2005de"
+Warning--I didn't find a database entry for "Balvay2005ca"
+Warning--I didn't find a database entry for "vanBuuren2011ica"
+Warning--I didn't find a database entry for "Hothorn2008ht"
+Warning--I didn't find a database entry for "Kudo2009hy"
+Warning--I didn't find a database entry for "Mule2008ms"
+Warning--I didn't find a database entry for "Guibal2010bl"
+Warning--I didn't find a database entry for "Hoeffel2010ce"
+Warning--I didn't find a database entry for "Lefort2012km"
+Warning--I didn't find a database entry for "Wang2015bb"
+Warning--I didn't find a database entry for "Doury:2017fz"
+Warning--I didn't find a database entry for "CardenasRodriguez:2013em"
+Warning--I didn't find a database entry for "Patlak:1983id"
+Warning--I didn't find a database entry for "Logan:1990jg"
+Warning--I didn't find a database entry for "Balvay:2005ca"
+Warning--I didn't find a database entry for "vanBuuren:2011ica"
+Warning--I didn't find a database entry for "Turco:2016"
+Warning--I didn't find a database entry for "CardenasRodriguez2013em"
+Warning--I didn't find a database entry for "Doury2016fi"
+Warning--I didn't find a database entry for "Doury2017wn"
+Warning--I didn't find a database entry for "Lowerison2017"
+Warning--I didn't find a database entry for "Gunn2001cx"
+Warning--I didn't find a database entry for "Blomley1997ff"
+Warning--I didn't find a database entry for "Barrois2013"
+Warning--I didn't find a database entry for "Lefort2012"
+Warning--empty publisher in Volkmann:1850us
+You've used 77 entries,
+            2773 wiz_defined-function locations,
+            1193 strings with 24139 characters,
+and the built_in function-call counts, 46334 in all, are:
+= -- 3928
+> -- 3689
+< -- 18
++ -- 1237
+- -- 1158
+* -- 4577
+:= -- 7275
+add.period$ -- 232
+call.type$ -- 77
+change.case$ -- 613
+chr.to.int$ -- 75
+cite$ -- 155
+duplicate$ -- 1622
+empty$ -- 3106
+format.name$ -- 1251
+if$ -- 9316
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 80
+newline$ -- 392
+num.names$ -- 308
+pop$ -- 1121
+preamble$ -- 1
+purify$ -- 540
+quote$ -- 0
+skip$ -- 1274
+stack$ -- 0
+substring$ -- 1914
+swap$ -- 165
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 827
+warning$ -- 1
+while$ -- 373
+width$ -- 0
+write$ -- 1003
+(There were 7 error messages)

@@ -1,0 +1,30 @@
+\gdef \the@ipfilectr {@-1}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\addvspace {10\p@ }
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-4}
+\addvspace {10\p@ }
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-5}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Synthesis of the different models tested. The first three models propose absolute quantification. The last five models propose relative quantification.}}{52}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Median [first-third quartiles] values of $NMRSE$ and $FMI$ (in \%) obtained for the different models. $N$ is the number of sub-regions where $FMI < 90\%$. Significant differences between \textbf {aLN} and any other model are indicated by $^\star $. In addition, significant differences between \textbf {aAIF} (resp. \textbf {rRT}) and \textbf {aAIFd} (resp. \textbf {rRTd)} are indicated by $^\dagger $ (resp. $^\ddagger $). The symbol $^\circ $ indicates that comparisons were not reported due to the high number of missing data.}}{56}{table.3.2}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Mean $\pm $ standard deviation of the parameters estimated with the \textbf {aAIFd} and \textbf {rAIFd} models, using two different sets of cut-offs to generate the AIF functions.}}{57}{table.3.3}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Mean $\pm $ standard deviation of the volume, flow and delay parameters estimated in the different sub-regions of the tumor, for the four test-retest exams, after multiple imputation of missing values due to poor fit quality. Values of $WIR$ and $F$ are multiplied by 1000.}}{67}{table.3.4}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Mean $\pm $ standard deviation of the coefficients of variation (CV), expressed in percentage, of volume and flow parameters estimated for each sub-region after multiple imputation of missing values due to poor fit quality. CV were not computed for time delays, since their values can be either positive or negative.}}{67}{table.3.5}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-6}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Median values of $FMI$ obtained for the four models and number of sub-regions $N_{rem}$, out of $512$, for which $FMI <90\%$.}}{76}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces p-values obtained in the post-hoc analysis of the Friedman test. Significant results ($\mathrm p < 0.05$) in bold.}}{77}{table.4.2}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-7}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Analytic expressions of perfusion parameters using a one-compartment model and assuming two different shapes of AIF: rectangle function of width $a$ and height $1/a$, $rect_a(t)$, and general case $C_A(t)$. In the first case, $K$ stands for the injected concentration.}}{101}{table.5.1}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-8}
+\addvspace {10\p@ }
+\gdef \the@ipfilectr {}

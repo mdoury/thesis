@@ -1,0 +1,77 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Balvay et~al.(2005)Balvay, Frouin, Calmon, Bessoud, Kahn, Siauve,
+  Cl{\'e}ment, and Cuenod]{Balvay:2005ca}
+Daniel Balvay, Fr{\'e}d{\'e}rique Frouin, Guillaume Calmon, Bertrand Bessoud,
+  Edmond Kahn, Nathalie Siauve, Olivier Cl{\'e}ment, and Charles~A Cuenod.
+\newblock {New criteria for assessing fit quality in dynamic
+  contrast-enhancedT1-weighted MRI for perfusion and permeability imaging}.
+\newblock \emph{Magnetic Resonance in Medicine}, 54\penalty0 (4):\penalty0
+  868--877, 2005.
+
+\bibitem[C{\'a}rdenas-Rodr{\'\i}guez et~al.(2013)C{\'a}rdenas-Rodr{\'\i}guez,
+  Howison, and Pagel]{CardenasRodriguez:2013em}
+Julio C{\'a}rdenas-Rodr{\'\i}guez, Christine~M Howison, and Mark~D Pagel.
+\newblock {A linear algorithm of the reference region model for DCE-MRI is
+  robust and relaxes requirements for temporal resolution}.
+\newblock \emph{Magnetic resonance imaging}, 31\penalty0 (4):\penalty0
+  497--507, May 2013.
+
+\bibitem[Dietrich et~al.(2012)Dietrich, Averkiou, Correas, Lassau, Leen, and
+  Piscaglia]{Dietrich:2012kw}
+C~F Dietrich, Michalakis Averkiou, J-M Correas, N~Lassau, E~Leen, and
+  F~Piscaglia.
+\newblock {An EFSUMB introduction into Dynamic Contrast-Enhanced Ultrasound
+  (DCE-US) for quantification of tumour perfusion.}
+\newblock In \emph{Ultraschall in der Medizin (Stuttgart, Germany : 1980)},
+  pages 344--351. Innere Medizin 2, Caritas-Krankenhaus, Bad Mergentheim.
+  Christoph.Dietrich@ckbm.de, {\textcopyright}~Georg Thieme Verlag KG, August
+  2012.
+
+\bibitem[Doury et~al.(2017)Doury, Dizeux, De~Cesare, Lucidarme, Pellot-Barakat,
+  Bridal, and Frouin]{Doury:2017fz}
+Maxime Doury, Alexandre Dizeux, Alain De~Cesare, Olivier Lucidarme, Claire
+  Pellot-Barakat, S~Lori Bridal, and Fr{\'e}d{\'e}rique Frouin.
+\newblock {Quantification of tumor perfusion using dynamic contrast-enhanced
+  ultrasound: impact of mathematical modeling.}
+\newblock \emph{Physics in medicine and biology}, 62\penalty0 (3):\penalty0
+  1113--1125, February 2017.
+
+\bibitem[Logan et~al.(1990)Logan, Fowler, Volkow, Wolf, Dewey, Schlyer,
+  MacGregor, Hitzemann, Bendriem, and Gatley]{Logan:1990jg}
+J~Logan, J~S Fowler, N~D Volkow, A~P Wolf, S~L Dewey, D~J Schlyer, R~R
+  MacGregor, R~Hitzemann, B~Bendriem, and S~J Gatley.
+\newblock {Graphical analysis of reversible radioligand binding from
+  time-activity measurements applied to [N-11C-methyl]-(-)-cocaine PET studies
+  in human subjects.}
+\newblock \emph{Journal of Cerebral Blood Flow {\&} Metabolism}, 10\penalty0
+  (5):\penalty0 740--747, September 1990.
+
+\bibitem[Patlak et~al.(1983)Patlak, Blasberg, and Fenstermacher]{Patlak:1983id}
+Clifford~S Patlak, Ronald~G Blasberg, and Joseph~D Fenstermacher.
+\newblock {Graphical Evaluation of Blood-to-Brain Transfer Constants from
+  Multiple-Time Uptake Data}.
+\newblock \emph{Journal of Cerebral Blood Flow {\&} Metabolism}, 3\penalty0
+  (1):\penalty0 1--7, March 1983.
+
+\bibitem[Tang et~al.(2011)Tang, Mulvana, Gauthier, Lim, Cosgrove, Eckersley,
+  and Stride]{Tang:2011fja}
+M~X Tang, H~Mulvana, T~Gauthier, A~K~P Lim, D~O Cosgrove, R~J Eckersley, and
+  E~Stride.
+\newblock {Quantitative contrast-enhanced ultrasound imaging: a review of
+  sources of variability.}
+\newblock \emph{Interface Focus}, 1\penalty0 (4):\penalty0 520--539, August
+  2011.
+
+\bibitem[van Buuren and Groothuis-Oudshoorn(2011)]{vanBuuren:2011ica}
+Stef van Buuren and Karin Groothuis-Oudshoorn.
+\newblock {mice: Multivariate Imputation by Chained Equations in R}.
+\newblock \emph{Journal of Statistical Software}, 45\penalty0 (1):\penalty0
+  1--67, December 2011.
+
+\end{thebibliography}

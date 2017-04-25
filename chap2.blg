@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: chap2.aux
+The style file: plainnat.bst
+Database file #1: Bibliography/chap2.bib
+Warning--I didn't find a database entry for "Arditi:2006ip"
+Warning--empty publisher in Volkmann:1850us
+You've used 76 entries,
+            2773 wiz_defined-function locations,
+            1098 strings with 22814 characters,
+and the built_in function-call counts, 45626 in all, are:
+= -- 3870
+> -- 3623
+< -- 18
++ -- 1215
+- -- 1137
+* -- 4503
+:= -- 7162
+add.period$ -- 229
+call.type$ -- 76
+change.case$ -- 603
+chr.to.int$ -- 74
+cite$ -- 153
+duplicate$ -- 1601
+empty$ -- 3065
+format.name$ -- 1229
+if$ -- 9176
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 79
+newline$ -- 387
+num.names$ -- 304
+pop$ -- 1103
+preamble$ -- 1
+purify$ -- 531
+quote$ -- 0
+skip$ -- 1256
+stack$ -- 0
+substring$ -- 1887
+swap$ -- 163
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 816
+warning$ -- 1
+while$ -- 368
+width$ -- 0
+write$ -- 990
+(There were 2 warnings)

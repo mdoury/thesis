@@ -31,78 +31,78 @@
 \contentsline {subsubsection}{Bolus injection}{25}{section*.8}
 \contentsline {paragraph}{\em {Model-free quantification methods}\\}{25}{section*.9}
 \contentsline {paragraph}{\em {Model-based quantification methods}\\}{30}{section*.10}
-\contentsline {subsubsection}{Infusion injection}{33}{section*.11}
-\contentsline {section}{\numberline {2.2}Deconvolution methods}{35}{section.2.2}
-\contentsline {section}{\numberline {2.3}Compartmental models}{35}{section.2.3}
+\contentsline {subsubsection}{Infusion injection}{34}{section*.11}
+\contentsline {section}{\numberline {2.2}Deconvolution methods}{37}{section.2.2}
+\contentsline {section}{\numberline {2.3}Compartmental models}{37}{section.2.3}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-5}
-\contentsline {chapter}{\numberline {3}Quantification of tumor perfusion using DCE-US: impact of mathematical modeling}{47}{chapter.3}
-\contentsline {section}{\numberline {3.1}Abstract}{47}{section.3.1}
-\contentsline {section}{\numberline {3.2}Introduction}{48}{section.3.2}
-\contentsline {section}{\numberline {3.3}Materials}{49}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Animals}{49}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Image acquisition}{50}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Data pre-processing}{50}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Methods}{51}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Quantification of tumor perfusion}{51}{subsection.3.4.1}
-\contentsline {subsubsection}{Absolute Log-normal model: aLN\nobreakspace {}\cite {Strouthos2010it}.}{52}{section*.13}
-\contentsline {subsubsection}{One-Compartment model with an Arterial Input Function: \textbf {aAIF} and \textbf {aAIFd}}{52}{section*.14}
-\contentsline {subsubsection}{Relative Log-Normal model: \textbf {rLN}.}{53}{section*.15}
-\contentsline {subsubsection}{Relative One-Compartment model with an Arterial Input Function: \textbf {rAIF and rAIFd}.}{54}{section*.16}
-\contentsline {subsubsection}{Relative One-Compartment model using the Reference Tissue kinetics: \textbf {rRT and rRTd}}{54}{section*.17}
-\contentsline {subsection}{\numberline {3.4.2}Data analysis}{55}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Results}{56}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Model comparison through quality of fit criteria}{56}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Model comparison through coefficients of variation}{57}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}Discussion}{58}{section.3.6}
-\contentsline {section}{\numberline {3.7}Conclusion}{61}{section.3.7}
-\contentsline {section}{\numberline {3.8}Acknowledgments}{62}{section.3.8}
+\contentsline {chapter}{\numberline {3}Quantification of tumor perfusion using DCE-US: impact of mathematical modeling}{49}{chapter.3}
+\contentsline {section}{\numberline {3.1}Abstract}{49}{section.3.1}
+\contentsline {section}{\numberline {3.2}Introduction}{50}{section.3.2}
+\contentsline {section}{\numberline {3.3}Materials}{51}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Animals}{51}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Image acquisition}{52}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Data pre-processing}{52}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Methods}{53}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Quantification of tumor perfusion}{53}{subsection.3.4.1}
+\contentsline {subsubsection}{Absolute Log-normal model: aLN\nobreakspace {}\cite {Strouthos2010it}.}{54}{section*.13}
+\contentsline {subsubsection}{One-Compartment model with an Arterial Input Function: \textbf {aAIF} and \textbf {aAIFd}}{54}{section*.14}
+\contentsline {subsubsection}{Relative Log-Normal model: \textbf {rLN}.}{55}{section*.15}
+\contentsline {subsubsection}{Relative One-Compartment model with an Arterial Input Function: \textbf {rAIF and rAIFd}.}{56}{section*.16}
+\contentsline {subsubsection}{Relative One-Compartment model using the Reference Tissue kinetics: \textbf {rRT and rRTd}}{56}{section*.17}
+\contentsline {subsection}{\numberline {3.4.2}Data analysis}{57}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Results}{58}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Model comparison through quality of fit criteria}{58}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Model comparison through coefficients of variation}{59}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Discussion}{60}{section.3.6}
+\contentsline {section}{\numberline {3.7}Conclusion}{63}{section.3.7}
+\contentsline {section}{\numberline {3.8}Acknowledgments}{64}{section.3.8}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-6}
-\contentsline {chapter}{\numberline {4}Regularized Linear Resolution of a One-Compartment Model to Improve the Reproducibility of Perfusion Parameters in CEUS}{69}{chapter.4}
-\contentsline {section}{\numberline {4.1}Abstract}{69}{section.4.1}
-\contentsline {section}{\numberline {4.2}Introduction}{70}{section.4.2}
-\contentsline {section}{\numberline {4.3}Materials}{71}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Animals}{71}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Image acquisition}{71}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Methods}{72}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Data pre-processing}{72}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Definition of the four models}{73}{subsection.4.4.2}
-\contentsline {subsubsection}{Log-Normal model (\textbf {LN})}{73}{section*.21}
-\contentsline {subsubsection}{Normalized log-normal model (\textbf {rLN})}{73}{section*.22}
-\contentsline {subsubsection}{Simple one-compartment model (\textbf {rLin})}{74}{section*.23}
-\contentsline {subsubsection}{Regularization of the one-compartment model (\textbf {rLinReg})}{75}{section*.24}
-\contentsline {subsection}{\numberline {4.4.3}Data analysis}{75}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Results}{76}{section.4.5}
-\contentsline {section}{\numberline {4.6}Discussion}{78}{section.4.6}
-\contentsline {section}{\numberline {4.7}Conclusion}{79}{section.4.7}
+\contentsline {chapter}{\numberline {4}Regularized Linear Resolution of a One-Compartment Model to Improve the Reproducibility of Perfusion Parameters in CEUS}{71}{chapter.4}
+\contentsline {section}{\numberline {4.1}Abstract}{71}{section.4.1}
+\contentsline {section}{\numberline {4.2}Introduction}{72}{section.4.2}
+\contentsline {section}{\numberline {4.3}Materials}{73}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Animals}{73}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Image acquisition}{73}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Methods}{74}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Data pre-processing}{74}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Definition of the four models}{75}{subsection.4.4.2}
+\contentsline {subsubsection}{Log-Normal model (\textbf {LN})}{75}{section*.21}
+\contentsline {subsubsection}{Normalized log-normal model (\textbf {rLN})}{75}{section*.22}
+\contentsline {subsubsection}{Simple one-compartment model (\textbf {rLin})}{76}{section*.23}
+\contentsline {subsubsection}{Regularization of the one-compartment model (\textbf {rLinReg})}{77}{section*.24}
+\contentsline {subsection}{\numberline {4.4.3}Data analysis}{77}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Results}{78}{section.4.5}
+\contentsline {section}{\numberline {4.6}Discussion}{80}{section.4.6}
+\contentsline {section}{\numberline {4.7}Conclusion}{81}{section.4.7}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-7}
-\contentsline {chapter}{\numberline {5}Impact of Recirculation in Dynamic Contrast-Enhanced Ultrasound: a Simulation Study}{81}{chapter.5}
-\contentsline {section}{\numberline {5.1}Abstract}{81}{section.5.1}
-\contentsline {section}{\numberline {5.2}Introduction}{82}{section.5.2}
-\contentsline {section}{\numberline {5.3}Theory}{84}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}One-compartment vascular model}{84}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Simplified recirculation model}{84}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Noise model}{86}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Perfusion quantification methods}{86}{subsection.5.3.4}
-\contentsline {subsubsection}{Methods $M_1$ and $M_2$ - Log-Normal model (LN)}{86}{section*.26}
-\contentsline {subsubsection}{Methods $M_3$ and $M_4$ - relative Log-Normal model (rLN)}{87}{section*.27}
-\contentsline {subsubsection}{Methods $M_5$ - relative one-compartment model (rLin)}{87}{section*.28}
-\contentsline {subsubsection}{Method $M_6$ - Regularized relative one compartment model (rReg)}{88}{section*.29}
-\contentsline {section}{\numberline {5.4}Experimental design}{88}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Simulations}{88}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Data analysis}{89}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}Results}{90}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Model $M_1$}{90}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Model $M_2$}{90}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}Model $M_3$}{95}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}Model $M_4$}{95}{subsection.5.5.4}
-\contentsline {subsection}{\numberline {5.5.5}Model $M_5$}{95}{subsection.5.5.5}
-\contentsline {subsection}{\numberline {5.5.6}Model $M_6$}{96}{subsection.5.5.6}
-\contentsline {section}{\numberline {5.6}Discussion}{96}{section.5.6}
-\contentsline {section}{\numberline {5.7}Conclusion}{99}{section.5.7}
+\contentsline {chapter}{\numberline {5}Impact of Recirculation in Dynamic Contrast-Enhanced Ultrasound: a Simulation Study}{83}{chapter.5}
+\contentsline {section}{\numberline {5.1}Abstract}{83}{section.5.1}
+\contentsline {section}{\numberline {5.2}Introduction}{84}{section.5.2}
+\contentsline {section}{\numberline {5.3}Theory}{86}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}One-compartment vascular model}{86}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Simplified recirculation model}{86}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Noise model}{88}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Perfusion quantification methods}{88}{subsection.5.3.4}
+\contentsline {subsubsection}{Methods $M_1$ and $M_2$ - Log-Normal model (LN)}{88}{section*.26}
+\contentsline {subsubsection}{Methods $M_3$ and $M_4$ - relative Log-Normal model (rLN)}{89}{section*.27}
+\contentsline {subsubsection}{Methods $M_5$ - relative one-compartment model (rLin)}{89}{section*.28}
+\contentsline {subsubsection}{Method $M_6$ - Regularized relative one compartment model (rReg)}{90}{section*.29}
+\contentsline {section}{\numberline {5.4}Experimental design}{90}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Simulations}{90}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Data analysis}{91}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Results}{92}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Model $M_1$}{92}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Model $M_2$}{92}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Model $M_3$}{97}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}Model $M_4$}{97}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}Model $M_5$}{97}{subsection.5.5.5}
+\contentsline {subsection}{\numberline {5.5.6}Model $M_6$}{98}{subsection.5.5.6}
+\contentsline {section}{\numberline {5.6}Discussion}{98}{section.5.6}
+\contentsline {section}{\numberline {5.7}Conclusion}{101}{section.5.7}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-8}
-\contentsline {chapter}{\numberline {A}Abbreviations and reference data}{105}{appendix.A}
+\contentsline {chapter}{\numberline {A}Abbreviations and reference data}{107}{appendix.A}
 \gdef \the@ipfilectr {}

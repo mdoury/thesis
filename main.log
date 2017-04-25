@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.11)  24 APR 2017 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.11)  25 APR 2017 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1134,27 +1134,28 @@ Underfull \vbox (badness 5652) has occurred while \output is active []
 Underfull \vbox (badness 5652) has occurred while \output is active []
 
  [31]
-Overfull \hbox (3.08748pt too wide) in paragraph at lines 262--266
+Overfull \hbox (3.08748pt too wide) in paragraph at lines 260--264
 \T1/MinionPro-LF/m/n/12 pa-ram-e-ters were eval-u-ated in five re-gions of in-t
 er-est of the es-tab-lished uni-lat-eral view, i.e. with
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1675) has occurred while \output is active []
 
  [32]
-Underfull \vbox (badness 7740) has occurred while \output is active []
+Underfull \vbox (badness 5652) has occurred while \output is active []
 
  [33]
+[34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
+ [35]
 
-Package natbib Warning: Citation `Arditi:2006ip' on page 35 undefined on input 
-line 330.
+Package natbib Warning: Citation `Arditi:2006ip' on page 36 undefined on input 
+line 352.
 
 
-Overfull \hbox (20.55025pt too wide) in paragraph at lines 330--334
+Overfull \hbox (20.55025pt too wide) in paragraph at lines 352--356
 []\T1/MinionPro-LF/b/n/12 ? \T1/MinionPro-LF/m/n/12 ] in-tro-duced a new for-ma
 l-ism for the quan-tifi-ca-tion of real-time destruction-replenishment
  []
@@ -1163,22 +1164,26 @@ l-ism for the quan-tifi-ca-tion of real-time destruction-replenishment
 \tf@brf=\write8
 \openout8 = `main.brf'.
 
- [35] [36] [37] [38] [39] [40] [41]
-Underfull \hbox (badness 1292) in paragraph at lines 451--451
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
+[37] [38] [39] [40] [41] [42] [43]
+Underfull \hbox (badness 1242) in paragraph at lines 480--480
 \T1/MinionPro-LF/m/n/12 tertreiner.  Quan-ti-ta-tive as-sess-ment of my-ocar-di
 al blood flow by con-trast two-
  []
 
-[42]
-Underfull \hbox (badness 1400) in paragraph at lines 512--512
+[44]
+Underfull \hbox (badness 1442) in paragraph at lines 541--541
 []\T1/MinionPro-LF/m/n/12 Byron F Van-den-berg, Robert Kieso, Karen Fox-Eastham
 , William Chil-ian, and
  []
 
-[43] [44])) [45]
+[45] [46])) [47]
 \openout2 = `chap3.aux'.
 
- (./chap3.tex [46
+ (./chap3.tex [48
 
 
 
@@ -1188,13 +1193,13 @@ Chapter 3.
 
 Underfull \vbox (badness 6758) has occurred while \output is active []
 
- [47]
+ [49]
 Overfull \hbox (1.75916pt too wide) in paragraph at lines 13--15
 \T1/MinionPro-LF/m/n/12 that these semi-quantitative pa-ram-e-ters were sen-si-
 tive to var-i-ous fac-tors [[]]: scanner-related
  []
 
-[48] [49]
+[50] [51]
 Package epstopdf Info: Source file: <Figures/Figure1.eps>
 (epstopdf)                    date: 2017-04-12 09:25:36
 (epstopdf)                    size: 1117482 bytes
@@ -1206,14 +1211,14 @@ ted-to.pdf Figures/Figure1.eps>
 (epstopdf)             \includegraphics on input line 46.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Figure1-eps-converted-to.pdf, id=957, 886.31125pt x 281.05pt>
+<Figures/Figure1-eps-converted-to.pdf, id=981, 886.31125pt x 281.05pt>
 File: Figures/Figure1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Figure1-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Figure1-eps-converted-to.pdf used on input lin
 e 46.
 (pdftex.def)             Requested size: 433.62pt x 137.50127pt.
- [50]
+ [52]
 Overfull \hbox (5.9753pt too wide) in paragraph at lines 63--79
  [] 
  []
@@ -1221,7 +1226,7 @@ Overfull \hbox (5.9753pt too wide) in paragraph at lines 63--79
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [53pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1230,7 +1235,7 @@ l.93 \end{equation}
                     <./Figures/Figure1-eps-converted-to.pdf>]
 Underfull \vbox (badness 2608) has occurred while \output is active []
 
- [52pdfTeX warning (ext4): destination with the same identifier (name{table.3.1
+ [54pdfTeX warning (ext4): destination with the same identifier (name{table.3.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1248,21 +1253,21 @@ ted-to.pdf Figures/Figure2.eps>
 (epstopdf)             \includegraphics on input line 113.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Figure2-eps-converted-to.pdf, id=1017, 850.17625pt x 202.7575pt>
+<Figures/Figure2-eps-converted-to.pdf, id=1041, 850.17625pt x 202.7575pt>
 File: Figures/Figure2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Figure2-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Figure2-eps-converted-to.pdf used on input lin
 e 113.
 (pdftex.def)             Requested size: 433.62pt x 103.41423pt.
- [53pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [55pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.127 \subsubsection
                     {Relative One-Compartment model with an Arterial Input F...
- <./Figures/Figure2-eps-converted-to.pdf>] [54] [55] [56pdfTeX warning (ext4): 
+ <./Figures/Figure2-eps-converted-to.pdf>] [56] [57] [58pdfTeX warning (ext4): 
 destination with the same identifier (name{table.3.2}) has been already used, d
 uplicate ignored
 
@@ -1281,7 +1286,7 @@ ted-to.pdf Figures/Figure3.eps>
 (epstopdf)             \includegraphics on input line 211.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Figure3-eps-converted-to.pdf, id=1096, 771.88374pt x 394.47375pt>
+<Figures/Figure3-eps-converted-to.pdf, id=1120, 771.88374pt x 394.47375pt>
 File: Figures/Figure3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Figure3-eps-converted-to.pdf>
@@ -1299,20 +1304,20 @@ ted-to.pdf Figures/Figure4.eps>
 (epstopdf)             \includegraphics on input line 237.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Figure4-eps-converted-to.pdf, id=1097, 769.87625pt x 429.605pt>
+<Figures/Figure4-eps-converted-to.pdf, id=1121, 769.87625pt x 429.605pt>
 File: Figures/Figure4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Figure4-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Figure4-eps-converted-to.pdf used on input lin
 e 237.
 (pdftex.def)             Requested size: 433.62pt x 241.97342pt.
- [57pdfTeX warning (ext4): destination with the same identifier (name{table.3.3
+ [59pdfTeX warning (ext4): destination with the same identifier (name{table.3.3
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.244 
-      ] [58pdfTeX warning (ext4): destination with the same identifier (name{fi
+      ] [60pdfTeX warning (ext4): destination with the same identifier (name{fi
 gure.3.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1321,7 +1326,7 @@ l.252
        <./Figures/Figure3-eps-converted-to.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [61pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1330,8 +1335,8 @@ l.252
        <./Figures/Figure4-eps-converted-to.pdf>]
 Underfull \vbox (badness 1675) has occurred while \output is active []
 
- [60]
-[61] (./chap3.bbl (./main.brf) [62] [63] [64] [65])) [66] [67pdfTeX warning (ex
+ [62]
+[63] (./chap3.bbl (./main.brf) [64] [65] [66] [67])) [68] [69pdfTeX warning (ex
 t4): destination with the same identifier (name{table.3.4}) has been already us
 ed, duplicate ignored
 
@@ -1347,7 +1352,7 @@ l.47 \include{chap3}
                     ]
 \openout2 = `chap4.aux'.
 
- (./chap4.tex [68
+ (./chap4.tex [70
 
 
 
@@ -1357,8 +1362,8 @@ Chapter 4.
 
 Underfull \vbox (badness 5388) has occurred while \output is active []
 
- [69]
-[70]
+ [71]
+[72]
 Package epstopdf Info: Source file: <Figures/Ch4_Figure1.eps>
 (epstopdf)                    date: 2017-04-12 14:56:46
 (epstopdf)                    size: 1454746 bytes
@@ -1370,21 +1375,21 @@ nverted-to.pdf Figures/Ch4_Figure1.eps>
 (epstopdf)             \includegraphics on input line 30.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch4_Figure1-eps-converted-to.pdf, id=1238, 888.31876pt x 277.035pt>
+<Figures/Ch4_Figure1-eps-converted-to.pdf, id=1262, 888.31876pt x 277.035pt>
 File: Figures/Ch4_Figure1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Ch4_Figure1-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Ch4_Figure1-eps-converted-to.pdf used on input
  line 30.
 (pdftex.def)             Requested size: 433.62pt x 135.22838pt.
- [71] [72pdfTeX warning (ext4): destination with the same identifier (name{figu
+ [73] [74pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.4.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.49 \end{equation}
-                    <./Figures/Ch4_Figure1-eps-converted-to.pdf>] [73] [74]
-[75]
+                    <./Figures/Ch4_Figure1-eps-converted-to.pdf>] [75] [76]
+[77]
 Package epstopdf Info: Source file: <Figures/Ch4_V_CV.eps>
 (epstopdf)                    date: 2017-04-12 14:56:46
 (epstopdf)                    size: 731458 bytes
@@ -1395,7 +1400,7 @@ Package epstopdf Info: Source file: <Figures/Ch4_V_CV.eps>
 rted-to.pdf Figures/Ch4_V_CV.eps>
 (epstopdf)             \includegraphics on input line 160.
 Package epstopdf Info: Output file is already uptodate.
- <Figures/Ch4_V_CV-eps-converted-to.pdf, id=1301, 449.68pt x 443.6575pt>
+ <Figures/Ch4_V_CV-eps-converted-to.pdf, id=1325, 449.68pt x 443.6575pt>
 File: Figures/Ch4_V_CV-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Ch4_V_CV-eps-converted-to.pdf>
@@ -1413,14 +1418,14 @@ rted-to.pdf Figures/Ch4_F_CV.eps>
 (epstopdf)             \includegraphics on input line 161.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch4_F_CV-eps-converted-to.pdf, id=1302, 449.68pt x 443.6575pt>
+<Figures/Ch4_F_CV-eps-converted-to.pdf, id=1326, 449.68pt x 443.6575pt>
 File: Figures/Ch4_F_CV-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Ch4_F_CV-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Ch4_F_CV-eps-converted-to.pdf used on input li
 ne 161.
 (pdftex.def)             Requested size: 212.47617pt x 209.62927pt.
- [76pdfTeX warning (ext4): destination with the same identifier (name{table.4.1
+ [78pdfTeX warning (ext4): destination with the same identifier (name{table.4.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1429,7 +1434,7 @@ l.194
       ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [77pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [79pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1445,8 +1450,8 @@ l.198
 ted-to.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [78]
-(./chap4.bbl (./main.brf) [79])) [80]
+ [80]
+(./chap4.bbl (./main.brf) [81])) [82]
 \openout2 = `chap5.aux'.
 
  (./chap5.tex
@@ -1454,17 +1459,17 @@ Chapter 5.
 
 Underfull \vbox (badness 6758) has occurred while \output is active []
 
- [81
+ [83
 
 
 
 
 ]
-[82]
+[84]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [83]
-[84]
+ [85]
+[86]
 Package epstopdf Info: Source file: <Figures/Ch5_simRC_CaCt4Cr.eps>
 (epstopdf)                    date: 2017-04-12 15:21:46
 (epstopdf)                    size: 1792014 bytes
@@ -1477,7 +1482,7 @@ eps-converted-to.pdf Figures/Ch5_simRC_CaCt4Cr.eps>
 (epstopdf)             \includegraphics on input line 54.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_simRC_CaCt4Cr-eps-converted-to.pdf, id=1404, 786.94pt x 468.75125p
+<Figures/Ch5_simRC_CaCt4Cr-eps-converted-to.pdf, id=1429, 786.94pt x 468.75125p
 t>
 File: Figures/Ch5_simRC_CaCt4Cr-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Ch5_simRC_CaCt4Cr-eps-converted-to.pdf>
@@ -1487,14 +1492,14 @@ Package pdftex.def Info: Figures/Ch5_simRC_CaCt4Cr-eps-converted-to.pdf used on
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [85pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [87pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.63 \begin{equation}
                       <./Figures/Ch5_simRC_CaCt4Cr-eps-converted-to.pdf>]
-[86]
+[88]
 Overfull \hbox (30.73343pt too wide) in paragraph at lines 98--102
 \T1/MinionPro-LF/m/n/12 with $\OML/MinionPro-TOsF/m/it/12 W[]\OMX/MnSymbolE/m/n
 /12 à\OML/MinionPro-TOsF/m/it/12 t\OMX/MnSymbolE/m/n/12 ç$ \T1/MinionPro-LF/m/n
@@ -1514,7 +1519,7 @@ t/12 C[] [] \T1/MinionPro-LF/m/n/12 d\OML/MinionPro-TOsF/m/it/12 ^^\$\T1/Minion
 Pro-LF/m/n/12 .
  []
 
-[87] [88]
+[89] [90]
 Package epstopdf Info: Source file: <Figures/Ch5_SimRC_SimulationBullseyes.eps>
 
 (epstopdf)                    date: 2017-04-12 15:21:46
@@ -1528,7 +1533,7 @@ onBullseyes-eps-converted-to.pdf Figures/Ch5_SimRC_SimulationBullseyes.eps>
 (epstopdf)             \includegraphics on input line 118.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_SimRC_SimulationBullseyes-eps-converted-to.pdf, id=1458, 1067.99pt
+<Figures/Ch5_SimRC_SimulationBullseyes-eps-converted-to.pdf, id=1482, 1067.99pt
  x 211.79124pt>
 File: Figures/Ch5_SimRC_SimulationBullseyes-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1540,7 +1545,7 @@ Package pdftex.def Info: Figures/Ch5_SimRC_SimulationBullseyes-eps-converted-to
 
 Underfull \vbox (badness 3965) has occurred while \output is active []
 
- [89pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [91pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1560,7 +1565,7 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 147.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_ParamBoard_Ct4-eps-converted-to.pdf, id=1482, 980.66376pt x 1241.6
+<Figures/Ch5_ParamBoard_Ct4-eps-converted-to.pdf, id=1508, 980.66376pt x 1241.6
 3875pt>
 File: Figures/Ch5_ParamBoard_Ct4-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Ch5_ParamBoard_Ct4-eps-converted-to.pdf>
@@ -1583,7 +1588,7 @@ _LN_LNwi-eps-converted-to.pdf Figures/Ch5_simRC_bullseye_LN_LNwi.eps>
 (epstopdf)             \includegraphics on input line 155.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_simRC_bullseye_LN_LNwi-eps-converted-to.pdf, id=1483, 532.99126pt 
+<Figures/Ch5_simRC_bullseye_LN_LNwi-eps-converted-to.pdf, id=1509, 532.99126pt 
 x 529.98pt>
 File: Figures/Ch5_simRC_bullseye_LN_LNwi-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -1603,7 +1608,7 @@ _rLN_rLNwi-eps-converted-to.pdf Figures/Ch5_simRC_bullseye_rLN_rLNwi.eps>
 (epstopdf)             \includegraphics on input line 163.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_simRC_bullseye_rLN_rLNwi-eps-converted-to.pdf, id=1484, 532.99126p
+<Figures/Ch5_simRC_bullseye_rLN_rLNwi-eps-converted-to.pdf, id=1510, 532.99126p
 t x 529.98pt>
 File: Figures/Ch5_simRC_bullseye_rLN_rLNwi-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1623,7 +1628,7 @@ _rLin_rReg-eps-converted-to.pdf Figures/Ch5_simRC_bullseye_rLin_rReg.eps>
 (epstopdf)             \includegraphics on input line 171.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_simRC_bullseye_rLin_rReg-eps-converted-to.pdf, id=1485, 878.28125p
+<Figures/Ch5_simRC_bullseye_rLin_rReg-eps-converted-to.pdf, id=1511, 878.28125p
 t x 529.98pt>
 File: Figures/Ch5_simRC_bullseye_rLin_rReg-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1656,27 +1661,27 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 182.
 
-[90] [91pdfTeX warning (ext4): destination with the same identifier (name{figur
+[92] [93pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.5.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.184 
-       <./Figures/Ch5_ParamBoard_Ct4-eps-converted-to.pdf>] [92pdfTeX warning (
+       <./Figures/Ch5_ParamBoard_Ct4-eps-converted-to.pdf>] [94pdfTeX warning (
 ext4): destination with the same identifier (name{figure.5.4}) has been already
  used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.184 
-       <./Figures/Ch5_simRC_bullseye_LN_LNwi-eps-converted-to.pdf>] [93pdfTeX w
+       <./Figures/Ch5_simRC_bullseye_LN_LNwi-eps-converted-to.pdf>] [95pdfTeX w
 arning (ext4): destination with the same identifier (name{figure.5.5}) has been
  already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.184 
-       <./Figures/Ch5_simRC_bullseye_rLN_rLNwi-eps-converted-to.pdf>] [94pdfTeX
+       <./Figures/Ch5_simRC_bullseye_rLN_rLNwi-eps-converted-to.pdf>] [96pdfTeX
  warning (ext4): destination with the same identifier (name{figure.5.6}) has be
 en already used, duplicate ignored
 
@@ -1735,14 +1740,14 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 Underfull \vbox (badness 4859) has occurred while \output is active []
 
- [95]
-[96] [97]
+ [97]
+[98] [99]
 Underfull \vbox (badness 5652) has occurred while \output is active []
 
- [98]
+ [100]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [99]
+ [101]
 Overfull \hbox (4.68356pt too wide) in paragraph at lines 233--236
 []$\OML/MinionPro-TOsF/m/it/12 AUC$ \T1/MinionPro-LF/m/n/12 and $\OML/MinionPro
 -TOsF/m/it/12 WIR$ \T1/MinionPro-LF/m/n/12 can also be de-rived when con-sid-er
@@ -1755,17 +1760,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 (./chap5.bbl (./main.brf)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [100]
-[101pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
+ [102]
+[103pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.56 
-     ] [102])) [103]
+     ] [104])) [105]
 \openout2 = `appa.aux'.
 
- (./appa.tex [104
+ (./appa.tex [106
 
 
 
@@ -1773,7 +1778,7 @@ l.56
 
 ]
 Appendix A.
-) [105]
+) [107]
 
 Package natbib Warning: There were undefined citations.
 
@@ -1786,7 +1791,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 60.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4B5502A44BBD2B8A113C900F6F79F719;5416.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: C5885D78FA6BDCDC5EF1B9D0E6A8385E;10579.
+(rerunfilecheck)             Checksum: CC7E472D876A9DC2FFB6D940BBCE261B;10968.
 
 
 LaTeX Warning: There were undefined references.
@@ -1797,13 +1802,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
  ) 
 Here is how much of TeX's memory you used:
- 12963 strings out of 493089
- 200734 string characters out of 6134841
- 265153 words of memory out of 5000000
- 15627 multiletter control sequences out of 15000+600000
+ 12997 strings out of 493089
+ 201362 string characters out of 6134841
+ 265607 words of memory out of 5000000
+ 15655 multiletter control sequences out of 15000+600000
  506985 words of font info for 213 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,14n,60p,1707b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,14n,60p,1707b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/Maxime/Library/texmf/fonts/enc/dvips/MinionPro/base-MinionPro-ab.enc}
 {/Users/Maxime/Library/texmf/fonts/enc/dvips/MinionPro/base-MinionPro-ad.enc}{/
 Users/Maxime/Library/texmf/fonts/enc/dvips/MnSymbol/MnSymbolD.enc}{/Users/Maxim
@@ -1822,10 +1827,10 @@ onPro-It.pfb></Users/Maxime/Library/texmf/fonts/type1/adobe/MinionPro/MinionPro
 Users/Maxime/Library/texmf/fonts/type1/public/MnSymbol/MnSymbol8.pfb></usr/loca
 l/texlive/2015/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (105 pages, 1532126 bytes).
+Output written on main.pdf (107 pages, 1537919 bytes).
 PDF statistics:
- 1779 PDF objects out of 2073 (max. 8388607)
- 1577 compressed objects within 16 object streams
- 376 named destinations out of 1000 (max. 500000)
+ 1804 PDF objects out of 2073 (max. 8388607)
+ 1600 compressed objects within 16 object streams
+ 382 named destinations out of 1000 (max. 500000)
  650 words of extra memory for PDF output out of 10000 (max. 10000000)
 

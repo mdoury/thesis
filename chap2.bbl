@@ -1,4 +1,4 @@
-\begin{thebibliography}{76}
+\begin{thebibliography}{80}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -108,6 +108,11 @@ P~E Dugdale and K~A Miles.
   enhancement on computed tomography.}
 \newblock \emph{European journal of radiology}, 30\penalty0 (3):\penalty0
   206--213, June 1999.
+
+\bibitem[Elie et~al.(2014)Elie, Lassau, Peronneau, and Rouffiac]{Elie2014}
+N~Elie, N~Lassau, P~Peronneau, and V~Rouffiac.
+\newblock {Method and system for quantification of tumoral vascularization}.
+\newblock US Patent Office, September 2014.
 
 \bibitem[Erlemann et~al.(1989)Erlemann, Reiser, Peters, Vasallo, Nommensen,
   Kusnierz-Glaz, Ritter, and Roessner]{Erlemann:1989ib}
@@ -239,6 +244,17 @@ Marios Lampaskis and Michalakis Averkiou.
 \newblock \emph{Ultrasound in Medicine {\&} Biology}, 36\penalty0 (2):\penalty0
   306--312, February 2010.
 
+\bibitem[Lavisse et~al.(2008)Lavisse, Lejeune, Rouffiac, Elie, Bribes, Demers,
+  Vrignaud, Bissery, Brul{\'e}, Koscielny, Peronneau, and
+  Lassau]{Lavisse:2008gc}
+Sonia Lavisse, Pascale Lejeune, Val{\'e}rie Rouffiac, Nicolas Elie, Estelle
+  Bribes, Brigitte Demers, Patricia Vrignaud, Marie-Christine Bissery, Aude
+  Brul{\'e}, Serge Koscielny, Pierre Peronneau, and Nathalie Lassau.
+\newblock {Early quantitative evaluation of a tumor vasculature disruptive
+  agent AVE8062 using dynamic contrast-enhanced ultrasonography.}
+\newblock \emph{Investigative Radiology}, 43\penalty0 (2):\penalty0 100--111,
+  February 2008.
+
 \bibitem[Linton et~al.(1995)Linton, Linton, and Band]{Linton:1995ij}
 R~A~F Linton, N~W~F Linton, and D~M Band.
 \newblock {A new method of analysing indicator dilution curves}.
@@ -291,6 +307,12 @@ K~A Miles, M~P Hayball, and A~K Dixon.
   tomography with perfusion imaging.}
 \newblock \emph{The British journal of radiology}, 68\penalty0 (809):\penalty0
   471--475, May 1995.
+
+\bibitem[Mischi et~al.(2003)Mischi, Kalker, and Korsten]{Mischi:2003ed}
+Massimo Mischi, Ton Kalker, and Erik Korsten.
+\newblock {Videodensitometric Methods for Cardiac Output Measurements}.
+\newblock \emph{EURASIP Journal on Advances in Signal Processing},
+  2003\penalty0 (5):\penalty0 862083--489, December 2003.
 
 \bibitem[Nally et~al.(1985)Nally, Clarke, Windham, Grecos, Gross, and
   Potvin]{Nally:1985te}
@@ -389,6 +411,13 @@ K~Q Schwarz, G~P Bezante, X~Chen, J~G Mottley, and R~Schlief.
   video and Doppler.}
 \newblock \emph{Ultrasound in Medicine {\&} Biology}, 19\penalty0 (6):\penalty0
   447--460, 1993.
+
+\bibitem[Sheppard and Savage(1951)]{Sheppard:1951we}
+C~W Sheppard and L~J Savage.
+\newblock {The random walk problem in relation to the physiology of circulatory
+  mixing}.
+\newblock In \emph{Physical Review}, pages 489--490. AMERICAN PHYSICAL SOC ONE
+  PHYSICS ELLIPSE, COLLEGE PK, MD 20740-3844 USA, 1951.
 
 \bibitem[Simpson and Burns(1997)]{Simpson:1997jn}
 D~H Simpson and P~N Burns.

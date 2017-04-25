@@ -3,47 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: chap2.aux
 The style file: plainnat.bst
 Database file #1: Bibliography/chap2.bib
+Warning--entry type for "Elie2014" isn't style-file defined
+--line 259 of file Bibliography/chap2.bib
 Warning--I didn't find a database entry for "Arditi:2006ip"
 Warning--empty publisher in Volkmann:1850us
-You've used 76 entries,
+You've used 80 entries,
             2773 wiz_defined-function locations,
-            1098 strings with 22814 characters,
-and the built_in function-call counts, 45626 in all, are:
-= -- 3870
-> -- 3623
-< -- 18
-+ -- 1215
-- -- 1137
-* -- 4503
-:= -- 7162
-add.period$ -- 229
-call.type$ -- 76
-change.case$ -- 603
-chr.to.int$ -- 74
-cite$ -- 153
-duplicate$ -- 1601
-empty$ -- 3065
-format.name$ -- 1229
-if$ -- 9176
+            1126 strings with 23837 characters,
+and the built_in function-call counts, 48166 in all, are:
+= -- 4090
+> -- 3824
+< -- 20
++ -- 1282
+- -- 1200
+* -- 4736
+:= -- 7549
+add.period$ -- 242
+call.type$ -- 80
+change.case$ -- 636
+chr.to.int$ -- 78
+cite$ -- 161
+duplicate$ -- 1691
+empty$ -- 3236
+format.name$ -- 1298
+if$ -- 9704
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 79
-newline$ -- 387
-num.names$ -- 304
-pop$ -- 1103
+missing$ -- 82
+newline$ -- 407
+num.names$ -- 320
+pop$ -- 1171
 preamble$ -- 1
-purify$ -- 531
+purify$ -- 560
 quote$ -- 0
-skip$ -- 1256
+skip$ -- 1335
 stack$ -- 0
-substring$ -- 1887
-swap$ -- 163
-text.length$ -- 2
+substring$ -- 1986
+swap$ -- 180
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 816
+type$ -- 860
 warning$ -- 1
-while$ -- 368
+while$ -- 387
 width$ -- 0
-write$ -- 990
-(There were 2 warnings)
+write$ -- 1042
+(There were 3 warnings)

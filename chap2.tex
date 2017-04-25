@@ -5,7 +5,7 @@ Generally speaking, quantification of perfusion consists in deriving parameters 
 This topic has been on the table, and continuously evolving, long before perfusion imaging existed. 
 Indeed, G.N.~Stewart introduced indicator dilution theory, starting with the founding paper published in the Journal of Physiology in 1897~\cite{Stewart:1897dz}. 
 W.F.~Hamilton went further, corrected the approximations made by Stewart.
-Even before Stewart and Hamilton, hemodynamics of the heart had been studied  through indirect measurements and reported in German language by Volkmann~\cite{Volkmann:1850us} and Vierordt~\cite{Vierordt:82xUDMVI} in the 1850s, and later through direct measurements by Stolnikow~\cite{Stolnikow:1886wm} and Tigerstedt~\cite{Tigerstedt:1891wn}.
+Even before Stewart and Hamilton, hemodynamics of the heart had been studied  through indirect measurements and reported in German language by \citet{Volkmann:1850us} and \citet{Vierordt:82xUDMVI} in the 1850s, and later through direct measurements by \citet{Stolnikow:1886wm} and \citet{Tigerstedt:1891wn}.
 
 This chapter fundamentally aims to review the various methods used to quantify perfusion exams acquired using one of the imaging modality described in Chapter~\ref{sec:IntroPerfusionImaging}. 
 Realistically, this review of perfusion quantification techniques cannot be close to comprehensive, instead it tackles the subject from the three angles mentioned thereafter, and emphasis the major landmarks of the perfusion quantification landscape.
@@ -37,7 +37,7 @@ Nally et al.~reported significant differences in the wash-in rate, curve width a
 
 \subsection{Radiography}
 \label{sec:SQRadiography}
-Derived from the work of Peters et al., semi-quantitative parameters were also proposed by Miles et al.~in 1991 to quantify renal cortical and medullary perfusion in X-ray computed tomography with bolus injection of Iodine~\cite{Miles:1991et,Miles:1991ei}. 
+Derived from the work of Peters et al., semi-quantitative parameters were also proposed by Miles et al.~in \citeyear{Miles:1991et} to quantify renal cortical and medullary perfusion in X-ray computed tomography with bolus injection of Iodine~\cite{Miles:1991et,Miles:1991ei}. 
 The proposed perfusion index was defined as the ratio of the maximum slope in the tissue curve and the peak enhancement of the arterial curve. 
 The method was successively used to quantify perfusion in the pancreas~\cite{Miles:2014ea}, solitary pulmonary nodules~\cite{Zhang:1997bi}, lymphoma masses~\cite{Dugdale:1999co}, lung adenocarcinoma~\cite{Tateishi:2001fz}, and more generally to study tumor angiogenesis~\cite{Tateishi:2001fz,Miles:2002eu}.
 
@@ -164,7 +164,7 @@ In \citeyear{Bleeker:1990uy}, \citet{Bleeker:1990uy} evaluated the stability, si
 Their findings were in favor of the Albunex contrast agent, which were the only microbubbles exhibiting sufficiently longlasting stability (i.e.~in size and number) when exposed to ultrasound waves.
 In addition, a linear relation between the concentration of microbubbles and both backscatter coefficient (i.e.~reflected power) and attenuation coefficient (i.e.~transmitted power) was reported for low concentrations.
 They also found strong linear relations between the ultrasonic properties of the contrast agent and the flow estimated using an indicator-dilution theory.  
-They emphasis the questionability of using grey-levels from ultrasond images to characterize blood flow, and instead recommend using attenuation based on transmission techniques, or backscattering after proper correction of signal attenuation.
+They emphasis the questionability of using grey-levels from ultrasound images to characterize blood flow, and instead recommend using attenuation based on transmission techniques, or backscattering after proper correction of signal attenuation.
 While in-vitro experiments show strong relations between the ultrasonic properties of Albunex contrast agent and the flow estimated using indicator-dilution theory, one must consider the mass conservation principle which is rarely respected in-vivo.
 
 A somehow similar in-vitro study was conducted a few years later by \citet{Heidenreich:1993ji}, however the proposed quantification model makes use of an input function as a reference instead of the injected quantity used by \citet{Bleeker:1990uy}, and extends the indicator-dilution model to estimate the tissue blood volume and mean transit time, in addition to the tissue blood flow. 
@@ -272,7 +272,7 @@ They believe it could be a relevant indicator to help characterize lesions in pa
 
 % Elie2014, Method and system for quantification of tumoral vascularization (US PATENT: US 8847960 B2)
 % IGR custom model
-In 2006, members of the \em{Institut Gustave Roussy}, also known as IGR, filed a patent application for quantification approach developped specifically for contrast-enhanced ultrasound~\cite{Elie2014}.
+In 2006, members of the Institut Gustave Roussy, also known as IGR, filed a patent application for quantification approach developped specifically for contrast-enhanced ultrasound~\cite{Elie2014}.
 The formulation of the mathematical medel is empirical, and is inspired from the model first proposed by \citet{Eyding:2003bo}, replacing both the numerator and the denominator terms by sigmoid functions. 
 A long list of semi-quantitative parameters that can be derived from the fitted model for vascularization and tumoral angiogenesis detection are listed by the authors, i.e.~peak-intensity time and value, wash-in time, mean transit time, area under the curve, wash-in rate, area under the wash-in, and under the wash-out. 
 
@@ -281,8 +281,18 @@ The group later used the patented model in an early attempt to assess the effica
 The group assessed tumor vasculature through the peak-intensity time and value, as well as the full-width at half maximum, in four groups of ten mice, respectively imaged at both 5 and 15 minutes, one hour, six hours, and twenty-four hours after treatment injection, and compared the post-treatment contrast-enhanced ultrasound results to pre-treatment results, but also to power Doppler and histology findings.
 They reported a progressive decrease in peak-intensity value reaching its minimum six hours after injection of the anti-angiogenic treatement, and opposite effects in time to peak-intensity and in the full-width at half maximum.
 
-% Mischi2003, Videodensitometric Methods for Cardiac Output Measurements
+% Mischi:2003ed, Videodensitometric Methods for Cardiac Output Measurements
 % Local Density Random Walk (LDRW) gives a physical interpretation of the dilution process, authors proposed the application of this diffusion with drift model to estimate the area under the curve and the mean transit time, which are then used to obtain tissue blood flow and tissue blood volume using indicator-dilution theory
+In \citeyear{Mischi:2003ed}, \citet{Mischi:2003ed} proposed the local density random walk model for characterization of tissue perfusion in contrast-enhanced ultrasound with bolus injection of microbubbles. 
+The model, first proposed by \citet{Sheppard:1951we} characterizes the dilution process through a mono-dimensional approximation of the vascular network, i.e.~vessels are considered as straight tubes with constant flows, and a Brownian motion of the contrast-agent following bolus injection is assumed.
+A novel estimation method based on a two-phase multiple linear regression is proposed, aleviating the need for initialization and assumptions on the nature of the time-intensity curve.
+They also proposed a correction for the systematic negative estimation bias in the area under the curve, that was shown proportional to the noise level through simulations.
+From the fitted time-intensity curve, the area under the curve and the mean transit time are extracted.
+Then flow and volume parameters are derived using the injected quantity of contrast-agent and indicator-dilution theory.
+They tested their model in-vitro, and compared the flow estimated with contrast-enhanced ultrasound with the direct flow measurements of an electromagnetic flowmeter.
+The fitted curves were strongly to the experimental data ($r^2 \gt 0.95$), and so were the four estimated and measured flow values ($r^2 \gt 0.99$), however the number of investigated flow rates is only four.
+
+
 
 
 % Mischi2008, On the physical and stochastic representation of an indicator dilution curve as a gamma variate

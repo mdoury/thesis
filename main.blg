@@ -6,7 +6,7 @@ A level-1 auxiliary file: contents.aux
 A level-1 auxiliary file: chap1.aux
 The style file: plainnat.bst
 A level-1 auxiliary file: chap2.aux
-Illegal, another \bibstyle command---line 342 of file chap2.aux
+Illegal, another \bibstyle command---line 363 of file chap2.aux
  : \bibstyle
  :          {plainnat}
 I'm skipping whatever remains of this command
@@ -39,6 +39,8 @@ Illegal, another \bibdata command---line 127 of file chap5.aux
 I'm skipping whatever remains of this command
 A level-1 auxiliary file: appa.aux
 Database file #1: Bibliography/chap2.bib
+Warning--entry type for "Elie2014" isn't style-file defined
+--line 259 of file Bibliography/chap2.bib
 Warning--I didn't find a database entry for "Arditi:2006ip"
 Warning--I didn't find a database entry for "Wei1998tc"
 Warning--I didn't find a database entry for "Dietrich2012kw"
@@ -81,45 +83,45 @@ Warning--I didn't find a database entry for "Blomley1997ff"
 Warning--I didn't find a database entry for "Barrois2013"
 Warning--I didn't find a database entry for "Lefort2012"
 Warning--empty publisher in Volkmann:1850us
-You've used 77 entries,
+You've used 81 entries,
             2773 wiz_defined-function locations,
-            1193 strings with 24139 characters,
-and the built_in function-call counts, 46334 in all, are:
-= -- 3928
-> -- 3689
-< -- 18
-+ -- 1237
-- -- 1158
-* -- 4577
-:= -- 7275
-add.period$ -- 232
-call.type$ -- 77
-change.case$ -- 613
-chr.to.int$ -- 75
-cite$ -- 155
-duplicate$ -- 1622
-empty$ -- 3106
-format.name$ -- 1251
-if$ -- 9316
+            1221 strings with 25162 characters,
+and the built_in function-call counts, 48874 in all, are:
+= -- 4148
+> -- 3890
+< -- 20
++ -- 1304
+- -- 1221
+* -- 4810
+:= -- 7662
+add.period$ -- 245
+call.type$ -- 81
+change.case$ -- 646
+chr.to.int$ -- 79
+cite$ -- 163
+duplicate$ -- 1712
+empty$ -- 3277
+format.name$ -- 1320
+if$ -- 9844
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 80
-newline$ -- 392
-num.names$ -- 308
-pop$ -- 1121
+missing$ -- 83
+newline$ -- 412
+num.names$ -- 324
+pop$ -- 1189
 preamble$ -- 1
-purify$ -- 540
+purify$ -- 569
 quote$ -- 0
-skip$ -- 1274
+skip$ -- 1353
 stack$ -- 0
-substring$ -- 1914
-swap$ -- 165
-text.length$ -- 2
+substring$ -- 2013
+swap$ -- 182
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 827
+type$ -- 871
 warning$ -- 1
-while$ -- 373
+while$ -- 392
 width$ -- 0
-write$ -- 1003
+write$ -- 1055
 (There were 7 error messages)

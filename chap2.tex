@@ -309,7 +309,6 @@ They also gave a stochastic intrepretation, that models the dilution impulse res
 Then they revealed the inverse relation between the parameters of the two interpretations, yielding an expression of the tissue impulse response as a function of the wash-out rate and the mean transit time which respects indicator-dilution theorems in the case an ideal Dirac injection.
 They finally established the relation of the gamma variate model with the local density random walk model using the previously presented physical interpretation.
 Based on the previously presented methodology~\cite{Mischi:2004cn}, the authors were able to estimate the volume of dilution between two measurements of the same bolus, i.e.~before and after the passage of the bolus in the volume to be estimated.
-
 They performed in vitro experiments with bolus injection, and compared the ability of the two models to estimate the dilution volume in a varying flow setup.
 Their in vitro findings were compared to those obtained in vivo, through a cardiac clinical study including twenty patients.
 Time-intensity curves in the left and right ventricle of the heart were derived from contrast-enhanced ultrasound acquisitions following bolus injection of microbubbles in an antecubital vein, using the same imaging apparatus and injection protocol than in vitro.
@@ -317,7 +316,7 @@ They reported that both models were able to accurately fit both in vitro and in 
 In vitro, the volume estimations were almost perfectly correlated to the real values using either model, and in good agreement in terms of absolute values, despite the underestimation in the largest volume case.
 In vivo, because no ground truth was available, they reported on the differences in the estimates of the two models against the mean estimated value through a Bland-Altman plot, and showed a mean difference of 63.1 mL with a standard deviation of 69.7 mL, representing 11.1\% of the overall mean estimated volume.
 
-% Kuenen2011, Contrast-Ultrasound Diffusion Imaging for Localization of Prostate Cancer
+% Kuenen:2011kr, Contrast-Ultrasound Diffusion Imaging for Localization of Prostate Cancer
 In \citeyear{Kuenen:2011kr}, \citet{Kuenen:2011kr} proposed a modified local density random walk model to reveal diffusion instead of perfusion, motivated by the assumption that this process better reflects tumor angiogenesis. 
 They observed that one of the parameters of the local density random walk model is related to the diffusion coefficient, but that it cannot be interpreted locally in-vivo because of its dependance on the distance from the injection site. 
 They therefore proposed the replacement of the global boundary condition assuming a Dirac bolus injection, which time and distance are needed, by a local boundary condition assuming a normally distributed spatial concentration profile at the time immediately preceding the passage of the bolus at the sampling location.
@@ -333,8 +332,16 @@ Optimal threshold values used for classification were estimated through histogra
 The authors acknowledge that the proposed diffusion-related parameter, $\kappa$, was not the most sensitive investigated parameter, however it was the only one with both sensitivity and specificity above 80\%.
 It also exhibited the highest area under the receiver operating characteristic curve with a value of 0.909. 
 
-% Mannaris2013, In vitro localized release of thermosensitive liposomes with ultrasound-induced hyperthermia.
-% Error function fitted to the wash-in phase of CEUS TICs to estimate the wash-in time
+% Averkiou:2010iw, Quantification of Tumor Microvascularity with Respiratory Gated Contrast Enhanced Ultrasound for Monitoring Therapy.
+In an attempt to monitor the microvascularity of colorectal metastasis in the liver of patients undergoing anti-cancer treatment, \citet{Averkiou:2010iw} investigated the use of the wash-in time ratio, defined as the ratio of the wash-in time in the metastasis to the wash-in time in normal liver parenchyma.
+They proposed an empirical model based on the error function to estimate the wash-in time of respiratory-gated time-intensity curves in metastatic and normal tissues obtained by contrast-enhanced ultrasonography.
+The function under investigation is a time-delayed error function, member of the sigmoid family, with varying rise time and maximum intensity, fitted to the wash-in of the time-intensity curve.
+Authors stated the rise time parameter is linearly related to the wash-in time.
+They performed a reproducibility study in five untreated patients with a total of twelve acquisitions, with varying injected quantity and/or injection duration of contrast-agent from one acquisition to another.
+While the wash-in time in the metastatic tissue exhibited variations up to 30\%, the wash-in rate was more reproducible exhibiting an average deviation of 9\%, with a maximum of 16\%, confirming the expected normalization effect.
+The ability of the wash-in time ratio to assess treatment efficiency was investigated in a longitudinal study, performed in seven patients undergoing a combination of cytotoxic and antiangiogenic treatments.
+Major findings include the ability to discriminate good from bad responders to therapy, the ground truth responder classification being assessed by experts using conventional criteria.
+Indeed, four out of five good responders exhibited a significant rise of the wash-in time ratio after the first therapy cycle, revealing the early normalization of the lesion microvascularity, and the mean increase in wash-in time ratio among the good responders at the end of the treatment was 75\%.
 
 
 

@@ -291,8 +291,8 @@ They tested their model in vitro, and compared the flow estimated with contrast-
 The fitted curves were strongly to the experimental data ($r^2 \gt 0.95$), and so were the four estimated and measured flow values ($r^2 \gt 0.99$).
 However the number of tested flow rates is only four, which seems small for in vitro experiments.
 
-% Mischi:2004iu, Contrast echocardiography for pulmonary blood volume quantification
-In \citeyear{Mischi:2004iu}, \citet{Mischi:2004iu} presented a method to quantify blood volume using the flow and mean transit time estimated in two time-intensity curves derived from contrast-enhanced ultrasound bolus acquisitions, i.e.~respectively acquired upstream and downstream of the volume of interest.
+% Mischi:2004cn, Contrast echocardiography for pulmonary blood volume quantification
+In \citeyear{Mischi:2004cn}, \citet{Mischi:2004cn} presented a method to quantify blood volume using the flow and mean transit time estimated in two time-intensity curves derived from contrast-enhanced ultrasound bolus acquisitions, i.e.~respectively acquired upstream and downstream of the volume of interest.
 The expression of blood volume is derived from indicator-dilution theory, and is expressed as the product of the difference in mean transit times with the blood flow.
 The local density random walk model and the first passage time model were fitted to time-intensity curves to estimate the mean transit time and the flow, and the blood volumes and mean transit times estimated using the two models were then compared through both in vitro and in vivo clinical experiments.
 These two models were described by \citet{Walley:1964fr} and \citet{Wise:1966wy}, the main difference between them being that the second only accounts for the first passage of the indicator through the sampling site.
@@ -308,7 +308,7 @@ They first gave a physical interpretation, that consists in seeing a blood vesse
 They also gave a stochastic intrepretation, that models the dilution impulse response a given distance from the injection site, assuming a poisson distribution of the number of individual particle wash-out to the next compartment.
 Then they revealed the inverse relation between the parameters of the two interpretations, yielding an expression of the tissue impulse response as a function of the wash-out rate and the mean transit time which respects indicator-dilution theorems in the case an ideal Dirac injection.
 They finally established the relation of the gamma variate model with the local density random walk model using the previously presented physical interpretation.
-Based on the previously presented methodology~\cite{Mischi:2004iu}, the authors were able to estimate the volume of dilution between two measurements of the same bolus, i.e.~before and after the passage of the bolus in the volume to be estimated.
+Based on the previously presented methodology~\cite{Mischi:2004cn}, the authors were able to estimate the volume of dilution between two measurements of the same bolus, i.e.~before and after the passage of the bolus in the volume to be estimated.
 
 They performed in vitro experiments with bolus injection, and compared the ability of the two models to estimate the dilution volume in a varying flow setup.
 Their in vitro findings were compared to those obtained in vivo, through a cardiac clinical study including twenty patients.
@@ -318,6 +318,20 @@ In vitro, the volume estimations were almost perfectly correlated to the real va
 In vivo, because no ground truth was available, they reported on the differences in the estimates of the two models against the mean estimated value through a Bland-Altman plot, and showed a mean difference of 63.1 mL with a standard deviation of 69.7 mL, representing 11.1\% of the overall mean estimated volume.
 
 % Kuenen2011, Contrast-Ultrasound Diffusion Imaging for Localization of Prostate Cancer
+In \citeyear{Kuenen:2011kr}, \citet{Kuenen:2011kr} proposed a modified local density random walk model to reveal diffusion instead of perfusion, motivated by the assumption that this process better reflects tumor angiogenesis. 
+They observed that one of the parameters of the local density random walk model is related to the diffusion coefficient, but that it cannot be interpreted locally in-vivo because of its dependance on the distance from the injection site. 
+They therefore proposed the replacement of the global boundary condition assuming a Dirac bolus injection, which time and distance are needed, by a local boundary condition assuming a normally distributed spatial concentration profile at the time immediately preceding the passage of the bolus at the sampling location.
+Replacing the old global boundary condition by the new local one yields a new expression of the local density random walk model, from which a local diffusion-related parameter $\kappa$ can be derived, defined as the ratio of the diffusive time to the squared convective time.
+The accuracy of the method was investigated by fitting the model to synthetic time-intensity curves simulated using the convective diffusion equation. 
+The model was able to fit the simulated curves accurately, and $\kappa$ was estimated with a mean relative error of 4.33\%. 
+However, when considering curves with recirculation and therefore fitting the model on cropped curves, the authors reported a higher mean relative error of 10.15\%. 
+Clinical relevance of the method was assessed in a preliminary study including five datasets from four patients with confirmed prostatectomy. 
+Parametric maps of $\kappa$ were compared to histology-based tissue classification, i.e.~based on the level of cell differenciation.
+In all patients, authors were able to discriminate cancerous from healthy tissue, i.e.~cancerous regions were associated with high $\kappa$ values.
+The tissue classification power of both classical semi-quantative parameters and the parameters of the proposed model was investigated. 
+Optimal threshold values used for classification were estimated through histogram analysis.
+The authors acknowledge that the proposed diffusion-related parameter, $\kappa$, was not the most sensitive investigated parameter, however it was the only one with both sensitivity and specificity above 80\%.
+It also exhibited the highest area under the receiver operating characteristic curve with a value of 0.909. 
 
 % Mannaris2013, In vitro localized release of thermosensitive liposomes with ultrasound-induced hyperthermia.
 % Error function fitted to the wash-in phase of CEUS TICs to estimate the wash-in time

@@ -31,9 +31,9 @@
 \contentsline {subsubsection}{Bolus injection}{25}{section*.8}
 \contentsline {paragraph}{\em {Model-free quantification methods}\\}{25}{section*.9}
 \contentsline {paragraph}{\em {Model-based quantification methods}\\}{30}{section*.10}
-\contentsline {subsubsection}{Infusion injection}{34}{section*.11}
-\contentsline {section}{\numberline {2.2}Deconvolution methods}{37}{section.2.2}
-\contentsline {section}{\numberline {2.3}Compartmental models}{37}{section.2.3}
+\contentsline {subsubsection}{Infusion injection}{35}{section*.11}
+\contentsline {section}{\numberline {2.2}Deconvolution methods}{38}{section.2.2}
+\contentsline {section}{\numberline {2.3}Compartmental models}{38}{section.2.3}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-5}
 \contentsline {chapter}{\numberline {3}Quantification of tumor perfusion using DCE-US: impact of mathematical modeling}{49}{chapter.3}

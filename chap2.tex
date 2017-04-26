@@ -47,7 +47,7 @@ Arterial perfusion was calculated using the maximum slope before peak splenic en
 In 1995 Blomley et al.~proposed the liver subtraction method to quantify liver perfusion~\cite{Blomley:1995vs}. 
 Instead of estimating the upslope in the late liver enhancement curve, they first subtracted the splenic enhancement curve multiplied by the ratio of arterial to splenic arterial perfusion, i.e. the ratio of the maximum slope in the early liver enhancement curve to the maximum slope in the spleen. 
 The maximum slope of the corrected enhancement curve is then used to calculate portal perfusion.
-In this study, the time and value of peak enhancement were obtained using a gamma-variate fit, allowing a finer estimation of these parameters.
+In this study, the time and value of peak enhancement were obtained using a gamma variate fit, allowing a finer estimation of these parameters.
 Whenever possible the authors used the enhancement curve in the portal vein instead of the splenic vein.
 Authors demonstrated the use of portal perfusion in one patient with metastatic livers, as well as in four patients with cirrhotic livers.
 Facing the small number of cases in the previous study, a collaborating group extended the application of the method in cirrhotic livers with more cases~\cite{Tsushima:1999vc}.
@@ -219,16 +219,15 @@ Finally, methods which showed promising results in preliminary studies at the ti
 \paragraph{\em{Model-based quantification methods}\\}
 
 % Kaul:1989il, Assessment of regional myocardial blood flow with myocardial contrast two-dimensional echocardiography
-In \citeyear{Kaul:1989il}, \citet{Kaul:1989il} proposed a first-order gamma-variate model to quantify blood flow using consecutive contrast-enhanced echocardiography acquisitions in an open-chest canine study with varying blood flow. 
+In \citeyear{Kaul:1989il}, \citet{Kaul:1989il} proposed a first-order gamma variate model to quantify blood flow using consecutive contrast-enhanced echocardiography acquisitions in an open-chest canine study with varying blood flow. 
 They compared their results in the myocardium and in the coronary bed with the transmural myocardial blood flow measured using radiolabelled microspheres, and to direct coronary flow measurements obtained by an electromagnetic flowmeter. 
 They studied the influence of the injection site by performing their experiments in two groups of eight dogs. 
 In the first group, dogs were injected a bolus of microbubbles in the circumflex artery, while in the second group they were injected in the left main coronary.
-Authors reported a good correlation of both myocardial and coronary blood flow measurements with the parameter of the gamma-variate which influences the curve width, $\alpha$, for both groups (mean $r = 0.81$ and $0.96$ respectively), but a poor correlation of the peak intensity (mean $r = 0.63$ and $0.39$ respectively). 
+Authors reported a good correlation of both myocardial and coronary blood flow measurements with the parameter of the gamma variate which influences the curve width, $\alpha$, for both groups (mean $r = 0.81$ and $0.96$ respectively), but a poor correlation of the peak intensity (mean $r = 0.63$ and $0.39$ respectively). 
 Pooling estimates from the eight dogs did not affect the correlation with $\alpha$ for the first group ($r = 0.80$), however for the second group, pooling data considerably dropped the correlation ($r = 0.23$).
 Scattered plots reveal the varying slopes obtained in the different dogs, emphasizing the impact of the injection site.
 Indeed, when injecting in the left main coronary the contrast agent is dispersed throught the coronary tree, making quantification of myocardial blood flow intrinsically relative.
 Authors suggested that absolute quantification of myocardial blood flow may be possible, injecting closer to the branches of the coronary tree, but were well aware that the proposed semi-quantitative parameters are not absolute themselves.
-
 
 \citet{Tiemann:2000wl} investigated the ability of harmonic power Doppler imaging to yield quantitative perfusion parameters, as this modality inherently destroys microbubble to produce contrast-specific images~\cite{Tiemann:1997vj}, through in vitro experiments, and ex vivo experiments in a porcine heart.
 % Tiemann:2000wl, Are microbubbles free flowing tracers through the Myocardium? Comparison of indicator-dilution curves obtained from dye dilution and echo contrast using harmonic power Doppler imaging.
@@ -258,7 +257,7 @@ The study concludes by stating the higher sensitivity of contrast burst imaging 
 
 % Eyding:2003bo, Parameters of cerebral perfusion in phase-inversion harmonic imaging (PIHI) ultrasound examinations.
 However, three years later, a study by \citet{Eyding:2003bo} to which Postert collaborated, investigated the 90\% peak width as an additional parameters to characterize time-intensity curves from phase-inversion harmonic imaging fitted with this model.
-Semi-quantitative parameters were evaluated in five regions of interest of the established unilateral view, i.e.~with an imaging depth of 100 mm, and nine regions of interest using a novel the bilateral view including both hemishperes, i.e.~with an imaging depth of 150 mm, of fourteen healthy patients. 
+Semi-quantitative parameters were evaluated in five regions of interest of the established ipsilateral view, i.e.~imaging only the hemisphere on the probe side, using an imaging depth of 100 mm, and nine regions of interest using the novel bilateral view, i.e.~allowing simultaneous imaging of both hemishperes with a single probe, using an imaging depth of 150 mm, of fourteen healthy patients. 
 Consecutive transtemporal acquisitions following intravenous injection of two different ultrasound contrast agents were performed in each view of each patient, with twenty minute intervals, with for comparison purposes.
 The authors reported the sensitivity of peak-intensity to depth, and the ability to differentiate arteries using either time parameter.
 
@@ -282,7 +281,6 @@ The group assessed tumor vasculature through the peak-intensity time and value, 
 They reported a progressive decrease in peak-intensity value reaching its minimum six hours after injection of the anti-angiogenic treatement, and opposite effects in time to peak-intensity and in the full-width at half maximum.
 
 % Mischi:2003ed, Videodensitometric Methods for Cardiac Output Measurements
-% Local Density Random Walk (LDRW) gives a physical interpretation of the dilution process, authors proposed the application of this diffusion with drift model to estimate the area under the curve and the mean transit time, which are then used to obtain tissue blood flow and tissue blood volume using indicator-dilution theory
 In \citeyear{Mischi:2003ed}, \citet{Mischi:2003ed} proposed the local density random walk model for characterization of tissue perfusion in contrast-enhanced ultrasound with bolus injection of microbubbles. 
 The model, first proposed by \citet{Sheppard:1951we} characterizes the dilution process through a mono-dimensional approximation of the vascular network, i.e.~vessels are considered as straight tubes with constant flows, and a Brownian motion of the contrast-agent following bolus injection is assumed.
 A novel estimation method based on a two-phase multiple linear regression is proposed, aleviating the need for initialization and assumptions on the nature of the time-intensity curve.
@@ -293,11 +291,26 @@ They tested their model in vitro, and compared the flow estimated with contrast-
 The fitted curves were strongly to the experimental data ($r^2 \gt 0.95$), and so were the four estimated and measured flow values ($r^2 \gt 0.99$).
 However the number of tested flow rates is only four, which seems small for in vitro experiments.
 
+% Mischi:2004iu, Contrast echocardiography for pulmonary blood volume quantification
 
 
+% Mischi:2008fe, On the physical and stochastic representation of an indicator dilution curve as a gamma variate
+% Physical and stochastic explaination of the gamma variate model, comparison with LDRW
+In \citeyear{Mischi:2008fe}, \citet{Mischi:2008fe} established the relation of the commonly-used gamma variate model to indicator-dilution theory using a one-dimentional multi-compartmental approximation of the vascular network.
+They first gave a physical interpretation, that consists in seeing a blood vessel as a cascade of equal mixing chambers, each compartment having a constant flow, and an exponential impulse responses which time constant is the ratio of the compartment blood flow to the compartment blood volume.
+They also gave a stochastic intrepretation, that models the dilution impulse response a given distance from the injection site, assuming a poisson distribution of the number of individual particle wash-out to the next compartment.
+Then they revealed the inverse relation between the parameters of the two interpretations, yielding an expression of the tissue impulse response as a function of the wash-out rate and the mean transit time which respects indicator-dilution theorems in the case an ideal Dirac injection.
+They finally established the relation of the gamma variate model with the local density random walk model using the previously presented physical interpretation.
+Based on the previously presented methodology~\cite{Mischi:2004iu}, the authors were able to estimate the volume of dilution between two measurements of the same bolus, i.e.~before and after the passage of the bolus in the volume to be estimated, as the product of the difference of the mean transit times estimated using either of the models, with the flow estimated as the ratio of the injected dose to the area under the curve according to indicator-dilution theory as presented by Stewart~\cite{Stewart:1897dz} and Hamilton~\cite{Hamilton:1932ww}.
 
-% Mischi2008, On the physical and stochastic representation of an indicator dilution curve as a gamma variate
-% Physical and stochastic explaination of the Gamma-Variate model, comparison with LDRW
+They performed in vitro experiments with bolus injection, and compared the ability of the two models to estimate the dilution volume in a varying flow setup.
+Their in vitro findings were compared to those obtained in vivo, through a cardiac clinical study including twenty patients.
+Time-intensity curves in the left and right ventricle of the heart were derived from contrast-enhanced ultrasound acquisitions following bolus injection of microbubbles in an antecubital vein, using the same imaging apparatus and injection protocol than in vitro.
+They reported that both models were able to accurately fit both in vitro and in vivo time-intensity curves, and reported on the sensitivity of the local density random walk to initialization.
+In vitro, the volume estimations were almost perfectly correlated to the real values using either model, and in good agreement in terms of absolute values, despite the underestimation in the largest volume case.
+In vivo, because no ground truth was available, they reported on the differences in the estimates of the two models against the mean estimated value through a Bland-Altman plot, and showed a mean difference of 63.1 mL with a standard deviation of 69.7 mL, representing 11.1\% of the overall mean estimated volume.
+
+% Kuenen2011, Contrast-Ultrasound Diffusion Imaging for Localization of Prostate Cancer
 
 % Mannaris2013, In vitro localized release of thermosensitive liposomes with ultrasound-induced hyperthermia.
 % Error function fitted to the wash-in phase of CEUS TICs to estimate the wash-in time

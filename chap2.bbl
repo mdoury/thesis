@@ -1,4 +1,4 @@
-\begin{thebibliography}{80}
+\begin{thebibliography}{81}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -307,6 +307,13 @@ K~A Miles, M~P Hayball, and A~K Dixon.
   tomography with perfusion imaging.}
 \newblock \emph{The British journal of radiology}, 68\penalty0 (809):\penalty0
   471--475, May 1995.
+
+\bibitem[Mischi et~al.(2008)Mischi, den Boer, and Korsten]{Mischi:2008fe}
+M~Mischi, J~A den Boer, and H~H~M Korsten.
+\newblock {On the physical and stochastic representation of an indicator
+  dilution curve as a gamma variate}.
+\newblock \emph{Physiological Measurement}, 29\penalty0 (3):\penalty0 281--294,
+  March 2008.
 
 \bibitem[Mischi et~al.(2003)Mischi, Kalker, and Korsten]{Mischi:2003ed}
 Massimo Mischi, Ton Kalker, and Erik Korsten.

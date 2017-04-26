@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.11)  25 APR 2017 16:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.11)  26 APR 2017 10:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1134,9 +1134,9 @@ Underfull \vbox (badness 5652) has occurred while \output is active []
 Underfull \vbox (badness 5652) has occurred while \output is active []
 
  [31]
-Overfull \hbox (3.08748pt too wide) in paragraph at lines 260--264
+Overfull \hbox (10.55142pt too wide) in paragraph at lines 259--263
 \T1/MinionPro-LF/m/n/12 pa-ram-e-ters were eval-u-ated in five re-gions of in-t
-er-est of the es-tab-lished uni-lat-eral view, i.e. with
+er-est of the es-tab-lished ip-si-lat-eral view, i.e. imag-
  []
 
 
@@ -1146,16 +1146,24 @@ Underfull \vbox (badness 1675) has occurred while \output is active []
 Underfull \vbox (badness 5652) has occurred while \output is active []
 
  [33]
-[34]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
-
-Package natbib Warning: Citation `Arditi:2006ip' on page 36 undefined on input 
-line 352.
+Package natbib Warning: Citation `Mischi:2004iu' on page 34 undefined on input 
+line 304.
 
 
-Overfull \hbox (20.55025pt too wide) in paragraph at lines 352--356
+Underfull \vbox (badness 5652) has occurred while \output is active []
+
+ [34]
+[35]
+Underfull \vbox (badness 5652) has occurred while \output is active []
+
+ [36]
+
+Package natbib Warning: Citation `Arditi:2006ip' on page 37 undefined on input 
+line 366.
+
+
+Overfull \hbox (20.55025pt too wide) in paragraph at lines 366--370
 []\T1/MinionPro-LF/b/n/12 ? \T1/MinionPro-LF/m/n/12 ] in-tro-duced a new for-ma
 l-ism for the quan-tifi-ca-tion of real-time destruction-replenishment
  []
@@ -1165,35 +1173,35 @@ l-ism for the quan-tifi-ca-tion of real-time destruction-replenishment
 \openout8 = `main.brf'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5652) has occurred while \output is active []
 
- [36]
-[37] [38] [39] [40] [41] [42] [43]
-Underfull \hbox (badness 1242) in paragraph at lines 480--480
-\T1/MinionPro-LF/m/n/12 tertreiner.  Quan-ti-ta-tive as-sess-ment of my-ocar-di
-al blood flow by con-trast two-
+ [37]
+[38] [39] [40] [41] [42] [43] [44]
+Underfull \hbox (badness 1400) in paragraph at lines 487--487
+[]\T1/MinionPro-LF/m/n/12 F J Ten Cate, J H Cor-nel, P W Ser-ruys, W B Vlet-ter
+, J Roe-landt, and W H
  []
 
-[44]
-Underfull \hbox (badness 1442) in paragraph at lines 541--541
+[45]
+Underfull \hbox (badness 1448) in paragraph at lines 548--548
 []\T1/MinionPro-LF/m/n/12 Byron F Van-den-berg, Robert Kieso, Karen Fox-Eastham
 , William Chil-ian, and
  []
 
-[45] [46])) [47]
+[46] [47])) [48]
 \openout2 = `chap3.aux'.
 
- (./chap3.tex [48
+ (./chap3.tex
+Chapter 3.
+
+Underfull \vbox (badness 6758) has occurred while \output is active []
+
+ [49
 
 
 
 
 ]
-Chapter 3.
-
-Underfull \vbox (badness 6758) has occurred while \output is active []
-
- [49]
 Overfull \hbox (1.75916pt too wide) in paragraph at lines 13--15
 \T1/MinionPro-LF/m/n/12 that these semi-quantitative pa-ram-e-ters were sen-si-
 tive to var-i-ous fac-tors [[]]: scanner-related
@@ -1211,7 +1219,7 @@ ted-to.pdf Figures/Figure1.eps>
 (epstopdf)             \includegraphics on input line 46.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Figure1-eps-converted-to.pdf, id=981, 886.31125pt x 281.05pt>
+<Figures/Figure1-eps-converted-to.pdf, id=989, 886.31125pt x 281.05pt>
 File: Figures/Figure1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Figure1-eps-converted-to.pdf>
@@ -1253,7 +1261,7 @@ ted-to.pdf Figures/Figure2.eps>
 (epstopdf)             \includegraphics on input line 113.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Figure2-eps-converted-to.pdf, id=1041, 850.17625pt x 202.7575pt>
+<Figures/Figure2-eps-converted-to.pdf, id=1050, 850.17625pt x 202.7575pt>
 File: Figures/Figure2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Figure2-eps-converted-to.pdf>
@@ -1286,7 +1294,7 @@ ted-to.pdf Figures/Figure3.eps>
 (epstopdf)             \includegraphics on input line 211.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Figure3-eps-converted-to.pdf, id=1120, 771.88374pt x 394.47375pt>
+<Figures/Figure3-eps-converted-to.pdf, id=1128, 771.88374pt x 394.47375pt>
 File: Figures/Figure3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Figure3-eps-converted-to.pdf>
@@ -1304,7 +1312,7 @@ ted-to.pdf Figures/Figure4.eps>
 (epstopdf)             \includegraphics on input line 237.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Figure4-eps-converted-to.pdf, id=1121, 769.87625pt x 429.605pt>
+<Figures/Figure4-eps-converted-to.pdf, id=1129, 769.87625pt x 429.605pt>
 File: Figures/Figure4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Figure4-eps-converted-to.pdf>
@@ -1375,7 +1383,7 @@ nverted-to.pdf Figures/Ch4_Figure1.eps>
 (epstopdf)             \includegraphics on input line 30.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch4_Figure1-eps-converted-to.pdf, id=1262, 888.31876pt x 277.035pt>
+<Figures/Ch4_Figure1-eps-converted-to.pdf, id=1271, 888.31876pt x 277.035pt>
 File: Figures/Ch4_Figure1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Ch4_Figure1-eps-converted-to.pdf>
@@ -1400,7 +1408,7 @@ Package epstopdf Info: Source file: <Figures/Ch4_V_CV.eps>
 rted-to.pdf Figures/Ch4_V_CV.eps>
 (epstopdf)             \includegraphics on input line 160.
 Package epstopdf Info: Output file is already uptodate.
- <Figures/Ch4_V_CV-eps-converted-to.pdf, id=1325, 449.68pt x 443.6575pt>
+ <Figures/Ch4_V_CV-eps-converted-to.pdf, id=1333, 449.68pt x 443.6575pt>
 File: Figures/Ch4_V_CV-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Ch4_V_CV-eps-converted-to.pdf>
@@ -1418,7 +1426,7 @@ rted-to.pdf Figures/Ch4_F_CV.eps>
 (epstopdf)             \includegraphics on input line 161.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch4_F_CV-eps-converted-to.pdf, id=1326, 449.68pt x 443.6575pt>
+<Figures/Ch4_F_CV-eps-converted-to.pdf, id=1334, 449.68pt x 443.6575pt>
 File: Figures/Ch4_F_CV-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Ch4_F_CV-eps-converted-to.pdf>
@@ -1482,7 +1490,7 @@ eps-converted-to.pdf Figures/Ch5_simRC_CaCt4Cr.eps>
 (epstopdf)             \includegraphics on input line 54.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_simRC_CaCt4Cr-eps-converted-to.pdf, id=1429, 786.94pt x 468.75125p
+<Figures/Ch5_simRC_CaCt4Cr-eps-converted-to.pdf, id=1437, 786.94pt x 468.75125p
 t>
 File: Figures/Ch5_simRC_CaCt4Cr-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Ch5_simRC_CaCt4Cr-eps-converted-to.pdf>
@@ -1533,7 +1541,7 @@ onBullseyes-eps-converted-to.pdf Figures/Ch5_SimRC_SimulationBullseyes.eps>
 (epstopdf)             \includegraphics on input line 118.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_SimRC_SimulationBullseyes-eps-converted-to.pdf, id=1482, 1067.99pt
+<Figures/Ch5_SimRC_SimulationBullseyes-eps-converted-to.pdf, id=1491, 1067.99pt
  x 211.79124pt>
 File: Figures/Ch5_SimRC_SimulationBullseyes-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1565,7 +1573,7 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 147.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_ParamBoard_Ct4-eps-converted-to.pdf, id=1508, 980.66376pt x 1241.6
+<Figures/Ch5_ParamBoard_Ct4-eps-converted-to.pdf, id=1516, 980.66376pt x 1241.6
 3875pt>
 File: Figures/Ch5_ParamBoard_Ct4-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Ch5_ParamBoard_Ct4-eps-converted-to.pdf>
@@ -1588,7 +1596,7 @@ _LN_LNwi-eps-converted-to.pdf Figures/Ch5_simRC_bullseye_LN_LNwi.eps>
 (epstopdf)             \includegraphics on input line 155.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_simRC_bullseye_LN_LNwi-eps-converted-to.pdf, id=1509, 532.99126pt 
+<Figures/Ch5_simRC_bullseye_LN_LNwi-eps-converted-to.pdf, id=1517, 532.99126pt 
 x 529.98pt>
 File: Figures/Ch5_simRC_bullseye_LN_LNwi-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -1608,7 +1616,7 @@ _rLN_rLNwi-eps-converted-to.pdf Figures/Ch5_simRC_bullseye_rLN_rLNwi.eps>
 (epstopdf)             \includegraphics on input line 163.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_simRC_bullseye_rLN_rLNwi-eps-converted-to.pdf, id=1510, 532.99126p
+<Figures/Ch5_simRC_bullseye_rLN_rLNwi-eps-converted-to.pdf, id=1518, 532.99126p
 t x 529.98pt>
 File: Figures/Ch5_simRC_bullseye_rLN_rLNwi-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1628,7 +1636,7 @@ _rLin_rReg-eps-converted-to.pdf Figures/Ch5_simRC_bullseye_rLin_rReg.eps>
 (epstopdf)             \includegraphics on input line 171.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Ch5_simRC_bullseye_rLin_rReg-eps-converted-to.pdf, id=1511, 878.28125p
+<Figures/Ch5_simRC_bullseye_rLin_rReg-eps-converted-to.pdf, id=1519, 878.28125p
 t x 529.98pt>
 File: Figures/Ch5_simRC_bullseye_rLin_rReg-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1791,7 +1799,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 60.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4B5502A44BBD2B8A113C900F6F79F719;5416.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: CC7E472D876A9DC2FFB6D940BBCE261B;10968.
+(rerunfilecheck)             Checksum: 7A35AE202924CD58CCB35E80B74A6F8B;11191.
 
 
 LaTeX Warning: There were undefined references.
@@ -1802,10 +1810,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
  ) 
 Here is how much of TeX's memory you used:
- 12997 strings out of 493089
- 201362 string characters out of 6134841
- 265607 words of memory out of 5000000
- 15655 multiletter control sequences out of 15000+600000
+ 13006 strings out of 493089
+ 201537 string characters out of 6134841
+ 265753 words of memory out of 5000000
+ 15663 multiletter control sequences out of 15000+600000
  506985 words of font info for 213 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,14n,60p,1707b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1827,10 +1835,10 @@ onPro-It.pfb></Users/Maxime/Library/texmf/fonts/type1/adobe/MinionPro/MinionPro
 Users/Maxime/Library/texmf/fonts/type1/public/MnSymbol/MnSymbol8.pfb></usr/loca
 l/texlive/2015/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (107 pages, 1537919 bytes).
+Output written on main.pdf (107 pages, 1541961 bytes).
 PDF statistics:
- 1804 PDF objects out of 2073 (max. 8388607)
- 1600 compressed objects within 16 object streams
- 382 named destinations out of 1000 (max. 500000)
+ 1813 PDF objects out of 2073 (max. 8388607)
+ 1608 compressed objects within 17 object streams
+ 383 named destinations out of 1000 (max. 500000)
  650 words of extra memory for PDF output out of 10000 (max. 10000000)
 

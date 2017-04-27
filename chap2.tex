@@ -105,8 +105,9 @@ Refer to Section~\ref{sec:IntroCEUS} for more information on contrast-enhanced u
 Methods assessing perfusion using bolus injection are first presented, followed by methods specific to continuous infusion injection.
 
 As a foreword to this section, indicator dilution theory as first formalized by \citet{Stewart:1897dz} and later by \citet{Hamilton:1932ww} is valid under the condition that the mass of contrast-agent is conserved through the time of the acquisition. 
-Since \citeyear{Butler:1979wu}, it a known that a portion of the intravenously injected microbubbles are filtrated through the lungs~\cite{Butler:1979wu} 
+Since \citeyear{Butler:1979wu}, it a known that a portion of the intravenously injected microbubbles are filtrated through the lungs~\cite{Butler:1979wu,Meltzer:1980js}
 % Butler:1979wu, Journal of Applied Physiology, The lung as a filter for microbubbles
+% Meltzer:1980js, WHY DO THE LUNGS CLEAR ULTRASONIC CONTRAST?
 , i.e.~before their first pass in the tissue of interest.
 Moreover, a portion of the following passes is filtered by the Kupffer cells in the liver~\cite{Kindberg:2003iq,Yanagisawa:2007bu}.
 % Kindberg:2003iq, Hepatic clearance of Sonazoid perfluorobutane microbubbles by Kupffer cells does not reduce the ability of liver to phagocytose or degrade albumin microspheres
@@ -201,20 +202,10 @@ Authors ackowledge the difficulty of estimating the input function using a singl
 They emphasis the necessity for a consistent and confined range of microbubble size, as the intensity of the signal backscattered by a single bubble is non-linearly proportional to the diameter of the bubble.
 The importance of conservation of contrast-agent quantity and properties throughout the acquisition of the ultrasound images was outlined, and the impact of hydrostatic pressure and gas saturation level of the solution as reported in the litterature was investigated.
 The choice of the representation of the time-intensity curves, i.e.~video intensity, log-transformed intensity, or concentration from calibration data, and its impact on the estimated parameters were discussed.
-A possible explaination for undetected changes when using peak height as an indicator of blood flow was proposed, authors related it to signal saturation and illustrate this phenomenum in simple cases where the changes in blood flow are caused by a change in blood volume only or in transit time only.
+A possible explaination for undetected changes when using peak height as an indicator of blood flow was proposed, authors related it to signal saturation and illustrate this phenomenon in simple cases where the changes in blood flow are caused by a change in blood volume only or in transit time only.
 Additionally, electronic issues resulting from signal acquisition, signal processing, and electronic thresholding were discussed.
 Physiological factors like tissue-dependant hematocrit were also investigated.
 Finally, methods which showed promising results in preliminary studies at the time of the review (i.e.~\citeyear{Wiencek:1993hr}) were reported, including various alternative imaging schemes (e.g.~acoustic velocity, radiofrequency data, second harmonic imaging).
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% LIMITATIONS OF EARLY MODEL-FREE QUANTIFICATION METHODS        %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% - bubble stability
-% - varying bubble size
-% - destructive imaging (high mechanical index)
-% - non contrast-specific imaging
-% - low sampling frequency
-% - estimation from non filtered time-intensity curves
 
 \paragraph{\em{Model-based quantification methods}\\}
 
@@ -300,7 +291,6 @@ They were compared by \citet{Bogaard:1986wp} in conductivity and thermodilution 
 Note that the flow was estimated as the ratio of the injected dose to the area under the fitted curve following to indicator-dilution equations presented by Stewart~\cite{Stewart:1897dz} and Hamilton~\cite{Hamilton:1932ww}.
 The authors reported a good agreement between the true and estimated values obtained in the in vitro experiments despite some discrepencies, especially for high blood volumes, and a good agreement between the two models for the clinical data in the absence of ground truth.
 
-
 % Mischi:2008fe, On the physical and stochastic representation of an indicator dilution curve as a gamma variate
 % Physical and stochastic explaination of the gamma variate model, comparison with LDRW
 In \citeyear{Mischi:2008fe}, \citet{Mischi:2008fe} established the relation of the commonly-used gamma variate model to indicator-dilution theory using a one-dimentional multi-compartmental approximation of the vascular network.
@@ -342,8 +332,6 @@ While the wash-in time in the metastatic tissue exhibited variations up to 30\%,
 The ability of the wash-in time ratio to assess treatment efficiency was investigated in a longitudinal study, performed in seven patients undergoing a combination of cytotoxic and antiangiogenic treatments.
 Major findings include the ability to discriminate good from bad responders to therapy, the ground truth responder classification being assessed by experts using conventional criteria.
 Indeed, four out of five good responders exhibited a significant rise of the wash-in time ratio after the first therapy cycle, revealing the early normalization of the lesion microvascularity, and the mean increase in wash-in time ratio among the good responders at the end of the treatment was 75\%.
-
-
 
 \subsubsection{Infusion injection}
 In 1998, \citet{Wei:1998jd} proposed an explicit model to quantify myocardial perfusion. % Wei:1998jd, Quantificatin of myocardial blood flow with ultrasound-induced destruction of microbubbles administered as a constant venous infusion
@@ -401,6 +389,28 @@ This variety is modeled as the sum of a variable number of piecewise linear repl
 The model was validated through in vitro experiments using a dialysis cartridge with tubular capillaries, and in vivo experiments in the renal cortex of 12 healthy volunteers, separated in two age groups. 
 While it achieved a significantly better fit than the exponential model using a Wilcoxon signed-rank test, whether the proposed model was using two, three, or four different tracts, the differences in the mean squared error remained extremely small and exhibited non-negligible overlap.
 Furthermore, while the authors report a significant difference in the initial replenishment slope among the two age groups using the proposed model, based a Mann-Whitney U-test, they do not report on the slope differences obtained using the exponential model, nor on the apparent concordance of the plateau values obtained using the two models.
+
+\subsubsection{Limitations of semi-quantitative approaches}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LIMITATIONS OF EARLY MODEL-FREE QUANTIFICATION METHODS        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% - bubble stability
+% - varying bubble size
+% - destructive imaging (high mechanical index)
+% - non contrast-specific imaging
+% - low sampling frequency
+% - estimation from non filtered time-intensity curves
+
+From an experimental standpoint, the pioneering studies reviewed in this section suffer from major limitations which can be explained by the simultaneous development of the imaging technology, contrast agent, and quantification approaches.
+
+Many of these studies used preliminary ultrasound contrast agents, yielding inconsistencies of the ultrasound signal and threrefore of the quantification process. 
+The firt identified pitfall was the stability of the microbubbles, for instance in \citeyear{Meltzer:1980ul} \citet{Meltzer:1980ul} investigated multiple substances to understand the causes of the contrast enhancement, including carbonated water or even tap water and freshly agitated water, causing no enhancement in the ultrasound images. 
+% Meltzer:1980ul, Why do the lungs clear ultrasonic contrast?
+They concluded that the bubbles needed to be present in the injected solution prior to injection, as opposed to caused by cavitation during rapid injection, and that they needed to be stable enough to travel through the vascular network.
+Another major limitation of these early studies lies in the size inhomogeneity among the injected microbubbles and the poor reproducibility of the preparation process, yielding inconsistencies in the backscattered signal intensity~\cite{Morse:1968vl,deJong:1993cr,Wiencek:1993hr}.
+Early work by \citet{Bommer:1978eu} were performed using microbubbles obtained by cavitation through rapid injection of dextrose in water, 
+Moreover, early commercial microbubbles were around 75 micrometers~\cite{Meltzer:1980ul,Carroll:1980vp}, and were thus too large to circulate in the capillaries.
+% Carroll:1980vp, Gelatin encapsulated nitrogen microbubbles as ultrasonic contrast agents.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% COMMENTS ON INFUSION MODELS %%

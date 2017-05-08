@@ -448,9 +448,19 @@ Using simulations, the role of the number of harmonics present in the upstream c
 Indeed, for low numbers of harmonics, oscillations could occur in the transfer function, yielding inaccurate estimation.
 The authors suggest intra-ventricular injection would alleviate this issue, as the upstream curve would contain more harmonics.
 
-% Maseri:1970, Frequency function of transit times through dog pulmonary circulation
-% Neufeld:1971, Computation of transit time distribution using sampled data Laplace transforms
+% Maseri:1970gn, Frequency function of transit times through dog pulmonary circulation
+In \citeyear{Maseri:1970gn}, \citet{Maseri:1970gn} used deconvolution to estimate the impulse response of the pulmonary circulatory system.
+Two tracers were injected simultaneously, the first one in the pulmonary artery, and the second one in the left ventricle.
+Both tracers were sampled at the same site, at the aortic root, yielding two time-concentration curves. 
+The authors used Laplace transforms to demonstrate that deconvolving the first time-concentration curve by the second one yields the impulse response of the pulmonary circulatory system, independently of the systemic recirculation of the tracers. 
+The deconvolution was performed using numerically without any curve fitting, despite the reported unstability of the solution.
+In order to limit this instability, the experiments were adapted consequently. 
+Visual checking was used to assess the accuracy of the estimation, and manual correction was performed when necessary.
+Biases induced by correction of recirculation through mono-exponential interpolation of the wash-out were reported in case of early recirculation.
+
 % Knopp:1976, Transcoronary intravascular transport functions obtained via a stable deconvolution technique
+
+
 % Alderson:1979, Deconvolution analysis in radionucleide quantitation of left-to-right cardiac shunts
 
 % Gamel:1973, Pitfalls in digital computation of the impulse response of vascular beds from indicator-dilution curves

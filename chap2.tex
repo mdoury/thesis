@@ -438,7 +438,16 @@ Additionally, the impulse-response function can be seen as the probability distr
 % Lassen:1979vj, Tracer kinetic methods in medical physiology, Ch. 7 MTT: Bolus Injection
 Parameters describing the systemic response of the vascular system can therefore be derived from the impulse-response function estimated by deconvolution.
 
-% Coulam:1966, A transfer function analysis of coronary and renal circulation calculated from upstream and downstream indicator-dilution curves
+% Coulam:1966un, A transfer function analysis of coronary and renal circulation calculated from upstream and downstream indicator-dilution curves
+In \citeyear{Coulam:1966un}, \citet{Coulam:1966un} proposed deconvolution to estimate the impulse response of coronary and renal circulatory systems, as well as the global circulatory transfer function, in a canine study with one dog.
+Because a perfect impulse injection is not achievable in practice, the transfer function cannot be estimated directly from the downstream time-concentration curve.
+Therefore bolus injections of indocyanine green dye were performed in a pulmonary artery and blood was sampled at various downstream sites.
+Deconvolution of the downstream curves by the upstream curve was performed in the frequency domain by simple division of the Fourier coefficients, and the inverse transform was applied to obtain the transfer function in the time domain.
+The accuracy of the estimation was assessed both visually and numerically, through time-domain convolution of the estimated transfer function with the upstream curve, yielding an estimate of the downstream curve. 
+Using simulations, the role of the number of harmonics present in the upstream curves was investigated.
+Indeed, for low numbers of harmonics, oscillations could occur in the transfer function, yielding inaccurate estimation.
+The authors suggest intra-ventricular injection would alleviate this issue, as the upstream curve would contain more harmonics.
+
 % Maseri:1970, Frequency function of transit times through dog pulmonary circulation
 % Neufeld:1971, Computation of transit time distribution using sampled data Laplace transforms
 % Knopp:1976, Transcoronary intravascular transport functions obtained via a stable deconvolution technique

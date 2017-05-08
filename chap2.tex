@@ -429,16 +429,30 @@ Because of the sensitivity of the semi-quantitative parameters to both experimen
 \label{sec:DeconvolutionMethods}
 \subsection{Generalities}
 Deconvolution-based methods are model-free approaches, assuming a linear and stationary system without any assumption on the underlying structures and processes~\cite{Lassen:1979tk}.
-% Lassen:1979tk, Tracer kinetic methods in medical physiology
+% Lassen:1979tm, Tracer kinetic methods in medical physiology, Ch9. Convolution Analysis
 Resolving the deconvolution equations necessitates the knowledge of at least two measurements: an input function, and either a residual measurement (i.e.~the amount of tracer remaining in the system) or an output measurement (i.e.~the amount of tracer leaving the system).
 In particular, dynamic perfusion imaging grants access to spatially-distributed measurements of the residual tissue function.
 
-The resolution process aims at estimating the system's impulse-response function, which is theoretically independant on the input, and because no assumption is made on the structure of the system, no assumption is made on the shape of the impulse-response function.
-Parameters describing the systemic response of the vascular system are then derived from the estimated impulse-response function.
+The resolution process aims at estimating the system's impulse-response function, which is theoretically independant on the input, and because no assumption is made on the structure of the system, no assumption is made on the shape of the impulse-response function or on the unit of the measurements.
+Additionally, the impulse-response function can be seen as the probability distribution of the contrast particles transit times~\cite{Lassen:1979vj}.
+% Lassen:1979vj, Tracer kinetic methods in medical physiology, Ch. 7 MTT: Bolus Injection
+Parameters describing the systemic response of the vascular system can therefore be derived from the impulse-response function estimated by deconvolution.
 
-\subsection{Nuclear medicine}
+% Coulam:1966, A transfer function analysis of coronary and renal circulation calculated from upstream and downstream indicator-dilution curves
+% Maseri:1970, Frequency function of transit times through dog pulmonary circulation
+% Neufeld:1971, Computation of transit time distribution using sampled data Laplace transforms
+% Knopp:1976, Transcoronary intravascular transport functions obtained via a stable deconvolution technique
+% Alderson:1979, Deconvolution analysis in radionucleide quantitation of left-to-right cardiac shunts
+
+% Gamel:1973, Pitfalls in digital computation of the impulse response of vascular beds from indicator-dilution curves
+
+
+% \subsection{Nuclear medicine}
 
 \subsection{X-rays}
+In \citeyear{Axel:1982wu}, \citet{Axel:1982wu} proposed a deconvolution-based technique to estimate mean transit time.
+% Axel:1982wu, Tissue mean transit time from dynamic computed tomography by a simple deconvolution technique.
+This approach estimates the first moment of the curve
 
 \subsection{Magnetic resonance}
 

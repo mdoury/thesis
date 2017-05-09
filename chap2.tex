@@ -463,15 +463,25 @@ In \citeyear{Knopp:1976uc}, a deconvolution method insensitive to noise, recircu
 The method was tested in a canine study with intra-ventricular injection dye injection, and simultaneous blood sampling at the aortic root and in the coronary sinus.
 The technique first models the impulse response as a weighted sum of delayed spread functions with unit area, which allowed predetermination of the convolved curves and aleviated the signal periodicity condition, and then iteratively minimized the fit error using a gradient descent algorithm.
 Impulse functions were first investigated, however spread functions were chosen to reduce the computational load while making the estimation more robust and ensuring similar quality of fit.
-Experiments reveal right-skewed impulse responses with prolonged tails, suggesting non-monoexponential downslopes as observed using classical unimodal functions, i.e.~lagged-normal, gamma-variate, lognormal.
-
-% Alderson:1979, Deconvolution analysis in radionucleide quantitation of left-to-right cardiac shunts
+Experiments reveal right-skewed impulse responses with prolonged tails, suggesting non-monoexponential downslopes expected using classical unimodal functions, i.e.~lagged-normal, gamma-variate, lognormal.
+The authors compared their estimates of mean and standard deviation of transit times to the estimates from previous studies, performed by the same group, but focused on other vascular structures, i.e.~lungs~\cite{Knopp:1969tu}, descending aorta~\cite{Bassingthwaighte:1967vy}, and femoral artery~\cite{Bassingthwaighte:1966jn}. 
+Despite the reported parametric overlap, authors observed a rise of the relative variation of transit times correlated with the complexity of the vascular structures, which they justified by reminding that different pathways have different mean transit times and flows.
 
 
 % Gamel:1973, Pitfalls in digital computation of the impulse response of vascular beds from indicator-dilution curves
 
 
-% \subsection{Nuclear medicine}
+\subsection{Nuclear medicine}
+% Kenny:1975gl, Deconvolution analysis of the scintillation camera renogram.
+% Appledorn:1977hl, Deconvolution analysis of the scintillation camera renogram. (response)
+
+
+% Alderson:1979ts, Deconvolution analysis in radionucleide quantitation of left-to-right cardiac shunts
+In \citeyear{Alderson:1979ts}, a Fourier-based deconvolution technique was proposed by \citet{Alderson:1979ts} to quantify left-to-right cardiac shunts from time-activity curves from scintigraphy following bolus injection of $[^{99m}$Tc]pertechnetate in a canine study. 
+The shunt quantification technique used the gamma-fitting technique first presented by \citet{Maltz:1973jj}, and was preceded by either low-pass filtering in the frequency domain, or smoothing of the deconvolved curves in the time domain, in order to reduce the high frequency components, and thus the oscillations observed in the obtained impulse responses.
+The ability of the technique to estimate the impulse response in case of either prolonged or fragmented bolus was investigated.
+The technique was able to significantly improve the accuracy of the shunt estimation in case of prolonged bolus, and while time-domain smoothing improve the accuracy of the estimates, frequency domain filtering proved more efficient.
+However none of the techniques yielded satisfactory results in case of fragmented bolus.
 
 \subsection{X-rays}
 In \citeyear{Axel:1982wu}, \citet{Axel:1982wu} proposed a deconvolution-based technique to estimate mean transit time.

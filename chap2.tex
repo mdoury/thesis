@@ -458,10 +458,15 @@ In order to limit this instability, the experiments were adapted consequently.
 Visual checking was used to assess the accuracy of the estimation, and manual correction was performed when necessary.
 Biases induced by correction of recirculation through mono-exponential interpolation of the wash-out were reported in case of early recirculation.
 
-% Knopp:1976, Transcoronary intravascular transport functions obtained via a stable deconvolution technique
-
+% Knopp:1976uc, Transcoronary intravascular transport functions obtained via a stable deconvolution technique
+In \citeyear{Knopp:1976uc}, a deconvolution method insensitive to noise, recirculation, and impulse response shape was proposed by \citet{Knopp:1976uc} to assess the impulse response of the coronary bed.
+The method was tested in a canine study with intra-ventricular injection dye injection, and simultaneous blood sampling at the aortic root and in the coronary sinus.
+The technique first models the impulse response as a weighted sum of delayed spread functions with unit area, which allowed predetermination of the convolved curves and aleviated the signal periodicity condition, and then iteratively minimized the fit error using a gradient descent algorithm.
+Impulse functions were first investigated, however spread functions were chosen to reduce the computational load while making the estimation more robust and ensuring similar quality of fit.
+Experiments reveal right-skewed impulse responses with prolonged tails, suggesting non-monoexponential downslopes as observed using classical unimodal functions, i.e.~lagged-normal, gamma-variate, lognormal.
 
 % Alderson:1979, Deconvolution analysis in radionucleide quantitation of left-to-right cardiac shunts
+
 
 % Gamel:1973, Pitfalls in digital computation of the impulse response of vascular beds from indicator-dilution curves
 

@@ -442,7 +442,7 @@ Parameters describing the systemic response of the vascular system can therefore
 In \citeyear{Zierler:1962cx}, \citet{Zierler:1962cx} established the relevance of the impulse response to assess indicator-dilution curves.
 He deeply investigated the theoretical aspects of indicator-dilution theory, the conditions for its validity, and the consequences when they are not respected, including when a sudden injection is not truly instantaneous. 
 This section established the theoretical basis for deconvolution of indicator-dilution curves. 
-In another section addressing the impact of recirculation, he established the relation between convolution integrals and Laplace transforms.
+In another section addressing the impact of recirculation, he established the role of the Laplace transform when solving convolution integrals, as found in his theoretical framework.
 
 % Coulam:1966un, A transfer function analysis of coronary and renal circulation calculated from upstream and downstream indicator-dilution curves
 In \citeyear{Coulam:1966un}, \citet{Coulam:1966un} proposed deconvolution to estimate the impulse response of coronary and renal circulatory systems, as well as the global circulatory transfer function, in a canine study with one dog.
@@ -479,8 +479,13 @@ Experiments reveal right-skewed impulse responses with prolonged tails, suggesti
 The authors compared their estimates of mean and standard deviation of transit times to the estimates from previous studies, performed by the same group, but focused on other vascular structures, i.e.~lungs~\cite{Knopp:1969tu}, descending aorta~\cite{Bassingthwaighte:1967vy}, and femoral artery~\cite{Bassingthwaighte:1966jn}. 
 Despite the reported parametric overlap, authors observed a rise of the relative variation of transit times correlated with the complexity of the vascular structures, which they justified by reminding that different pathways have different mean transit times and flows.
 
-% Gamel:1973, Pitfalls in digital computation of the impulse response of vascular beds from indicator-dilution curves
-%%% TO DO
+% Gamel:1973uz, Pitfalls in digital computation of the impulse response of vascular beds from indicator-dilution curves
+As soon as \citeyear{Gamel:1973uz}, \citet{Gamel:1973uz} published a review of the various pitfalls affecting the deconvolution process when estimating vascular impulse responses from indicator-dilution curves. 
+The impact of noise on the estimation of the impulse response by the direct method was first demonstrated on simulated data, establishing the necessity of either using an appropriate noise filtering technique, enforcing some predetermined form to the impulse response, or apllying some kind of regularization to the estimation process in order to avoid oscillations and negative values.
+Six estimation methods enforcing either of the above mentioned strategies were then investigated regarding various considerations.
+The impact of the data starting point was investigated, especially in the output curve which is usually widely spread and delayed.
+The authors report poor impulse response estimation in case of noisy time-varying data, despite the accuracy of the reconvolved curves.
+Then the impact of the numerical approximation which is a consequence discretization process was investigated, while trapezoidal integration exhibited lower error than rectangular integration, both methods proved extremely sensitive to noise. 
 
 
 \subsection{Nuclear medicine}

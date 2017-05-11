@@ -489,11 +489,9 @@ Then the impact of the numerical approximation which is a consequence discretiza
 
 
 \subsection{Nuclear medicine}
-% Flemming:1974, A technique for the deconvolution of the renogram
-%%% TO FIND, AND TO DO
-
 % Kenny:1975gl, Deconvolution analysis of the scintillation camera renogram.
-Following the development of renography based on gamma-camera acquisitions by \citet{Short:1973ip}, \citet{Kenny:1975gl} proposed a deconvolution technique, based on the Laplace transform, in an attempt to make the estimation of the kidney function independent on the spread of the bolus when it enters the kidney, and assessed it in a clinical study.
+Following the development of renography based on gamma-camera acquisitions by \citet{Short:1973ip}, \citet{Kenny:1975gl} used a deconvolution technique first presented in \cite{Fleming:1974id}, based on the Laplace transform, in an attempt to make the estimation of the kidney function independent on the spread of the bolus when it enters the kidney, and assessed it in a clinical study.
+% Fleming:1974id, A technique for the deconvolution of the renogram
 The approach accounts for both the establishment of an equilibrium of the tracer in the extravascular space, spread of the bolus during its passage through the kidney, and the removal of the tracer from blood by the kidney assuming bi-exponential clearance in the cardiac measurements.
 The impulse response of the kidney vascular network was estimated from the Laplace-derived formula established in the paper, involving the renal time-activity curve, its derivative, its integral and various constants to be estimated.
 Because scintigraphy is a projection imaging technique, the background activity was subtracted using the regions between the two kidneys to obtain the activity as specific to the kidney as possible.
@@ -522,9 +520,21 @@ The technique was able to significantly improve the accuracy of the shunt estima
 However none of the techniques yielded satisfactory results in case of fragmented bolus.
 
 \subsection{X-rays}
-In \citeyear{Axel:1982wu}, \citet{Axel:1982wu} proposed a deconvolution-based technique to estimate mean transit time.
 % Axel:1982wu, Tissue mean transit time from dynamic computed tomography by a simple deconvolution technique.
-This approach estimates the first moment of the curve
+In \citeyear{Axel:1982wu}, \citet{Axel:1982wu} proposed a deconvolution technique to estimate the mean transit time of contrast-enhanced X-ray computed tomography acquired in the brain, where iodinated tracers do not diffuse in the extravascular space. 
+Because the only considered parameter under investigation is the mean transit time, the authors consider the shape of the impulse response unimportant, with only a measure of its width being required.
+Authors demonstrates this by estimating the impulse response as an exponential function, a Fermi function and a step function. 
+The Fermi and the step functions yielded similar estimations of the mean transit time, however the exponential function yielded lower values of the parameter.
+Additionally, the Fermi and step function achieved slightly better fits than the exponential function, but the difference was not found significant.
+The method, previously in presented in~\cite{Axel:1980jg}, was used as a reference. 
+The mean transit time was defined as the difference of the first moments of the tissular and vasclar curves following gamma-variate fitting.
+The mean transit time estimated using this method seem to best agree with the mean transit time values obtained using the exponential impulse response.
+% Axel:1980jg, Cerebral blood flow determination by rapid-sequence computed tomography: theoretical analysis.
+The author assumes that the impulse response function in most tissues are likely to have a squared shape with rounded corner, which the Fermi function can easily approximate.
+They comment on the insensitivity of the method to noise compared to transform-based methods, as well as recirculation without needing curve fitting and extrapolation.
+
+% Lassen:1984kp, Cerebral transit of an intravascular tracer may allow measurement of regional blood volume but not regional blood flow.
+% Impossible to perform deconvolution without assuming a known shape for the impulse response.
 
 \subsection{Magnetic resonance}
 

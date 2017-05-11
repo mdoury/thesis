@@ -458,8 +458,14 @@ In order to limit this instability, the experiments were adapted consequently.
 Visual checking was used to assess the accuracy of the estimation, and manual correction was performed when necessary.
 Biases induced by correction of recirculation through mono-exponential interpolation of the wash-out were reported in case of early recirculation.
 
+% Valentinuzzi:1975tr, Discrete deconvolution
+A popular matrix-based deconvolution technique was proposed by \citet{Valentinuzzi:1975tr} as a technical note in \citeyear{Valentinuzzi:1975tr}. 
+The method relies on the matrix formulation of the convolution process, however the set of derived linear equations is solved successively, therefore avoiding matrix inversion which is known to be an ill-conditioned problem. 
+Authors acknowledge the sensitivity of the technique to noise, and warn about the impact of imperfect noise filtering on the estimation process. 
+The role of the sampling interval is also discussed, the authors reveal that increasing it can only improve estimation accuracy up to a point, but demonstrated that increasing it too much could actually increase the estimation error.
+
 % Knopp:1976uc, Transcoronary intravascular transport functions obtained via a stable deconvolution technique
-In \citeyear{Knopp:1976uc}, a deconvolution method insensitive to noise, recirculation, and impulse response shape was proposed by \citet{Knopp:1976uc} to assess the impulse response of the coronary bed.
+In \citeyear{Knopp:1976uc}, a deconvolution method said to be insensitive to noise, recirculation, and impulse response shape was proposed by \citet{Knopp:1976uc} to assess the impulse response of the coronary bed.
 The method was tested in a canine study with intra-ventricular injection dye injection, and simultaneous blood sampling at the aortic root and in the coronary sinus.
 The technique first models the impulse response as a weighted sum of delayed spread functions with unit area, which allowed predetermination of the convolved curves and aleviated the signal periodicity condition, and then iteratively minimized the fit error using a gradient descent algorithm.
 Impulse functions were first investigated, however spread functions were chosen to reduce the computational load while making the estimation more robust and ensuring similar quality of fit.
@@ -468,20 +474,33 @@ The authors compared their estimates of mean and standard deviation of transit t
 Despite the reported parametric overlap, authors observed a rise of the relative variation of transit times correlated with the complexity of the vascular structures, which they justified by reminding that different pathways have different mean transit times and flows.
 
 % Gamel:1973, Pitfalls in digital computation of the impulse response of vascular beds from indicator-dilution curves
-
+%%% TO DO
 
 \subsection{Nuclear medicine}
+% Flemming:1974, A technique for the deconvolution of the renogram
+%%% TO FIND, AND TO DO
+
 % Kenny:1975gl, Deconvolution analysis of the scintillation camera renogram.
-Following the development of \citet{Short:1973ip} in the field of renography based on gamma-camera acquisitions, \citet{Kenny:1975gl} proposed a deconvolution technique in an attempt to make the estimation of the kidney function independent on the spread of the bolus when it enters the kidney, and assessed it in a clinical study.
+Following the development of renography based on gamma-camera acquisitions by \citet{Short:1973ip}, \citet{Kenny:1975gl} proposed a deconvolution technique, based on the Laplace transform, in an attempt to make the estimation of the kidney function independent on the spread of the bolus when it enters the kidney, and assessed it in a clinical study.
 The approach accounts for both the establishment of an equilibrium of the tracer in the extravascular space, spread of the bolus during its passage through the kidney, and the removal of the tracer from blood by the kidney assuming bi-exponential clearance in the cardiac measurements.
+The impulse response of the kidney vascular network was estimated from the Laplace-derived formula established in the paper, involving the renal time-activity curve, its derivative, its integral and various constants to be estimated.
 Because scintigraphy is a projection imaging technique, the background activity was subtracted using the regions between the two kidneys to obtain the activity as specific to the kidney as possible.
 This was encouraged by the similarity of the activity curves in this region with those of the nephrectomy sites observed in fifteen kidney-ablated subjects.
 Authors were able to distinguish healthy kidneys from those affected by various diseases, indeed all affected kidneys exhibited longer minimum, mean, and maximum transit times, and a wider transit time distribution.
 Additionally, they were able to distinguish between the various studied diseases using the same criteria.
 % Appledorn:1977hl, Deconvolution analysis of the scintillation camera renogram. (response)
 \citet{Appledorn:1977hl} responded to the publication and expressed his disagreement regarding the formulation of the clearance function, arguing that the input to the renal system depends on the negative time derivative of the cardiac curve.
-He explained his reasoning mathematically, assuming a two-compartment model previously presented in the litterature~\cite{DeGrazia:1974uo}, and proposed a correction for the renal input function.
+He explained his reasoning mathematically, assuming a two-compartment model previously presented in the litterature~\cite{DeGrazia:1974uo}, and proposed a correction for the renal input function. 
 
+% Diffey:1976tk, The 99mTc-DTPA dynamic renal scan with deconvolution analysis.
+\citet{Diffey:1976tk} proposed the use of the matrix-based deconvolution method, first generically introduced by \citet{Valentinuzzi:1975tr}, to quantify the impulse responses of the renal parenchyma and renal pelvis to a bolus injection of $^{99m}$Tc-DTPA. 
+% Diffey:1976bf, Data-bounding technique in discrete deconvolution
+They used the iterative data-bounding technique prior to deconvolution for noise removal, the technique is detailed in~\cite{Diffey:1976bf}.
+Non-renal activity is assumed qualitatively similar to arterial activity, thus the correction is simply applied by setting the first term of the impulse response equal to the second one.
+The impulse response of the renal parenchyma was obtained by deconvoluting the parenchymal curve by the arterial curve.
+The impulse reponse of the renal pelvis was obtained by deconvoluting the pelvic curve by the parenchymal curve.
+Accounting for the regional variations of tracer retention enabled the authors to differentiate between patients with and without pelvic obstruction, and proved to be an efficient tool to assess the renal function.
+Authors regret that the spatial resolution of the gamma-camera did not enable to distinguish between cortical and medularry structures.
 
 % Alderson:1979ts, Deconvolution analysis in radionucleide quantitation of left-to-right cardiac shunts
 In \citeyear{Alderson:1979ts}, a Fourier-based deconvolution technique was proposed by \citet{Alderson:1979ts} to quantify left-to-right cardiac shunts from time-activity curves from scintigraphy following bolus injection of $[^{99m}$Tc]pertechnetate in a canine study. 

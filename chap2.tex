@@ -487,6 +487,10 @@ The impact of the data starting point was investigated, especially in the output
 The authors report poor impulse response estimation in case of noisy time-varying data, despite the accuracy of the reconvolved curves.
 Then the impact of the numerical approximation which is a consequence discretization process was investigated, while trapezoidal integration exhibited lower error than rectangular integration, both methods proved extremely sensitive to noise. 
 
+% Lassen:1984kp, Cerebral transit of an intravascular tracer may allow measurement of regional blood volume but not regional blood flow.
+Additionally, in \citeyear{Lassen:1984kp} \citet{Lassen:1984kp} warned about the inability to estimate the blood flow unless the shape of the impulse response is accurately known prior to deconvolution.
+He said this was necessary in order to accurately determin the height of the initial bolus.
+And while this is not the object of his letter, he also warned about the lack of direct relations between blood flow and the various semi-quantitative parameters proposed in the litterature.
 
 \subsection{Nuclear medicine}
 % Kenny:1975gl, Deconvolution analysis of the scintillation camera renogram.
@@ -554,8 +558,8 @@ When repeated studies were performed, i.e.~in five of the six cats included in t
 % Wintermark:2001bm, Simultaneous measurement of regional cerebral blood flow by perfusion CT and stable xenon CT: a validation study. 
 \citet{Wintermark:2001bm} compared the results of two deconvolution methods to quantify perfusion computed-tomography exams, using stable xenon computed-tomography as a reference.
 The first deconvolution is performed using a commercial software, known as \emph{CT~Perfusion} (GE Medical Systems).
-The software is basically an improvement of the method proposed by \citet{Cenic:1999un}, allowing processing of pixel-by-pixel parametric maps in less than five minutes with improved stability, by means of singular value decomposition, which makes it usable in clinical routine.
-In this technique, noise filtering is enforce by thresholding of the singular values.
+The software basically uses an improvement of the method proposed by \citet{Cenic:1999un}, allowing processing of pixel-by-pixel parametric maps with improved stability, by means of a singular value decomposition enforcing noise filtering by thresholding of the singular values. 
+Additionally, the computation time is considerably reduced using this method, which makes it usable in clinical routine.
 The second method uses a least squares minimization technique with improved stability, taking advantage of prior rank determination through QR decomposition with pivoting, i.e.~decomposition of the matrix of shifted observations as the product of an orthogonal matrix, an upper triangular matrix, and a permutation matrix~\cite{Golub:100136}.
 The authors report a good agreement between the reference method and both the commercial package and the presented method estimates of cerebral blood flow compared to the reference method ($R^2 = 0.79$ and $0.67$ respectively), as well as between the two investigated deconvolution methods ($R^2 = 0.72$).
 However, the methods were shown to differ in terms of spatial filtering of the parametric maps, as well as in the detection thresholds of vessels.
@@ -570,13 +574,6 @@ The larger anterior artery was used as an arterial input function, and the super
 The authors report significant differences between the healthy and affected hemispheres in either of the three parameters derived from the deconvolution of signals, i.e.~cerebral blood flow, cerebral blood volume, and mean transit time.
 They also observed significant differences between low-enhancement and normal-enhancement regions for cerebral blood flow and cerebral blood volume.
 Additionally, inter and intra observer variation were investigated and showed good agreement between and within observers.
-
-
-% Wintermark:2005ua, Accuracy of dynamic perfusion CT with deconvolution in detecting acute hemispheric stroke.
-
-% Lassen:1984kp, Cerebral transit of an intravascular tracer may allow measurement of regional blood volume but not regional blood flow.
-% Impossible to perform deconvolution without assuming a known shape for the impulse response.
-
 
 \subsection{Magnetic resonance}
 

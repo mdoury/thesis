@@ -526,15 +526,41 @@ Because the only considered parameter under investigation is the mean transit ti
 Authors demonstrates this by estimating the impulse response as an exponential function, a Fermi function and a step function. 
 The Fermi and the step functions yielded similar estimations of the mean transit time, however the exponential function yielded lower values of the parameter.
 Additionally, the Fermi and step function achieved slightly better fits than the exponential function, but the difference was not found significant.
-The method, previously in presented in~\cite{Axel:1980jg}, was used as a reference. 
+The method previously in presented in~\cite{Axel:1980jg}, was used as a reference. 
+% Axel:1980jg, Cerebral blood flow determination by rapid-sequence computed tomography: theoretical analysis.
 The mean transit time was defined as the difference of the first moments of the tissular and vasclar curves following gamma-variate fitting.
 The mean transit time estimated using this method seem to best agree with the mean transit time values obtained using the exponential impulse response.
-% Axel:1980jg, Cerebral blood flow determination by rapid-sequence computed tomography: theoretical analysis.
 The author assumes that the impulse response function in most tissues are likely to have a squared shape with rounded corner, which the Fermi function can easily approximate.
 They comment on the insensitivity of the method to noise compared to transform-based methods, as well as recirculation without needing curve fitting and extrapolation.
 
+% Yeung:1992df, An absorptiometry method for the determination of arterial blood concentration of injected iodinated contrast agent.
+In \citeyear{Yeung:1992df}, \citet{Yeung:1992df} presented a single photon absorptiometry method to quantify arterial concentration of iodinated contrast agents using blood sampling, and investigated it through both preclinical and clinical experiments.
+A deconvolution method was used for the quantification, it was proposed by the research group the same year, however while the paper was submitted it seems it has never been published.
+The only given details are that it uses a non-negative least square algorithm~\cite{Lawson:1995wg} to ensure that only physiologically relevant positive values can occur in the impulse response function, and that estimated function must be smooth.
+% Cenic:1999un, Dynamic CT measurement of cerebral blood flow: a validation study.
+In \citeyear{Cenic:1999un}, \citet{Cenic:1999un} reused the deconvolution method to quantify dynamic perfusion computed-tomography following bolus injection of iopamidol in white rabbits.
+Three regions of interest were defined in the brain, i.e.~two in the parietal regions, and one in the basal ganglia.
+Multiple arteries were present in the image, i.e.~ear arteries, postcommunicating arteries, and internal carotid arteries.
+In order to limit the impact of partial volume effects, the chosen artery was the one with the largest cross section seen in the image which resulted in the highest peak average intensity, typically an ear artery.
+Additionally, partial volume effects were corrected by first fitting a gaussian curve to the non-contrast profile of the artery to obtain its standard deviation.
+This parameter was used to estimate a partial volume scaling factor, using a formula resulting from phantom experiments of tubes with known inner diameters and tracer concentrations.
+Finally the arterial intensities were divided by this factor to correct for partial volume effect.
+Non-contrast scan intensities were subtracted from the average curves in the three regions of interest, as well as from the average arterial curve. 
+Deconvolution allowed the estimation of regional cerebral blood flow, cerebral blood volume, and mean transit time.
+For comparison purposes, the regional cerebral blood flow was also estimated using microspheres measurements, which was considered the ground truth.
+The authors report good agreement of the measured regional cerebral blood flow as they obtained a slope close to unity in a linear regression analysis, and correlation between measurements was good but far from perfect ($r = 0.837$).
+When repeated studies were performed, i.e.~in five of the six cats included in the study due to sudden death of the sixth rabbit, no significant differences were found between the parameters from the various acquisitions, however the computed-tomography estimates of regional blood flow were ten percent more variable than with the microspheres.
+
+% Eastwood:2002hx, CT perfusion scanning with deconvolution analysis: pilot study in patients with acute middle cerebral artery stroke.
+
+
+% Wintermark:2001bm, Simultaneous measurement of regional cerebral blood flow by perfusion CT and stable xenon CT: a validation study. 
+
+% Wintermark:2005ua, Accuracy of dynamic perfusion CT with deconvolution in detecting acute hemispheric stroke.
+
 % Lassen:1984kp, Cerebral transit of an intravascular tracer may allow measurement of regional blood volume but not regional blood flow.
 % Impossible to perform deconvolution without assuming a known shape for the impulse response.
+
 
 \subsection{Magnetic resonance}
 

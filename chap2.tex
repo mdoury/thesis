@@ -599,14 +599,21 @@ This is particulary important in the liver, for arterial and portal components p
 
 \subsection{Magnetic resonance}
 % Rosen:1990hz, Perfusion imaging with NMR contrast agents
-\citet{Rosen:1990hz} proposed a review of the contrast agents usable for perfusion imaging using magnetic resonnance, depending on the property involved, i.e.~relaxivity or susceptibility. 
+\citet{Rosen:1990hz} proposed a review of the contrast agents usable for perfusion imaging using magnetic resonance, depending on the property involved, i.e.~relaxivity or susceptibility. 
 He also adressed the perfusion quantification techniques for contrast-enhanced magnetic resonance data, often inspired by the advances in the other perfusion imaging modalities.
 The main goal the authors want to reach is the estimation of tissue blood flow, and they rely on the central blood volume principle established by \citet{Stewart:1897dz}, which defines tissue blood flow as the ratio of the tissue blood volume to the mean transit time.
-They recommended estimating the mean transit time through deconvolution, suggesting the use of Fourier-based methods, and proposed the tissue blood volume as the ratio of the areas under the tissular and arterial curves, as proposed by \citet{Lassen:1979vj} for indicator-dilution theory, of \citet{Axel:1980jg} for perfusion computed-tomography imaging.
+They recommended estimating the mean transit time through deconvolution, suggesting the use of Fourier-based methods, and proposed the tissue blood volume as the ratio of the areas under the tissular and arterial curves, as proposed by \citet{Lassen:1979vj} for indicator-dilution theory, and \citet{Axel:1980jg} for perfusion computed-tomography imaging.
 
-
-
-
+% Rempp:1994kk, Quantification of regional cerebral blood flow and volume with dynamic susceptibility contrast-enhanced MR imaging.
+\citet{Rempp:1994kk} investigated susceptibility contrast-enhanced magnetic resonance imaging to quantify cerebral perfusion in a clinical study with twelve healthy patients with intact blood-brain barrier.
+A dual FLASH sequence was used, allowing interleaved acquisition in two parallel sections, one being the section of interest, the other one containing the feeding arteries.
+The arterial input function was estimated directly in the imaging plane, either in the carotid or in the vertebral arteries, and the segmentation was performed on pixel-by-pixel maps of semi-quantitative parameters, i.e.~the full width at half maximum, peak intensity, and time to peak intensity.
+More precisely, adaptive thresholding was first performed on the full width at half maximum and peak intensity maps, and only pixels with peak intensities over 75\% of the maximum intensity in the image were retained.
+The authors defined the regional cerebral blood volume as the ratio of the area under the curve in the tissue of interest to the area under the arterial input function, as suggested by indicator-dilution theory, but corrected the estimate for both brain tissue density and hematocrit variations from arteries to smaller blood vessels.
+Fourier deconvolution enforcing noise filtering by means of a Weiner filter was used to estimate the impulse response of the tissue of interest.
+Then the mean transit time was estimated as the ratio of the area under the impulse response to its height.
+Regional cerebral blood volume and blood flow were estimated in both gray and white matter for every patient.
+The authors report an overall decrease of both perfusion parameters with age, and suggest this explains the large standard deviations of their estimates.
 
 
 \subsection{Ultrasound}

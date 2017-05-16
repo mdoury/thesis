@@ -632,14 +632,31 @@ The models are divided between model-based and model-free approaches, the former
 The weight of the regularization term in the algebraic method, as well as the thresholding value for the SVD approach were determined empirically, and chosen as the values that yielded the most accurate impulse responses and cerebral blood flow estimates on twelve representative simulated cases.
 Multiple factors and their impact on the regional cerebral blood flow estimates were investigated in this simulation study, i.e.~noise, vascular structure, cerebral blood flow, cerebral blood volume, and time-delay.
 Expectedly, the model-based approach was not able to correctly estimate cerebral blood flow when the vascular structure used for simulation did not match the one-compartment model assumption.
-The Fourier method proved sensitive to the cerebral blood flow, indeed the estimation error was negatively correlated with the simulated value.
+The Fourier method proved sensitive to the cerebral blood flow, indeed the estimation error was negatively correlated with the simulated value, but also to the simulated vascular structure.
 The regularized algebraic approach proved to overestimate blood flow for a low cerebral blood volume (3\%), and to yield more accurate estimates for higher cerebral blood volume (4.5\%), the authors therefore concluded on the sensitivity of the method to cerebral blood volume.
 However the authors discuss the possible role of the regularization weight in these variations, as modifying the cerebral blood volume effectively modifies the signal to noise ratio, which does could then differ from the conditions for which the weight was optimized.
 While the opposite behaviour seems to be observable in the SVD estimates, the authors considered that the bias in the estimation of cerebral blood flow was insensitive to cerebral blood volume. 
 Additionally, when a time delay was added to the simulated curve, the SVD greatly underestimated cerebral blood flow, in particular for large simulated flow values, emphasizing the need for delay correction prior to the estimation process.
+Model-free approaches were able to estimate cerebral blood flow accurately, however they generally failed to accuratly match the shape of the impulse response function.
+Globally, all approaches were less precise in case of shorter mean transit time values, which the authors justified as a consequence of the arterial input function varying slowly compared to the mean transit time, which determines the time-scale of the impulse response to be estimated.
 
-
-
+% ostergaard:1996hh, High resolution measurement of cerebral blood flow using intravascular tracer bolus passages. Part II: Experimental comparison and preliminary results
+The second part of the study~\cite{ostergaard:1996hh} confronts the models assessed through simulations to experimental contrast-enhanced magnetic resonance data acquired in six healthy subjects, as well as in four clinically relevant cases, following automatic bolus injection of paramagnetic contrast-agents, i.e.~Dy-DTPA-BMA, and Gd-DTPA respectively.
+An additional model-based approach was introduced in the experimental part of the study, i.e.~the decreasing part of a Gaussian was proposed as an ad-hoc intermediate between the exponential (one-compartment model) and the square (plug-flow model) impulse responses. 
+All image sequences were filtered using a $3 \times 3$ averaging kernel prior to deconvolution.
+The arterial input function was estimated in pixels located around the middle cerebral artery.
+The time-concentrations curves used for quantification were not converted in actual units, instead a constant hematocrit throughout the brain was assumed, and white matter was used as a reference.
+Additionally, because time-delays tended bias the estimation of blood flow in the simulation study discussed above, the influence of this parameter was investigated in multiple slices by comparing the estimation of the arterial input function along the middle central artery.
+This study revealed very little dispersion and delay along major arteries, and the authors mainly attribute this delay to the delay between the acquisition of the different slices.
+They however suggested that appropriate time correction should be applied when quantifying multiple slices using a common arterial input function estimated in a single slice.
+However, some cases exhibited time-delays in regions supplied by other arteries, in particular the cerebellum, and in the occipital region which are mainly supplied by the posterior cerebral artery.
+For all approaches the cerebral blood flow was defined as the maximum of the impulse resonse curve, and the cerebral blood volume as its area under the curve.
+In healthy patients, the exponential and SVD approaches yielded very similar parametric maps.
+The regularized algebraic approach yielded very high flow in the grey matter which can be explained by the high cerebral blood volume in this tissue.
+The Fourier approach yielded poor contrast between the grey and white matters, confirming the sensitivity of the method to the cerebral blood volume and vascular structure.
+Strong differences, i.e.~almost 2-fold, were observed between the cerebral blood flows estimated using the exponential and Gaussian models, indeed a better agreement was found between the SVD and exponential approaches.
+Moreover, the fit quality was considerably lower using the Gaussian model, suggesting that the exponential model is a better approximation to model cerebral impulse response.
+%%%%%% TO FINISH %%%%%%
 
 \subsection{Ultrasound}
 

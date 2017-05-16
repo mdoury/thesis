@@ -605,7 +605,7 @@ The main goal the authors want to reach is the estimation of tissue blood flow, 
 They recommended estimating the mean transit time through deconvolution, suggesting the use of Fourier-based methods, and proposed the tissue blood volume as the ratio of the areas under the tissular and arterial curves, as proposed by \citet{Lassen:1979vj} for indicator-dilution theory, and \citet{Axel:1980jg} for perfusion computed-tomography imaging.
 
 % Rempp:1994kk, Quantification of regional cerebral blood flow and volume with dynamic susceptibility contrast-enhanced MR imaging.
-\citet{Rempp:1994kk} investigated susceptibility contrast-enhanced magnetic resonance imaging to quantify cerebral perfusion in a clinical study with twelve healthy patients with intact blood-brain barrier.
+\citet{Rempp:1994kk} investigated susceptibility Gd-DTPA2-enhanced magnetic resonance imaging to quantify cerebral perfusion in a clinical study with twelve healthy patients with intact blood-brain barrier.
 A dual FLASH sequence was used, allowing interleaved acquisition in two parallel sections, one being the section of interest, the other one containing the feeding arteries.
 The arterial input function was estimated directly in the imaging plane, either in the carotid or in the vertebral arteries, and the segmentation was performed on pixel-by-pixel maps of semi-quantitative parameters, i.e.~the full width at half maximum, peak intensity, and time to peak intensity.
 More precisely, adaptive thresholding was first performed on the full width at half maximum and peak intensity maps, and only pixels with peak intensities over 75\% of the maximum intensity in the image were retained.
@@ -614,6 +614,31 @@ Fourier deconvolution enforcing noise filtering by means of a Weiner filter was 
 Then the mean transit time was estimated as the ratio of the area under the impulse response to its height.
 Regional cerebral blood volume and blood flow were estimated in both gray and white matter for every patient.
 The authors report an overall decrease of both perfusion parameters with age, and suggest this explains the large standard deviations of their estimates.
+
+% Wilke:1995dt, Regional myocardial blood volume and flow: First-pass MR imaging with polylysine-Gd-DTPA
+% King:1993uj, A vascular transport operator.
+\citet{Wilke:1995dt} used a low-order vascular transport operator, presented in~\cite{King:1993uj}, to model the vascular impulse response using magnetic resonance imaging with bolus injection of an intravascular contrast agent, i.e.~polylysine-Gd-DTPA. 
+They compared their perfusion estimates in the myocardium of dogs, with and without induced coronary stenosis, to the perfusion parameters obtained using radiolabelled microspheres.
+Contrast signal intensities were normalized according to the pre-contrast values, as well as from the signal intensities observed in an oil phantom placed under the chest of the dogs.
+The vascular transport operator accounts for the pure delay of the contrast agent, but also for the dispersion of the bolus by means of a fourth-order linear differential operator, resulting from the combination of two attenuated second-order operators in series.
+The model is therefore parameterized by two parameters only, i.e.~the mean transit time of the impulse response, and the relative dispersion which is defined as the ratio of the standard deviation of the impulse response to its mean transit time.
+The model is fitted using a fast iterative derivative-free approach presented in~\cite{Chan:1993ve}, which performs non-linear least-squares fitting without making assumptions on the data variance through data weighting.
+Despite imperfect registration between magnetic resonance estimates and tissue analysis for quantification of microspheres, good agreement between the measurements was reported regarding both myocardial blood volume and myocardial blood flow.
+Myocardial segments that were hypoperfused because of coronary stenosis were accurately identified using the proposed method.
+
+% ostergaard:1996gt, High resolution measurement of cerebral blood flow using intravascular tracer bolus passages. Part I: Mathematical approach and statistical analysis
+\citet{ostergaard:1996gt} reviewed the various deconvolution approaches which had already been applied for the quantification of perfusion using contrast-enhanced imaging using simulated magnetic resonance data, especially in the case of cerebral imaging where the tracers remain intravascular thanks to the blood-brain barrier.
+The models are divided between model-based and model-free approaches, the former referring to a one-compartment model with exponential impulse response~\cite{Faddy:1987kl}, the latter referring to either transform approaches through the Fourier method~\cite{Coulam:1966un}, algebraic approaches through a matrix-based method~\cite{Valentinuzzi:1975tr} with an additional regularization term enforcing decreasing impulse response, or SVD approaches through a classical method with filtering of components which singular values are close to zero~\cite{Diffey:1976tk}.
+The weight of the regularization term in the algebraic method, as well as the thresholding value for the SVD approach were determined empirically, and chosen as the values that yielded the most accurate impulse responses and cerebral blood flow estimates on twelve representative simulated cases.
+Multiple factors and their impact on the regional cerebral blood flow estimates were investigated in this simulation study, i.e.~noise, vascular structure, cerebral blood flow, cerebral blood volume, and time-delay.
+Expectedly, the model-based approach was not able to correctly estimate cerebral blood flow when the vascular structure used for simulation did not match the one-compartment model assumption.
+The Fourier method proved sensitive to the cerebral blood flow, indeed the estimation error was negatively correlated with the simulated value.
+The regularized algebraic approach proved to overestimate blood flow for a low cerebral blood volume (3\%), and to yield more accurate estimates for higher cerebral blood volume (4.5\%), the authors therefore concluded on the sensitivity of the method to cerebral blood volume.
+However the authors discuss the possible role of the regularization weight in these variations, as modifying the cerebral blood volume effectively modifies the signal to noise ratio, which does could then differ from the conditions for which the weight was optimized.
+While the opposite behaviour seems to be observable in the SVD estimates, the authors considered that the bias in the estimation of cerebral blood flow was insensitive to cerebral blood volume. 
+Additionally, when a time delay was added to the simulated curve, the SVD greatly underestimated cerebral blood flow, in particular for large simulated flow values, emphasizing the need for delay correction prior to the estimation process.
+
+
 
 
 \subsection{Ultrasound}

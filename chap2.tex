@@ -92,6 +92,13 @@ They observed an increase of the signal intensity ratios and relative enhancemen
 Enhancement slope enabled malignancy prediction with an accuracy of 79.7\% using a cutoff value of 30\%/min.
 They also reported lower peak intensity ratios and wash-in rates in areas with necrosis or peritumoral edema. % Erlemann:1989ib
 
+% Wilke:1993wu, Contrast-enhanced first pass myocardial perfusion imaging: correlation between myocardial blood flow in dogs at rest and during hyperemia.
+\citet{Wilke:1993wu} investigated the use of contrast-enhanced magnetic-resonance imaging for the quantification of myocardial perfusion in a canine study, and compared the estimated parameters to the blood flow obtained using radiolabelled microspheres.
+A bolus of Gd-DTPA was injected during Turbo-FLASH acquisition, and a six circular regions of interest were delineated in the myocardium, as well as one region of interest in each ventricular cavity, yielding a total of nine regional time-intensity curves.
+All the time-intensity curves were fitted with a gamma-variate curve to both correct for recirculation, and limit the impact of extravascular diffusion, using only the samples occuring before the curves decreases to 70\% of its peak value.
+The mean transit time of each curve was calculated numerically, and the correlation of its inverse, of the time of peak intensity, as well as the initial slope (defined as the ratio of the peak intensity to the time of peak intensity) with absolute myocardial blood flow estimates from radiolabelled microspheres were investigated.
+Good correlations with the ground truth ($r \geq 0.89$) were reported for the three semi-quantitative parameters cited above.
+
 \citet{Verstraete:1994iw} also reported on the ability to differentiate benign from malignant musculoskeletal lesions, using imaging and quantification techniques similar to those used by \citet{Erlemann:1989ib}.
 Despite the higher temporal resolution of 2.41 seconds possible in their study, their findings are likewise nuanced because of the overlap of parameters between highly vascularized benign lesions and the malignant ones. % Verstraete:1994iw
 
@@ -591,6 +598,16 @@ The method proved robust to recirculation, which alleviates the necessity for ga
 This is particulary important in the liver, for arterial and portal components partially overlap.
 
 \subsection{Magnetic resonance}
+% Rosen:1990hz, Perfusion imaging with NMR contrast agents
+\citet{Rosen:1990hz} proposed a review of the contrast agents usable for perfusion imaging using magnetic resonnance, depending on the property involved, i.e.~relaxivity or susceptibility. 
+He also adressed the perfusion quantification techniques for contrast-enhanced magnetic resonance data, often inspired by the advances in the other perfusion imaging modalities.
+The main goal the authors want to reach is the estimation of tissue blood flow, and they rely on the central blood volume principle established by \citet{Stewart:1897dz}, which defines tissue blood flow as the ratio of the tissue blood volume to the mean transit time.
+They recommended estimating the mean transit time through deconvolution, suggesting the use of Fourier-based methods, and proposed the tissue blood volume as the ratio of the areas under the tissular and arterial curves, as proposed by \citet{Lassen:1979vj} for indicator-dilution theory, of \citet{Axel:1980jg} for perfusion computed-tomography imaging.
+
+
+
+
+
 
 \subsection{Ultrasound}
 

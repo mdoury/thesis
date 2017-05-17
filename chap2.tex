@@ -692,6 +692,15 @@ The forward ejection fraction was estimated with and without deconvolution of th
 The results without deconvolution clearly underestimated the ejection fraction as measure by the reference method, despite a seamingly good correlation of the two measurements.
 However, using the deconvolution-based method an excellent agreement of the estimates is reported, indeed the correlation is high ($R^2 = 0.93$) with a mean bias of 1.6\%, and a standard deviation of 8\%, demonstrating the feasibility of the method.
 
+% Gauthier:2012vc, Assessment of quantitative perfusion parameters by dynamic contrast-enhanced sonography using a deconvolution method: an in vitro and in vivo study.
+\citet{Gauthier:2012vc} used a deconvolution method based on singular value decomposition, but enforcing Tikhonov regularization to reduce the rapid oscillations in the impulse response function, and finally the impulse response is fitted by the explicit model by~\citet{Elie2014} presented in Section~\ref{SQ:US:Bolus}.
+The blood flow and the blood volume were then derived from the model fitted to the estimated impulse response, and were respectively defined as the peak value, and the area under the curve.
+The additional regularization term was weighted, and the determination of this weighting parameter was determined using the L-curve method described in~\cite{Hansen:1992jx}.
+The reproducibility of the method was assessed through both in vitro and in vivo experiments, and was compared to the semi-quantitative parameters extracted from the time-intensity curve fitted with the same explicit model, without deconvolution.
+The in vitro experiments consisted in five acquisition following bolus injection of microbubbles in phantom composed of a feeding pipe and three interwined pipes, injecting two different volumes of contrast agent.
+The absolute parameters tend to be slightly less variable than the semi-quantitative parameters of the other method, however no statistical tests were reported, and neither were the estimated parameter values, forbiding the validation of this quantification method by comparison to the in vitro experimental parameters.
+In vivo, three consecutive acquisitions were performed in five tumor-bearing mice, using an arterial input function estimated directly from the imaging plane in a feeding vessel that was previously detected using Power Doppler imaging.
+Once again, only the variability of the parameters was reported, the estimated values were not reported, and no statistical analysis was performed.
 
 
 

@@ -125,6 +125,7 @@ The mass conservation condition is therefore usually not respected in contrast-e
 Semi-quantitative methods based on indicator dilution theory were nonetheless extensively used to quantify perfusion in contrast-enhanced ultrasound exams.
 
 \subsubsection{Bolus injection}
+\label{SQ:US:Bolus}
 
 \paragraph{\em{Model-free quantification methods}\\}
 
@@ -136,8 +137,8 @@ The latter was found correlated to the cardiac-output, and enabled the differenc
 In the same issue of The American Journal of Cardiology, the same group applied the same technique to produce indicator-dilution curves in another cardiac study~\cite{DeMaria:1978il}. % DeMaria:1978il, Combined peripheral venous injection and cross-sectional echocardiography in the evaluation of cardiac disease
 They used the ultrasound images themselves to identify patients with intracardiac shunts, but also the mean clearance time of the indicator-dilution curves to identify patients with tricuspid regurgitation, and severe congestive failure.
 
-At the same period, \citet{Hagler:1982hs} presented early data of videodensitometry data for the quantification of left-to-right shunts using echographic acquisitions with direct injection of a bolus of ultrasound contrast-agent (i.e.~indocyanine green dye) in the left ventricule. % Hagler:1982hs, Videodensitometric Quantitation of Left-to-Right Shunts with Contrast Echocardiography
-They estimated the ratio of left-to-right shunt, which they defined as the ratio of the area under the curve in the right ventricule to the area under the curve in the left ventricule, and showed an strong correlation of echographic measurements with both indicator-dilution and dye measurements.
+At the same period, \citet{Hagler:1982hs} presented early data of videodensitometry data for the quantification of left-to-right shunts using echographic acquisitions with direct injection of a bolus of ultrasound contrast-agent (i.e.~indocyanine green dye) in the left ventricle. % Hagler:1982hs, Videodensitometric Quantitation of Left-to-Right Shunts with Contrast Echocardiography
+They estimated the ratio of left-to-right shunt, which they defined as the ratio of the area under the curve in the right ventricle to the area under the curve in the left ventricle, and showed an strong correlation of echographic measurements with both indicator-dilution and dye measurements.
 \citet{Meltzer:1982vt} extended this work and investigated the relevance of a mono-exponential model to fit the wash-out curve, as suggested by indicator-dilution theory. % Meltzer:1982vt, Videodensitometric processing of contrast two-dimensional echocardiographic data.
 This was assessed by fitting a linear model to the log-transformed time-density wash-out curve, exhibiting excellent correlation with experimental data. 
 They therefore concluded on the relevance of the log wash-out slope, and established its relation to the contrast agent disapearance rate. 
@@ -656,9 +657,42 @@ The regularized algebraic approach yielded very high flow in the grey matter whi
 The Fourier approach yielded poor contrast between the grey and white matters, confirming the sensitivity of the method to the cerebral blood volume and vascular structure.
 Strong differences, i.e.~almost 2-fold, were observed between the cerebral blood flows estimated using the exponential and Gaussian models, indeed a better agreement was found between the SVD and exponential approaches.
 Moreover, the fit quality was considerably lower using the Gaussian model, suggesting that the exponential model is a better approximation to model cerebral impulse response.
-%%%%%% TO FINISH %%%%%%
+
+% JeroschHerold:1998gg, Magnetic resonance quantification of the myocardial perfusion reserve with a Fermi function model for constrained deconvolution
+Inspired by the work of \citet{Axel:1982wu} for quantification of perfusion computed-tomography, \citet{JeroschHerold:1998gg} proposed a Fermi function to model the myocardial impulse response in an attempt to quantify the myocardial perfusion reserve from the first pass of a bolus of Gd-DTPA imaged using a multislice magnetic resonance imaging technique.
+Interestingly, the convolution operation was performed as a product in the frequency domain, following Fourier transform, but the non-linear least-square fitting was performed in the time-domain, following inverse Fourier transform of the convolved functions.
+Since two measurements are necessary to estimate myocardial perfusion reserve, two magnetic resonance sequences were acquired to assess this parameter in nine patients with suspected microvascular desease.
+The first acquisition was performed at rest, and the second was performed during adenosine-induced maximum hyperemia.
+Fermi-based deconvolution was then performed for both exams, using the left ventricle blood pool as an input function.
+The myocardial blood flow was defined as the maximum value of the Fermi function, i.e.~initial value, and the myocardial blood reserve was obtained as the ratio of the hyperemic blood flow to the basal blood flow.
+The coronary flow reserve estimated in the left anterior coronary artery using intracoronary Doppler ultrasound was used as a gold standard. 
+Good agreement was found between the reference measurement and the perfusion reserve estimated in the left anterior coronary artery region ($r = 0.84$) with a regression slope close to the unit but with high uncertainty ($0.98 \pm 0.24$).
+Moreover, even if the data is not presented, agreement between the perfusion in the left anterior coronary artery region and the perfusion reserve averaged over the entire myocardium is reported.
+They also assessed the ability of the method to estimate blood flow reserve from synthetic data, resulting from random solutions of the multiple-pathway perfusion model described in~\cite{Kroll:1996vz} with simulated uniform random noise. 
+The authors report excellent correlation between the simulated and estimated values ($r = 0.98$) with a regression slope close to the unit ($1.04 \pm 0.029$).
+However, accounting for capillary permeability responsible for the leakage of contrast agent in the interstitial space in the simulation process, i.e.~varying the permeability surface area product, had a direct impact on the simulated curves, but induced a variation of less than ten percent in the estimates of the myocardial perfusion reserve.
+The impact of varying upstream bolus dispersion, capillary permeability, blood volume, blood flow, sampling frequency, and injection speed on the estimated parameters was also investigated.
 
 \subsection{Ultrasound}
+% Mischi:2004cn, Contrast echocardiography for pulmonary blood volume quantification
+In \citeyear{Mischi:2004cn}, \citet{Mischi:2004cn} proposed a semi-quantitative method to assess pulmonary blood volume in cardiac contrast-enhanced exams.
+The semi quantitative aspects of the methods are discussed in details in Section~\ref{SQ:US:Bolus}.
+However, prior to being fitted by either the local density random walk or first passage time models, the time-intensity curves were deconvolved using a Wiener filter to correct for the non-instantaneous bolus injection.
+Because the bolus was injected using an automatic system, the arterial input function was not estimated from image measurements in this study, instead it was modeled as a 0.8 second rectangle function corresponding to the settings of the electronic injector.
+The ability of the Wiener filter to accurately recover the original simulated time-intensity curve from noise-corrupted convolved curves was assessed.
+
+% Mischi:2005df, Identification of ultrasound contrast agent dilution systems for ejection fraction measurements
+In \citeyear{Mischi:2005df}, \citet{Mischi:2005df} used the same deconvolution method, but this time applied it to the estimation the impulse response of a vascular system located between two measurement sites.
+In particular, the goal of the study was to propose an accurate measurement of the forward ejection fraction, even in case of leakage through the mitral valve, hence the use of a contrast-enhanced imaging modality, but avoiding the invasive intra-ventricular injection and replacing it by intravenous injection.
+To meet this goal, the authors propose estimating the impulse response from the attenuation-corrected time-intensity curve measured in the left ventricle, assuming a one-compartment model, and using the signal measured in the left atrium as an input function.
+After estimation of the noisy left-ventricular impulse response by the Wiener filter deconvolution, an exponential curve resulting from the one-compartment model assumption was fitted to its downslope, from which the forward ejection fraction can be derived.
+The accuracy and precision of the deconvolution method was assessed through simulations with varying signal to noise ratio and forward ejection fraction, and good agreement between the simulated and estimated values of both blood volume ($R^2 = 0.99$) obtained using the methodology previously described in~\cite{Mischi:2004cn} (see Section~\ref{SQ:US:Bolus}).
+Contrast-enhanced ultrasound data were acquired in twenty patients following the injection of a small quantity of microbubbles, therefore limiting commonly observed saturation artifacts.
+The forward ejection fraction was estimated with and without deconvolution of the left-ventricular time-intensity curves, and the results were compared to the ejection fraction estimated using an established bi-plane echocardiographic method~\cite{BroganIII:1992dt}.
+The results without deconvolution clearly underestimated the ejection fraction as measure by the reference method, despite a seamingly good correlation of the two measurements.
+However, using the deconvolution-based method an excellent agreement of the estimates is reported, indeed the correlation is high ($R^2 = 0.93$) with a mean bias of 1.6\%, and a standard deviation of 8\%, demonstrating the feasibility of the method.
+
+
 
 
 \section{Compartmental models}

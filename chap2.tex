@@ -702,6 +702,19 @@ The absolute parameters tend to be slightly less variable than the semi-quantita
 In vivo, three consecutive acquisitions were performed in five tumor-bearing mice, using an arterial input function estimated directly from the imaging plane in a feeding vessel that was previously detected using Power Doppler imaging.
 Once again, only the variability of the parameters was reported, the estimated values were not reported, and no statistical analysis was performed.
 
+% Jirik:2013cla, Ultrasound perfusion analysis combining bolus-tracking and burst-replenishment.
+\citet{Jirik:2013cla} proposed a contrast-enhanced ultrasound acquisition scheme referred to as bolus-and-burst for it combines bolus injection and destruction-replenishment, as well as a blind deconvolution method, specific to their custom acquisition scheme, for simultaneous estimation of the arterial input function and the tissue impulse response.
+As the name suggests, the acquisition is divided in two main parts.
+The first part consists of a classical low mechanical index image acquisiton to image the passage of a bolus of microbubbles injected intravenously.
+Then, at the end of the bolus-phase, when the concentration of contrast agent in the tissue decays rather slowly, a sequence of high mechanical index pulses are sent to disrupt the circulating microbubbles.
+The second part is another classical low mechanical index acquisiton to image the replenishment of contrast agent in the tissue.
+A blind deconvolution algorithm is then applied to the average time-intensity curve in the tissue of interest.
+The quantification is divided in two parts as well. 
+First a rough estimation of the tissue impulse response is performed from the destruction-replenishment curve using~\cite{Vogel:2005ks}, i.e.~a quantitative formulation of the monoexponential model proposed by \citet{Wei:1998jd}.
+This initial impulse response estimate is then used to roughly estimate the arterial input function by deconvolution of the bolus-phase.
+In the second part, the arterial input function and the tissue impulse response are refined by multichannel deconvolution, considering the two parts of the acquisition are independent measurement with a common impulse response.
+To ensure physiologically relevant and smooth estimation of the arterial input function, a positivity constraint as well as a Tikhonov regularization are enforced.
+The authors investigated several techniques to address the problem of absolute quantification, and retained the use of a population-based scaling constant resulting from previous acquisitions in feeding arteries with lower contrast agent doses, as proposed by \citet{Taxt:2012km} for magnetic resonance imaging.
 
 
 \section{Compartmental models}

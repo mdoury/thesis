@@ -365,7 +365,8 @@ and compared the estimated parameters according to the acquisition sequence, i.e
 The authors disclosed highly different perfusion parameter values according to the acquisition scheme, which yielded significantly different values of both parameters.
 However, they were able to distinguish large arteries in the renal hilum from smaller arteries in the renal cortex, using either of the schemes, and either of the parameters.
 
-In \citeyear{Krix:2003tq}, ~\citet{Krix:2003tq} presented a hyperbolic model to quantify perfusion using either intermittent or real-time imaging, relying on physiological considerations, and accounting for the distribution of blood velocities in the tissue. % Krik2003b, A multivessel model describing replenishment kinetics of ultrasound contrast agent for quantification of tissue perfusion 
+% Krix2003tq, A multivessel model describing replenishment kinetics of ultrasound contrast agent for quantification of tissue perfusion
+In \citeyear{Krix:2003tq}, ~\citet{Krix:2003tq} presented a hyperbolic model to quantify perfusion using either intermittent or real-time imaging, relying on physiological considerations, and accounting for the distribution of blood velocities in the tissue.  
 The model assumes a spherical distribution of blood vessel directions with varying blood velocity.
 This assumption yields an initial linear increase of the concentration until the vessels perpendicular to the imaging plane with the highest velocity are fully refilled. 
 After the initial linear increase in signal intensity, the fully filled vessels do not contribute to signal increase anymore. This yields a non-linear increase until only the vessels with the lowest velocity remain to be fully filled. 
@@ -375,9 +376,10 @@ They state the slope of the replenishment curve observed at these times can be u
 The influence on the width of the blood velocity distribution is visually described.
 The method was evaluated in a murine study with continuous infusion and intermittent imaging, followed by a bolus injection and intermittent imaging as well~\cite{Krix:2003wh}. % Comparison of intermittent-bolus contrast imaging with conventional power Doppler sonography: quantification of tumour perfusion in small animals
 
+% Potdevin:2004eq, Analysis of refill curve shape in ultrasound contrast agent studies
 \citet{Potdevin:2004eq} investigated the misfit of the exponential model to refill curves and proposed the use of the error function instead.
 They introduced a time-delay parameter in their model in order to better reflect experimental data. 
-They also investigated the impact of observing multiple blood velocities in the region of interest, as well as the effect of the point spread function of the imaging system through a simulation study and concluded that replenishment curves contain more information that just mean transit time. % Potdevin:2004eq, Analysis of refill curve shape in ultrasound contrast agent studies
+They also investigated the impact of observing multiple blood velocities in the region of interest, as well as the effect of the point spread function of the imaging system through a simulation study and concluded that replenishment curves contain more information that just mean transit time. 
 For instance they were able to reveal the presence of abnormal vascular structures, such as shunting, i.e.~direct flow from the arterial system to the venous system without passing through the capillary bed.
 In a latter study, they proposed an adaptation of the model to quantify local replenishment curves in tissues with complex vascular structures.
 Replenishment curves are first normalized according to the estimated depth-dependent pixel intensity in a pixel containing only blood.
@@ -564,7 +566,10 @@ Moreover, when comparing hepatic perfusion indices in normal liver tissue with m
 The method proved robust to recirculation, which alleviates the necessity for gamma-variate fitting to get rid of recirculation. 
 This is particulary important in the liver, for arterial and portal components partially overlap.
 
-% Kudo2009 Time delay
+% Kudo:2009hy, Difference in Tracer Delay–induced Effect among Deconvolution Algorithms in CT Perfusion Analysis: Quantitative Evaluation with Digital Phantoms
+\citet{Kudo:2009hy} investigated variants of the singular value decomposition deconvolution method, developped for delay-insensitive deconvolution of magnetic resonance data, and their sensitivity to the tracer time delay. 
+The authors compared regional blood flow, regional blood volume, and mean transit time estimates of the standard singular value decomposition algorithm, to the estimates of a delay-insensitive block-circulant deconvolution method introduced by \citet{Wu:2003du}, as well as a delay-corrected deconvolution method proposed by \citet{Ibaraki:2005fn}.
+The block-circulant approach was the most insensitive to tracer delay while the standard method was the most sensitive, and the delay-corrected method yielded intermediate results.
 
 \subsection{Magnetic resonance}
 % Rosen:1990hz, Perfusion imaging with NMR contrast agents

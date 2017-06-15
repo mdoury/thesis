@@ -1,5 +1,5 @@
 %!TeX root = ../main.tex
-\chapter{Quantification of perfusion exams: A review}\label{chapter:review}
+\chapter{Quantification of perfusion exams: A~review}\label{chapter:review}
 
 Generally speaking, quantification of perfusion consists in deriving parameters from blood flow measurements, regardless of the method used for the measure. 
 This topic has been on the table, and continuously evolving, long before perfusion imaging existed. 
@@ -879,10 +879,19 @@ The authors compared the linear and non-linear estimation methods through simula
 Expectedly, in addition to alleviate the need for initialization values, the linear resolution method proved more accurate, especially for low sampling frequencies and high noise amplitudes.
 
 \subsection{Ultrasound}
-The contrast-enhanced ultrasound was virgin of any compartmental model before. 
+To our knowledge, no proper compartmental approach had been proposed prior to the method proposed in \cite{Doury:2016fi} and in Chapter~\ref{chapter:IUS} of this document.
 
-\section{Limitations}
-From an experimental standpoint, the pioneering studies reviewed in this section suffer from major limitations which can be explained by the simultaneous development of the imaging technology, contrast agent, and quantification approaches.
+Recently, a compartmental model was used to characterize contrast-enhanced ultrasound data by \citet{Rizzo:2016dz}.
+However the method is based on a gamma-variate model of the circulating bubbles with the addition of an irreversible compartment representing a fraction of microbubbles that can get trapped in complex vasculature.
+This compartment is modeled by the addition of the integral of the fitted gamma-variate curve to the model, and the weight of this term must be estimated.
+The model was fitted at the pixel level using a variational Bayes estimator which priors were derived from the non-linear fit of the same model at the regional level.
+The authors reported a better fit in half of the pixel using the model with the irreversible compartment compared to a simple gamma-variate model in a cohort of 99 subjects suffering from arthritis.
+They designed an automatic algorithm to detemine which model should be used according to the data.
+The fraction of trapped microbubbles also improved classification of patients with rheumatoid and non-rheumatoid arthritis.
+
+
+\section{Discussion}
+From an experimental standpoint, the pioneering studies reviewed in this chapter suffer from major limitations which can be explained by the simultaneous development of the imaging technology, contrast agents, and quantification approaches.
 
 Many of these studies used preliminary ultrasound contrast agents, known to be unstable and irregular in size, yielding poor resistance to injection and ultrasound pulses, as well as inconsistencies of the ultrasound signal.
 All these characteristics made the quantification process of early studies extremely difficult.
@@ -903,17 +912,52 @@ Therefore quantifying perfusion using parameters dependant on the peak-intensity
 In pioneering cardiac studies, sampling frequencies were low and did not allow accurate characterization of the high-frequency wash-in resulting from bolus injection, therefore numerous studies focused on contrast-agent wash-out.
 
 Following methodological and computational developements, model-based quantification was proposed to fit time-intensity curves, and allowed the estimation of many semi-quantative parameters. 
-While physical explainations were found some explicit models, most studies merely used the models for noise filtering and time interpolation.
-Indeed, semi-quantitative parameters were estimated from fitted curves, then blood flow and blood volume estimates were derived using indicator dilution theory.
+While physical explainations were found for some explicit models, most studies merely used the models for noise filtering, correction of recirculation and time interpolation.
+Indeed, semi-quantitative parameters were estimated from fitted curves, then blood flow and blood volume estimates were derived from indicator dilution theory.
 
 Whether extracted directly from the time-intensity curve or from the modeled curve, semi-quantitative parameters are inherently sensitive to experimental conditions.
-For instance, on the one hand, area under the curve, peak-intensity or even wash-in and wash-out rates, are directly related to the injected dose, on the other hand time parameters such as the wash-in and wash-out times, the time to peak-intensity or the mean transit time of the contrast agent are influenced by the site, speed and duration of the injection.
+For instance, area under the curve, peak-intensity or even wash-in and wash-out rates, are directly related to the injected dose, moreover time parameters such as the wash-in and wash-out times, the time to peak-intensity or the mean transit time of the contrast agent are influenced by the site, speed and duration of the injection.
 
 In addition, physiological parameters such as heart rate or even blood pressure can affect the kinetic or the ultrasound response of the microbubbles, and therefore affect the time-intensity curves. 
 Because semi-quantitative parameters are directly extracted from the time-intensity curve, they suffer from physiological inter-exam variations too. 
 This is also true for the replenishment of tissues following disruptive pulses in the case of infusion injection.
 
-Because of the sensitivity of the semi-quantitative parameters to both experimental and physiological conditions, and because indicator-dilution theory is hardly applicable to contrast-enhanced ultrasound as discussed above, one should at most consider the derived parameters as relative indicators of perfusion, but certainly not as absolute parameters.
+Because of the sensitivity of the semi-quantitative parameters to both experimental and physiological conditions, and because indicator-dilution theory is hardly applicable to contrast-enhanced ultrasound as discussed above, one should consider the derived parameters as relative indicators of perfusion, but certainly not as absolute parameters.
+
+Deconvolution approaches estimate the response of a tissue to an instantaneous injection of tracer using an arterial input measurement, a tissue measurement, and none or little a priori on the shape of the estimated impulse tissue response.
+Deconvolution methods based on the matrix formulation rely on matrix inversion, which is known to be an ill-conditioned problem.
+Iterative algorithms were proposed to estimate the tissue impulse response without inverting the matrix, however they are extremely sensitive to noise as they are prone to cumulative error.
+Unconstrained or poorly constrained deconvolution can sometimes yield impulse responses with negative values, which is not physiologically possible.
+Constrained and regularized deconvolution were proposed to estimate positive, decreasing and smooth impulse response functions, but still few assumptions are made on the shape of the tissue response.
+
+The shape of the estimated curves can be extremely heterogeneous depending on the estimation method and constrains, and extracting parameters can be difficult. 
+To reduce the sensitivity of the deconvolution to noise and to limit oscillations of the tissue response, noise filtering techniques can be enforced rather simply in Fourier or singular value decomposition or by direct filtering of the time-intensity curve, but even small filtering errors can yield imprecise estimates.
+
+Compartmental modeling roughly consist in a model-based deconvolution with strong a priori on the shape of the tissue impulse response and a reduced number of physiologically relevant parameters. 
+The small number of degrees of freedom restricts the shape of the input function convolved with the tissue impulse respons to a limited set of possible curves, making the estimation process less sensitive to noise.
+Linear formulations of these models can alleviate the need for initialization, but also make the estimation process more robust to noise, yielding stable estimates with fewer or sparser samples as discussed in Chapter~\ref{chapter:Simulations}.
+
+An arterial measurement is required for some semi-quantitative approaches, by almost all deconvolution approaches, and by most compartmental models. 
+Accurate arterial measurement allows the normalization of the tissue measurement and the estimation of perfusion parameters that are independant of the injection.
+
+Arterial measurement can be performed through blood sampling, this technique is especially popular in the fields of nuclear medicine and radiology as continuous radioactivity measurements apparatus have been extensively developped and commercialized.
+Nonetheless, patient needs to be catheterized and this procedure remains invasive. 
+
+Image-based arterial measurements are extremely unreliable regardless of the imaging modality. 
+Indeed the aorta is not always present in the field of view and a large artery feeding the tissue of interest can be hard to identify, especially in two-dimensional data.
+Additionally, partial volume effect, attenuation and saturation artifacts can affect the measured signal intensity.
+Indeed, in most modalities a trade-off must be made between space and time resolution, and the small size of the artery combined to the high speed of a bolus in an artery makes the estimation of the arterial input function extremely difficult.
+In contrast-enhanced ultrasound the noise is multiplicative, which makes the high-intensity arterial measurements highly unreliable.
+
+A healthy reference tissue can be chosen in the image to normalize the perfusion parameters in the tissue interest by their value in the reference region.
+The reference region should be chosen in a large, homogeneous and well perfused tissue to limit partial volume effet and saturation artifacts in addition to reducing the noise in the reference tissue enhancement curve.
+
+Direct estimation of relative perfusion parameters can also be obtained using compartmental modeling, alleviating the need for an arterial measurement.
+The relative perfusion quantification methods were generally formulated with a single enhancement curve to characterize, even though they were often applied later to the region or even pixel level.
+
+Whether fitting an explicit model to a single tissue curve for noise filtering or estimating quantitative parameters using a compartmental model using multiples enhancement curves, one should consider time-delay parameters.
+Indeed, time-delay parameters are often overlooked in the litterature, however they play a crucial role in the estimation of perfusion parameters as fitting a model without a time-delay parameter or prior delay correction can induce a bias in the estimation.
+A few methods were presented as delay-insensitive, some other methods actually include time-delay parameters in their equations, and commercial softwares certainly correct for delay, but to our knowledge no study reported on the absolute or relative values of such parameters, or exploited parametric maps revealing the timeline of the bolus arrival in the studied tissue. 
 
 \bibliographystyle{plainnat}
 \bibliography{Bibliography/chap2}

@@ -1,4 +1,6 @@
 %!TeX root = ../main.tex
+\input{intro_p1}
+
 \chapter{Quantification of perfusion exams: A~review}\label{chapter:review}
 
 Generally speaking, quantification of perfusion consists in deriving parameters from blood flow measurements, regardless of the method used for the measure. 
@@ -776,7 +778,6 @@ The volume of distribution in the liver was fixed during the estimation process 
 The single-input model additionally enforces a fixed ratio of gut tissue to liver tissue volume.
 Poor agreement of the blood flow estimates of the dual-input and single-input models was found with microsphere measurements, however the single-input model performed slighlty better.
 
-
 % Linear formulation of compartmental models
 % Blomqvist:1984jy, On the Construction of Functional Maps in Positron Emission Tomography
 In~\citeyear{Blomqvist:1984jy}, \citet{Blomqvist:1984jy} proposed a linear formulation of a three-compartment model presented by~\citet{Raichle:1975va} obtained by rearranging and integrating twice the second-order differential equations relating the arterial concentration to the tissue concentration.
@@ -847,10 +848,15 @@ The non-linear and linear resolution methods were compared through simulations i
 The linear method was extensively faster, and more accurate in low to moderate noise conditions, and less sensitive to the sampling interval.
 Additionally, the linear resolution method does not require initial values for the parameters, making the estimation method more robust.
 
+% Balvay:2005ca, New criteria for assessing fit quality in dynamic contrast-enhancedT1-weighted MRI for perfusion and permeability imaging
+\citet{Balvay:2005ca} investigated the sensitivity of two compartmental models for quantification of contrast-enhanced magnetic resonance imaging to the duration of the acquisition using a new criteria to assess the quality of fit of the models in a preclinical study in mice with human prostatic tumors implantes subcutaneously.
+A one-compartment model accounting for tissue perfusion only, and a two-compartment model accounting for both perfusion and permeability were fitted non-linearly to the mean enhancement curve in the tumor region using an image-based plasma measurement from the heart left ventricle.
+The one-compartment model was not able to accurately fit the full-length mean enhancement curve in the tumor region and yielded biased tissue blood flow and fractional blood volume, but it was able to accurately fit shorter curves where permeability can be neglected and yielded parameter estimates comparable to those of the two-compartment model for full-length data.
+
 % Kovar:1998bt, A new method for imaging perfusion and contrast extraction fraction: input functions derived from reference tissues.
 In \citeyear{Kovar:1998bt}, \citet{Kovar:1998bt} proposed a compartmental model using the tracer kinetic in a reference tissue, such as a muscle, as well as litterature values of perfusion rate, extraction fraction, and extracellular volume in the chosen reference tissue to estimate the vascular input function.
 They then used the estimated input function to estimate the product of the perfusion rate and the extraction fraction in the tissue of interest.
-The equations of the model are derived from the differential form of the model proposed by \citet{Kety:1951tp}.
+The equations of the model were derived from the differential form of the model proposed by \citet{Kety:1951tp}.
 The method was investigated in a preclinical magnetic resonance study of rats with implanted mammary and prostate tumors to assess the distribution of a diffusible paramagnetic tracer.
 
 % Yankeelov:2005dea, Quantitative pharmacokinetic analysis of DCE-MRI data without an arterial input function: a reference region model.
@@ -959,5 +965,8 @@ Whether fitting an explicit model to a single tissue curve for noise filtering o
 Indeed, time-delay parameters are often overlooked in the litterature, however they play a crucial role in the estimation of perfusion parameters as fitting a model without a time-delay parameter or prior delay correction can induce a bias in the estimation.
 A few methods were presented as delay-insensitive, some other methods actually include time-delay parameters in their equations, and commercial softwares certainly correct for delay, but to our knowledge no study reported on the absolute or relative values of such parameters, or exploited parametric maps revealing the timeline of the bolus arrival in the studied tissue. 
 
+\input{outro_p1}
+
+\newpage
 \bibliographystyle{plainnat}
 \bibliography{Bibliography/chap2}

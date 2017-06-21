@@ -1,0 +1,24 @@
+\chapter*{Afterword}
+The development of quantification methods often came along with the development of the imaging modality itself.
+Semi-quantitative approaches are the most intuitive approaches, they are generally used to characterize perfusion data in the early stage of the imaging technique, they are however subject to inter-exam physiological and experimental changes.
+Then physiological parameters are often derived from semi-quantitative parameters characterizing the tracer kinetic in the tissue of interest and in an artery, they however suffer from the same limitations as semi-quantitative parameters, but are also affected by the difficulty of estimating the arterial curve.
+
+Ultrasound contrast agents are not anymore in their early development stages, on the contrary they reached a point where their behavior is well understood and where they can be used routinely for some clinical applications. 
+While the ultrasound imaging technique is not new at all, it was using analog signal processing for a long period of time.
+It however reached a turning point with the development of numerical ultrasound scanners, exploiting the development of high-end graphical hardware which allows parallel computing to allow complex real-time signal processing.
+This turning point suggest future development of the imaging technique, in particular with the joint development of ultrafast plane wave imaging and three-dimensional ultrasound probes.
+
+Regarding contrast-enhanced ultrasound, which is the core modality addressed in this thesis, semi-quantitative approaches are by far the most commonly used approaches.
+Indeed, many manufacturers of ultrasound scanners and contrast-agent implemented these techniques in commercial softwares, which explains their popularity in clinical appication.
+A few approaches relying on deconvolution were also proposed for characterization of contrast-enhanced ultrasound exams, but compartmental modeling remains extremely rare in the ulrasound litterature.
+This can be explained by the dependance of the majority of these techniques on the ability to perform an accurate arterial measurement. 
+However accurate measurement is not always possible as arterial regions are usually small and exhibit high tracer concentration, making the estimated curve subject to saturation and partial volume effects.
+Finding an artery can be especially tricky in two-dimensional data, and even more limiting when attempting to compare two or more exams.
+Indeed, imaging the exact same plane is extremely difficult even for experienced radiologists, especially in the case of evolving tissues like growing tumors or when monitoring the effect of a treatment.
+The impact of the arterial function on the parameters of a one-compartment model for quantification of contrast-enhanced ultrasound data will be investigated in Chapter~\ref{chapter:PMB}.
+
+When an arterial input function cannot be estimated, or at least not accurately, another tissue present in the image can be used as a reference for comparison purposes.
+Just like the absolute values, the relative or normalized perfusion parameters can be used to perform relative comparison of the tissues observable in a single exam. 
+However, parameter normalization allows comparison of the same tissue observed in different exams, using the reference tissue as a basis for comparison, and assuming the reference tissue did not change between the two exams.
+The reproducibility of relative approaches will be investigated in the following part of the thesis.
+

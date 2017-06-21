@@ -1,0 +1,31 @@
+\chapter*{Foreword}
+In the second part of this thesis, we perform an in-depth investigation of three major perfusion quantification techniques.
+The techniques investigated are a semi-quantitative method using the log-normal distribution, a one-compartment model using an arterial measurement, and a one-compartment model using a reference tissue. 
+The first two methods yield absolute parameters while the third directly yields relative parameters.
+Relative parameters were derived from the absolute parameters using their value inside a reference tissue.
+In an attempt to reveal the spatial functional heterogeneity of tumors while ensuring reasonable signal-to-noise ratio in the time-intensity curves, the models were fitted to regional time-intensity curves resulting from the cutout of the perfused tumor area. 
+
+Our group previously proposed a multiplicative noise model to reflect the characteristics of noise in ultrasound data.
+The multiplicative noise model was not used in this study however, as it was unable to accurately fit the regional data despite using the least-square estimates as initialization values. 
+Instead, we used a non-linear least-square estimation method to fit all models.
+
+The log-normal model is commonly used in the litterature to fit perfusion curves, and in particular contrast-enhanced ultrasound data.
+It is mainly used to filter out the noise of the time-intensity curves, and semi-quantitative parameters are usually derived from the fitted curve, e.g.~the area under the curve, the peak enhancement, or the wash-in rate. 
+Our research group used the log-normal model to fit the global mean time-intensity curve inside the perfused area of tumors.
+The author of this study revealed the poor reproducibility of the global semi-quantitative parameters despite the improvement resulting from the use of an automatic injection setup, which was also used in Chapter~\ref{chapter:PMB}.
+
+Compartmental modeling performs a normalization of the studied time-intensity curve by the input of the system through deconvolution, theoretically making parameters independant on the characteristics of the tracer injection, i.e.~quantity, duration.
+Compartmental approaches were primarily developed for nuclear medicine imaging techniques, they were then extended to other perfusion imaging modalities, in particular to contrast-enhanced magnetic resonance imaging.
+The one-compartment model is the most basic form of compartmental model, and is particularly designed for intravascular tracers like ultrasound contrast agents. 
+However no reference of this model applied to contrast-enhanced ultrasound data was found in the litterature.
+The method allows the estimation of absolute perfusion parameters, i.e.~tissue blood flow, and tissue blood volume.
+However, as discussed in Chapter~\ref{chapter:review}, arterial measurements are subject to artifacts, and are in fact not always possible.
+
+To alleviate the need for arterial measurements, relative methods making use of a reference tissue instead were developed, allowing direct estimation of relative perfusion parameters.
+These relative parameters are closely related to the absolute parameters, except they are normalized according to the reference tissue.
+The tissue interest can be selected in a large and homogeneous region free of large blood vessels, reducing the influence of noise, saturation, and partial volumes.
+
+The reproducibility of the regional parameters estimated using the two absolute methods and the three relative methods was investigated through test-retest experiments in order to limit the inter-exam changes to their minimum.
+Additionally, the impact of accounting for the time taken by the tracer to arrive in the tissue on the reproducibility of the estimated perfusion parameter was studied. 
+The experimental setup and the results are reported in Chapter~\ref{chapter:PMB} which is the adaptation of an article published in {\em Physics in Medicine and Biology}.
+In Chapter~\ref{chapter:PMB2}, we propose an extention of this work establishing the relations between the parameters of the three models mentioned aboove, first theoretically, and then experimentally through a correlation study.

@@ -30,6 +30,7 @@
 
 \begin{document}
 % \fontencoding{LY1}\fontfamily{ACaslonPro}\mdweight
+\frontmatter
 
 \include{cover}
 \pagestyle{plain}
@@ -41,19 +42,15 @@
 %add a nice little line underneath the heading
 \renewcommand{\headrulewidth}{0.6pt}
 
-
+\cleardoublepage
+\mainmatter
 \include{chap1}
-\part{Quantification of perfusion: state~of~the~art}
-\include{chap2}
-\part{Reproducibility of the existing methods and the relations between them}
-\include{chap3}
-\part{Proposition and assessement of a new quantification method}
-\include{intro_p3}
-\include{chap4}
-\include{chap5}
-\include{outro_p3}
+\include{part1}
+\include{part2}
+\include{part3}
 
-\clearpage
+\cleardoublepage
+\backmatter
 \appendix
 %\addcontentsline{toc}{part}{Appendix}
 

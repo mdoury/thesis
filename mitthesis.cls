@@ -189,9 +189,9 @@
 \@leftblanktrue}
 
 %  Thesis looks much like report
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions
-\LoadClass{report}
+\LoadClass{book}
 
 % If the user wants single spacing, set baselinestretch=1.
 

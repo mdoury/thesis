@@ -1,0 +1,275 @@
+\chapter{Error Sources Affecting Relative Quantification of CEUS} 
+
+\section{Abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+
+\section{Introduction}
+CEUS is a cheap, fast, and non-invasive imaging modality, enabling both diagnosis and monitoring of cancer, and revealing the vascular function of tissues.
+Reproducible acquisition and accurate quantification of CEUS data is of the essence to monitor cancer development, along with their vascular network.
+This is especially true when it comes to exam comparison, and in particular to compare longitudinal exams of tumors undergoing vascular-targeting therapy, i.e.~anti-angiogenic treatments. 
+Indeed, assessment of the efficiency of a therapy heavily depends on the methodology at use.
+In order to compare CEUS exams, quantification schemes should be robust to inter-exam changes, but also to acquisition context and settings.
+In a previous study, we studied the impact of inter-exam changes on perfusion parameters estimated from CEUS data, whether occurring at the experimental or physiological level.
+Additionally, a previous simulation study addressed the issue of recirculation in CEUS quantification.
+In this paper we study other sources of error, potentially affecting quantification, through a series of simulation experiment with varying factors.
+These include data intrinsic characteristics, i.e.~noise level, exam duration, sampling time; as well as quantification strategy, i.e.~analysis scale, estimation method, reference tissue selection.
+
+\section{Theory}
+\subsection{Simulation models}
+In this section, the two models employed to simulate synthetic noisy CEUS data are presented.
+First, the one vascular compartment model was used to generate noiseless time-intensity curves (TICs), with known physiology-related perfusion parameters.
+Then, because of the multiplicative nature of the noise in ultrasound data, a parametric multiplicative noise model was used to corrupt the simulated noiseless TICs. 
+
+\subsubsection{One vascular compartment model (OVC)}
+\label{sec:OVCModel}
+A vascularized tissue is considered an homogeneous compartment fed by an artery.
+The vascular compartment is parameterized by tissue blood volume $V$, and tissue blood flow $F$, since the distribution of microbubbles is restricted to the vascular space~\cite{Gunn2001cx,Doury2016wn}.
+An additional time-delay parameter $D$, reflecting the transit time of the contrast agent from the feeding artery to the tissue of interest, was used to fit data more accurately, thus avoiding biasing the estimation of vascular parameter. 
+The mathematical expression of this model is given by equation (\ref{eq:CM}):
+% \begin{equation}
+% \label{eq:CM}
+% C \left( t \right) = F \int_{0}^{t} C_A \left( \tau \right) \mathrm{e}^{-\frac{F}{V} \left( t - D - \tau \right)}\mathrm d \tau, \forall t \geq D, \quad 0 \textrm{ else.}
+% \end{equation}
+\begin{equation}
+\begin{array}{rcl}
+% \frac{\mathrm dC \left( t - D \right)}{\mathrm dt} &=& F \frac{\mathrm dC_A \left( t \right)}{\mathrm dt} - \frac{F}{V} C \left( t - D \right), \quad \forall t \geq D,  \\
+%  &=& 0 \textrm{ otherwise.}
+\dot{C} \left( t - D \right) &=& F \cdot C_A \left( t \right) - \frac{F}{V} \cdot C \left( t - D \right), \quad \forall t \geq D,  \\
+ &=& 0 \textrm{ otherwise.}
+\end{array}
+\label{eq:CM}
+\end{equation}
+where $C_A$ is the AIF, $C$ is the modeled TIC, and $\dot{C}$ is the time derivative of $C$.
+
+Given the AIF $C_A(t)$ and the TIC in a region of interest $C(t)$, three perfusion parameters can be estimated by least-squares fitting: $V$, $F$, and $D$.
+Inversely, given an AIF $C_A(t)$, and the set of three perfusion parameters $V$, $F$, and $D$, the associated TIC $C(t)$ can be simulated.
+
+\subsubsection{Multiplicative noise model}
+A multiplicative noise model following a gamma distribution enforcing unit mean was used, inspired by Barrois et al., i.e.~$\mathrm{mean}_v~p\left(v\right) = 1$, where $p\left(v\right)$ is the gamma distribution~\cite{Barrois2013}.
+A unit mean distribution for a multiplicative noise ensures no bias in introduced by the noise model: it is the equivalent of a centered distribution for additive noise.
+
+The gamma distribution is traditionally parameterized by two parameters: the shape parameter $k$, and the scale parameter $\theta$.
+However, enforcing a unit mean is equivalent to set $\theta = \nicefrac{1}{k}$, the noise distribution $p\left(v\right)$ can therefore be parameterized by a single parameter, $k$, as
+\begin{equation}
+p\left(v\right) = \nicefrac{1}{\Gamma\left(k\right)} ~ k^k ~ v^{k-1} ~ \mathrm e^{-vk}, \forall~v \geq 0.
+\end{equation}
+The shape parameter $k$ controls the sharpness of the noise distribution, and is related to the standard deviation by the relation $\sigma = \nicefrac{1}{\sqrt{k}}$, allowing modulation of the noise level in simulated TICs.
+Fig.~\ref{fig:recmod} shows an example of multiplicative random noise on simulated TICs for $k = 16$, corresponding to $\sigma = 0.25$.
+
+\subsection{Quantification models}
+In this section we present relative quantification methods, making use of a reference tissue, derived from the previously described OVC model. 
+The following methods are intended to estimate perfusion parameters from $N_T$ tissues in a single CEUS exam.
+The TIC in the i$^{th}$ tissue of interest is noted $C_T^i(t)$, where $i \in \left[\![1,N_T \right]\!]$, and the TIC in the chosen reference tissue is noted $C_R(t)$. All TICs are defined for $t \in \left[ 0, L \right]$.
+
+\subsubsection{Relative OVC model (rOVC)}
+A relative OVC model can be derived from the previously presented OVC model, considering conjointly one tissue of interest with TIC $C_T^i(t)$, and one reference tissue with TIC $C_R(t)$:
+\begin{equation}
+\left\{
+% \begin{array}{r c l}
+% \frac{\mathrm dC_R \left( t - D_R \right)}{\mathrm dt} &=& F_R \frac{\mathrm dC_A \left( t \right)}{\mathrm dt} - \frac{F_R}{V_R} C_R \left( t - D_R \right), \quad \forall t \geq D_R,  \\
+%  &=& 0 \textrm{ otherwise;} \\
+% \frac{\mathrm dC_T \left( t - D_T \right)}{\mathrm dt} &=& F_T \frac{\mathrm dC_A \left( t \right)}{\mathrm dt} - \frac{F_T}{V_T} C_T \left( t - D_T \right), \quad \forall t \geq D_T,  \\
+%  &=& 0 \textrm{ otherwise.}
+% \end{array}
+\begin{array}{r c l}
+\dot{C_R} \left( t - D_R \right) &=& F_R \cdot C_A \left( t \right) - \frac{F_R}{V_R} \cdot C_R \left( t - D_R \right), \quad \forall t \geq D_R,  \\
+ &=& 0 \textrm{ otherwise\,;} \\
+\dot{C_T^i} \left( t - D_T^i \right) &=& F_T^i \cdot C_A \left( t \right) - \frac{F_T^i}{V_T^i} \cdot C_T^i \left( t - D_T^i \right), \quad \forall t \geq D_T^i,  \\
+ &=& 0 \textrm{ otherwise.}
+\end{array}
+\right.
+\label{eq:RTCM}
+\end{equation}
+The first equation of the system of equations (\ref{eq:RTCM}) can be rearranged as
+\begin{equation}
+\begin{array}{rcl}
+C_A(t) &=&\frac{1}{F_{R}} \cdot \dot{C}_{R}(t - D_{R}) + \frac{1}{V_{R}} \cdot {C_{R}}(t - D_R) \quad\forall t \geq D_{R}, \\
+&=& \textrm{0 otherwise.}
+\end{array}
+\label{eq:CACM}
+\end{equation}
+
+Replacing $C_A(t)$ in the second equation of system (\ref{eq:RTCM}) by its expression in equation (\ref{eq:CACM}), $\dot{C}_T^i(t)$ can be expressed as
+\begin{equation}
+\begin{array}{rcl}
+\dot{C}_T^i \left(t - D_T^i\right) &= & \frac{F_T^i}{F_{R}} \cdot \dot{C}_{R}\left(t-D_R\right) + \frac{F_T^i}{V_R} \cdot C_{R} \left(t - D_{R}\right)  \\
+& & \qquad - \frac{F_T^i}{V_T^i} \cdot C_{T^i} \left(t - D_{T^i}\right), \quad \forall t \geq D_T^i,\\
+&=& \textrm{0 otherwise.}
+\end{array}
+\label{eq:RTDEF1}
+\end{equation}
+
+Defining the relative flow as $rF^i = \nicefrac{V_T^i}{V_R}$, the relative volume as $rV^i = \nicefrac{V_T^i}{V_R}$, and the rate constant in the i$^{th}$ tissue of interest as $k_T^i = \nicefrac{F_T^i}{V_T^i}$, the previous equation rewrites
+\begin{equation}
+\begin{array}{rcl}
+\dot{C}_T^i \left(t - D_T^i\right) &= & rF^i \cdot \dot{C}_{R}\left(t-D_R\right) + rV^i \cdot k_T^i \cdot C_{R} \left(t - D_{R}\right) \\
+& & \qquad - k_T^i \cdot C_{T}^i \left( t - D_{T}^i \right), \quad \forall t \geq D_T^i,\\
+&=& \textrm{0 otherwise.}
+\end{array}
+\label{eq:RTDEF2}
+\end{equation}
+
+Assuming initial concentrations are equal to zero in both tissues, $\dot{C}_T^i$ in Eq.~\ref{eq:RTDEF2} integrates in exponential form~\cite{Yankeelov2005}, yielding
+\begin{equation}
+\begin{array}{rcl}
+C_T^i \left( t - D_T^i \right) & = & rF^i \cdot \left( k_R - k_T^i \right) \cdot \int_{0}^{t} C_{R} \left( \tau - D_R \right) \cdot e^{- k_T^i \cdot \left( t - D_R - \tau \right)} \mathrm d \tau \\
+& & \qquad + rF^i \cdot C_{R} \left( t - D_R \right) \quad \forall t \geq D_T^i, \\
+&=& \textrm{0 otherwise,}
+\end{array}
+\label{eq:RTDEF4}
+\end{equation}
+where $k_R = \nicefrac{F_R}{V_R}$ is the rate constant in the reference tissue.
+
+The latter equation, however, is not linearly solvable. 
+A non-linear resolution method must therefore be used in order to estimate vascular parameters $rF^i$, $rV^i$, $k_T^i$, and $k_R$ in each of the $N_T$ tissues of interest.
+
+\subsubsection{Linear resolution of the rOVC model (rLin)}
+Alternatively, under similar assumptions, $\dot{C}_T^i$ in Eq.~\ref{eq:RTDEF2} can be integrated over time, yielding the following expression of $C_T^i$~\cite{Cardenas2013}
+\begin{equation}
+\begin{array}{rcl}
+C_T^i \left(t - D_T^i\right) &=& rF^i \cdot C_{R}\left(t-D_R\right) + rV^i \cdot k_T^i \cdot \int_0^t C_{R} \left(\tau - D_{R}\right) \mathrm d\tau \\
+& & \qquad - k_T^i \cdot \int_0^t C_{T}^i \left( \tau - D_{T}^i \right) \mathrm d\tau, \quad \forall t \geq D_T^i,\\
+&=& \textrm{0 otherwise.}
+\end{array}
+\label{eq:RTDEF3}
+\end{equation}
+
+Assuming time delay parameters $D_T^i$ and $D_R$ are known beforehand, TICs can be time-registered, mimicking an ideal case with no delay in bolus arrival.
+Variables $x^i\left(t\right)$, $y^i\left(t\right)$ are time-registered versions of the TIC in the i$^{th}$ tissue of interest and its integral.
+They were defined $\forall t \in \left[ 0,\,L-D_T^i\right]$, as
+\begin{equation}
+\begin{array}{rcl}
+x^i\left(t\right) &=& C_{T}^i\left(t\right), \\
+y^i\left(t\right) &=& -\int_0^{t} C_{T}^i \left( \tau \right) \mathrm d\tau.
+\end{array}
+\label{eq:RTLINV1}
+\end{equation}
+Similarly, variables $u\left(t\right)$, $v\left(t\right)$ are time-registered versions of the reference TIC and its integral.
+They were defined $\forall t \in \left[ 0,\,L-D_R\right]$, as
+\begin{equation}
+\begin{array}{rcl}
+u\left(t\right) &=& C_{R}\left(t\right), \\
+v\left(t\right) &=& \int_0^t C_{R} \left(\tau\right) \mathrm d\tau.
+\end{array}
+\label{eq:RTLINV2}
+\end{equation}
+
+Eq.~\ref{eq:RTDEF3} can be interpreted as an overly determined linear system of equations~\cite{Bjorck1996}, i.e.~one equation for each time sample $t$.
+It therefore rewrites
+\begin{equation}
+x^i\left(t\right) = a^i \cdot u\left(t\right) + b^i \cdot v\left(t\right) + c^i \cdot y^i\left(t\right) \qquad \forall t \geq D_T^i,
+\label{eq:RTLINF}
+\end{equation}
+where coefficients $a^i$, $b^i$, and $c^i$ are defined in terms of vascular parameters as
+\begin{equation}
+a^i = rF^i, \quad b^i = rV^i \cdot k_T^i, \quad c^i = k_T^i.
+\label{eq:RTLINC}
+\end{equation}
+
+The system can be solved using a linear least-squares resolution method, yielding estimates of parameters $a^i$, $b^i$, and $c^i$ by minimization of the squared fit error $\varepsilon^i$
+\begin{equation}
+\argmin_{\left\lbrace a^i, b^i, c^i\right\rbrace} \varepsilon^i, \textrm{ where } \varepsilon^i = \sum_t \Big( x^i\left(t\right) - a^i\cdot u\left(t\right) + b^i\cdot v\left(t\right) + c^i\cdot y^i\left(t\right) \Big)^2.
+\end{equation}
+Vascular parameters of the \textbf{rLin} model can then be derived easily using
+\begin{equation}
+rF^i = a^i,~rV^i = \nicefrac{b^i}{c^i}, \textrm{ and } k_T^i = c^i.
+\end{equation}
+
+The linear resolution of the \textbf{rOVC} model will be referred to as \textbf{rLin} in the following.
+
+\subsubsection{Regularized linear resolution of the rOVC model (rReg)}
+Estimating $rF^i$, $rV^i$, and $k_T^i$ in $N_T$ tissues using the \textbf{rLin} model, $N_T$ values of parameter $k_R$ can be derived as a linear combination of the \textbf{rLin} model parameters:
+\begin{equation}
+k_R = \frac{F_R}{F_T^i}\frac{F_T^i}{V_T^i}\frac{V_T^i}{V_R} = \frac{rV^i \cdot k_T^i}{rF^i} = \frac{b^i}{a^i}
+\label{eq:KR}
+\end{equation}
+
+However, there is but one reference tissue per exam, associated to a single reference TIC $C_R\left(t\right)$. 
+Since parameter $k_R$ characterizes the vascular function of a single reference tissue, a unique value should be estimated per exam in order to avoid discrepancies of $k_R$ values between tissues of interest. 
+
+The linear relation between parameters of the \textbf{rLin} model provided by Eq.~\ref{eq:KR} can be used as a constraint to ensure the $N_T$ derived values of $k_R$ are consistent across tissues.
+Substituting in Eq.~\ref{eq:RTLINF} yields 
+\begin{equation}
+\begin{array}{rcl}
+x^i\left(t\right) &=& a^i\cdot\left( u\left(t\right) + k_R\cdot v\left(t\right)\right) + c^i\cdot y^i\left(t\right),
+\end{array}
+\label{eq:RTREG}
+\end{equation}
+which rewrites 
+\begin{equation}
+\begin{array}{rcl}
+x^i\left(t\right) &=& a^i\cdot w\left(t\right) + c^i\cdot y^i\left(t\right)
+\end{array}
+\label{eq:RTREG2}
+\end{equation}
+where $w\left(t\right)$ is a linear combination of variables $u\left(t\right)$ and $v\left(t\right)$, which were defined in Eq.~\ref{eq:RTLINV2}, 
+\begin{equation}
+\begin{array}{rcl}
+w\left(t\right) &=& u\left(t\right) + k_R \cdot v\left(t\right),\\
+&=& C_{R}\left(t-D_R\right) + k_R \cdot \int_0^t C_{R} \left(\tau - D_{R}\right) \mathrm d\tau.
+\end{array}
+\label{eq:RTREG3}
+\end{equation}
+
+Provided a value of parameter $k_R$, the $N_T$ linear system equations defined in Eq.~\ref{eq:RTREG} are independently solvable using a linear least-squares resolution method, minimizing the squared error, $e^i$:
+\begin{equation}
+\argmin_{\left\lbrace a^i, c^i \right\rbrace} e^i, \textrm{ where } e^i = \sum_{t} \Big( x^i\left(t\right) - \left[a^i\cdot w\left(t\right) + c^i\cdot y^i\left(t\right) \right] \Big)^2.
+\end{equation}
+
+Since the value of $k_R$ is unknown, and is necessary to define $w\left(t\right)$, its value must be determined.
+We proposed a non-linear optimization scheme that estimates the value of $k_R$ by minimization of the normalized mean squared error, $E$:
+\begin{equation}
+\argmin_{k_R} E, \textrm{ where } E = \sum_i\frac{\sqrt{\nicefrac{e^i}{N^i} }}{\lvert x^i \rvert_{\infty}},
+\end{equation}
+$N^i$ being the number of samples in $x^i(t)$, i.e.~the number of time samples verifying $t \in \left[0,\,L-D_T^i\right]$.
+Vascular parameters were then derived from the model estimates as 
+\begin{equation}
+rF^i = a^i,~rV^i = \frac{k_R \cdot a^i}{c^i}, \textrm{ and } k_T^i = c^i.
+\end{equation}
+
+\subsubsection{Estimation of time-delay parameters}
+As stated in the presentation of the \textbf{rLin} and \textbf{rReg} models, time-delay parameters must be known beforehand, and TICs registered in time in order to solve the linear system of equations.
+The determination method of the time-delay parameter, noted $D$, of a generic TIC, noted $C\left(t\right)$, used the empirical method described below.
+
+$C\left(t\right)$ was noise-filtered twice by a moving-average filter of width 2 seconds, yielding $C_f\left(t\right)$.
+The time when $C_f\left(t\right)$ reaches 20\% of its maximum value is a rough approximation that intentionally overestimates $D$, it was noted $t_{20\%}$.
+$C_f\left(t\right)$ was then truncated, conserving only the part where $t \leq t_{20\%}$.
+The derivative of $C_{f}\left(t\right)$, noted $\dot{C}_{f}\left(t\right)$, was approximated by convolution of the TIC with the central difference operator~\cite{Whittaker1967}. % Whittaker, E. T. and Robinson, G. "Central-Difference Formulae." Ch. 3 in The Calculus of Observations: A Treatise on Numerical Mathematics, 4th ed. New York: Dover, pp. 35-52, 1967.
+Finally, assuming no oscillation occurred in the TIC prior to bolus arrival, $D$ was defined as the time at which the derivative $\dot{C}_{f}\left(t\right)$ reaches 20\% of its value at $t = t_{20\%}$:
+\begin{equation}
+\exists D\in\Re^+,~D \leq t_{20\%}\,\wedge\,\dot{C}_{f}\left(D\right) = 20\% \times \dot{C}_{f}\left(t_{20\%}\right).
+\end{equation}
+
+\section{Materials and Methods}
+\subsection{Simulations of CEUS data}
+\subsubsection{Simulation process}
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
+\subsubsection{Varying factors}
+\paragraph{Noise level}
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
+\paragraph{Exam duration}
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
+\paragraph{Sampling time}
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
+\paragraph{Reference tissue}
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
+\paragraph{Number of tissues}
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
+\subsection{Data analysis}
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
+
+\section{Results}
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
+\section{Discussion}
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
+\section{Conclusion}
+Sed non aliquet felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo justo ac dui pretium imperdiet. Sed suscipit iaculis mi at feugiat. Ut neque ipsum, luctus id lacus ut, laoreet scelerisque urna. Phasellus venenatis, tortor nec vestibulum mattis, massa tortor interdum felis, nec pellentesque metus tortor nec nisl. Ut ornare mauris tellus, vel dapibus arcu suscipit sed. Nam condimentum sem eget mollis euismod. Nullam dui urna, gravida venenatis dui et, tincidunt sodales ex. Nunc est dui, sodales sed mauris nec, auctor sagittis leo. Aliquam tincidunt, ex in facilisis elementum, libero lectus luctus est, non vulputate nisl augue at dolor.

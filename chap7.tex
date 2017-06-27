@@ -44,7 +44,7 @@ where $C_A$ is the AIF, $C$ is the modeled TIC, and $\dot{C}$ is the time deriva
 Given the AIF $C_A(t)$ and the TIC in a region of interest $C(t)$, three perfusion parameters can be estimated by least-squares fitting: $V$, $F$, and $D$.
 Inversely, given an AIF $C_A(t)$, and the set of three perfusion parameters $V$, $F$, and $D$, the associated TIC $C(t)$ can be simulated.
 
-\subsubsection{Multiplicative noise model}
+\subsubsection{Multiplicative noise model}\label{sec:NoiseModel}
 A multiplicative noise model following a gamma distribution enforcing unit mean was used, inspired by Barrois et al., i.e.~$\mathrm{mean}_v~p\left(v\right) = 1$, where $p\left(v\right)$ is the gamma distribution~\cite{Barrois2013}.
 A unit mean distribution for a multiplicative noise ensures no bias in introduced by the noise model: it is the equivalent of a centered distribution for additive noise.
 
@@ -55,6 +55,7 @@ p\left(v\right) = \nicefrac{1}{\Gamma\left(k\right)} ~ k^k ~ v^{k-1} ~ \mathrm e
 \end{equation}
 The shape parameter $k$ controls the sharpness of the noise distribution, and is related to the standard deviation by the relation $\sigma = \nicefrac{1}{\sqrt{k}}$, allowing modulation of the noise level in simulated TICs.
 Fig.~\ref{fig:recmod} shows an example of multiplicative random noise on simulated TICs for $k = 16$, corresponding to $\sigma = 0.25$.
+Unless specified differently, this value of $\sigma$ was used as the default standard deviation of the noise distribution and 150 random noise sequences were generated from this distribution.
 
 \subsection{Quantification models}
 In this section we present relative quantification methods, making use of a reference tissue, derived from the previously described OVC model. 
@@ -246,30 +247,41 @@ Finally, assuming no oscillation occurred in the TIC prior to bolus arrival, $D$
 Regional perfusion parameters were derived from experimental data fitted with the OVC model presented in Section~\ref{sec:OVCModel}.
 The arterial input function was estimated in the image using the segmentation method presented in Chapter~\ref{chapter:PMB}.
 A log-normal model was fitted to the resulting arterial curve for noise-filtering purposes. 
-Regional time-intensity curves were simulated using the same model along with the estimated arterial input function.
+Regional enhancement curves were simulated using the same model, along with the estimated model parameters and arterial input function.
+
+\subsection{Data analysis}\label{sec:dataAnalysis}
+The accuracy and the precision of the parameters estimated using the \textbf{rLin} and the \textbf{rReg} models was respectively investigated through the mean value and standard deviation of the relative estimation error over the 150 random noise samples.
+The relative estimation error of parameter $\theta$, noted $rE_{\theta}$, is expressed in percent and defined as
+\begin{equation}
+rE_{\theta} = 100 \times \frac{\theta_{est}-\theta_{sim}}{\theta_{sim}}
+\end{equation}
+i.e.~the difference between the estimated parameter $\theta_{est}$ and the simulated parameter $\theta_{sim}$, normalized by the simulated value.
 
 \subsubsection{Varying factors}
 \paragraph{Noise level}
-Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+The influence of noise was investigated by varying $\sigma$, the standard deviation of the multiplicative noise level presented in Section~\ref{sec:NoiseModel}.
+$\sigma$ was varied linearly with increments of 0.05 from 0, corresponding to a noiseless conditions, to 0.5, corresponding to high noise conditions.
+For each noise level, 150 random noise sets following the multiplicative gamma noise model were generated.
 
 \paragraph{Exam duration}
-Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+Various exam durations were investigateds by varying the number of samples in the simulated data.
+More precisely, the exam duration was varied from 50 seconds to 165 seconds with 5 seconds increments.
 
-\paragraph{Sampling time}
-Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+\paragraph{Sampling period}
+The sampling period was varied from 0.1 to 1.0 second with 0.1 increments, this range is representative of the acquisition settings that can be found in contrast-enhanced ultrasound studies.
 
 \paragraph{Reference tissue}
-Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+The impact of the reference tissue selected for relative quantification was investigated by varying the simulated reference curve.
+In particular, the tissue blood volume, the tissue blood flow of the reference tissue were varied by multiplying either or both of them by $\dfrac{1}{2}$, $\dfrac{1}{1.5}$, $1$, $1.5$, and $2$.
+This allows either tissue blood flow, tissue blood volume, or tissue rate constant to be fixed while the other two vary.
 
-\paragraph{Number of tissues}
-Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
-
-\subsection{Data analysis}
-Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+\paragraph{Number of regions}
+Various regional segmentation were performed varying the number of tumor regions as powers of two from 1 to 32.
+For each segmentation, the parameters of the OVC model were estimated, then regional enhancement curves were simulated using the same OVC model.
 
 
 \section{Results}
-Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
 
 \section{Discussion}
 Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.

@@ -301,13 +301,31 @@ i.e.~the difference between the estimated parameter $\theta_{est}$ and the simul
 
 \section{Results}
 \paragraph{Noise level}
-Figure~\ref{fig:noiseLevel} shows the relative estimation error of the (a)~relative tissue blood volume, (b)~relative tissue blood flow, and (c)~rate constants in the tumor and reference tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
+Figures~\ref{fig:noise_rV} to \ref{fig:noise_kR} show the relative estimation error of the relative tissue blood volume (Figure~\ref{fig:noise_rV}), relative tissue blood flow (Figure~\ref{fig:noise_rF}), and rate constants in the tumor (Figure~\ref{fig:noise_kT}) and reference  (Figure~\ref{fig:noise_kR}) tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
 
-% \begin{figure}
-% \includegraphics[width=\linewidth]{Fig1.eps}
-% \caption{}
-% \label{fig:noiseLevel}
-% \end{figure}
+\begin{figure}
+\includegraphics[width=\linewidth]{simNoise_rV.eps}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative blood volume ($rV$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
+\label{fig:noise_rV}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simNoise_rF.eps}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative blood flow ($rF$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
+\label{fig:noise_rF}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simNoise_kT.eps}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
+\label{fig:noise_kT}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simNoise_kR.eps}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
+\label{fig:noise_kR}
+\end{figure}
 
 \paragraph{Exam duration}
 Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR} show the impact of the exam duration on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:examDuration_rV}), relative tissue blood flow (Figure~\ref{fig:examDuration_rF}), and rate constants in the tumor (Figure~\ref{fig:examDuration_kT}) and in the reference tissue (Figure~\ref{fig:examDuration_kR}).
@@ -315,25 +333,25 @@ In Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR}, each plot rep
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_rV.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the relative blood volume ($rV$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration, in seconds.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative blood volume ($rV$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration.}
 \label{fig:examDuration_rV}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_rF.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the relative blood flow ($rF$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration, in seconds.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative blood flow ($rF$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration.}
 \label{fig:examDuration_rF}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_kT.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration, in seconds.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration.}
 \label{fig:examDuration_kT}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_kR.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration, in seconds.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration.}
 \label{fig:examDuration_kR}
 \end{figure}
 
@@ -344,25 +362,25 @@ In Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR}, each plot represents 
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSampling_rV.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
 \label{fig:sampling_rV}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSampling_rF.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
 \label{fig:sampling_rF}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSampling_kT.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
 \label{fig:sampling_kT}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSampling_kR.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
 \label{fig:sampling_kR}
 \end{figure}
 
@@ -445,7 +463,7 @@ Instead it investigates solely the impact of the number of regions included in t
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simReg_rF_rReg.eps}
-\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood flow ($rV$) estimated using the \textbf{rReg} model depending on the number of regions $N_T$.}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rReg} model depending on the number of regions $N_T$.}
 \label{fig:region_rF_rReg}
 \end{figure}
 

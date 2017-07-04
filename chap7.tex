@@ -287,7 +287,7 @@ The derived parameters were then used as ground truth to evaluate the accuracy o
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simReg_sim.eps}
-\caption{Relative perfusion parameters used for simulation varying the number of regions from 1 (left) to 32 (right), i.e.~relative tissue blood volume, $rV$, relative tissue blood flow, $rF$, tissue rate constant, $k_T$.}
+\caption{Relative perfusion parameters used for simulation varying the number of tumor regions $N_T$ from 1 (left) to 32 (right), i.e.~relative tissue blood volume, $rV$, relative tissue blood flow, $rF$, tissue rate constant, $k_T$.}
 \label{fig:simReg}
 \end{figure}
 
@@ -311,29 +311,29 @@ Figure~\ref{fig:noiseLevel} shows the relative estimation error of the (a)~relat
 
 \paragraph{Exam duration}
 Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR} show the impact of the exam duration on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:examDuration_rV}), relative tissue blood flow (Figure~\ref{fig:examDuration_rF}), and rate constants in the tumor (Figure~\ref{fig:examDuration_kT}) and in the reference tissue (Figure~\ref{fig:examDuration_kR}).
-In Figures~\ref{fig:examDuration_rV}-\ref{fig:examDuration_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
+In Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_rV.eps}
-\caption{}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the relative blood volume ($rV$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} models (purple squares), as a function of the exam duration, in seconds.}
 \label{fig:examDuration_rV}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_rF.eps}
-\caption{}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the relative blood flow ($rF$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} models (purple squares), as a function of the exam duration, in seconds.}
 \label{fig:examDuration_rF}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_kT.eps}
-\caption{}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} models (purple squares), as a function of the exam duration, in seconds.}
 \label{fig:examDuration_kT}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_kR.eps}
-\caption{}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} models (purple squares), as a function of the exam duration, in seconds.}
 \label{fig:examDuration_kR}
 \end{figure}
 
@@ -348,13 +348,56 @@ Similarly, Figure~\ref{fig:samplingPeriod} shows the impact of the sampling peri
 % \end{figure}
 
 \paragraph{Reference tissue}
-The effect of varying the characteristics of the reference tissue on the accuracy and precision of the estimation process are displayed in Figure~\ref{fig:referenceTissue}. 
+The effect of varying the characteristics of the reference tissue on the accuracy and precision of the estimation process are displayed in Figures~\ref{fig:referenceTissue_rV_rLin} to \ref{fig:referenceTissue_kR_rReg}. 
 
-% \begin{figure}
-% \includegraphics[width=\linewidth]{Fig4.eps}
-% \caption{}
-% \label{fig:referenceTissue}
-% \end{figure}
+\begin{figure}
+\includegraphics[width=\linewidth]{simRef_rV_rLin.eps}
+\caption{Bullseyes of the median relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rLin} model depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_rV_rLin}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simRef_rV_rReg.eps}
+\caption{Bullseyes of the median relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rReg} model depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_rV_rReg}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simRef_rF_rLin.eps}
+\caption{Bullseyes of the median relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rLin} model depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_rF_rLin}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simRef_rF_rReg.eps}
+\caption{Bullseyes of the median relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rReg} model depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_rF_rReg}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simRef_kT_rLin.eps}
+\caption{Bullseyes of the median relative estimation error for the rate constant in the tumor ($kT$) estimated using the \textbf{rLin} model depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_kT_rLin}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simRef_kT_rReg.eps}
+\caption{Bullseyes of the median relative estimation error for the rate constant in the tumor ($kT$) estimated using the \textbf{rReg} model depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_kT_rReg}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simRef_kR_rLin.eps}
+\caption{Bullseyes of the median relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} model depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_kR_rLin}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simRef_kR_rReg.eps}
+\caption{Bullseyes of the median relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rReg} model depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_kR_rReg}
+\end{figure}
+
 
 \paragraph{Number of regions}
 Theoretically, the number of regions included in the analysis should not have any impact on the parameter of the \textbf{rLin} model as every kinetic is analyzed individually.

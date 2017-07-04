@@ -315,37 +315,56 @@ In Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR}, each plot rep
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_rV.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the relative blood volume ($rV$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} models (purple squares), as a function of the exam duration, in seconds.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the relative blood volume ($rV$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration, in seconds.}
 \label{fig:examDuration_rV}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_rF.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the relative blood flow ($rF$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} models (purple squares), as a function of the exam duration, in seconds.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the relative blood flow ($rF$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration, in seconds.}
 \label{fig:examDuration_rF}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_kT.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} models (purple squares), as a function of the exam duration, in seconds.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration, in seconds.}
 \label{fig:examDuration_kT}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_kR.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} models (purple squares), as a function of the exam duration, in seconds.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error, expressed as a percentage of the ground truth value, for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration, in seconds.}
 \label{fig:examDuration_kR}
 \end{figure}
 
 
 \paragraph{Sampling period}
-Similarly, Figure~\ref{fig:samplingPeriod} shows the impact of the sampling period on the relative estimation error of the (a)~relative tissue blood volume, (b)~relative tissue blood flow, and (c)~rate constants in the tumor and reference tissues for the \textbf{rLin} and \textbf{rReg} models.
+Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR} show the impact of the sampling period on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:sampling_rV}), relative tissue blood flow (Figure~\ref{fig:sampling_rF}), and rate constants in the tumor (Figure~\ref{fig:sampling_kT}) and in the reference tissue (Figure~\ref{fig:sampling_kR}).
+In Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
 
-% \begin{figure}
-% \includegraphics[width=\linewidth]{Fig3.eps}
-% \caption{}
-% \label{fig:samplingPeriod}
-% \end{figure}
+\begin{figure}
+\includegraphics[width=\linewidth]{simSampling_rV.eps}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
+\label{fig:sampling_rV}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simSampling_rF.eps}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
+\label{fig:sampling_rF}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simSampling_kT.eps}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
+\label{fig:sampling_kT}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simSampling_kR.eps}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} model (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
+\label{fig:sampling_kR}
+\end{figure}
 
 \paragraph{Reference tissue}
 The effect of varying the characteristics of the reference tissue on the accuracy and precision of the estimation process are displayed in Figures~\ref{fig:referenceTissue_rV_rLin} to \ref{fig:referenceTissue_kR_rReg}. 

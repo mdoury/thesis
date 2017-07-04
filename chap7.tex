@@ -249,38 +249,123 @@ The arterial input function was estimated in the image using the segmentation me
 A log-normal model was fitted to the resulting arterial curve for noise-filtering purposes. 
 Regional enhancement curves were simulated using the same model, along with the estimated model parameters and arterial input function.
 
-\subsection{Data analysis}\label{sec:dataAnalysis}
-The accuracy and the precision of the parameters estimated using the \textbf{rLin} and the \textbf{rReg} models was respectively investigated through the mean value and standard deviation of the relative estimation error over the 150 random noise samples.
-The relative estimation error of parameter $\theta$, noted $rE_{\theta}$, is expressed in percent and defined as
-\begin{equation}
-rE_{\theta} = 100 \times \frac{\theta_{est}-\theta_{sim}}{\theta_{sim}}
-\end{equation}
-i.e.~the difference between the estimated parameter $\theta_{est}$ and the simulated parameter $\theta_{sim}$, normalized by the simulated value.
-
 \subsubsection{Varying factors}
 \paragraph{Noise level}
-The influence of noise was investigated by varying $\sigma$, the standard deviation of the multiplicative noise level presented in Section~\ref{sec:NoiseModel}.
+The influence of noise was investigated by varying parameter $\sigma$, i.e.~the standard deviation of the multiplicative noise level presented in Section~\ref{sec:NoiseModel}.
 $\sigma$ was varied linearly with increments of 0.05 from 0, corresponding to a noiseless conditions, to 0.5, corresponding to high noise conditions.
 For each noise level, 150 random noise sets following the multiplicative gamma noise model were generated.
+Example time-intensity curves with varying noise levels are displayed in Figure~\ref{fig:simNoise}.
 
 \paragraph{Exam duration}
 Various exam durations were investigateds by varying the number of samples in the simulated data.
 More precisely, the exam duration was varied from 50 seconds to 165 seconds with 5 seconds increments.
 
 \paragraph{Sampling period}
+Simulated noiseless enhancement curves were resampled using varying sampling periods to study the impact of this parameter on the accuracy and precision of the estimation.
 The sampling period was varied from 0.1 to 1.0 second with 0.1 increments, this range is representative of the acquisition settings that can be found in contrast-enhanced ultrasound studies.
 
 \paragraph{Reference tissue}
-The impact of the reference tissue selected for relative quantification was investigated by varying the simulated reference curve.
-In particular, the tissue blood volume, the tissue blood flow of the reference tissue were varied by multiplying either or both of them by $\dfrac{1}{2}$, $\dfrac{1}{1.5}$, $1$, $1.5$, and $2$.
-This allows either tissue blood flow, tissue blood volume, or tissue rate constant to be fixed while the other two vary.
+The reference tissue can be represented functionally by the parameters of the OVC model, i.e.~$V_R$, $F_R$, and $k_R = \dfrac{F_R}{V_R}$.
+The impact of these parameters on the accuracy and the precision of the quantification process using the \textbf{rLin} and the \textbf{rReg} models was investigated.
+In particular, the tissue blood volume, the tissue blood flow of the reference tissue were varied by scaling either or both of them by $\dfrac{1}{2}$, $\dfrac{2}{3}$, $1$, $\dfrac{3}{2}$, and $2$.
+Because of the relation between the three parameters, they cannot be varied individually.
+It is however possible to fix either of the parameters while varying the two others.
+The disks at the bottom Figure~\ref{fig:simRef} shows the various values of the perfusion parameters used to simulate the reference tissue enhancement curve, the center disk being the original value obtained from experimental data.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simRef.eps}
+\caption{Absolute perfusion parameters used for simulation with the OVC model, i.e.~tissue blood volume, $V_T$ and $V_R$, tissue blood flow, $F_T$ and $F_R$, tissue rate constant, $k_T$ and $k_R$, and time delay, $D_T$ and $D_R$. Bullseye view of the parameters in the 32 tumor regions. The bottom disks represent the parameters used to simulated the reference tissue region, the center disk being the original value used for all experiments. The other disks are, from left to right, the half, two third, three half, and double of the original value, used to study the influence of the reference tissue.}
+\label{fig:simRef}
+\end{figure}
 
 \paragraph{Number of regions}
-Various regional segmentation were performed varying the number of tumor regions as powers of two from 1 to 32.
-For each segmentation, the parameters of the OVC model were estimated, then regional enhancement curves were simulated using the same OVC model.
+Various regional segmentation were performed varying the number of tumor regions as powers of two, ranging from 1 to 32.
+For each segmentation, the parameters of the OVC model were estimated using the mean enhancement curve in each tumor and reference region, as well as an estimate of the arterial input function derived from the image. 
+Figure~\ref{fig:simReg} shows the simulated values of the perfusion parameters for the various segmentations with a varying number of regions. 
+The absolute perfusion parameters of the OVC model were used to derive the parameters of the rOVC model using the definitions of Eq.~\ref{eq:RTDEF2}.
+The derived parameters were then used as ground truth to evaluate the accuracy of the perfusion parameters estimated using the \textbf{rLin} and the \textbf{rReg} models.
 
+\begin{figure}
+\includegraphics[width=\linewidth]{simReg_sim.eps}
+\caption{Relative perfusion parameters used for simulation varying the number of regions from 1 (left) to 32 (right), i.e.~relative tissue blood volume, $rV$, relative tissue blood flow, $rF$, tissue rate constant, $k_T$.}
+\label{fig:simReg}
+\end{figure}
+
+\subsection{Data analysis}\label{sec:dataAnalysis}
+The accuracy and the precision of the parameters estimated using the \textbf{rLin} and the \textbf{rReg} models were respectively investigated through the mean value and standard deviation of the relative estimation error over 150 random noise samples.
+The relative estimation error of parameter $\theta$, noted $rE_{\theta}$, is expressed in percent and defined as
+\begin{equation}
+rE_{\theta} = 100 \times \frac{\theta_{est}-\theta_{sim}}{\theta_{sim}}
+\end{equation}
+i.e.~the difference between the estimated parameter $\theta_{est}$ and the simulated parameter $\theta_{sim}$, normalized by the simulated value.
 
 \section{Results}
+\paragraph{Noise level}
+Figure~\ref{fig:noiseLevel} shows the relative estimation error of the (a)~relative tissue blood volume, (b)~relative tissue blood flow, and (c)~rate constants in the tumor and reference tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
+
+% \begin{figure}
+% \includegraphics[width=\linewidth]{Fig1.eps}
+% \caption{}
+% \label{fig:noiseLevel}
+% \end{figure}
+
+\paragraph{Exam duration}
+Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR} show the impact of the exam duration on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:examDuration_rV}), relative tissue blood flow (Figure~\ref{fig:examDuration_rF}), and rate constants in the tumor (Figure~\ref{fig:examDuration_kT}) and in the reference tissue (Figure~\ref{fig:examDuration_kR}).
+In Figures~\ref{fig:examDuration_rV}-\ref{fig:examDuration_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simSamples_rV.eps}
+\caption{}
+\label{fig:examDuration_rV}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simSamples_rF.eps}
+\caption{}
+\label{fig:examDuration_rF}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simSamples_kT.eps}
+\caption{}
+\label{fig:examDuration_kT}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simSamples_kR.eps}
+\caption{}
+\label{fig:examDuration_kR}
+\end{figure}
+
+
+\paragraph{Sampling period}
+Similarly, Figure~\ref{fig:samplingPeriod} shows the impact of the sampling period on the relative estimation error of the (a)~relative tissue blood volume, (b)~relative tissue blood flow, and (c)~rate constants in the tumor and reference tissues for the \textbf{rLin} and \textbf{rReg} models.
+
+% \begin{figure}
+% \includegraphics[width=\linewidth]{Fig3.eps}
+% \caption{}
+% \label{fig:samplingPeriod}
+% \end{figure}
+
+\paragraph{Reference tissue}
+The effect of varying the characteristics of the reference tissue on the accuracy and precision of the estimation process are displayed in Figure~\ref{fig:referenceTissue}. 
+
+% \begin{figure}
+% \includegraphics[width=\linewidth]{Fig4.eps}
+% \caption{}
+% \label{fig:referenceTissue}
+% \end{figure}
+
+\paragraph{Number of regions}
+Theoretically, the number of regions included in the analysis should not have any impact on the parameter of the \textbf{rLin} model as every kinetic is analyzed individually.
+It should however reveal the importance of regularizing parameter $k_R$ across tumor regions, as introduced by the \textbf{rReg} model, by comparison with the \textbf{rLin} model.
+The impact of varying the number of regions on the accuracy and precision of the estimates of the \textbf{rLin} and \textbf{rReg} models is shown in Figure~\ref{fig:regionNumber}.
+
+% \begin{figure}
+% \includegraphics[width=\linewidth]{Fig5.eps}
+% \caption{}
+% \label{fig:regionNumber}
+% \end{figure}
 
 
 \section{Discussion}

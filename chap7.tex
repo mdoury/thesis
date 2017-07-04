@@ -402,13 +402,57 @@ The effect of varying the characteristics of the reference tissue on the accurac
 \paragraph{Number of regions}
 Theoretically, the number of regions included in the analysis should not have any impact on the parameter of the \textbf{rLin} model as every kinetic is analyzed individually.
 It should however reveal the importance of regularizing parameter $k_R$ across tumor regions, as introduced by the \textbf{rReg} model, by comparison with the \textbf{rLin} model.
-The impact of varying the number of regions on the accuracy and precision of the estimates of the \textbf{rLin} and \textbf{rReg} models is shown in Figure~\ref{fig:regionNumber}.
+The impact of varying the number of regions on the accuracy and precision of the estimates of the \textbf{rLin} and \textbf{rReg} models is shown in Figures~\ref{fig:region_rV_rLin} to \ref{fig:region_kR_rReg}.
+This study does not account for the variations of the signal to noise ratio depending on the size of the region.
+Instead it investigates solely the impact of the number of regions included in the analysis on the accuracy and precision of the estimates depending on whether the approach is regularized for parameter $k_R$ by keeping the noise level constant regardless of the number of regions.
 
-% \begin{figure}
-% \includegraphics[width=\linewidth]{Fig5.eps}
-% \caption{}
-% \label{fig:regionNumber}
-% \end{figure}
+\begin{figure}
+\includegraphics[width=\linewidth]{simReg_rV_rLin.eps}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rLin} model depending on the number of regions $N_T$.}
+\label{fig:region_rV_rLin}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simReg_rV_rReg.eps}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rReg} model depending on the number of regions $N_T$.}
+\label{fig:region_rV_rReg}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simReg_rF_rLin.eps}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rLin} model depending on the number of regions $N_T$.}
+\label{fig:region_rF_rLin}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simReg_rF_rReg.eps}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood flow ($rV$) estimated using the \textbf{rReg} model depending on the number of regions $N_T$.}
+\label{fig:region_rF_rReg}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simReg_kT_rLin.eps}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} model depending on the number of regions $N_T$.}
+\label{fig:region_kT_rLin}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simReg_kT_rReg.eps}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rReg} model depending on the number of regions $N_T$.}
+\label{fig:region_kT_rReg}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simReg_kR_rLin.eps}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} model depending on the number of regions $N_T$.}
+\label{fig:region_kR_rLin}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simReg_kR_rReg.eps}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rReg} model depending on the number of regions $N_T$.}
+\label{fig:region_kR_rReg}
+\end{figure}
 
 
 \section{Discussion}

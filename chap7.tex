@@ -303,9 +303,10 @@ i.e.~the difference between the estimated parameter $\theta_{est}$ and the simul
 \paragraph{Noise level}
 Figures~\ref{fig:noise_rV} to \ref{fig:noise_kR} show the relative estimation error of the relative tissue blood volume ($rV$, Figure~\ref{fig:noise_rV}), relative tissue blood flow (Figure~\ref{fig:noise_rF}), and rate constants in the tumor (Figure~\ref{fig:noise_kT}) and reference  (Figure~\ref{fig:noise_kR}) tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
 
+Expectedly, for the four parameters of both models, the interquartile range of the relative estimation bias increased with the noise level, and no relation was found between the noise level and the median value of the relative estimation error.
 In terms of relative tissue blood volume (see Figure~\ref{fig:noise_rV}), the two models were hardly differenciable.
 Inside a given region, the median relative estimation error value can be different with a slight advantage for the \textbf{rLin} model, but the precision of the estimation is however generally comparable.
-Additionally, the \textbf{rReg} model makes the estimation bias more consistant across regions.
+Additionally, the \textbf{rReg} model makes the estimation bias of $rV$ more consistant across regions.
 Regarding relative blood flow (see Figure~\ref{fig:noise_rF}), the \textbf{rLin} model was generally more accurate than the \textbf{rReg} model. 
 However the estimation of $rF$ was less precise and more sensitive to noise using the \textbf{rLin} model.
 In terms of the rate constant in tumor tissues (see Figure~\ref{fig:noise_kT}), the \textbf{rReg} model proved both more accurate and more precise than the \textbf{rLin} model.
@@ -343,6 +344,17 @@ Oppositely, the estimates of the \textbf{rLin} model were extremely inconsistent
 Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR} show the impact of the exam duration on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:examDuration_rV}), relative tissue blood flow (Figure~\ref{fig:examDuration_rF}), and rate constants in the tumor (Figure~\ref{fig:examDuration_kT}) and in the reference tissue (Figure~\ref{fig:examDuration_kR}).
 In Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
 
+Regarding relative blood volume (see Figure~\ref{fig:examDuration_rV}), the \textbf{rReg} model was able to estimate the parameter accurately, and to reach a steady state with exams as short as 80 seconds.
+Oppositely, the \textbf{rLin} model only yielded accurate estimates using the whole exam duration, i.e.~165 seconds, and at the exception of one region it overall underestimated $rV$.
+Comparably, the relative blood flow (see Figure~\ref{fig:examDuration_rF}) was steadily estimated using the \textbf{rReg} model with exams as short as 50 seconds, despite an average overestimation of less than 4\%.
+The estimates of $rF$ given by the \textbf{rLin} were found more sensitive to the duration of the exam, and generally overestimated $rF$ for very short exams, the bias decreasing with exam duration.
+And then, past some duration threshold, which variable from one region to another, the bias increased linearly with the exam duration.
+Regarding the rate constant in the tumor (see Figure~\ref{fig:examDuration_kT}), the \textbf{rLin} model was unable to accurately estimate the parameter for incomplete exams, and exhibited strong biases in short exams, again varying from one exam to another. 
+The \textbf{rReg} model was able to steadily and uniformely estimate parameter $k_T$, despite a tendency of the median relative estimation error to slightly decrease with the exam duration for exams lasting more than 100 seconds.
+Moreover, the estimation of $k_T$ was more precise using the \textbf{rReg} model.
+For both models, the bias in the estimation of $k_R$, the rate constant in the reference tissue (see Figure~\ref{fig:examDuration_kR}), was strongly correlated to the bias in the estimation of $k_T$.
+
+
 \begin{figure}
 \includegraphics[width=\linewidth]{simSamples_rV.eps}
 \caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative blood volume ($rV$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration.}
@@ -371,6 +383,8 @@ In Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR}, each plot rep
 \paragraph{Sampling period}
 Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR} show the impact of the sampling period on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:sampling_rV}), relative tissue blood flow (Figure~\ref{fig:sampling_rF}), and rate constants in the tumor (Figure~\ref{fig:sampling_kT}) and in the reference tissue (Figure~\ref{fig:sampling_kR}).
 In Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
+
+
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSampling_rV.eps}

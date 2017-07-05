@@ -1,18 +1,22 @@
 \chapter{Error Sources Affecting Relative Quantification of CEUS} 
 
-\section{Abstract}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+% \section{Abstract}
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+
+% \section{Introduction}
+% CEUS is a cheap, fast, and non-invasive imaging modality, enabling both diagnosis and monitoring of cancer, and revealing the vascular function of tissues.
+% Reproducible acquisition and accurate quantification of CEUS data is of the essence to monitor cancer development, along with their vascular network.
+% This is especially true when it comes to exam comparison, and in particular to compare longitudinal exams of tumors undergoing vascular-targeting therapy, i.e.~anti-angiogenic treatments. 
+% Indeed, assessment of the efficiency of a therapy heavily depends on the methodology at use.
+% In order to compare CEUS exams, quantification schemes should be robust to inter-exam changes, but also to acquisition context and settings.
+% In a previous study, we studied the impact of inter-exam changes on perfusion parameters estimated from CEUS data, whether occurring at the experimental or physiological level.
+% Additionally, a previous simulation study addressed the issue of recirculation in CEUS quantification.
+% In this paper we study other sources of error, potentially affecting quantification, through a series of simulation experiment with varying factors.
+% These include data intrinsic characteristics, i.e.~noise level, exam duration, sampling time; as well as quantification strategy, i.e.~analysis scale, estimation method, reference tissue selection.
 
 \section{Introduction}
-CEUS is a cheap, fast, and non-invasive imaging modality, enabling both diagnosis and monitoring of cancer, and revealing the vascular function of tissues.
-Reproducible acquisition and accurate quantification of CEUS data is of the essence to monitor cancer development, along with their vascular network.
-This is especially true when it comes to exam comparison, and in particular to compare longitudinal exams of tumors undergoing vascular-targeting therapy, i.e.~anti-angiogenic treatments. 
-Indeed, assessment of the efficiency of a therapy heavily depends on the methodology at use.
-In order to compare CEUS exams, quantification schemes should be robust to inter-exam changes, but also to acquisition context and settings.
-In a previous study, we studied the impact of inter-exam changes on perfusion parameters estimated from CEUS data, whether occurring at the experimental or physiological level.
-Additionally, a previous simulation study addressed the issue of recirculation in CEUS quantification.
-In this paper we study other sources of error, potentially affecting quantification, through a series of simulation experiment with varying factors.
-These include data intrinsic characteristics, i.e.~noise level, exam duration, sampling time; as well as quantification strategy, i.e.~analysis scale, estimation method, reference tissue selection.
+Quantification models
+Simulations
 
 \section{Theory}
 \subsection{Simulation models}
@@ -384,7 +388,15 @@ For both models, the bias in the estimation of $k_R$, the rate constant in the r
 Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR} show the impact of the sampling period on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:sampling_rV}), relative tissue blood flow (Figure~\ref{fig:sampling_rF}), and rate constants in the tumor (Figure~\ref{fig:sampling_kT}) and in the reference tissue (Figure~\ref{fig:sampling_kR}).
 In Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
 
-
+Varying the sampling period over the investigated range, i.e.~from 0.1 to 1 second, did not have a significant impact on the accuracy of the estimation of the relative tissue blood volume parameter using both the \textbf{rLin} and \textbf{rReg} models (see Figure~\ref{fig:sampling_rV}), and only a slight decrease in precision was observed for larger sampling period.
+Similarly to the varying noise level experiments, the bias in the estimation bias of $rV$ was more consistent across regions using the \textbf{rReg} model, with the median relative estimation errors generally inferior to 4\%.
+The estimates of $rF$, the relative tissue blood flow, exhibited a tendency to decrease with increasing sampling period, especially in regions with large simulated $k_T$ values. 
+While in most regions the estimates of $rF$ from the \textbf{rReg} model get closer to zero for large sampling periods, one region underestimated the parameter by more than 20\%.
+The estimates of $rF$ from the \textbf{rLin} model exhibited a similar trend, but in addition they were overall more sensitive to the sampling period in terms of precision, and less consistent across regions.
+In terms of rate constant in the tumor (see Figure~\ref{fig:sampling_kT}), the \textbf{rReg} model yielded consistent negative biases across regions, and generally yielded more precise estimates than the \textbf{rLin} model.
+For both models, a slight decrease of the estimates of $k_T$ with the sampling period was observed for both models in most regions, but stronger negative slopes were observed in regions with larger simulated $k_T$.
+The rate constant in the reference tissue was estimated consistently across tumor regions using the \textbf{rReg} model (see Figure~\ref{fig:sampling_kR}), and despite a slight underestimation, the estimation was overall more accurate and precise with this model.
+Indeed, the estimation of $k_R$ using the \textbf{rLin} model was extremely imprecise in some regions.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simSampling_rV.eps}
@@ -411,7 +423,7 @@ In Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR}, each plot represents 
 \end{figure}
 
 \paragraph{Reference tissue}
-The effect of varying the characteristics of the reference tissue on the accuracy and precision of the estimation process are displayed in Figures~\ref{fig:referenceTissue_rV_rLin} to \ref{fig:referenceTissue_kR_rReg}. 
+The effect of varying the characteristics of the reference tissue on the accuracy and precision of the estimation process are displayed in Figures~\ref{fig:referenceTissue_rV_rLin} to~\ref{fig:referenceTissue_kR_rReg}. 
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simRef_rV_rLin.eps}

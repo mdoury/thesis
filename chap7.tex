@@ -301,7 +301,19 @@ i.e.~the difference between the estimated parameter $\theta_{est}$ and the simul
 
 \section{Results}
 \paragraph{Noise level}
-Figures~\ref{fig:noise_rV} to \ref{fig:noise_kR} show the relative estimation error of the relative tissue blood volume (Figure~\ref{fig:noise_rV}), relative tissue blood flow (Figure~\ref{fig:noise_rF}), and rate constants in the tumor (Figure~\ref{fig:noise_kT}) and reference  (Figure~\ref{fig:noise_kR}) tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
+Figures~\ref{fig:noise_rV} to \ref{fig:noise_kR} show the relative estimation error of the relative tissue blood volume ($rV$, Figure~\ref{fig:noise_rV}), relative tissue blood flow (Figure~\ref{fig:noise_rF}), and rate constants in the tumor (Figure~\ref{fig:noise_kT}) and reference  (Figure~\ref{fig:noise_kR}) tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
+
+In terms of relative tissue blood volume (see Figure~\ref{fig:noise_rV}), the two models were hardly differenciable.
+Inside a given region, the median relative estimation error value can be different with a slight advantage for the \textbf{rLin} model, but the precision of the estimation is however generally comparable.
+Additionally, the \textbf{rReg} model makes the estimation bias more consistant across regions.
+Regarding relative blood flow (see Figure~\ref{fig:noise_rF}), the \textbf{rLin} model was generally more accurate than the \textbf{rReg} model. 
+However the estimation of $rF$ was less precise and more sensitive to noise using the \textbf{rLin} model.
+In terms of the rate constant in tumor tissues (see Figure~\ref{fig:noise_kT}), the \textbf{rReg} model proved both more accurate and more precise than the \textbf{rLin} model.
+Indeed, the \textbf{rReg} model exhibited an extremely consistant estimation bias across regions, with an average of -3\%, and a lower sensitivity to noise.
+The \textbf{rLin} model on the other hand, yielded estimates of $k_T$ with highly variable biases, with median biases reaching 40\% in one of the regions, and overestimating the parameter in some regions while underestimating it in others.
+A common value of the rate constant in the reference tissue (see Figure~\ref{fig:noise_kR}), $k_R$, was estimated for all tumor regions using the \textbf{rReg} model.
+The regularized model underestimated $k_R$ by 5\% in average in our experiments and exhibited a rather low sensitivity to noise. 
+Oppositely, the estimates of the \textbf{rLin} model were extremely inconsistent across regions, and were more sensitive to noise in most regions.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simNoise_rV.eps}

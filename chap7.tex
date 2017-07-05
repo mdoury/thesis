@@ -296,7 +296,7 @@ The derived parameters were then used as ground truth to evaluate the accuracy o
 \end{figure}
 
 \subsection{Data analysis}\label{sec:dataAnalysis}
-The accuracy and the precision of the parameters estimated using the \textbf{rLin} and the \textbf{rReg} models were respectively investigated through the mean value and standard deviation of the relative estimation error over 150 random noise samples.
+The accuracy and the precision of the parameters estimated using the \textbf{rLin} and the \textbf{rReg} models were respectively investigated through the median value and either the standard deviation or the interquartile range of the relative estimation error over 150 random noise samples.
 The relative estimation error of parameter $\theta$, noted $rE_{\theta}$, is expressed in percent and defined as
 \begin{equation}
 rE_{\theta} = 100 \times \frac{\theta_{est}-\theta_{sim}}{\theta_{sim}}
@@ -310,11 +310,11 @@ Figures~\ref{fig:noise_rV} to \ref{fig:noise_kR} show the relative estimation er
 Expectedly, for the four parameters of both models, the interquartile range of the relative estimation bias increased with the noise level, and no relation was found between the noise level and the median value of the relative estimation error.
 In terms of relative tissue blood volume (see Figure~\ref{fig:noise_rV}), the two models were hardly differenciable.
 Inside a given region, the median relative estimation error value can be different with a slight advantage for the \textbf{rLin} model, but the precision of the estimation is however generally comparable.
-Additionally, the \textbf{rReg} model makes the estimation bias of $rV$ more consistant across regions.
+Additionally, the \textbf{rReg} model makes the estimation bias of $rV$ more consistent across regions.
 Regarding relative blood flow (see Figure~\ref{fig:noise_rF}), the \textbf{rLin} model was generally more accurate than the \textbf{rReg} model. 
 However the estimation of $rF$ was less precise and more sensitive to noise using the \textbf{rLin} model.
 In terms of the rate constant in tumor tissues (see Figure~\ref{fig:noise_kT}), the \textbf{rReg} model proved both more accurate and more precise than the \textbf{rLin} model.
-Indeed, the \textbf{rReg} model exhibited an extremely consistant estimation bias across regions, with an average of -3\%, and a lower sensitivity to noise.
+Indeed, the \textbf{rReg} model exhibited an extremely consistent estimation bias across regions, with an average of -3\%, and a lower sensitivity to noise.
 The \textbf{rLin} model on the other hand, yielded estimates of $k_T$ with highly variable biases, with median biases reaching 40\% in one of the regions, and overestimating the parameter in some regions while underestimating it in others.
 A common value of the rate constant in the reference tissue (see Figure~\ref{fig:noise_kR}), $k_R$, was estimated for all tumor regions using the \textbf{rReg} model.
 The regularized model underestimated $k_R$ by 5\% in average in our experiments and exhibited a rather low sensitivity to noise. 
@@ -423,128 +423,111 @@ Indeed, the estimation of $k_R$ using the \textbf{rLin} model was extremely impr
 \end{figure}
 
 \paragraph{Reference tissue}
-The effect of varying the characteristics of the reference tissue on the accuracy and precision of the estimation process are displayed in Figures~\ref{fig:referenceTissue_rV_rLin} to~\ref{fig:referenceTissue_kR_rReg}. 
+The effect of varying the characteristics of the reference tissue on the accuracy and precision of the estimation process are displayed in Figures~\ref{fig:referenceTissue_rV} to~\ref{fig:referenceTissue_kR}. 
 In any of these eight Figures, the first line corresponds to fixed values of the tissue blood volume $V_R$ with varying tissue blood flow $F_R$, the second line corresponds to fixed values of $F_R$ with varying $V_R$, and the third line correspond to fixed values of $k_R$ with varying values of both $V_R$ and $k_R$.
 Each bullseye displays the median relative estimation error in each of the 32 tumor regions for the considered parameter.
 
-The relative tissue blood volume, $rV$, estimated using the \textbf{rLin} model (see Figure~\ref{fig:referenceTissue_rV_rLin}) revealed sensitive to variations of parameter $k_R$.
+The relative tissue blood volume (see Figure~\ref{fig:referenceTissue_rV}), $rV$, estimated using the \textbf{rLin} model revealed sensitive to variations of parameter $k_R$.
 Indeed, an increase in $k_R$ resulted in increased positive or negative biases, along with increased heterogeneity of the bias across regions.
-Using the \textbf{rReg} model (see Figure~\ref{fig:referenceTissue_rV_rReg}) reduced the discrepencies across regions compared to the \textbf{rLin} model, but varying $k_R$ one way or the other overestimated the values of $rV$.
-Similarly, the relative blood flow, $rF$, estimated using either the \textbf{rLin} model (see Figure~\ref{fig:referenceTissue_rF_rLin}) or the \textbf{rReg} model (see Figure~\ref{fig:referenceTissue_rF_rReg}) were sensitive to variations of $k_R$. 
+Using the \textbf{rReg} model reduced the discrepencies across regions compared to the \textbf{rLin} model, but varying $k_R$ one way or the other overestimated the values of $rV$.
+Similarly, the relative blood flow (see Figure~\ref{fig:referenceTissue_rF}), $rF$, estimated using either the \textbf{rLin} model or the \textbf{rReg} model were sensitive to variations of $k_R$. 
 Larger biases were found using the \textbf{rReg} model, however larger discrepencies across regions were observed in the estimation biases of the \textbf{rLin} model.
 For both models, regions with large simulated $k_T$ values were inversely biased, i.e.~$rF$ was underestimated while the other regions were overestimated and oppositely.
 The smallest biases in the estimation of $rF$ were found for two thirds of the original $k_R$ value.
 In case of fixed $k_R$ values, using lower values of both $F_R$ and $V_R$ yielded overestimated $rV$ and $rF$ values using both models.
-Regarding the rate constant in the tumor, $k_T$, large discrepencies can be observed using the \textbf{rLin} model (see Figure~\ref{fig:referenceTissue_kT_rLin}), and they tend to increase with decreasing values of $k_R$.
-Using the \textbf{rReg} model (see Figure~\ref{fig:referenceTissue_kT_rReg}), the bias in the estimation of $k_T$ increased for lower values of $k_R$.
+Regarding the rate constant in the tumor (see Figure~\ref{fig:referenceTissue_kT}), $k_T$, large discrepencies can be observed using the \textbf{rLin} model, and they tend to increase with decreasing values of $k_R$.
+Using the \textbf{rReg} model, the bias in the estimation of $k_T$ increased for lower values of $k_R$.
 Additionally, discrepencies across regions are almost inexistant using the \textbf{rReg} model, except in regions with large simulated $k_T$ values, revealing the effect of regularization.
 Biases close to zero were found in most regions simulating the reference tissue curve using two thirds of the original $k_R$ value.
-The rate constant in the reference tissue, $k_R$, exhibited behaviors extremely similar to those of $k_T$, whether estimated using the \textbf{rLin} model (see Figure~\ref{fig:referenceTissue_kR_rLin}) or the \textbf{rReg} model (see Figure~\ref{fig:referenceTissue_kR_rReg}).
+The rate constant in the reference tissue (see Figure~\ref{fig:referenceTissue_kR}), $k_R$, exhibited behaviors extremely similar to those of $k_T$, whether estimated using the \textbf{rLin} model or the \textbf{rReg} model.
 In case of fixed $k_R$ values, using lower values of both $F_R$ and $V_R$ yielded underestimated $kT$ and $kR$ values using both models.
 
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simRef_rV_rLin.eps}
-\caption{Bullseyes of the median relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rLin} model depending on the characteristics of the reference tissue used for simulation.}
-\label{fig:referenceTissue_rV_rLin}
-\end{figure}
-
-\begin{figure}
+\par\vspace{1cm}
 \includegraphics[width=\linewidth]{simRef_rV_rReg.eps}
-\caption{Bullseyes of the median relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rReg} model depending on the characteristics of the reference tissue used for simulation.}
-\label{fig:referenceTissue_rV_rReg}
+\caption{Bullseyes of the median relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rLin} (top) and \textbf{rReg} (bottom) models depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_rV}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simRef_rF_rLin.eps}
-\caption{Bullseyes of the median relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rLin} model depending on the characteristics of the reference tissue used for simulation.}
-\label{fig:referenceTissue_rF_rLin}
-\end{figure}
-
-\begin{figure}
+\par\vspace{1cm}
 \includegraphics[width=\linewidth]{simRef_rF_rReg.eps}
-\caption{Bullseyes of the median relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rReg} model depending on the characteristics of the reference tissue used for simulation.}
-\label{fig:referenceTissue_rF_rReg}
+\caption{Bullseyes of the median relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rLin} (top) and \textbf{rReg} (bottom) models depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_rF}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simRef_kT_rLin.eps}
-\caption{Bullseyes of the median relative estimation error for the rate constant in the tumor ($kT$) estimated using the \textbf{rLin} model depending on the characteristics of the reference tissue used for simulation.}
-\label{fig:referenceTissue_kT_rLin}
-\end{figure}
-
-\begin{figure}
+\par\vspace{1cm}
 \includegraphics[width=\linewidth]{simRef_kT_rReg.eps}
-\caption{Bullseyes of the median relative estimation error for the rate constant in the tumor ($kT$) estimated using the \textbf{rReg} model depending on the characteristics of the reference tissue used for simulation.}
-\label{fig:referenceTissue_kT_rReg}
+\caption{Bullseyes of the median relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} (top) and \textbf{rReg} (bottom) models depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_kT}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simRef_kR_rLin.eps}
-\caption{Bullseyes of the median relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} model depending on the characteristics of the reference tissue used for simulation.}
-\label{fig:referenceTissue_kR_rLin}
-\end{figure}
-
-\begin{figure}
+\par\vspace{1cm}
 \includegraphics[width=\linewidth]{simRef_kR_rReg.eps}
-\caption{Bullseyes of the median relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rReg} model depending on the characteristics of the reference tissue used for simulation.}
-\label{fig:referenceTissue_kR_rReg}
+\caption{Bullseyes of the median relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} (top) and \textbf{rReg} (bottom) models depending on the characteristics of the reference tissue used for simulation.}
+\label{fig:referenceTissue_kR}
 \end{figure}
 
 
 \paragraph{Number of regions}
-Theoretically, the number of regions included in the analysis should not have any impact on the parameter of the \textbf{rLin} model as every kinetic is analyzed individually.
-It should however reveal the importance of regularizing parameter $k_R$ across tumor regions, as introduced by the \textbf{rReg} model, by comparison with the \textbf{rLin} model.
+% Theoretically, the number of regions included in the analysis should not have any impact on the parameter of the \textbf{rLin} model as every kinetic is analyzed individually.
+% It should however reveal the importance of regularizing parameter $k_R$ across tumor regions, as introduced by the \textbf{rReg} model, by comparison with the \textbf{rLin} model.
+% This study does not account for the variations of the signal to noise ratio depending on the size of the region.
+% Instead it investigates solely the impact of the number of regions included in the analysis on the accuracy and precision of the estimates depending on whether the approach is regularized for parameter $k_R$ by keeping the noise level constant regardless of the number of regions.
+
 The impact of varying the number of regions on the accuracy and precision of the estimates of the \textbf{rLin} and \textbf{rReg} models is shown in Figures~\ref{fig:region_rV_rLin} to \ref{fig:region_kR_rReg}.
-This study does not account for the variations of the signal to noise ratio depending on the size of the region.
-Instead it investigates solely the impact of the number of regions included in the analysis on the accuracy and precision of the estimates depending on whether the approach is regularized for parameter $k_R$ by keeping the noise level constant regardless of the number of regions.
+Indeed, each figure corresponds to a parameter, and the first line represent the accuracy of the estimation through the median relative estimation error, while the second line represent the precision of the estimation through the standard deviation of the relative estimation error.
+The relative tissue blood volume $rV$ (see Figure~\ref{fig:region_rV}) from the \textbf{rLin} and \textbf{rReg} models were slightly underestimated using both methods, the latter however yielded more homogeneous median biases across regions.
+The \textbf{rLin} model was particularly imprecise in the region exhibiting the larger value of $k_T$.
+For both models, no significant effect of the number of region on the accuracy and precision of the estimates of $rV$ was observed in our experiments.
+Using the \textbf{rLin} model, increasing the number of region resulted in a lower precision of the regional estimates of $rF$, the relative tissue blood flow (see Figure~\ref{fig:region_rF}).
+The \textbf{rReg} model yielded slightly more biased estimates of $rF$, but increasing the number of regions included in the analysis increased the precision of the estimation for studies including two or more regions.
+Overall, the biases in the estimates of $rF$ from the \textbf{rReg} model were more consistent across tumor regions.
+The rate constant in the tumor $k_T$ (see Figure~\ref{fig:region_kT}) was globally overestimated using the \textbf{rLin} model, except in the region with the largest simulated $k_T$ value where it was underestimated.
+The most imprecise estimation of $k_T$ with this model were also found in the four regions exhibiting the largest simulated values of $k_T$.
+Using the \textbf{rReg} model considerably reduced the median value of the estimation bias for studies including four or more regions, as well as its standard deviation for studies with eight or more regions.
+Additionally, the estimation is more homogeneous acrosse regions in terms of both accuracy and precision.
+Regarding $k_R$, the rate constant in the reference tissue (see Figure~\ref{fig:region_kR}), the precision and the homogeneity of the estimates from the \textbf{rLin} model clearly decreases with the number of regions, while the precision actually increases using the \textbf{rReg} model. 
+Increasing the number of regions increased the heterogeneity of the biases in the $k_R$ estimates of the \textbf{rLin} model.
+The $k_R$ estimates of the \textbf{rReg} model exhibit a slight negative bias, which does not change much when changing the number of regions
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simReg_rV_rLin.eps}
-\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rLin} model depending on the number of regions $N_T$.}
-\label{fig:region_rV_rLin}
-\end{figure}
-
-\begin{figure}
+\par\vspace{1cm}
 \includegraphics[width=\linewidth]{simReg_rV_rReg.eps}
-\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rReg} model depending on the number of regions $N_T$.}
-\label{fig:region_rV_rReg}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood volume ($rV$) estimated using the \textbf{rLin} (top) and \textbf{rReg} (bottom) models depending on the number of regions $N_T$.}
+\label{fig:region_rV}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simReg_rF_rLin.eps}
-\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rLin} model depending on the number of regions $N_T$.}
-\label{fig:region_rF_rLin}
-\end{figure}
-
-\begin{figure}
+\par\vspace{1cm}
 \includegraphics[width=\linewidth]{simReg_rF_rReg.eps}
-\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rReg} model depending on the number of regions $N_T$.}
-\label{fig:region_rF_rReg}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the relative tissue blood flow ($rF$) estimated using the \textbf{rLin} (top) and \textbf{rReg} (bottom) models depending on the number of regions $N_T$.}
+\label{fig:region_rF}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simReg_kT_rLin.eps}
-\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} model depending on the number of regions $N_T$.}
-\label{fig:region_kT_rLin}
-\end{figure}
-
-\begin{figure}
+\par\vspace{1cm}
 \includegraphics[width=\linewidth]{simReg_kT_rReg.eps}
-\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rReg} model depending on the number of regions $N_T$.}
-\label{fig:region_kT_rReg}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} (top) and \textbf{rReg} (bottom) models depending on the number of regions $N_T$.}
+\label{fig:region_kT}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simReg_kR_rLin.eps}
-\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} model depending on the number of regions $N_T$.}
-\label{fig:region_kR_rLin}
-\end{figure}
-
-\begin{figure}
+\par\vspace{1cm}
 \includegraphics[width=\linewidth]{simReg_kR_rReg.eps}
-\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rReg} model depending on the number of regions $N_T$.}
-\label{fig:region_kR_rReg}
+\caption{Bullseyes of the median value and the standard deviation of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} (top) and \textbf{rReg} (bottom) models depending on the number of regions $N_T$.}
+\label{fig:region_kR}
 \end{figure}
 
 

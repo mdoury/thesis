@@ -424,6 +424,24 @@ Indeed, the estimation of $k_R$ using the \textbf{rLin} model was extremely impr
 
 \paragraph{Reference tissue}
 The effect of varying the characteristics of the reference tissue on the accuracy and precision of the estimation process are displayed in Figures~\ref{fig:referenceTissue_rV_rLin} to~\ref{fig:referenceTissue_kR_rReg}. 
+In any of these eight Figures, the first line corresponds to fixed values of the tissue blood volume $V_R$ with varying tissue blood flow $F_R$, the second line corresponds to fixed values of $F_R$ with varying $V_R$, and the third line correspond to fixed values of $k_R$ with varying values of both $V_R$ and $k_R$.
+Each bullseye displays the median relative estimation error in each of the 32 tumor regions for the considered parameter.
+
+The relative tissue blood volume, $rV$, estimated using the \textbf{rLin} model (see Figure~\ref{fig:referenceTissue_rV_rLin}) revealed sensitive to variations of parameter $k_R$.
+Indeed, an increase in $k_R$ resulted in increased positive or negative biases, along with increased heterogeneity of the bias across regions.
+Using the \textbf{rReg} model (see Figure~\ref{fig:referenceTissue_rV_rReg}) reduced the discrepencies across regions compared to the \textbf{rLin} model, but varying $k_R$ one way or the other overestimated the values of $rV$.
+Similarly, the relative blood flow, $rF$, estimated using either the \textbf{rLin} model (see Figure~\ref{fig:referenceTissue_rF_rLin}) or the \textbf{rReg} model (see Figure~\ref{fig:referenceTissue_rF_rReg}) were sensitive to variations of $k_R$. 
+Larger biases were found using the \textbf{rReg} model, however larger discrepencies across regions were observed in the estimation biases of the \textbf{rLin} model.
+For both models, regions with large simulated $k_T$ values were inversely biased, i.e.~$rF$ was underestimated while the other regions were overestimated and oppositely.
+The smallest biases in the estimation of $rF$ were found for two thirds of the original $k_R$ value.
+In case of fixed $k_R$ values, using lower values of both $F_R$ and $V_R$ yielded overestimated $rV$ and $rF$ values using both models.
+Regarding the rate constant in the tumor, $k_T$, large discrepencies can be observed using the \textbf{rLin} model (see Figure~\ref{fig:referenceTissue_kT_rLin}), and they tend to increase with decreasing values of $k_R$.
+Using the \textbf{rReg} model (see Figure~\ref{fig:referenceTissue_kT_rReg}), the bias in the estimation of $k_T$ increased for lower values of $k_R$.
+Additionally, discrepencies across regions are almost inexistant using the \textbf{rReg} model, except in regions with large simulated $k_T$ values, revealing the effect of regularization.
+Biases close to zero were found in most regions simulating the reference tissue curve using two thirds of the original $k_R$ value.
+The rate constant in the reference tissue, $k_R$, exhibited behaviors extremely similar to those of $k_T$, whether estimated using the \textbf{rLin} model (see Figure~\ref{fig:referenceTissue_kR_rLin}) or the \textbf{rReg} model (see Figure~\ref{fig:referenceTissue_kR_rReg}).
+In case of fixed $k_R$ values, using lower values of both $F_R$ and $V_R$ yielded underestimated $kT$ and $kR$ values using both models.
+
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simRef_rV_rLin.eps}

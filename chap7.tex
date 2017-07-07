@@ -253,17 +253,23 @@ Finally, assuming no oscillation occurred in the TIC prior to bolus arrival, $D$
 \section{Materials and Methods}
 \subsection{Simulations of CEUS data}
 \subsubsection{Simulation process}
-Regional perfusion parameters were derived from experimental data fitted with the OVC model presented in Section~\ref{sec:OVCModel}.
+Regional perfusion parameters were derived from experimental data fitted with the \textbf{OVC} model presented in Section~\ref{sec:OVCModel}.
 The arterial input function was estimated in the image using the segmentation method presented in Chapter~\ref{chapter:PMB}.
 A log-normal model was fitted to the resulting arterial curve for noise-filtering purposes. 
 Regional enhancement curves were simulated using the same model, along with the estimated model parameters and arterial input function.
+Simulated time-intensity curves inside of each tumor region, as well as in the reference tissue are displayed in Figure~\ref{fig:simCtCr}.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{simCtCr.eps}
+\caption{Time-intensity curves inside of each of the 32 tumor regions (top grid), and in the reference tissue (bottom), simulated using the \textbf{OVC}. Each plot shows the simulated noiseless curve (orange line) in the region, i.e.~$\sigma = 0$, as well as the curve with simulated multiplicative noise (blue dots), i.e.~$\sigma = 0.25$.}
+\label{fig:simCtCr}
+\end{figure}
 
 \subsubsection{Varying factors}
 \paragraph{Noise level}
 The influence of noise was investigated by varying parameter $\sigma$, i.e.~the standard deviation of the multiplicative noise level presented in Section~\ref{sec:NoiseModel}.
 $\sigma$ was varied linearly with increments of 0.05 from 0, corresponding to a noiseless conditions, to 0.5, corresponding to high noise conditions.
 For each noise level, 150 random noise sets following the multiplicative gamma noise model were generated.
-Example time-intensity curves with varying noise levels are displayed in Figure~\ref{fig:simNoise}.
 
 \paragraph{Exam duration}
 Various exam durations were investigateds by varying the number of samples in the simulated data.

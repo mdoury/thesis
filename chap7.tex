@@ -32,7 +32,7 @@ Then, because of the multiplicative nature of the noise in ultrasound data, a pa
 \subsubsection{One vascular compartment model (OVC)}
 \label{sec:OVCModel}
 A vascularized tissue is considered an homogeneous compartment fed by an artery.
-The vascular compartment is parameterized by tissue blood volume $V$, and tissue blood flow $F$, since the distribution of microbubbles is restricted to the vascular space~\cite{Gunn2001cx,Doury2016wn}.
+The vascular compartment is parameterized by tissue blood volume $V$, and tissue blood flow $F$, since the distribution of microbubbles is restricted to the vascular space~\cite{Gunn:2001cx,Doury:2017fz}.
 An additional time-delay parameter $D$, reflecting the transit time of the contrast agent from the feeding artery to the tissue of interest, was used to fit data more accurately, thus avoiding biasing the estimation of vascular parameter. 
 The mathematical expression of this model is given by equation (\ref{eq:CM}):
 % \begin{equation}
@@ -54,7 +54,7 @@ Given the AIF $C_A(t)$ and the TIC in a region of interest $C(t)$, three perfusi
 Inversely, given an AIF $C_A(t)$, and the set of three perfusion parameters $V$, $F$, and $D$, the associated TIC $C(t)$ can be simulated.
 
 \subsubsection{Multiplicative noise model}\label{sec:NoiseModel}
-A multiplicative noise model following a gamma distribution enforcing unit mean was used, inspired by Barrois et al., i.e.~$\mathrm{mean}_v~p\left(v\right) = 1$, where $p\left(v\right)$ is the gamma distribution~\cite{Barrois2013}.
+A multiplicative noise model following a gamma distribution enforcing unit mean was used, inspired by Barrois et al., i.e.~$\mathrm{mean}_v~p\left(v\right) = 1$, where $p\left(v\right)$ is the gamma distribution~\cite{Barrois:2013gw}.
 A unit mean distribution for a multiplicative noise ensures no bias in introduced by the noise model: it is the equivalent of a centered distribution for additive noise.
 
 The gamma distribution is traditionally parameterized by two parameters: the shape parameter $k$, and the scale parameter $\theta$.
@@ -119,7 +119,7 @@ Defining the relative flow as $rF^i = \nicefrac{V_T^i}{V_R}$, the relative volum
 \label{eq:RTDEF2}
 \end{equation}
 
-Assuming initial concentrations are equal to zero in both tissues, $\dot{C}_T^i$ in Eq.~\ref{eq:RTDEF2} integrates in exponential form~\cite{Yankeelov2005}, yielding
+Assuming initial concentrations are equal to zero in both tissues, $\dot{C}_T^i$ in Eq.~\ref{eq:RTDEF2} integrates in exponential form~\cite{Yankeelov2005de}, yielding
 \begin{equation}
 \begin{array}{rcl}
 C_T^i \left( t - D_T^i \right) & = & rF^i \cdot \left( k_R - k_T^i \right) \cdot \int_{0}^{t} C_{R} \left( \tau - D_R \right) \cdot e^{- k_T^i \cdot \left( t - D_R - \tau \right)} \mathrm d \tau \\
@@ -134,7 +134,7 @@ The latter equation, however, is not linearly solvable.
 A non-linear resolution method must therefore be used in order to estimate vascular parameters $rF^i$, $rV^i$, $k_T^i$, and $k_R$ in each of the $N_T$ tissues of interest.
 
 \subsubsection{Linear resolution of the rOVC model (rLin)}
-Alternatively, under similar assumptions, $\dot{C}_T^i$ in Eq.~\ref{eq:RTDEF2} can be integrated over time, yielding the following expression of $C_T^i$~\cite{Cardenas2013}
+Alternatively, under similar assumptions, $\dot{C}_T^i$ in Eq.~\ref{eq:RTDEF2} can be integrated over time, yielding the following expression of $C_T^i$~\cite{CardenasRodriguez:2013em}
 \begin{equation}
 \begin{array}{rcl}
 C_T^i \left(t - D_T^i\right) &=& rF^i \cdot C_{R}\left(t-D_R\right) + rV^i \cdot k_T^i \cdot \int_0^t C_{R} \left(\tau - D_{R}\right) \mathrm d\tau \\
@@ -164,7 +164,7 @@ v\left(t\right) &=& \int_0^t C_{R} \left(\tau\right) \mathrm d\tau.
 \label{eq:RTLINV2}
 \end{equation}
 
-Eq.~\ref{eq:RTDEF3} can be interpreted as an overly determined linear system of equations~\cite{Bjorck1996}, i.e.~one equation for each time sample $t$.
+Eq.~\ref{eq:RTDEF3} can be interpreted as an overly determined linear system of equations~\cite{Bjorck:1996uz}, i.e.~one equation for each time sample $t$.
 It therefore rewrites
 \begin{equation}
 x^i\left(t\right) = a^i \cdot u\left(t\right) + b^i \cdot v\left(t\right) + c^i \cdot y^i\left(t\right) \qquad \forall t \geq D_T^i,
@@ -244,7 +244,7 @@ The determination method of the time-delay parameter, noted $D$, of a generic TI
 $C\left(t\right)$ was noise-filtered twice by a moving-average filter of width 2 seconds, yielding $C_f\left(t\right)$.
 The time when $C_f\left(t\right)$ reaches 20\% of its maximum value is a rough approximation that intentionally overestimates $D$, it was noted $t_{20\%}$.
 $C_f\left(t\right)$ was then truncated, conserving only the part where $t \leq t_{20\%}$.
-The derivative of $C_{f}\left(t\right)$, noted $\dot{C}_{f}\left(t\right)$, was approximated by convolution of the TIC with the central difference operator~\cite{Whittaker1967}. % Whittaker, E. T. and Robinson, G. "Central-Difference Formulae." Ch. 3 in The Calculus of Observations: A Treatise on Numerical Mathematics, 4th ed. New York: Dover, pp. 35-52, 1967.
+The derivative of $C_{f}\left(t\right)$, noted $\dot{C}_{f}\left(t\right)$, was approximated by convolution of the TIC with the central difference operator~\cite{Whittaker:2008wv}. % Whittaker, E. T. and Robinson, G. "Central-Difference Formulae." Ch. 3 in The Calculus of Observations: A Treatise on Numerical Mathematics, 4th ed. New York: Dover, pp. 35-52, 1967.
 Finally, assuming no oscillation occurred in the TIC prior to bolus arrival, $D$ was defined as the time at which the derivative $\dot{C}_{f}\left(t\right)$ reaches 20\% of its value at $t = t_{20\%}$:
 \begin{equation}
 \exists D\in\Re^+,~D \leq t_{20\%}\,\wedge\,\dot{C}_{f}\left(D\right) = 20\% \times \dot{C}_{f}\left(t_{20\%}\right).
@@ -257,7 +257,14 @@ Regional perfusion parameters were derived from experimental data fitted with th
 The arterial input function was estimated in the image using the segmentation method presented in Chapter~\ref{chapter:PMB}.
 A log-normal model was fitted to the resulting arterial curve for noise-filtering purposes. 
 Regional enhancement curves were simulated using the same model, along with the estimated model parameters and arterial input function.
-Simulated time-intensity curves inside of each tumor region, as well as in the reference tissue are displayed in Figure~\ref{fig:simCtCr}.
+The perfusion parameters of the \textbf{OVC} model used for simulation are presented in Figure~\ref{fig:simRef}.
+The associated time-intensity curves simulated for each tumor region, as well as for the reference tissue are displayed in Figure~\ref{fig:simCtCr}.
+
+\begin{figure}[bh]
+\includegraphics[width=\linewidth]{simRef.eps}
+\caption{Absolute perfusion parameters used for simulation with the OVC model, i.e.~tissue blood volume, $V_T$ and $V_R$, tissue blood flow, $F_T$ and $F_R$, tissue rate constant, $k_T$ and $k_R$, and time delay, $D_T$ and $D_R$. Bullseye view of the parameters in the 32 tumor regions. The bottom disks represent the parameters used to simulated the reference tissue region, the center disk being the original value used for all experiments. The other disks are, from left to right, the half, two third, three half, and double of the original value, used to study the influence of the reference tissue.}
+\label{fig:simRef}
+\end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simCtCr.eps}
@@ -286,12 +293,6 @@ In particular, the tissue blood volume, the tissue blood flow of the reference t
 Because of the relation between the three parameters, they cannot be varied individually.
 It is however possible to fix either of the parameters while varying the two others.
 The disks at the bottom Figure~\ref{fig:simRef} shows the various values of the perfusion parameters used to simulate the reference tissue enhancement curve, the center disk being the original value obtained from experimental data.
-
-\begin{figure}
-\includegraphics[width=\linewidth]{simRef.eps}
-\caption{Absolute perfusion parameters used for simulation with the OVC model, i.e.~tissue blood volume, $V_T$ and $V_R$, tissue blood flow, $F_T$ and $F_R$, tissue rate constant, $k_T$ and $k_R$, and time delay, $D_T$ and $D_R$. Bullseye view of the parameters in the 32 tumor regions. The bottom disks represent the parameters used to simulated the reference tissue region, the center disk being the original value used for all experiments. The other disks are, from left to right, the half, two third, three half, and double of the original value, used to study the influence of the reference tissue.}
-\label{fig:simRef}
-\end{figure}
 
 \paragraph{Number of regions}
 Various regional segmentation were performed varying the number of tumor regions as powers of two, ranging from 1 to 32.
@@ -498,8 +499,8 @@ In case of fixed $k_R$ values, using lower values of both $F_R$ and $V_R$ yielde
 
 
 \paragraph{Number of regions}
-The impact of varying the number of regions on the accuracy and precision of the estimates of the \textbf{rLin} and \textbf{rReg} models is shown in Figures~\ref{fig:region_rV_rLin} to \ref{fig:region_kR_rReg}.
-Indeed, each figure corresponds to a parameter, and the first line represent the accuracy of the estimation through the median relative estimation error, while the second line represent the precision of the estimation through the standard deviation of the relative estimation error.
+The impact of varying the number of regions on the accuracy and precision of the estimates of the \textbf{rLin} and \textbf{rReg} models is shown in Figures~\ref{fig:region_rV} to \ref{fig:region_kR}.
+Indeed, each figure corresponds to a parameter, and the first line represent the accuracy of the estimation through the median relative estimation error, while the second line represents the precision of the estimation through the standard deviation of the relative estimation error.
 The relative tissue blood volume $rV$ (see Figure~\ref{fig:region_rV}) from the \textbf{rLin} and \textbf{rReg} models were slightly underestimated using both methods, the latter however yielded more homogeneous median biases across regions.
 The \textbf{rLin} model was particularly imprecise in the region exhibiting the larger value of $k_T$.
 For both models, no significant effect of the number of region on the accuracy and precision of the estimates of $rV$ was observed in our experiments.

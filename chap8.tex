@@ -33,13 +33,25 @@ Chapter~\ref{chapter:IRBM} focuses on the impact of recirculating contrast agent
 In Chapter~\ref{chapter:PLOSONE} we presented the \textbf{rReg} in more details, and studied the impact of varying data characteristics, e.g.~exam duration, sampling period, or of quantification choices, e.g.~reference tissue, number of tissue regions.
 These studies revealed the robustness of the \textbf{rReg} model to recirculation and degraded data, but also its ability to quantify perfusion homogeneously across tumor regions.
 
-The \textbf{rReg} model is a promising perfusion quantification tool, and its applicability to contrast-enhanced ultrasound data was demonstrated in this thesis.
-Application to other perfusion imaging modalities should be investigated, and may require some adaptations of the model to the characteristics of the data, the tissue, or the contrast agent.
-Indeed, applicability of the method to various compartmental architectures should be investigated in order to account for the characteristics of the tissue and contrast agent.
+Overall, the \textbf{rReg} model proved a promising perfusion quantification tool, and its applicability to contrast-enhanced ultrasound data was demonstrated in this thesis.
+When performing relative perfusion quantification in multiple regions, we highly recommend accounting for the relations between the regional model parameters to avoid regional inconsistencies, while making the estimation more robust.
+Nevertheless, two-dimensional data still represents the majority of contrast-enahced ultrasound exams nowadays, making exam comparison extremely difficult.
+Indeed it is particularly difficult to ensure the exact same imaging plane is selected in two exams performed days apart, and this is especially true when monitoring evolving tissues where structures change in shapes and size, e.g.~tumor growth, treatment response.
+Therefore we highly recommend the use three-dimensional perfusion imaging whenever possible, in particular when it comes to exam comparison.
+
+Three-dimensional perfusion imaging is vastly available in positron emission tomography, X-ray computed tomography, and magnetic resonance imaging.
+However, application of the \textbf{rReg} model to other perfusion imaging modalities should be further investigated, and may require some adaptations to account for the characteristics of the data, the tissue, or the contrast agent.
+Indeed, applicability of the estimation method to various compartmental architectures should be investigated in order to account for the characteristics of the tissue and contrast agent.
 Further adaptation is also necessary in order to study perfusion in the liver, indeed the model needs to account for both the arterial and portal blood supplies.
 Quantification of perfusion in the kidney remains challenging because of the complex vascular structures resulting in multiple perfusion phases, and should be addressed particularly.
-The impact of the reference tissue on the perfusion parameters of the \textbf{rReg} was shown in Chapter~\ref{chapter:PLOSONE}, however a finer study is necessary to better define the characteristics of the ideal reference tissue. 
 
+The impact of the reference tissue on the perfusion parameters of the \textbf{rReg} was shown in Chapter~\ref{chapter:PLOSONE}, however a finer study is necessary to better define the characteristics of the ideal reference tissue. 
+Accounting for multiple reference tissues may alleviate the sensitivity of the model estimates to the characteristics of the reference tissues.
+However, using a reference tissue to monitor the perfusion of tumors undergoing therapy raises a question regarding the effect of the treatment on the perfusion of the reference tissue, especially in the case of anti-angiogenic treatments.
+
+To conclude, choosing the quantification method to assess tissue perfusion through contrast-enhanced exams remains a complex problem that heavily depends on the data and on the goal of the study.
+Exam comparison is particularly difficult because of variations occuring at both the experimental and physiological levels.
+Reference tissue models proved more reproducible and robust than arterial input function models overall, however once accurate estimation of the arterial input function is achieved would it still be the case?
 
 
 % \newpage

@@ -64,6 +64,13 @@
 \usepackage{fancyhdr}
 %\renewcommand{\chaptermark}[1]{\markboth{\textit{\chaptername}\ \thechapter.\ #1}{}}
 
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
 % Declare argmin as a math operator
 \DeclareMathOperator*{\argmin}{arg\,min}
 

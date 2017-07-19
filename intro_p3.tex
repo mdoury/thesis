@@ -1,25 +1,26 @@
 \chapter*{Foreword}
 Chapter~\ref{chapter:PMB} revealed the superior reproducibility of the relative perfusion parameters estimated by the reference tissue model.
-However, as discussed in the afterword of the second part of this thesis, the formulation of the reference tissue model used in this study requires a fixed value of parameter $k_R$,i.e.~the rate constant characterizing the time-intensity curve in the reference tissue.
-In the third and last part of this thesis, we propose a linear formulation of the reference tissue model alleviating the need for a fixed value of $k_R$, and assess it using both experimental and simulated data.
+However, as discussed in the afterword of the second part of this thesis, the formulation of the reference tissue model used in this study was achieved using a fixed value of parameter $k_R$,i.e.~the rate constant characterizing the time-intensity curve in the reference tissue.
+In the third and last part of this thesis, we propose a linear formulation of the reference tissue model alleviating the need for a fixed value of $k_R$~\cite{CardenasRodriguez:2013em}, and assess it using both experimental and simulated data.
 
-Using the linear formulation for regional analysis, a value of $k_R$ should be estimated for each region.
-Such discrepencies in the values of $k_R$ can affect the value of the other perfusion parameters.
-This issue is further discussed in Chapter~\ref{chapter:IUS}, where a regularized estimation method ensuring a single value of $k_R$ is estimated per exam.
+Using the linear formulation for regional analysis, i.e.~including multiple regions of interest, a different value of parameter $k_R$ should be estimated for each region.
+Such discrepencies in the values of $k_R$ can also affect the value of the other perfusion parameters.
+This issue is further discussed in Chapter~\ref{chapter:IUS}, where a new regularized estimation method ensuring a single value of $k_R$ is estimated for all the regions of interest of an exam.
 The reproducibility of the linear resolution method and of the proposed regularized method are assessed using the same test-retest experiments as presented in Chapter~\ref{chapter:PMB}, and compared to the absolute and normalized parameters of the Log-Normal model, i.e.~$AUC$, $rAUC$, $WIR$, $rWIR$.
 This work was published in the proceedings of the {\em IEEE International Ultrasonics Symposium} (IUS)~\cite{Doury:2016fi}.
 
 The reviewers of \cite{Doury:2016fi} raised an interesting question regarding the impact of recirculation on the perfusion parameters estimated in our contrast-enhanced ultrasound test-retest study.
-Chapter~\ref{chapter:IRBM} address this issue in depth and study the impact of recirculating microbubbles on the accuracy and precision of the perfusion parameters through a simulation study.
+Chapter~\ref{chapter:IRBM} addresses this issue in depth and studies the impact of recirculating microbubbles on the accuracy and precision of the perfusion parameters through a simulation study.
 A simple recirculation model was used, it was however able to reflect the various passes of the bolus, as well as its dispersion and attenuation.
-An intuitive approach to avoid recirculation consist in fitting the model to the portion of data acquired before recirculation occurs, thus a classical and a cropped version of the Log-Normal model were assessed.
+An intuitive approach to limit the impact of recirculation consist in fitting the model to the part of data acquired before recirculation occurs, thus a classical and a cropped version of the Log-Normal model were assessed.
 Oppositely, compartmental models are build to account for recirculation.
 The robustness of the linear reference tissue model and of its regularized version to recirculation was assessed.
-This work has been submitted to {\em Innovation and Research in BioMedical Engineering} (IRBM).
+A revised version of this work was submitted to {\em Innovation and Research in BioMedical Engineering} (IRBM)~\cite{Doury:2017vv}.
 
-Chapter~\ref{chapter:PLOSONE} formally presents the linear and regularized estimation methods to solve the reference tissue model.
-Indeed, getting into details was not possible in~\cite{Doury2017wn} because of the limited space available in the proceedings template.
-This is however not the core of this work, which aims at evaluating the sensitivity of perfusion parameters to varying data characteristics, and analysis choices.
-In particular, the impact of acquisition duration, acquisition frequency, noise amplitude, number of regions, as well as the characteristics of the reference tissue were investigated.
+Chapter~\ref{chapter:PLOSONE} formally details the linear and regularized estimation methods to solve the reference tissue model.
+It provides a full development of the method proposed in~\cite{Doury:2017fz}.
+In addition, this Chapter aims at evaluating the sensitivity of perfusion parameters to varying data characteristics, and analysis method settings.
+In particular, the impact of acquisition duration, acquisition frequency, noise amplitude, number of regions used for the regulairzation, as well as the characteristics of the reference tissue were investigated.
 In order to provide a ground truth, synthetic data based on preclinical experiments was generated using a one-compartment model.
+This Chapter is an extended version of a paper that we planned to submit to {\em Medical Image Analysis}.
 \blfootnote{N.B.~All the references cited in this part of the thesis are pooled together and presented at the end of Part~\ref{part:part3}.}

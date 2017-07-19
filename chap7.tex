@@ -33,8 +33,8 @@ Then, because of the multiplicative nature of the noise in ultrasound data, a pa
 \label{sec:OVCModel}
 A vascularized tissue is considered an homogeneous compartment fed by an artery.
 The vascular compartment is parameterized by tissue blood volume $V$, and tissue blood flow $F$, since the distribution of microbubbles is restricted to the vascular space~\cite{Gunn:2001cx,Doury:2017fz}.
-An additional time-delay parameter $D$, reflecting the transit time of the contrast agent from the feeding artery to the tissue of interest, was used to fit data more accurately, thus avoiding biasing the estimation of vascular parameter. 
-The mathematical expression of this model is given by equation (\ref{eq:CM}):
+An additional time-delay parameter $D$, reflecting the transit time of the contrast agent from the feeding artery to the tissue of interest, was introduced to describe experimental data more accurately, thus avoiding a bias in the estimation of the vascular parameter. 
+The mathematical expression of this model is given by Equation (\ref{eq:CM2}):
 % \begin{equation}
 % \label{eq:CM}
 % C \left( t \right) = F \int_{0}^{t} C_A \left( \tau \right) \mathrm{e}^{-\frac{F}{V} \left( t - D - \tau \right)}\mathrm d \tau, \forall t \geq D, \quad 0 \textrm{ else.}
@@ -44,35 +44,38 @@ The mathematical expression of this model is given by equation (\ref{eq:CM}):
 % \frac{\mathrm dC \left( t - D \right)}{\mathrm dt} &=& F \frac{\mathrm dC_A \left( t \right)}{\mathrm dt} - \frac{F}{V} C \left( t - D \right), \quad \forall t \geq D,  \\
 %  &=& 0 \textrm{ otherwise.}
 \dot{C} \left( t - D \right) &=& F \cdot C_A \left( t \right) - \frac{F}{V} \cdot C \left( t - D \right), \quad \forall t \geq D,  \\
- &=& 0 \textrm{ otherwise.}
+ &=& 0 \textrm{ otherwise.} 
 \end{array}
 \label{eq:CM}
 \end{equation}
-where $C_A$ is the AIF, $C$ is the modeled TIC, and $\dot{C}$ is the time derivative of $C$.
-
-Given the AIF $C_A(t)$ and the TIC in a region of interest $C(t)$, three perfusion parameters can be estimated by least-squares fitting: $V$, $F$, and $D$.
-Inversely, given an AIF $C_A(t)$, and the set of three perfusion parameters $V$, $F$, and $D$, the associated TIC $C(t)$ can be simulated.
+where $C_A$ is the arterial input function, $C$ is the modeled TIC inside the tissue of interest, and $\dot{C}$ is the time derivative of $C$.
+This equation integrates as 
+\begin{equation}
+C \left( t \right) = F \int_{0}^{t} C_A \left( \tau \right) \mathrm{e}^{-\frac{F}{V} \left( t - D - \tau \right)}\mathrm d \tau, \forall t \geq D, \quad 0 \textrm{ else.}
+\label{eq:CM2}
+\end{equation}
+Given an AIF $C_A(t)$, and the set of three perfusion parameters $V$, $F$, and $D$, the associated TIC $C(t)$ can be simulated.
 
 \subsubsection{Multiplicative noise model}\label{sec:NoiseModel}
-A multiplicative noise model following a gamma distribution enforcing unit mean was used, inspired by Barrois et al., i.e.~$\mathrm{mean}_v~p\left(v\right) = 1$, where $p\left(v\right)$ is the gamma distribution~\cite{Barrois:2013gw}.
-A unit mean distribution for a multiplicative noise ensures no bias in introduced by the noise model: it is the equivalent of a centered distribution for additive noise.
+A multiplicative noise model following a gamma distribution and enforcing unit mean was used, i.e.~$\mathrm{mean}_v~p\left(v\right) = 1$, inspired by \citet{Barrois:2013gw}.
+A unit mean distribution for a multiplicative noise is the equivalent of a centered distribution for additive noise.
 
-The gamma distribution is traditionally parameterized by two parameters: the shape parameter $k$, and the scale parameter $\theta$.
-However, enforcing a unit mean is equivalent to set $\theta = \nicefrac{1}{k}$, the noise distribution $p\left(v\right)$ can therefore be parameterized by a single parameter, $k$, as
+A gamma distribution is parameterized by two parameters: the shape parameter $k$, and the scale parameter $\theta$.
+Enforcing a unit mean is equivalent to set $\theta = \nicefrac{1}{k}$, the noise distribution $p\left(v\right)$ is therefore parameterized by a single shape parameter, $k$, as
 \begin{equation}
 p\left(v\right) = \nicefrac{1}{\Gamma\left(k\right)} ~ k^k ~ v^{k-1} ~ \mathrm e^{-vk}, \forall~v \geq 0.
 \end{equation}
-The shape parameter $k$ controls the sharpness of the noise distribution, and is related to the standard deviation by the relation $\sigma = \nicefrac{1}{\sqrt{k}}$, allowing modulation of the noise level in simulated TICs.
+The shape parameter $k$ is related to the standard deviation by the relation $\sigma = \nicefrac{1}{\sqrt{k}}$, allowing modulation of the noise level in simulated TICs.
 Fig.~\ref{fig:recmod} shows an example of multiplicative random noise on simulated TICs for $k = 16$, corresponding to $\sigma = 0.25$.
 Unless specified differently, this value of $\sigma$ was used as the default standard deviation of the noise distribution and 150 random noise sequences were generated from this distribution.
 
 \subsection{Quantification models}
-In this section we present relative quantification methods, making use of a reference tissue, derived from the previously described OVC model. 
+Two different relative quantification methods, making use of a reference tissue, derived from the previously described OVC model are described. 
 The following methods are intended to estimate perfusion parameters from $N_T$ tissues in a single CEUS exam.
-The TIC in the i$^{th}$ tissue of interest is noted $C_T^i(t)$, where $i \in \left[\![1,N_T \right]\!]$, and the TIC in the chosen reference tissue is noted $C_R(t)$. All TICs are defined for $t \in \left[ 0, L \right]$.
+The TIC in the i$^{th}$ tissue of interest is noted $C_T^i(t)$, where $i \in \left[\![1,N_T \right]\!]$, and the TIC in the chosen reference tissue is noted $C_R(t)$. All TICs are defined for $t \in \left[ 0, L \right]$ and count $N_S$ samples.
 
 \subsubsection{Relative OVC model (rOVC)}
-A relative OVC model can be derived from the previously presented OVC model, considering conjointly one tissue of interest with TIC $C_T^i(t)$, and one reference tissue with TIC $C_R(t)$:
+A relative OVCd model can be derived from the previously presented OVC model, considering conjointly one tissue of interest with TIC $C_T^i(t)$, and one reference tissue with TIC $C_R(t)$:
 \begin{equation}
 \left\{
 % \begin{array}{r c l}
@@ -130,10 +133,12 @@ C_T^i \left( t - D_T^i \right) & = & rF^i \cdot \left( k_R - k_T^i \right) \cdot
 \end{equation}
 where $k_R = \nicefrac{F_R}{V_R}$ is the rate constant in the reference tissue.
 
-The latter equation, however, is not linearly solvable. 
-A non-linear resolution method must therefore be used in order to estimate vascular parameters $rF^i$, $rV^i$, $k_T^i$, and $k_R$ in each of the $N_T$ tissues of interest.
+Using such a formulation, Equation (\ref{eq:RTDEF4}) is not linearly solvable. 
+A non-linear resolution method must therefore be used in order to estimate vascular parameters $rF^i$, $rV^i$, $k_T^i$, and $k_R$, in each of the $N_T$ tissues of interest, as well as the time-delay parameters $D_T^i$, and $D_R$.
+This approach has been investigated in Chapters~\ref{chapter:PMB} and~\ref{chapter:PMB2}, and was therefore not included in the study. 
+Instead we used the linear formulation presented in the following Section.
 
-\subsubsection{Linear resolution of the rOVC model (rLin)}
+\subsubsection{Linear resolution of the rOVC model (rLin)}\label{sec:rLin}
 Alternatively, under similar assumptions, $\dot{C}_T^i$ in Eq.~\ref{eq:RTDEF2} can be integrated over time, yielding the following expression of $C_T^i$~\cite{CardenasRodriguez:2013em}
 \begin{equation}
 \begin{array}{rcl}
@@ -144,33 +149,33 @@ C_T^i \left(t - D_T^i\right) &=& rF^i \cdot C_{R}\left(t-D_R\right) + rV^i \cdot
 \label{eq:RTDEF3}
 \end{equation}
 
-Assuming time delay parameters $D_T^i$ and $D_R$ are known beforehand, TICs can be time-registered, mimicking an ideal case with no delay in bolus arrival.
-Variables $x^i\left(t\right)$, $y^i\left(t\right)$ are time-registered versions of the TIC in the i$^{th}$ tissue of interest and its integral.
-They were defined $\forall t \in \left[ 0,\,L-D_T^i\right]$, as
+Assuming time delay parameters $D_T^i$ and $D_R$ are estimated beforehand using the method presented in Section~\ref{sec:estimationDelay}, TICs can be time-shifted, mimicking an ideal case with no delay in bolus arrival.
+Variables $x^i\left(t\right)$, $y^i\left(t\right)$ are time-shifted versions of the TIC in the i$^{th}$ tissue of interest and its integral.
+They are defined $\forall t \in \left[ 0,\,L-D_T^i\right]$, as
 \begin{equation}
 \begin{array}{rcl}
-x^i\left(t\right) &=& C_{T}^i\left(t\right), \\
-y^i\left(t\right) &=& -\int_0^{t} C_{T}^i \left( \tau \right) \mathrm d\tau.
+x^i\left(t\right) &=& C_{T}^i\left(t + D_T^i\right), \\
+y^i\left(t\right) &=& -\int_0^{t} C_{T}^i \left( \tau + D_T^i \right) \mathrm d\tau.
 \end{array}
 \label{eq:RTLINV1}
 \end{equation}
-Similarly, variables $u\left(t\right)$, $v\left(t\right)$ are time-registered versions of the reference TIC and its integral.
-They were defined $\forall t \in \left[ 0,\,L-D_R\right]$, as
+Similarly, variables $u\left(t\right)$, $v\left(t\right)$ are time-shifted versions of the reference TIC and its integral.
+They are defined $\forall t \in \left[ 0,\,L-D_R\right]$, as
 \begin{equation}
 \begin{array}{rcl}
-u\left(t\right) &=& C_{R}\left(t\right), \\
-v\left(t\right) &=& \int_0^t C_{R} \left(\tau\right) \mathrm d\tau.
+u\left(t\right) &=& C_{R}\left(t + D_R\right), \\
+v\left(t\right) &=& \int_0^t C_{R} \left(\tau + D_R \right) \mathrm d\tau.
 \end{array}
 \label{eq:RTLINV2}
 \end{equation}
 
-Eq.~\ref{eq:RTDEF3} can be interpreted as an overly determined linear system of equations~\cite{Bjorck:1996uz}, i.e.~one equation for each time sample $t$.
-It therefore rewrites
+Eq.~\ref{eq:RTDEF3} can be interpreted as an overdetermined system of $N_S$ linear equations~\cite{Bjorck:1996uz}, i.e.~one equation for each time sample $t$.
+It can therefore be written
 \begin{equation}
 x^i\left(t\right) = a^i \cdot u\left(t\right) + b^i \cdot v\left(t\right) + c^i \cdot y^i\left(t\right) \qquad \forall t \geq D_T^i,
 \label{eq:RTLINF}
 \end{equation}
-where coefficients $a^i$, $b^i$, and $c^i$ are defined in terms of vascular parameters as
+where coefficients $a^i$, $b^i$, and $c^i$ are defined as
 \begin{equation}
 a^i = rF^i, \quad b^i = rV^i \cdot k_T^i, \quad c^i = k_T^i.
 \label{eq:RTLINC}
@@ -178,7 +183,7 @@ a^i = rF^i, \quad b^i = rV^i \cdot k_T^i, \quad c^i = k_T^i.
 
 The system can be solved using a linear least-squares resolution method, yielding estimates of parameters $a^i$, $b^i$, and $c^i$ by minimization of the squared fit error $\varepsilon^i$
 \begin{equation}
-\argmin_{\left\lbrace a^i, b^i, c^i\right\rbrace} \varepsilon^i, \textrm{ where } \varepsilon^i = \sum_t \Big( x^i\left(t\right) - a^i\cdot u\left(t\right) + b^i\cdot v\left(t\right) + c^i\cdot y^i\left(t\right) \Big)^2.
+\argmin_{\left\lbrace a^i, b^i, c^i\right\rbrace} \varepsilon^i, \textrm{ where } \varepsilon^i = \sum_t \Big( x^i\left(t\right) - a^i\cdot u\left(t\right) - b^i\cdot v\left(t\right) - c^i\cdot y^i\left(t\right) \Big)^2.
 \end{equation}
 Vascular parameters of the \textbf{rLin} model can then be derived easily using
 \begin{equation}
@@ -186,6 +191,7 @@ rF^i = a^i,~rV^i = \nicefrac{b^i}{c^i}, \textrm{ and } k_T^i = c^i.
 \end{equation}
 
 The linear resolution of the \textbf{rOVC} model will be referred to as \textbf{rLin} in the following.
+For the case of a single region, $N_T = 1$, the \textbf{rLin} model is equivalent to the method proposed by \citet{CardenasRodriguez:2013em}.
 
 \subsubsection{Regularized linear resolution of the rOVC model (rReg)}
 Estimating $rF^i$, $rV^i$, and $k_T^i$ in $N_T$ tissues using the \textbf{rLin} model, $N_T$ values of parameter $k_R$ can be derived as a linear combination of the \textbf{rLin} model parameters:
@@ -194,8 +200,9 @@ k_R = \frac{F_R}{F_T^i}\frac{F_T^i}{V_T^i}\frac{V_T^i}{V_R} = \frac{rV^i \cdot k
 \label{eq:KR}
 \end{equation}
 
-However, there is but one reference tissue per exam, associated to a single reference TIC $C_R\left(t\right)$. 
-Since parameter $k_R$ characterizes the vascular function of a single reference tissue, a unique value should be estimated per exam in order to avoid discrepancies of $k_R$ values between tissues of interest. 
+When there are more than one tissue of interest ($N_T > 1$), $N_T$ values of parameter $k_R$ can be derived from the parameters of the \textbf{rLin} model. 
+However, these $N_T$ values of $k_R$ characterize the same reference tissue, associated to a single reference TIC $C_R\left(t\right)$. 
+A unique value of $k_R$ should therefore be estimated per exams in order to avoir discrepencies between the $N_T$ tissues of interest.
 
 The linear relation between parameters of the \textbf{rLin} model provided by Eq.~\ref{eq:KR} can be used as a constraint to ensure the $N_T$ derived values of $k_R$ are consistent across tissues.
 Substituting in Eq.~\ref{eq:RTLINF} yields 
@@ -212,7 +219,7 @@ x^i\left(t\right) &=& a^i\cdot w\left(t\right) + c^i\cdot y^i\left(t\right)
 \end{array}
 \label{eq:RTREG2}
 \end{equation}
-where $w\left(t\right)$ is a linear combination of variables $u\left(t\right)$ and $v\left(t\right)$, which were defined in Eq.~\ref{eq:RTLINV2}, 
+where $w\left(t\right)$ is defined by
 \begin{equation}
 \begin{array}{rcl}
 w\left(t\right) &=& u\left(t\right) + k_R \cdot v\left(t\right),\\
@@ -221,23 +228,23 @@ w\left(t\right) &=& u\left(t\right) + k_R \cdot v\left(t\right),\\
 \label{eq:RTREG3}
 \end{equation}
 
-Provided a value of parameter $k_R$, the $N_T$ linear system equations defined in Eq.~\ref{eq:RTREG} are independently solvable using a linear least-squares resolution method, minimizing the squared error, $e^i$:
+When a value of parameter $k_R$ is provided, the $N_T$ linear system equations defined in Eq.~\ref{eq:RTREG} are independently solvable using a linear least-squares resolution method, minimizing the squared error, $e^i$:
 \begin{equation}
 \argmin_{\left\lbrace a^i, c^i \right\rbrace} e^i, \textrm{ where } e^i = \sum_{t} \Big( x^i\left(t\right) - \left[a^i\cdot w\left(t\right) + c^i\cdot y^i\left(t\right) \right] \Big)^2.
 \end{equation}
 
-Since the value of $k_R$ is unknown, and is necessary to define $w\left(t\right)$, its value must be determined.
-We proposed a non-linear optimization scheme that estimates the value of $k_R$ by minimization of the normalized mean squared error, $E$:
+Since the value of $k_R$ is necessary to define $w\left(t\right)$, its value must be determined.
+We proposed a non-linear iterative optimization scheme that estimates the value of $k_R$ by iteratively minimizing the normalized mean squared error, $E$:
 \begin{equation}
-\argmin_{k_R} E, \textrm{ where } E = \sum_i\frac{\sqrt{\nicefrac{e^i}{N^i} }}{\lvert x^i \rvert_{\infty}},
+\argmin_{k_R} E, \textrm{ where } E = \sum_i\frac{\sqrt{\nicefrac{e^i}{N_S^i} }}{\lvert x^i\left(t\right) \rvert_{\infty}},
 \end{equation}
-$N^i$ being the number of samples in $x^i(t)$, i.e.~the number of time samples verifying $t \in \left[0,\,L-D_T^i\right]$.
+$N_S^i$ being the number of samples in $x^i(t)$, i.e.~the number of time samples verifying $t \in \left[0,\,L-D_T^i\right]$, and $\lvert \dot \rvert_{\infty}$ is the uniform norm of $x^i\left(t\right)$ defined as the maximum absolute value in the regional time-shifted curve.
 Vascular parameters were then derived from the model estimates as 
 \begin{equation}
 rF^i = a^i,~rV^i = \frac{k_R \cdot a^i}{c^i}, \textrm{ and } k_T^i = c^i.
 \end{equation}
 
-\subsubsection{Estimation of time-delay parameters}
+\subsubsection{Estimation of time-delay parameters}\label{sec:estimationDelay}
 As stated in the presentation of the \textbf{rLin} and \textbf{rReg} models, time-delay parameters must be known beforehand, and TICs registered in time in order to solve the linear system of equations.
 The determination method of the time-delay parameter, noted $D$, of a generic TIC, noted $C\left(t\right)$, used the empirical method described below.
 
@@ -320,6 +327,8 @@ In this section we present the results of our simulation experiments.
 Figure~\ref{fig:gridIndices} provides the correspondance between regions, depending on the type of data to be presented.
 Indeed, color-coded bullseyes were used when a single value had to be represented per region, but grids of plots were used to show the regional results as a function of a simulation parameter, i.e.~noise level, exam duration, and sampling period.
 
+In Figures~\ref{fig:noise_rV} to \ref{fig:sampling_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
+
 \begin{figure}
 \includegraphics[width=\linewidth]{gridIndices.eps}
 \caption{Correspondance of the regions between bullseye (left) and grid (right) representation.}
@@ -344,31 +353,30 @@ Oppositely, the estimates of the \textbf{rLin} model were extremely inconsistent
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simNoise_rV.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative blood volume ($rV$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative blood volume ($rV$) estimated in the 32 tumor regions using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
 \label{fig:noise_rV}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simNoise_rF.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative blood flow ($rF$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the relative blood flow ($rF$) estimated in the 32 tumor regions using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
 \label{fig:noise_rF}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simNoise_kT.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the tumor ($k_T$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the tumor ($k_T$) estimated in the 32 tumor regions using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
 \label{fig:noise_kT}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{simNoise_kR.eps}
-\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
+\caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated in the 32 tumor regions using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
 \label{fig:noise_kR}
 \end{figure}
 
 \paragraph{Exam duration}
 Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR} show the impact of the exam duration on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:examDuration_rV}), relative tissue blood flow (Figure~\ref{fig:examDuration_rF}), and rate constants in the tumor (Figure~\ref{fig:examDuration_kT}) and in the reference tissue (Figure~\ref{fig:examDuration_kR}).
-In Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
 
 Regarding relative blood volume (see Figure~\ref{fig:examDuration_rV}), the \textbf{rReg} model was able to estimate the parameter accurately, and to reach a steady state with exams as short as 80 seconds.
 Oppositely, the \textbf{rLin} model only yielded accurate estimates using the whole exam duration, i.e.~165 seconds, and at the exception of one region it overall underestimated $rV$.
@@ -408,7 +416,6 @@ For both models, the bias in the estimation of $k_R$, the rate constant in the r
 
 \paragraph{Sampling period}
 Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR} show the impact of the sampling period on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:sampling_rV}), relative tissue blood flow (Figure~\ref{fig:sampling_rF}), and rate constants in the tumor (Figure~\ref{fig:sampling_kT}) and in the reference tissue (Figure~\ref{fig:sampling_kR}).
-In Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
 
 Varying the sampling period over the investigated range, i.e.~from 0.1 to 1 second, did not have a significant impact on the accuracy of the estimation of the relative tissue blood volume parameter using both the \textbf{rLin} and \textbf{rReg} models (see Figure~\ref{fig:sampling_rV}), and only a slight decrease in precision was observed for larger sampling period.
 Similarly to the varying noise level experiments, the bias in the estimation bias of $rV$ was more consistent across regions using the \textbf{rReg} model, with the median relative estimation errors generally inferior to 4\%.

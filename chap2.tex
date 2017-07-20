@@ -4,14 +4,20 @@
 Generally speaking, quantification of perfusion consists in deriving parameters from blood flow measurements, regardless of the method used for the measure. 
 This topic has been on the table, and continuously evolving, long before perfusion imaging existed. 
 Indeed, G.N.~Stewart introduced indicator dilution theory, starting with the founding paper published in the Journal of Physiology in 1897~\cite{Stewart:1897dz}. 
-W.F.~Hamilton went further, corrected the approximations made by Stewart.
+Indicator dilution theory was originally developped to quantify perfusion using blood sampling data.
+It relates tracer concentration curves to physical measurements, i.e.~blood flow, blood volume, and mean transit time, assuming a stationary flow system and an instantaneous injection of a known quantity of tracer.
+W.F.~Hamilton went further, corrected some approximations made by Stewart.
 Even before Stewart and Hamilton, hemodynamics of the heart had been studied  through indirect measurements and reported in German language by \citet{Volkmann:1850us} and \citet{Vierordt:82xUDMVI} in the 1850s, and later through direct measurements by \citet{Stolnikow:1886wm} and \citet{Tigerstedt:1891wn}.
 
 This chapter fundamentally aims to review the various methods used to quantify perfusion exams acquired using one of the imaging modality briefly presented in Chapter~\ref{chapter:intro}. 
-Realistically, this review of perfusion quantification techniques cannot be close to comprehensive, instead it tackles the subject from the three angles mentioned thereafter, and emphasis the major landmarks of the perfusion quantification landscape.
+Quantification of perfusion exams is possible assuming the signal intensity is linearly related to the concentration of tracer in the tissue. 
+Verifying this assumption is not included in the scope of this thesis, it will therefore be considered true in the following of this manuscript.
+Additionally, perfusion imaging modalities yields macroscopic measurements, i.e.~at the pixel or voxel level, and does not give direct access to microscopic measurements, i.e.~at the cellular or molecular level.
+Therefore, an image-based measurement is really a mixture of multiple signals corresponding to the various vascular structures present inside the unitary volume of interest. 
 
+Realistically, this review of perfusion quantification techniques cannot be close to comprehensive, instead it tackles the subject from the three angles mentioned thereafter, and emphasis the major landmarks of the perfusion quantification landscape.
 Section~\ref{sec:SQMethods} presents semi-quantitative methods, extracting parameters directly either from raw or noise-filtered enhancement curves. 
-Then Section~\ref{sec:DeconvolutionMethods} presents deconvolution-based quantification methods, estimating the vascular transfer function in the tissue of interest by means of blind or regularized deconvolution.
+Then Section~\ref{sec:DeconvolutionMethods} presents deconvolution-based quantification methods, estimating the vascular impulse response in the tissue of interest by means of blind or regularized deconvolution.
 Finally, compartmental models accounting for the various interactions of the contrast agent with the tissue are presented in Section~\ref{sec:CompartmentalModels}. 
 
 \section{Semi-quantitative methods}
@@ -21,7 +27,8 @@ Semi-quantitative methods are probably among the most intuitive as they extract 
 They are however not directly related to any physiological function and are prone to changes in experimental or physiological conditions.
 They are therefore often used as relative indicators of perfusion and contrast agent transit time~\cite{Miles:1991et}, allowing intra-exam comparisons.
 
-Examples of semi-quantitative parameters include the peak enhancement~\cite{Norman:1978ji,Nally:1985te,Pettersson:1987ft,Erlemann:1989ib}, the time to peak enhancement~\cite{Norman:1978ji,Erlemann:1989ib,Dietrich:2012kw}, maximum upslope gradient, also known as wash-in rate~\cite{Nally:1985te,Erlemann:1989ib}, the area under the enhancement curve~\cite{Dietrich:2012kw}, but also perfusion parameters based on indicator dilution theory based on the previously cited parameters~\cite{Hilson:1978us,Peters:1987fa,Peters:1987vx,Miles:1991et,Miles:1991ei,Miles:1993cq,Blomley:1995vs,Koenig:1998ir}.
+Examples of semi-quantitative parameters include the peak enhancement~\cite{Norman:1978ji,Nally:1985te,Pettersson:1987ft,Erlemann:1989ib}, the time to peak enhancement~\cite{Norman:1978ji,Erlemann:1989ib,Dietrich:2012kw}, maximum upslope gradient, also known as wash-in rate~\cite{Nally:1985te,Erlemann:1989ib}, the area under the enhancement curve~\cite{Dietrich:2012kw}. 
+We also considered semi-quantitative the perfusion parameters based on indicator dilution theory that were derived from the previously cited parameters~\cite{Hilson:1978us,Peters:1987fa,Peters:1987vx,Miles:1991et,Miles:1991ei,Miles:1993cq,Blomley:1995vs,Koenig:1998ir}.
 % Figure~\ref{fig:SQParameters} shows graphical representations of the above mentioned semi-quantitative parameters. 
 
 \subsection{Nuclear medicine}
@@ -30,12 +37,12 @@ Semi-quantitative parameters have been used to differentiate stenosed from healt
 
 For instance, Hilson et al.~and later Peters et al.~both proposed an enhancement-based perfusion index, which is commonly defined as the ratio of the tissue blood flow to the cardiac output. 
 On the one hand, Hilson et al.~defined the perfusion index as the ratio of the area under the arterial curve to the area under the renal curve, both curves are integrated up to the arterial peak~\cite{Hilson:1978us}.
-On the other hand, Peters et al.~defined the perfusion index as the ratio of the maximum upslope of the renal curve normalized for the injected quantity to the maximum upslope of the integrated arterial curve normalized for the area under the arterial enhancement curve, and multiplied by a constant converting the gamma camera into a unit of activity~\cite{Peters:1987fa,Peters:1987vx}. 
+On the other hand, Peters et al.~defined the perfusion index as the ratio of the maximum upslope of the renal curve normalized for the injected quantity to the maximum upslope of the integrated arterial curve normalized for the area under the arterial enhancement curve, and multiplied by a constant converting the number of received gamma photons into a unit of activity~\cite{Peters:1987fa,Peters:1987vx}. 
 
 Nally et al.~reported significant differences in the wash-in rate, curve width at 75\% of the peak enhancement, and maximum enhancement in normal and stenosed kidney in a canine model~\cite{Nally:1985te}. 
 
 
-\subsection{X-rays}
+\subsection{X-ray}
 \label{sec:SQRadiography}
 Derived from the work of Peters et al., semi-quantitative parameters were also proposed by Miles et al.~in \citeyear{Miles:1991et} to quantify renal cortical and medullary perfusion in X-ray computed tomography with bolus injection of Iodine~\cite{Miles:1991et,Miles:1991ei}. 
 The proposed perfusion index was defined as the ratio of the maximum slope in the tissue curve and the peak enhancement of the arterial curve. 
@@ -112,7 +119,7 @@ Refer to Section~\ref{sec:IntroCEUS} for more information on contrast-enhanced u
 Methods assessing perfusion using bolus injection are first presented, followed by methods specific to continuous infusion injection.
 
 As a foreword to this section, indicator dilution theory as first formalized by \citet{Stewart:1897dz} and later by \citet{Hamilton:1932ww} is valid under the condition that the mass of contrast-agent is conserved through the time of the acquisition. 
-Since \citeyear{Butler:1979wu}, it a known that a portion of the intravenously injected microbubbles are filtrated through the lungs~\cite{Butler:1979wu,Meltzer:1980js}
+Since \citeyear{Butler:1979wu}, it is known that a portion of the intravenously injected microbubbles are filtrated through the lungs~\cite{Butler:1979wu,Meltzer:1980js}
 % Butler:1979wu, Journal of Applied Physiology, The lung as a filter for microbubbles
 % Meltzer:1980js, WHY DO THE LUNGS CLEAR ULTRASONIC CONTRAST?
 , i.e.~before their first pass in the tissue of interest.
@@ -206,12 +213,12 @@ These results suggest the independence of the relative wash-out rate to the mixi
 
 \citet{Wiencek:1993hr} investigated the various steps necessary to achieve accurate quantification of contrast echocardiography using indicator-dilution theory. 
 % Wiencek:1993hr, Pitfalls in Quantitative Contrast Echocardiography: The Steps to Quantitation of Perfusion
-The proposed approach relies on the knowledge of an arterial input function, i.e.~the time-intensity curve in a pure blood pool like the aortic root or in the left ventricle, in order to relax the need for standardized injection and physiological conditions.
+The proposed approach assumes the arterial input function is known beforehand, i.e.~the time-intensity curve in a pure blood pool like the aortic root or in the left ventricle, in order to relax the need for standardized injection and physiological conditions.
 Authors ackowledge the difficulty of estimating the input function using a single injection, and suggest performing two separate injections to avoid saturation and non-linearities caused by high contrast-agent concentrations.
 They emphasis the necessity for a consistent and confined range of microbubble size, as the intensity of the signal backscattered by a single bubble is non-linearly proportional to the diameter of the bubble.
 The importance of conservation of contrast-agent quantity and properties throughout the acquisition of the ultrasound images was outlined, and the impact of hydrostatic pressure and gas saturation level of the solution as reported in the litterature was investigated.
 The choice of the representation of the time-intensity curves, i.e.~video intensity, log-transformed intensity, or concentration from calibration data, and its impact on the estimated parameters were discussed.
-A possible explaination for undetected changes when using peak height as an indicator of blood flow was proposed, authors related it to signal saturation and illustrate this phenomenon in simple cases where the changes in blood flow are caused by a change in blood volume only or in transit time only.
+A possible explanation for undetected changes when using the peak intensity as an indicator of blood flow was proposed, authors related it to signal saturation and illustrate this phenomenon in simple cases where the changes in blood flow are caused by a change in blood volume only or in transit time only.
 Additionally, electronic issues resulting from signal acquisition, signal processing, and electronic thresholding were discussed.
 Physiological factors like tissue-dependant hematocrit were also investigated.
 Finally, methods which showed promising results in preliminary studies at the time of the review (i.e.~\citeyear{Wiencek:1993hr}) were reported, including various alternative imaging schemes (e.g.~acoustic velocity, radiofrequency data, second harmonic imaging).
@@ -223,10 +230,10 @@ In \citeyear{Kaul:1989il}, \citet{Kaul:1989il} proposed a first-order gamma vari
 They compared their results in the myocardium and in the coronary bed with the transmural myocardial blood flow measured using radiolabelled microspheres, and to direct coronary flow measurements obtained by an electromagnetic flowmeter. 
 They studied the influence of the injection site by performing their experiments in two groups of eight dogs. 
 In the first group, dogs were injected a bolus of microbubbles in the circumflex artery, while in the second group they were injected in the left main coronary.
-Authors reported a good correlation of both myocardial and coronary blood flow measurements with the parameter of the gamma variate which influences the curve width, $\alpha$, for both groups (mean $r = 0.81$ and $0.96$ respectively), but a poor correlation of the peak intensity (mean $r = 0.63$ and $0.39$ respectively). 
+Authors reported a good correlation of both myocardial and coronary blood flow measurements with the parameter of the gamma variate model which influences the width of the modeled enhancement curve, $\alpha$, for both groups (mean $r = 0.81$ and $0.96$ respectively), but a poor correlation of the peak intensity (mean $r = 0.63$ and $0.39$ respectively). 
 Pooling estimates from the eight dogs did not affect the correlation with $\alpha$ for the first group ($r = 0.80$), however for the second group, pooling data considerably dropped the correlation ($r = 0.23$).
 Scattered plots reveal the varying slopes obtained in the different dogs, emphasizing the impact of the injection site.
-Indeed, when injecting in the left main coronary the contrast agent is dispersed throught the coronary tree, making quantification of myocardial blood flow intrinsically relative.
+Indeed, when injecting in the left main coronary the contrast agent is dispersed through the coronary tree, making quantification of myocardial blood flow intrinsically relative.
 Authors suggested that absolute quantification of myocardial blood flow may be possible, injecting closer to the branches of the coronary tree, but were well aware that the proposed semi-quantitative parameters are not absolute themselves.
 
 \citet{Tiemann:2000wl} investigated the ability of harmonic power Doppler imaging to yield quantitative perfusion parameters, as this modality inherently destroys microbubble to produce contrast-specific images~\cite{Tiemann:1997vj}, through in vitro experiments, and ex vivo experiments in a porcine heart.
@@ -249,7 +256,7 @@ The presence of ultrasonic microbubbles could therefore influence the ground tru
 
 % Postert:2000kda, Contrast agent specific imaging modes for the ultrasonic assessment of parenchymal cerebral echo contrast enhancement.
 In \citeyear{Postert:2000kda}, \citet{Postert:2000kda} proposed an empirical model for the quantification of cerebral perfusion time-intensity curves following intravenous injection of a bolus of microbbubles, imaged through the acoustic temporal bone window using phase-inversion harmonic ultrasound imaging, contrast burst imaging, and time variance imaging for comparison. 
-The model accounts for the baseline-intensity and for the maximum change in intensity, i.e.~the peak-intensity minus the baseline-intensity. 
+The model accounts for the baseline-intensity and for the maximum intensity variation, i.e.~the peak-intensity minus the baseline-intensity. 
 Moreover, the wash-in of the bolus is modeled by a logistic curve with adjustable steepness and delay, despite authors describe it as step function, and the destruction of microbubbles is modeled by an exponential decay.
 However, none of the model parameters is directly related to the physiology or to physical measurements. 
 Authors used the peak-intensity, as well as the time to peak-intensity extracted parameters from the modeled time-intensity curves as semi-quantitative parameters to compare the values obtained using the three modalities of contrast-enhanced ultrasond cited above, and in four regions of interest of nine healthy patients. 
@@ -271,13 +278,14 @@ They believe it could be a relevant indicator to help characterize lesions in pa
 
 % Elie2014, Method and system for quantification of tumoral vascularization (US PATENT: US 8847960 B2)
 % IGR custom model
-In 2006, members of the Institut Gustave Roussy, also known as IGR, filed a patent application for quantification approach developped specifically for contrast-enhanced ultrasound~\cite{Elie2014}.
+In 2006, \citet{Elie2014} filed a patent application for quantification approach developped specifically for contrast-enhanced ultrasound.
 The formulation of the mathematical medel is empirical, and is inspired from the model first proposed by \citet{Eyding:2003bo}, replacing both the numerator and the denominator terms by sigmoid functions. 
-A long list of semi-quantitative parameters that can be derived from the fitted model for vascularization and tumoral angiogenesis detection are listed by the authors, i.e.~peak-intensity time and value, wash-in time, mean transit time, area under the curve, wash-in rate, area under the wash-in, and under the wash-out. 
+A dozen of semi-quantitative parameters that can be derived from the fitted model for vascularization and tumoral angiogenesis detection are listed by the authors, i.e.~peak time, peak value, wash-in time, mean transit time, area under the curve, wash-in rate, area under the wash-in, and under the wash-out. 
 
 % Lavisse:2008gc, Early quantitative evaluation of a tumor vasculature disruptive agent AVE8062 using dynamic contrast-enhanced ultrasonography.
 The group later used the patented model in an early attempt to assess the efficacy of a disruptive anti-angiogenic treatment~\cite{Lavisse:2008gc}.
-The group assessed tumor vasculature through the peak-intensity time and value, as well as the full-width at half maximum, in four groups of ten mice, respectively imaged at both 5 and 15 minutes, one hour, six hours, and twenty-four hours after treatment injection, and compared the post-treatment contrast-enhanced ultrasound results to pre-treatment results, but also to power Doppler and histology findings.
+They assessed tumor vasculature through the peak time and peak value, as well as the full-width at half maximum, in four groups of ten mice, respectively imaged at 5, 15 minutes, one hour, six hours, and twenty-four hours after treatment injection, and compared the post-treatment contrast-enhanced ultrasound results to pre-treatment results.
+Results were also compared to power Doppler and histology findings.
 They reported a progressive decrease in peak-intensity value reaching its minimum six hours after injection of the anti-angiogenic treatement, and opposite effects in time to peak-intensity and in the full-width at half maximum.
 
 % Mischi:2003ed, Videodensitometric Methods for Cardiac Output Measurements
@@ -288,8 +296,7 @@ They also proposed a correction for the systematic negative estimation bias in t
 From the fitted time-intensity curve, the area under the curve and the mean transit time are extracted.
 Then flow and volume parameters are derived using the injected quantity of contrast-agent and indicator-dilution theory.
 They tested their model in vitro, and compared the flow estimated with contrast-enhanced ultrasound with the direct flow measurements of an electromagnetic flowmeter.
-The fitted curves were strongly to the experimental data ($r^2 \gt 0.95$), and so were the four estimated and measured flow values ($r^2 \gt 0.99$).
-However the number of tested flow rates is only four, which seems small for in vitro experiments.
+The fitted curves were strongly correlated to the experimental data ($r^2 \gt 0.95$), and so were the four estimated and measured flow values ($r^2 \gt 0.99$).
 
 % Mischi:2004cn, Contrast echocardiography for pulmonary blood volume quantification
 In \citeyear{Mischi:2004cn}, \citet{Mischi:2004cn} presented a method to quantify blood volume using the flow and mean transit time estimated in two time-intensity curves derived from contrast-enhanced ultrasound bolus acquisitions, i.e.~respectively acquired upstream and downstream of the volume of interest.
@@ -301,11 +308,11 @@ Note that the flow was estimated as the ratio of the injected dose to the area u
 The authors reported a good agreement between the true and estimated values obtained in the in vitro experiments despite some discrepancies, especially for high blood volumes, and a good agreement between the two models for the clinical data in the absence of ground truth.
 
 % Mischi:2008fe, On the physical and stochastic representation of an indicator dilution curve as a gamma variate
-% Physical and stochastic explaination of the gamma variate model, comparison with LDRW
-In \citeyear{Mischi:2008fe}, \citet{Mischi:2008fe} established the relation of the commonly-used gamma variate model to indicator-dilution theory using a one-dimentional multi-compartmental approximation of the vascular network.
-They first gave a physical interpretation, that consists in seeing a blood vessel as a cascade of equal mixing chambers, each compartment having a constant flow, and an exponential impulse responses which time constant is the ratio of the compartment blood flow to the compartment blood volume.
-They also gave a stochastic intrepretation, that models the dilution impulse response a given distance from the injection site, assuming a poisson distribution of the number of individual particle wash-out to the next compartment.
-Then they revealed the inverse relation between the parameters of the two interpretations, yielding an expression of the tissue impulse response as a function of the wash-out rate and the mean transit time which respects indicator-dilution theorems in the case an ideal Dirac injection.
+% Physical and stochastic explanation of the gamma variate model, comparison with LDRW
+In \citeyear{Mischi:2008fe}, \citet{Mischi:2008fe} established the relation of the commonly-used gamma variate model to indicator-dilution theory using a one-dimensional multi-compartmental approximation of the vascular network.
+They first gave a physical interpretation, that consists in defining a blood vessel as a cascade of equal mixing chambers, each compartment having a constant flow, and an exponential impulse response with a time constant equal to the ratio of the compartment blood flow to the compartment blood volume.
+They also gave a stochastic intrepretation, that models the dilution impulse response at a given distance from the injection site, assuming a Poisson distribution of the number of individual particle wash-out to the next compartment.
+Then they revealed the inverse relation between the parameters of the two interpretations, yielding an expression of the tissue impulse response as a function of the wash-out rate and the mean transit time which respects indicator-dilution theorems in the case of an ideal Dirac injection.
 They finally established the relation of the gamma variate model with the local density random walk model using the previously presented physical interpretation.
 Based on the previously presented methodology~\cite{Mischi:2004cn}, the authors were able to estimate the volume of dilution between two measurements of the same bolus, i.e.~before and after the passage of the bolus in the volume to be estimated.
 They performed in vitro experiments with bolus injection, and compared the ability of the two models to estimate the dilution volume in a varying flow setup.
@@ -321,9 +328,9 @@ They observed that one of the parameters of the local density random walk model 
 They therefore proposed the replacement of the global boundary condition assuming a Dirac bolus injection, which time and distance are needed, by a local boundary condition assuming a normally distributed spatial concentration profile at the time immediately preceding the passage of the bolus at the sampling location.
 Replacing the old global boundary condition by the new local one yields a new expression of the local density random walk model, from which a local diffusion-related parameter $\kappa$ can be derived, defined as the ratio of the diffusive time to the squared convective time.
 The accuracy of the method was investigated by fitting the model to synthetic time-intensity curves simulated using the convective diffusion equation. 
-The model was able to fit the simulated curves accurately, and $\kappa$ was estimated with a mean relative error of 4.33\%. 
-However, when considering curves with recirculation and therefore fitting the model on cropped curves, the authors reported a higher mean relative error of 10.15\%. 
-Clinical relevance of the method was assessed in a preliminary study including five datasets from four patients with confirmed prostatectomy. 
+The model was able to fit the simulated curves accurately, and $\kappa$ was estimated with a mean relative error of 4\%. 
+However, when considering curves with recirculation and therefore fitting the model on cropped curves, the authors reported a higher mean relative error of 10\%. 
+Clinical relevance of the method was assessed in a preliminary study including five datasets from four patients with confirmed prostate cancer, that were referred for radical ablation of the prostate. 
 Parametric maps of $\kappa$ were compared to histology-based tissue classification, i.e.~based on the level of cell differenciation.
 In all patients, authors were able to discriminate cancerous from healthy tissue, i.e.~cancerous regions were associated with high $\kappa$ values.
 The tissue classification power of both classical semi-quantative parameters and the parameters of the proposed model was investigated. 
@@ -332,14 +339,14 @@ The authors acknowledge that the proposed diffusion-related parameter, $\kappa$,
 It also exhibited the highest area under the receiver operating characteristic curve with a value of 0.909. 
 
 % Averkiou:2010iw, Quantification of Tumor Microvascularity with Respiratory Gated Contrast Enhanced Ultrasound for Monitoring Therapy.
-In an attempt to monitor the microvascularity of colorectal metastasis in the liver of patients undergoing anti-cancer treatment, \citet{Averkiou:2010iw} investigated the use of the wash-in time ratio, defined as the ratio of the wash-in time in the metastasis to the wash-in time in normal liver parenchyma.
+In an attempt to monitor the microvascularity of colorectal metastasis in the liver of patients undergoing anti-cancer treatment, \citet{Averkiou:2010iw} investigated the use of the ratio of the wash-in time in the metastasis to the wash-in time in normal liver parenchyma.
 They proposed an empirical model based on the error function to estimate the wash-in time of respiratory-gated time-intensity curves in metastatic and normal tissues obtained by contrast-enhanced ultrasonography.
 The function under investigation is a time-delayed error function, member of the sigmoid family, with varying rise time and maximum intensity, fitted to the wash-in of the time-intensity curve.
 Authors stated the rise time parameter is linearly related to the wash-in time.
 They performed a reproducibility study in five untreated patients with a total of twelve acquisitions, with varying injected quantity and/or injection duration of contrast-agent from one acquisition to another.
-While the wash-in time in the metastatic tissue exhibited variations up to 30\%, the wash-in rate was more reproducible exhibiting an average deviation of 9\%, with a maximum of 16\%, confirming the expected normalization effect.
+While the wash-in time in the metastatic tissue exhibited variations up to 30\%, the wash-in time ratio was more reproducible exhibiting an average deviation of 9\%, with a maximum of 16\%, revealing the effect of normalization.
 The ability of the wash-in time ratio to assess treatment efficiency was investigated in a longitudinal study, performed in seven patients undergoing a combination of cytotoxic and antiangiogenic treatments.
-Major findings include the ability to discriminate good from bad responders to therapy, the ground truth responder classification being assessed by experts using conventional criteria.
+Major findings include the ability to discriminate good from bad responders to therapy, the ground truth responder classification being assessed by experts using conventional criteria, i.e.~number and size of the lesions, blood tests for serum tumor markers, and liver function tests.
 Indeed, four out of five good responders exhibited a significant rise of the wash-in time ratio after the first therapy cycle, revealing the early normalization of the lesion microvascularity, and the mean increase in wash-in time ratio among the good responders at the end of the treatment was 75\%.
 
 \subsubsection{Infusion injection}
@@ -358,7 +365,7 @@ allowing real-time imaging of low microbubble concentration at low mechanical in
 \citet{Tiemann:1999vy} in \citeyear{Tiemann:1999vy} % Tiemann:1999vy, Real-Time Contrast Echo Assessment of Myocardial Perfusion at Low Emission Power: First Experimental and Clinical Results Using Power Pulse Inversion Imaging.
 and \citet{Masugata:2001vg} in \citeyear{Masugata:2001vg} % Masugata:2001vg, Quantitative Assessment of Myocardial Perfusion During Graded Coronary Stenosis by Real-Time Myocardial Contrast Echo Refilling Curves
 demonstrated the use of power pulse inversion to image the replenishment of tissue following a single series of microbubble-disrupting pulses in real-time.
-Both study also reveal that the model proposed by Wei et al.~could be used to accurately fit real-time replenishment curves.
+Both studies also reveal that the model proposed by \citet{Wei:1998jd} could be used to accurately fit real-time replenishment curves.
 
 In \citeyear{Schlosser:2001vv}, \citet{Schlosser:2001vv} applied the same model to quantify renal perfusion, % Schlosser:2001vv, Feasibility of the flash-replenishment concept in renal tissue: which parameters affect the assessment of the contrast replenishment?
 and compared the estimated parameters according to the acquisition sequence, i.e.~power pulse inversion~\cite{Simpson:1997jn} vs.~pulse inversion~\cite{Burns:2000tl}. % Burns:2000tl, Pulse inversion imaging of liver blood flow: improved method for characterizing focal masses with microbubble contrast
@@ -387,7 +394,7 @@ The model accounts for the specific angles, lengths, and velocities of the vario
 They also used their model as a tissue classifier tool, determining tissue type as the predefined vascular model that best fitted the enhancement curve in the least squares sense.
 However, applying the simpler exponential model with the average tissue mean transit time on normalized data yielded accurate tissue classification maps, suggesting that the major factor differentiating the replenishment curves of the various tissue types is actually mean transit time.
 The additional information could be used to characterize vascular properties more finely.
-In spite, while their is no physical evidence why the exponential model should fit replenishment curves, it remains a good approximation and allow accurate differentiation among tissue types.
+In spite, while their is no physical evidence why the exponential model should fit replenishment curves, it remains a good approximation and allows accurate differentiation among tissue types.
 This is especially true when applied to noisy replenishment curves.
 
 \citet{Arditi:2006ip} introduced a new formalism for the quantification of real-time destruction-replenishment acquisitions using a low mechanical index. % Arditi:2006ip, A new formalism for the quantification of tissue perfusion by the destruction-replenishment method in contrast ultrasound imaging 
@@ -409,7 +416,7 @@ Deconvolution-based methods are model-free approaches, assuming a linear and sta
 Resolving the deconvolution equations necessitates the knowledge of at least two measurements: an input function, and either a residual measurement (i.e.~the amount of tracer remaining in the system) or an output measurement (i.e.~the amount of tracer leaving the system).
 In particular, dynamic perfusion imaging grants access to spatially-distributed measurements of the residual tissue function.
 
-The resolution process aims at estimating the system's impulse-response function, which is theoretically independant on the input, and because no assumption is made on the structure of the system, no assumption is made on the shape of the impulse-response function or on the unit of the measurements.
+The resolution process aims at estimating the impulse-response function of the system, which is theoretically independant on the input, and because no assumption is made on the structure of the system, no assumption is made on the shape of the impulse-response function or on the unit of the measurements.
 Additionally, the impulse-response function can be seen as the probability distribution of the contrast particles transit times~\cite{Lassen:1979vj}.
 % Lassen:1979vj, Tracer kinetic methods in medical physiology, Ch. 7 MTT: Bolus Injection
 Parameters describing the systemic response of the vascular system can therefore be derived from the impulse-response function estimated by deconvolution.
@@ -421,13 +428,13 @@ This section established the theoretical basis for deconvolution of indicator-di
 In another section addressing the impact of recirculation, he established the role of the Laplace transform when solving convolution integrals, as found in his theoretical framework.
 
 % Coulam:1966un, A transfer function analysis of coronary and renal circulation calculated from upstream and downstream indicator-dilution curves
-In \citeyear{Coulam:1966un}, \citet{Coulam:1966un} proposed deconvolution to estimate the impulse response of coronary and renal circulatory systems, as well as the global circulatory transfer function, in a canine study with one dog.
-Because a perfect impulse injection is not achievable in practice, the transfer function cannot be estimated directly from the downstream time-concentration curve.
+In \citeyear{Coulam:1966un}, \citet{Coulam:1966un} proposed deconvolution to estimate the impulse response of coronary and renal circulatory systems, as well as the global circulatory impulse response, in a canine study with one dog.
+Because a perfect impulse injection is not achievable in practice, the impulse response cannot be estimated directly from the downstream time-concentration curve.
 Therefore bolus injections of indocyanine green dye were performed in a pulmonary artery and blood was sampled at various downstream sites.
-Deconvolution of the downstream curves by the upstream curve was performed in the frequency domain by simple division of the Fourier coefficients, and the inverse transform was applied to obtain the transfer function in the time domain.
-The accuracy of the estimation was assessed both visually and numerically, through time-domain convolution of the estimated transfer function with the upstream curve, yielding an estimate of the downstream curve. 
+Deconvolution of the downstream curves by the upstream curve was performed in the frequency domain by simple division of the Fourier coefficients, and the inverse transform was applied to obtain the impulse response in the time domain.
+The accuracy of the estimation was assessed both visually and numerically, through time-domain convolution of the estimated impulse response with the upstream curve, yielding an estimate of the downstream curve. 
 Using simulations, the role of the number of harmonics present in the upstream curves was investigated.
-Indeed, for low numbers of harmonics, oscillations could occur in the transfer function, yielding inaccurate estimation.
+Indeed, for low numbers of harmonics, oscillations could occur in the impulse response, yielding inaccurate estimation.
 The authors suggest intra-ventricular injection would alleviate this issue, as the upstream curve would contain more harmonics.
 
 % Maseri:1970gn, Frequency function of transit times through dog pulmonary circulation
@@ -441,7 +448,7 @@ Visual checking was used to assess the accuracy of the estimation, and manual co
 Biases induced by correction of recirculation through mono-exponential interpolation of the wash-out were reported in case of early recirculation.
 
 % Valentinuzzi:1975tr, Discrete deconvolution
-A popular matrix-based deconvolution technique was proposed by \citet{Valentinuzzi:1975tr} as a technical note in \citeyear{Valentinuzzi:1975tr}. 
+A popular matrix-based deconvolution technique was proposed by \citet{Valentinuzzi:1975tr} in \citeyear{Valentinuzzi:1975tr}. 
 The method relies on the matrix formulation of the convolution process, however the set of derived linear equations is solved successively, therefore avoiding matrix inversion which is known to be an ill-conditioned problem. 
 Authors acknowledge the sensitivity of the technique to noise, and warn about the impact of imperfect noise filtering on the estimation process. 
 The role of the sampling interval is also discussed, the authors reveal that increasing it can only improve estimation accuracy up to a point, but demonstrated that increasing it too much could actually increase the estimation error.
@@ -449,15 +456,15 @@ The role of the sampling interval is also discussed, the authors reveal that inc
 % Knopp:1976uc, Transcoronary intravascular transport functions obtained via a stable deconvolution technique
 In \citeyear{Knopp:1976uc}, a deconvolution method said to be insensitive to noise, recirculation, and impulse response shape was proposed by \citet{Knopp:1976uc} to assess the impulse response of the coronary bed.
 The method was tested in a canine study with intra-ventricular injection dye injection, and simultaneous blood sampling at the aortic root and in the coronary sinus.
-The technique first models the impulse response as a weighted sum of delayed spread functions with unit area, which allowed predetermination of the convolved curves and aleviated the signal periodicity condition, and then iteratively minimized the fit error using a gradient descent algorithm.
-Impulse functions were first investigated, however spread functions were chosen to reduce the computational load while making the estimation more robust and ensuring similar quality of fit.
+The technique first models the impulse response as a weighted sum of delayed statistical distributions with unit area, which allowed predetermination of the convolved curves and aleviated the signal periodicity condition, and then iteratively minimized the fit error using a gradient descent algorithm.
+Impulse functions were first investigated, however other distribution functions were chosen to reduce the computational load while making the estimation more robust and ensuring similar quality of fit.
 Experiments reveal right-skewed impulse responses with prolonged tails, suggesting non-monoexponential downslopes expected using classical unimodal functions, i.e.~lagged-normal, gamma-variate, lognormal.
 The authors compared their estimates of mean and standard deviation of transit times to the estimates from previous studies, performed by the same group, but focused on other vascular structures, i.e.~lungs~\cite{Knopp:1969tu}, descending aorta~\cite{Bassingthwaighte:1967vy}, and femoral artery~\cite{Bassingthwaighte:1966jn}. 
 Despite the reported parametric overlap, authors observed a rise of the relative variation of transit times correlated with the complexity of the vascular structures, which they justified by reminding that different pathways have different mean transit times and flows.
 
 % Gamel:1973uz, Pitfalls in digital computation of the impulse response of vascular beds from indicator-dilution curves
 As soon as \citeyear{Gamel:1973uz}, \citet{Gamel:1973uz} published a review of the various pitfalls affecting the deconvolution process when estimating vascular impulse responses from indicator-dilution curves. 
-The impact of noise on the estimation of the impulse response by the direct method was first demonstrated on simulated data, establishing the necessity of either using an appropriate noise filtering technique, enforcing some predetermined form to the impulse response, or apllying some kind of regularization to the estimation process in order to avoid oscillations and negative values.
+The impact of noise on the estimation of the impulse response by the direct method was first demonstrated on simulated data, establishing the necessity of either using an appropriate noise filtering technique, enforcing some predetermined form to the impulse response, or applying some kind of regularization to the estimation process in order to avoid oscillations and negative values.
 Six estimation methods enforcing either of the above mentioned strategies were then investigated regarding various considerations.
 The impact of the data starting point was investigated, especially in the output curve which is usually widely spread and delayed.
 The authors report poor impulse response estimation in case of noisy time-varying data, despite the accuracy of the reconvolved curves.
@@ -490,25 +497,25 @@ Non-renal activity is assumed qualitatively similar to arterial activity, thus t
 The impulse response of the renal parenchyma was obtained by deconvoluting the parenchymal curve by the arterial curve.
 The impulse reponse of the renal pelvis was obtained by deconvoluting the pelvic curve by the parenchymal curve.
 Accounting for the regional variations of tracer retention enabled the authors to differentiate between patients with and without pelvic obstruction, and proved to be an efficient tool to assess the renal function.
-Authors regret that the spatial resolution of the gamma-camera did not enable to distinguish between cortical and medularry structures.
+Authors regret that the spatial resolution of the gamma-camera did not enable to distinguish between cortical and medulary structures.
 
 % Alderson:1979ts, Deconvolution analysis in radionucleide quantitation of left-to-right cardiac shunts
-In \citeyear{Alderson:1979ts}, a Fourier-based deconvolution technique was proposed by \citet{Alderson:1979ts} to quantify left-to-right cardiac shunts from time-activity curves from scintigraphy following bolus injection of $[^{99m}$Tc]pertechnetate in a canine study. 
+In \citeyear{Alderson:1979ts}, a Fourier-based deconvolution technique, relying on the same computational technique as~\cite{Coulam:1966un}, was proposed by \citet{Alderson:1979ts} to quantify left-to-right cardiac shunts from time-activity curves from scintigraphy following bolus injection of $[^{99m}$Tc]pertechnetate in a canine study. 
 The shunt quantification technique used the gamma-fitting technique first presented by \citet{Maltz:1973jj}, and was preceded by either low-pass filtering in the frequency domain, or smoothing of the deconvolved curves in the time domain, in order to reduce the high frequency components, and thus the oscillations observed in the obtained impulse responses.
 The ability of the technique to estimate the impulse response in case of either prolonged or fragmented bolus was investigated.
-The technique was able to significantly improve the accuracy of the shunt estimation in case of prolonged bolus, and while time-domain smoothing improve the accuracy of the estimates, frequency domain filtering proved more efficient.
+The technique was able to significantly improve the accuracy of the shunt estimation in case of prolonged bolus, and while time-domain smoothing improved the accuracy of the estimates, frequency domain filtering proved more efficient.
 However none of the techniques yielded satisfactory results in case of fragmented bolus.
 
-\subsection{X-rays}
+\subsection{X-ray}
 % Axel:1982wu, Tissue mean transit time from dynamic computed tomography by a simple deconvolution technique.
 In \citeyear{Axel:1982wu}, \citet{Axel:1982wu} proposed a deconvolution technique to estimate the mean transit time of contrast-enhanced X-ray computed tomography acquired in the brain, where iodinated tracers do not diffuse in the extravascular space. 
 Because the only considered parameter under investigation is the mean transit time, the authors consider the shape of the impulse response unimportant, with only a measure of its width being required.
-Authors demonstrates this by estimating the impulse response as an exponential function, a Fermi function and a step function. 
+Authors demonstrates this by estimating the impulse response as an exponential function, a Fermi function or a step function. 
 The Fermi and the step functions yielded similar estimations of the mean transit time, however the exponential function yielded lower values of the parameter.
 Additionally, the Fermi and step function achieved slightly better fits than the exponential function, but the difference was not found significant.
 The method previously in presented in~\cite{Axel:1980jg}, was used as a reference. 
 % Axel:1980jg, Cerebral blood flow determination by rapid-sequence computed tomography: theoretical analysis.
-The mean transit time was defined as the difference of the first moments of the tissular and vasclar curves following gamma-variate fitting.
+The mean transit time was defined as the difference of the first moments of the tissular and vascular curves following gamma-variate fitting.
 The mean transit time estimated using this method seem to best agree with the mean transit time values obtained using the exponential impulse response.
 The author assumes that the impulse response function in most tissues are likely to have a squared shape with rounded corner, which the Fermi function can easily approximate.
 They comment on the insensitivity of the method to noise compared to transform-based methods, as well as recirculation without needing curve fitting and extrapolation.
@@ -526,18 +533,22 @@ Additionally, partial volume effects were corrected by first fitting a gaussian 
 This parameter was used to estimate a partial volume scaling factor, using a formula resulting from phantom experiments of tubes with known inner diameters and tracer concentrations.
 Finally the arterial intensities were divided by this factor to correct for partial volume effect.
 Non-contrast scan intensities were subtracted from the average curves in the three regions of interest, as well as from the average arterial curve. 
-Deconvolution allowed the estimation of regional cerebral blood flow, cerebral blood volume, and mean transit time.
+Deconvolution allowed the estimation of the impulse response, which was then used to derive the mean transit time as the ratio of the area under the curve to its plateau value~\cite{Axel:1982wu}.
+The cerebral blood volume was defined as the ratio of the area under the enhancement curve inside the tissue of interest to the area under the arterial input function~\cite{Axel:1980jg}.
+Finally, the cerebral blood flow was defined using the central volume principle as the ratio of the cerebral blood volume to the tracer mean transit time~\cite{Zierler:1962cx}.
 For comparison purposes, the regional cerebral blood flow was also estimated using microspheres measurements, which was considered the ground truth.
-The authors report good agreement of the measured regional cerebral blood flow as they obtained a slope close to unity in a linear regression analysis, and correlation between measurements was good but far from perfect ($r = 0.837$).
-When repeated studies were performed, i.e.~in five of the six cats included in the study due to sudden death of the sixth rabbit, no significant differences were found between the parameters from the various acquisitions, however the computed-tomography estimates of regional blood flow were ten percent more variable than with the microspheres.
+Fluorescent microspheres with varying colors were injected in the left atrium one minute before every contrast-enhanced computed tomography acquisition, blood was sampled in the femoral artery during two minutes after the injection. 
+Rabbit brains were then excised after the last computed tomography acquisition, and cerebral blood flow was estimated using the method presented in~\cite{Heymann:1977hj}.
+The authors report good agreement of the measured regional cerebral blood flow as they obtained a slope close to unity in a linear regression analysis, and correlation between measurements was good yet not excellent ($r = 0.837$).
+When repeated studies were performed, i.e.~in five of the six rabbits included in the study due to sudden death of the sixth rabbit, no significant differences were found between the parameters from the various acquisitions, however the computed-tomography estimates of regional blood flow were ten percent more variable than the one estimated using microspheres.
 
 % Wintermark:2001bm, Simultaneous measurement of regional cerebral blood flow by perfusion CT and stable xenon CT: a validation study. 
 \citet{Wintermark:2001bm} compared the results of two deconvolution methods to quantify perfusion computed-tomography exams, using stable xenon computed-tomography as a reference.
 The first deconvolution is performed using a commercial software, known as \emph{CT~Perfusion} (GE Medical Systems).
-The software basically uses an improvement of the method proposed by \citet{Cenic:1999un}, allowing processing of pixel-by-pixel parametric maps with improved stability, by means of a singular value decomposition enforcing noise filtering by thresholding of the singular values. 
+The software basically uses an improvement of the method proposed by \citet{Cenic:1999un}, allowing processing of pixel-by-pixel parametric maps with improved stability, by means of a singular value decomposition~\cite{Golub:2006bj} enforcing noise filtering through thresholding of the singular values. 
 Additionally, the computation time is considerably reduced using this method, which makes it usable in clinical routine.
 The second method uses a least squares minimization technique with improved stability, taking advantage of prior rank determination through QR decomposition with pivoting, i.e.~decomposition of the matrix of shifted observations as the product of an orthogonal matrix, an upper triangular matrix, and a permutation matrix~\cite{Golub:100136}.
-The authors report a good agreement between the reference method and both the commercial package and the presented method estimates of cerebral blood flow compared to the reference method ($R^2 = 0.79$ and $0.67$ respectively), as well as between the two investigated deconvolution methods ($R^2 = 0.72$).
+The authors report a good agreement between the reference method and both the commercial package and the presented method estimates of cerebral blood flow ($R^2 = 0.79$ and $0.67$ respectively), as well as between the two investigated deconvolution methods ($R^2 = 0.72$).
 However, the methods were shown to differ in terms of spatial filtering of the parametric maps, as well as in the detection thresholds of vessels.
 Indeed, regions with arterial branches are filtered away using the commercial software, while they exhibit a higher cerebral blood flow using the improved least squares method.
 Note that these regions with branches are neither visible in the reference method.
@@ -547,45 +558,47 @@ Note that these regions with branches are neither visible in the reference metho
 % Hoeffner:2004hq, Cerebral Perfusion CT: Technique and Clinical Applications
 \citet{Hoeffner:2004hq} provided a review of the technique, as well as the various applications, and limitations of this quantification software.
 The larger anterior artery was used as an arterial input function, and the superior sagittal sinus was used as a venous outflow function.
-The authors report significant differences between the healthy and affected hemispheres in either of the three parameters derived from the deconvolution of signals, i.e.~cerebral blood flow, cerebral blood volume, and mean transit time.
+The deconvolution method requires arterial and venous measurements in order to compare the shape and height of the time-attenuation curve of each pixel with the shape and height of the arterial and venous time-attenuation curves before proceeding to the actual deconvolution, i.e.~the estimation of the tissue impulse response.
+The cerebral blood volume was then derived as the area under the tissue impulse response, the cerebral blood flow as the plateau value of the tissue impulse response, and the mean transit time as the ratio of these two parameters.
+The authors report significant differences between the healthy and affected hemispheres in either of the three parameters derived from the deconvolution of signals.
 They also observed significant differences between low-enhancement and normal-enhancement regions for cerebral blood flow and cerebral blood volume.
 Additionally, inter and intra observer variation were investigated and showed good agreement between and within observers.
 
 % Cuenod:2001ef, Early changes in liver perfusion caused by occult metastases in rats: detection with quantitative CT.
-\citet{Cuenod:2001ef} proposed a deconvolution-based method for the quantification of perfusion in metastasis bearing rat livers using contrast-enhanced computed tomography accounting for both arterial and portal supplies, with bolus injection of iobitridol, a iodinated contrast-agent.
+\citet{Cuenod:2001ef} proposed a deconvolution-based method for the quantification of perfusion in rats with metastasis in the liver using contrast-enhanced computed tomography accounting for both arterial and portal supplies, with bolus injection of iobitridol, a iodinated contrast-agent.
 Because the arterial and portal components are totally mixed in the sinusoidal capillaries, the system assumes a common impulse response for both components shaped as a Weibul function, however the two inputs are weighted.
 This technique allows the estimation of the hepatic blood flow, which can be separated in two components, yielding the arterial and portal blood flows, and the tissue blood volume.
+The method differs from classical deconvolution because of the strong a priori on the shape of the impulse response, which is defined parametrically, considerably reducing the number of parameters to estimate but also the flexibility of the method.
 The mean transit time of the contrast agent was also estimated from the impulse response of the system.
 Additionally, the complementary weights of the two blood supplies allow the estimation of a parameters called the hepatic perfusion index, which is the ratio of the arterial blood flow to the total blood flow.
 The perfusion of micro and macro metastases were compared to normal liver tissue using the above cited parameters, and significant differences were found in mean transit time, total hepatic blood flow, and portal blood flow for both types of metastases, but also in hepatic perfusion index and the tissue blood volume for macro metastases.
 % Cuenod:2002cm, Deconvolution Technique for Measuring Tissue Perfusion by Dynamic CT
-The theoretical aspects of the method were presented in more details in \cite{Cuenod:2002cm}.
-This other study actually investigates the use of two contrast agent, a classical iodinated contrast agent that diffuses in the extravascular space, i.e.~iobitridol, and a macromolecular iodinated contrast agent that mostly remains in the intravascular space with little capillary leakage, i.e.~carboxyl dextran.
+The theoretical aspects of the deconvolution method were presented in more details in \cite{Cuenod:2002cm}.
+This study actually investigates the use of two contrast agents, a classical iodinated contrast agent that diffuses in the extravascular space, i.e.~iobitridol, and a macromolecular iodinated contrast agent that mostly remains in the intravascular space with little capillary leakage, i.e.~carboxyl dextran.
 The authors report larger estimates of the mean transit time using the macromolecular contrast agent.
-Moreover, when comparing hepatic perfusion indices in normal liver tissue with metastatic tissue, the observed much larger values in the metastasis, a large reduction in hepatic blood flow, as well as lower tissue blood volume.
+Moreover, when comparing hepatic perfusion indices in normal liver tissue with metastatic tissue, they observed much larger values in the metastasis, as well as a large reduction in hepatic blood flow, and lower tissue blood volume.
 The method proved robust to recirculation, which alleviates the necessity for gamma-variate fitting to get rid of recirculation. 
-This is particulary important in the liver, for arterial and portal components partially overlap.
+This is particulary important in the liver, since arterial and portal components partially overlap.
 
 % Kudo:2009hy, Difference in Tracer Delay–induced Effect among Deconvolution Algorithms in CT Perfusion Analysis: Quantitative Evaluation with Digital Phantoms
-\citet{Kudo:2009hy} investigated variants of the singular value decomposition deconvolution method, developped for delay-insensitive deconvolution of magnetic resonance data, and their sensitivity to the tracer time delay. 
+In \citeyear{Kudo:2009hy}, \citet{Kudo:2009hy} investigated variants of the singular value decomposition deconvolution method, first developped for delay-insensitive deconvolution of magnetic resonance data, and their sensitivity to the tracer time delay for quantification of contrast-enhanced computed tomography data. 
 The authors compared regional blood flow, regional blood volume, and mean transit time estimates of the standard singular value decomposition algorithm, to the estimates of a delay-insensitive block-circulant deconvolution method introduced by \citet{Wu:2003du}, as well as a delay-corrected deconvolution method proposed by \citet{Ibaraki:2005fn}.
 The three methods were investigated on synthetic datasets varying the tracer delay in the left hemisphere.
 The block-circulant approach was the most insensitive to tracer delay while the standard method was the most sensitive, and the delay-corrected method yielded intermediate results.
 
 \subsection{Magnetic resonance}
 % Rosen:1990hz, Perfusion imaging with NMR contrast agents
-\citet{Rosen:1990hz} proposed a review of the contrast agents usable for perfusion imaging using magnetic resonance, depending on the property involved, i.e.~relaxivity or susceptibility. 
-He also adressed the perfusion quantification techniques for contrast-enhanced magnetic resonance data, often inspired by the advances in the other perfusion imaging modalities.
-The main goal the authors want to reach is the estimation of tissue blood flow, and they rely on the central blood volume principle established by \citet{Stewart:1897dz}, which defines tissue blood flow as the ratio of the tissue blood volume to the mean transit time.
-They recommended estimating the mean transit time through deconvolution, suggesting the use of Fourier-based methods, and proposed the tissue blood volume as the ratio of the areas under the tissular and arterial curves, as proposed by \citet{Lassen:1979vj} for indicator-dilution theory, and \citet{Axel:1980jg} for perfusion computed-tomography imaging.
+In \citeyear{Rosen:1990hz}, \citet{Rosen:1990hz} proposed a review of the contrast agents usable for perfusion imaging using magnetic resonance, depending on the property involved, i.e.~relaxivity or susceptibility, and adressed the different perfusion quantification techniques for contrast-enhanced magnetic resonance data, often inspired by the advances in the other perfusion imaging modalities.
+The main goal the authors wanted to reach was the estimation of tissue blood flow, and they rely on the central blood volume principle established by \citet{Stewart:1897dz}, which defines tissue blood flow as the ratio of the tissue blood volume to the mean transit time.
+They recommended estimating the mean transit time through deconvolution, suggesting the use of Fourier-based methods~\cite{Coulam:1966un}, and proposed the tissue blood volume as the ratio of the areas under the tissular and arterial curves, as proposed by \citet{Lassen:1979vj} for indicator-dilution theory, and \citet{Axel:1980jg} for perfusion computed-tomography imaging.
 
 % Rempp:1994kk, Quantification of regional cerebral blood flow and volume with dynamic susceptibility contrast-enhanced MR imaging.
 \citet{Rempp:1994kk} investigated susceptibility Gd-DTPA2-enhanced magnetic resonance imaging to quantify cerebral perfusion in a clinical study with twelve healthy patients with intact blood-brain barrier.
 A dual FLASH sequence was used, allowing interleaved acquisition in two parallel sections, one being the section of interest, the other one containing the feeding arteries.
 The arterial input function was estimated directly in the imaging plane, either in the carotid or in the vertebral arteries, and the segmentation was performed on pixel-by-pixel maps of semi-quantitative parameters, i.e.~the full width at half maximum, peak intensity, and time to peak intensity.
 More precisely, adaptive thresholding was first performed on the full width at half maximum and peak intensity maps, and only pixels with peak intensities over 75\% of the maximum intensity in the image were retained.
-The authors defined the regional cerebral blood volume as the ratio of the area under the curve in the tissue of interest to the area under the arterial input function, as suggested by indicator-dilution theory, but corrected the estimate for both brain tissue density and hematocrit variations from arteries to smaller blood vessels.
-Fourier deconvolution enforcing noise filtering by means of a Weiner filter was used to estimate the impulse response of the tissue of interest.
+The authors defined the regional cerebral blood volume as the ratio of the area under the curve in the tissue of interest to the area under the arterial input function, as suggested by indicator-dilution theory, but corrected this estimate for both brain tissue density and hematocrit variations from arteries to smaller blood vessels.
+Fourier deconvolution enforcing noise filtering by means of a Wiener filter was used to estimate the impulse response of the tissue of interest.
 Then the mean transit time was estimated as the ratio of the area under the impulse response to its height.
 Regional cerebral blood volume and blood flow were estimated in both gray and white matter for every patient.
 The authors report an overall decrease of both perfusion parameters with age, and suggest this explains the large standard deviations of their estimates.
@@ -602,14 +615,14 @@ Despite imperfect registration between magnetic resonance estimates and tissue a
 Myocardial segments that were hypoperfused because of coronary stenosis were accurately identified using the proposed method.
 
 % ostergaard:1996gt, High resolution measurement of cerebral blood flow using intravascular tracer bolus passages. Part I: Mathematical approach and statistical analysis
-\citet{ostergaard:1996gt} reviewed the various deconvolution approaches which had already been applied for the quantification of perfusion using contrast-enhanced imaging using simulated magnetic resonance data, especially in the case of cerebral imaging where the tracers remain intravascular thanks to the blood-brain barrier.
-The models are divided between model-based and model-free approaches, the former referring to a one-compartment model with exponential impulse response~\cite{Faddy:1987kl}, the latter referring to either transform approaches through the Fourier method~\cite{Coulam:1966un}, algebraic approaches through a matrix-based method~\cite{Valentinuzzi:1975tr} with an additional regularization term enforcing decreasing impulse response, or SVD approaches through a classical method with filtering of components which singular values are close to zero~\cite{Diffey:1976tk}.
+In \citeyear{ostergaard:1996gt}, \citet{ostergaard:1996gt} reviewed the various deconvolution approaches which had already been applied for the quantification of perfusion using contrast-enhanced imaging using simulated magnetic resonance data, especially in the case of cerebral imaging where the tracers remain intravascular thanks to the blood-brain barrier.
+The methods were divided between model-based and model-free approaches, the former referring to a one-compartment model with exponential impulse response~\cite{Faddy:1987kl}, the latter referring to either transform approaches through the Fourier method~\cite{Coulam:1966un}, algebraic approaches through a matrix-based method~\cite{Valentinuzzi:1975tr} with an additional regularization term enforcing decreasing impulse response, or SVD approaches through a classical method with filtering of components which singular values are close to zero~\cite{Diffey:1976tk}.
 The weight of the regularization term in the algebraic method, as well as the thresholding value for the SVD approach were determined empirically, and chosen as the values that yielded the most accurate impulse responses and cerebral blood flow estimates on twelve representative simulated cases.
-Multiple factors and their impact on the regional cerebral blood flow estimates were investigated in this simulation study, i.e.~noise, vascular structure, cerebral blood flow, cerebral blood volume, and time-delay.
-Expectedly, the model-based approach was not able to correctly estimate cerebral blood flow when the vascular structure used for simulation did not match the one-compartment model assumption.
+Multiple factors and their impact on the regional cerebral blood flow estimates were investigated in this simulation study, i.e.~noise, shape of the impulse response, cerebral blood flow, cerebral blood volume, and time-delay.
+Expectedly, the model-based approach was not able to correctly estimate cerebral blood flow when the shape of the impulse response was not exponential and therefore did not match the single-compartment model assumption.
 The Fourier method proved sensitive to the cerebral blood flow, indeed the estimation error was negatively correlated with the simulated value, but also to the simulated vascular structure.
 The regularized algebraic approach proved to overestimate blood flow for a low cerebral blood volume (3\%), and to yield more accurate estimates for higher cerebral blood volume (4.5\%), the authors therefore concluded on the sensitivity of the method to cerebral blood volume.
-However the authors discuss the possible role of the regularization weight in these variations, as modifying the cerebral blood volume effectively modifies the signal to noise ratio, which does could then differ from the conditions for which the weight was optimized.
+However the authors discuss the possible role of the regularization weight in these variations, as modifying the cerebral blood volume effectively modifies the signal to noise ratio, which could then differ from the conditions for which the weight was optimized.
 While the opposite behaviour seems to be observable in the SVD estimates, the authors considered that the bias in the estimation of cerebral blood flow was insensitive to cerebral blood volume. 
 Additionally, when a time delay was added to the simulated curve, the SVD greatly underestimated cerebral blood flow, in particular for large simulated flow values, emphasizing the need for delay correction prior to the estimation process.
 Model-free approaches were able to estimate cerebral blood flow accurately, however they generally failed to accuratly match the shape of the impulse response function.
@@ -621,11 +634,11 @@ An additional model-based approach was introduced in the experimental part of th
 All image sequences were filtered using a $3 \times 3$ averaging kernel prior to deconvolution.
 The arterial input function was estimated in pixels located around the middle cerebral artery.
 The time-concentrations curves used for quantification were not converted in actual units, instead a constant hematocrit throughout the brain was assumed, and white matter was used as a reference.
-Additionally, because time-delays tended bias the estimation of blood flow in the simulation study discussed above, the influence of this parameter was investigated in multiple slices by comparing the estimation of the arterial input function along the middle central artery.
+Additionally, because time-delays tended to bias the estimation of blood flow in the simulation study discussed above, the influence of this parameter was investigated in multiple slices by comparing the estimation of the arterial input function along the middle central artery.
 This study revealed very little dispersion and delay along major arteries, and the authors mainly attribute this delay to the delay between the acquisition of the different slices.
 They however suggested that appropriate time correction should be applied when quantifying multiple slices using a common arterial input function estimated in a single slice.
 However, some cases exhibited time-delays in regions supplied by other arteries, in particular the cerebellum, and in the occipital region which are mainly supplied by the posterior cerebral artery.
-For all approaches the cerebral blood flow was defined as the maximum of the impulse resonse curve, and the cerebral blood volume as its area under the curve.
+For all approaches the cerebral blood flow was defined as the maximum of the impulse response curve, and the cerebral blood volume as its area under the curve.
 In healthy patients, the exponential and SVD approaches yielded very similar parametric maps.
 The regularized algebraic approach yielded very high flow in the grey matter which can be explained by the high cerebral blood volume in this tissue.
 The Fourier approach yielded poor contrast between the grey and white matters, confirming the sensitivity of the method to the cerebral blood volume and vascular structure.
@@ -635,17 +648,18 @@ Moreover, the fit quality was considerably lower using the Gaussian model, sugge
 % JeroschHerold:1998gg, Magnetic resonance quantification of the myocardial perfusion reserve with a Fermi function model for constrained deconvolution
 Inspired by the work of \citet{Axel:1982wu} for quantification of perfusion computed-tomography, \citet{JeroschHerold:1998gg} proposed a Fermi function to model the myocardial impulse response in an attempt to quantify the myocardial perfusion reserve from the first pass of a bolus of Gd-DTPA imaged using a multislice magnetic resonance imaging technique.
 Interestingly, the convolution operation was performed as a product in the frequency domain, following Fourier transform, but the non-linear least-square fitting was performed in the time-domain, following inverse Fourier transform of the convolved functions.
-Since two measurements are necessary to estimate myocardial perfusion reserve, two magnetic resonance sequences were acquired to assess this parameter in nine patients with suspected microvascular desease.
+Since two measurements are necessary to estimate myocardial perfusion reserve, two magnetic resonance sequences were acquired to assess this parameter in nine patients with suspected microvascular disease.
 The first acquisition was performed at rest, and the second was performed during adenosine-induced maximum hyperemia.
 Fermi-based deconvolution was then performed for both exams, using the left ventricle blood pool as an input function.
 The myocardial blood flow was defined as the maximum value of the Fermi function, i.e.~initial value, and the myocardial blood reserve was obtained as the ratio of the hyperemic blood flow to the basal blood flow.
 The coronary flow reserve estimated in the left anterior coronary artery using intracoronary Doppler ultrasound was used as a gold standard. 
 Good agreement was found between the reference measurement and the perfusion reserve estimated in the left anterior coronary artery region ($r = 0.84$) with a regression slope close to the unit but with high uncertainty ($0.98 \pm 0.24$).
-Moreover, even if the data is not presented, agreement between the perfusion in the left anterior coronary artery region and the perfusion reserve averaged over the entire myocardium is reported.
+Moreover, even if the data were not presented, agreement between the perfusion in the left anterior coronary artery region and the perfusion reserve averaged over the entire myocardium was reported.
 They also assessed the ability of the method to estimate blood flow reserve from synthetic data, resulting from random solutions of the multiple-pathway perfusion model described in~\cite{Kroll:1996vz} with simulated uniform random noise. 
 The authors report excellent correlation between the simulated and estimated values ($r = 0.98$) with a regression slope close to the unit ($1.04 \pm 0.029$).
 However, accounting for capillary permeability responsible for the leakage of contrast agent in the interstitial space in the simulation process, i.e.~varying the permeability surface area product, had a direct impact on the simulated curves, but induced a variation of less than ten percent in the estimates of the myocardial perfusion reserve.
-The impact of varying upstream bolus dispersion, capillary permeability, blood volume, blood flow, sampling frequency, and injection speed on the estimated parameters was also investigated.
+The impact of varying upstream bolus dispersion, capillary permeability, blood volume, blood flow, sampling frequency, and injection speed on the estimated parameters was also investigated by simulation.
+The authors concluded the ability of model-based deconvolution to determine the myocardial perfusion reserve in perfusion magnetic resonance exams.
 
 \subsection{Ultrasound}
 % Mischi:2004cn, Contrast echocardiography for pulmonary blood volume quantification
@@ -653,43 +667,46 @@ In \citeyear{Mischi:2004cn}, \citet{Mischi:2004cn} proposed a semi-quantitative 
 The semi quantitative aspects of the methods are discussed in details in Section~\ref{SQ:US:Bolus}.
 However, prior to being fitted by either the local density random walk or first passage time models, the time-intensity curves were deconvolved using a Wiener filter to correct for the non-instantaneous bolus injection.
 Because the bolus was injected using an automatic system, the arterial input function was not estimated from image measurements in this study, instead it was modeled as a 0.8 second rectangle function corresponding to the settings of the electronic injector.
-The ability of the Wiener filter to accurately recover the original simulated time-intensity curve from noise-corrupted convolved curves was assessed.
+The ability of the Wiener filter to accurately recover the original or simulated time-intensity curve from noise-corrupted convolved curves was assessed.
+The two investigated methods yielded stable and reproducible volume estimates over the investigated range of flows, however the local density random walk was generally more accurate, and the first passage time model tended to overestimate the distribution volume in their experiments.
 
 % Mischi:2005df, Identification of ultrasound contrast agent dilution systems for ejection fraction measurements
-In \citeyear{Mischi:2005df}, \citet{Mischi:2005df} used the same deconvolution method, but this time applied it to the estimation the impulse response of a vascular system located between two measurement sites.
-In particular, the goal of the study was to propose an accurate measurement of the forward ejection fraction, even in case of leakage through the mitral valve, hence the use of a contrast-enhanced imaging modality, but avoiding the invasive intra-ventricular injection and replacing it by intravenous injection.
-To meet this goal, the authors propose estimating the impulse response from the attenuation-corrected time-intensity curve measured in the left ventricle, assuming a one-compartment model, and using the signal measured in the left atrium as an input function.
-After estimation of the noisy left-ventricular impulse response by the Wiener filter deconvolution, an exponential curve resulting from the one-compartment model assumption was fitted to its downslope, from which the forward ejection fraction can be derived.
+In \citeyear{Mischi:2005df}, \citet{Mischi:2005df} used the same deconvolution method, but this time applied it to the estimation of the impulse response of a vascular system located between two measurement sites.
+In particular, the goal of the study was to propose an accurate measurement of the forward ejection fraction, even in case of leakage through the mitral valve, but avoiding the invasive intra-ventricular injection and replacing it by intravenous injection.
+To meet this goal, the authors propose estimating the impulse response from the attenuation-corrected time-intensity curve measured in the left ventricle, and using the signal measured in the left atrium as an input function to their deconvolution algorithm.
+The method yielded a noisy estimation of the left-ventricular impulse response.
+Assuming a one-compartment model for the left ventricle, an exponential curve was fitted to its downslope, from which the forward ejection fraction can be derived.
 The accuracy and precision of the deconvolution method was assessed through simulations with varying signal to noise ratio and forward ejection fraction, and good agreement between the simulated and estimated values of both blood volume ($R^2 = 0.99$) obtained using the methodology previously described in~\cite{Mischi:2004cn} (see Section~\ref{SQ:US:Bolus}).
-Contrast-enhanced ultrasound data were acquired in twenty patients following the injection of a small quantity of microbubbles, therefore limiting commonly observed saturation artifacts.
-The forward ejection fraction was estimated with and without deconvolution of the left-ventricular time-intensity curves, and the results were compared to the ejection fraction estimated using an established bi-plane echocardiographic method~\cite{BroganIII:1992dt}.
-The results without deconvolution clearly underestimated the ejection fraction as measure by the reference method, despite a seamingly good correlation of the two measurements.
+Experimental contrast-enhanced ultrasound data were acquired in twenty patients with leaking mitral valve following the injection of a small quantity of microbubbles, therefore limiting commonly observed saturation artifacts.
+The forward ejection fraction was estimated with and without deconvolution, i.e.~fitting the exponential function to either the deconvolved or original left-ventricular time-intensity curves, and the results were compared to the ejection fraction estimated using an established bi-plane echocardiographic method~\cite{BroganIII:1992dt}.
+The results without deconvolution clearly underestimated the ejection fraction as measured by the reference method, despite a seamingly good correlation of the two measurements.
 However, using the deconvolution-based method an excellent agreement of the estimates is reported, indeed the correlation is high ($R^2 = 0.93$) with a mean bias of 1.6\%, and a standard deviation of 8\%, demonstrating the feasibility of the method.
 
 % Gauthier:2012vc, Assessment of quantitative perfusion parameters by dynamic contrast-enhanced sonography using a deconvolution method: an in vitro and in vivo study.
-\citet{Gauthier:2012vc} used a deconvolution method based on singular value decomposition, but enforcing Tikhonov regularization to reduce the rapid oscillations in the impulse response function, and finally the impulse response is fitted by the explicit model by~\citet{Elie2014} presented in Section~\ref{SQ:US:Bolus}.
+\citet{Gauthier:2012vc} used a deconvolution method based on singular value decomposition, but enforcing Tikhonov regularization to reduce the rapid oscillations in the impulse response function, and finally the impulse response was fitted by the explicit model proposed by~\citet{Elie2014} and presented in Section~\ref{SQ:US:Bolus}.
 The blood flow and the blood volume were then derived from the model fitted to the estimated impulse response, and were respectively defined as the peak value, and the area under the curve.
 The additional regularization term was weighted, and the determination of this weighting parameter was determined using the L-curve method described in~\cite{Hansen:1992jx}.
 The reproducibility of the method was assessed through both in vitro and in vivo experiments, and was compared to the semi-quantitative parameters extracted from the time-intensity curve fitted with the same explicit model, without deconvolution.
 The in vitro experiments consisted in five acquisition following bolus injection of microbubbles in phantom composed of a feeding pipe and three interwined pipes, injecting two different volumes of contrast agent.
-The absolute parameters tend to be slightly less variable than the semi-quantitative parameters of the other method, however no statistical tests were reported, and neither were the estimated parameter values, forbiding the validation of this quantification method by comparison to the in vitro experimental parameters.
+The absolute parameters tend to be slightly less variable than the semi-quantitative parameters of the method without prior deconvolution, however no statistical tests were reported, and neither were the estimated parameter values, preventing the validation of this quantification method by comparison to the in vitro experimental parameters.
 In vivo, three consecutive acquisitions were performed in five tumor-bearing mice, using an arterial input function estimated directly from the imaging plane in a feeding vessel that was previously detected using Power Doppler imaging.
+In terms of reproducibility, the quantitative parameters obtained by deconvolution was found superior to the semi-quantitative parameters derived from the modeled curve.
 Once again, only the variability of the parameters was reported, the estimated values were not reported, and no statistical analysis was performed.
 
 % Jirik:2013cla, Ultrasound perfusion analysis combining bolus-tracking and burst-replenishment.
 \citet{Jirik:2013cla} proposed a contrast-enhanced ultrasound acquisition scheme referred to as bolus-and-burst for it combines bolus injection and destruction-replenishment, as well as a blind deconvolution method, specific to their custom acquisition scheme, for simultaneous estimation of the arterial input function and the tissue impulse response.
 As the name suggests, the acquisition is divided in two main parts.
-The first part consists of a classical low mechanical index image acquisiton to image the passage of a bolus of microbubbles injected intravenously.
+The first part consists of a classical low mechanical index image acquisition to image the passage of a bolus of microbubbles injected intravenously.
 Then, at the end of the bolus-phase, when the concentration of contrast agent in the tissue decays rather slowly, a sequence of high mechanical index pulses are sent to disrupt the circulating microbubbles.
-The second part is another classical low mechanical index acquisiton to image the replenishment of contrast agent in the tissue.
+The second part is another classical low mechanical index acquisition to image the replenishment of contrast agent in the tissue.
 A blind deconvolution algorithm is then applied to the average time-intensity curve in the tissue of interest.
 The quantification is divided in two parts as well. 
-First a rough estimation of the tissue impulse response is performed from the destruction-replenishment curve using~\cite{Vogel:2005ks}, i.e.~a quantitative formulation of the monoexponential model proposed by \citet{Wei:1998jd}.
+First a rough estimation of the tissue impulse response is performed from the destruction-replenishment curve using the quantitative formulation of the popular monoexponential model proposed by~\cite{Vogel:2005ks}.
 This initial impulse response estimate is then used to roughly estimate the arterial input function by deconvolution of the bolus-phase.
-In the second part, the arterial input function and the tissue impulse response are refined by multichannel deconvolution, considering the two parts of the acquisition are independent measurement with a common impulse response.
+In the second part, the arterial input function and the tissue impulse response are refined by multichannel deconvolution, considering the two parts of the acquisition are independent measurements with a common impulse response.
 To ensure physiologically relevant and smooth estimation of the arterial input function, a positivity constraint as well as a Tikhonov regularization are enforced.
 The authors investigated several techniques to address the problem of absolute quantification, and retained the use of a population-based scaling constant resulting from previous acquisitions in feeding arteries with lower contrast agent doses, as proposed by \citet{Taxt:2012km} for magnetic resonance imaging.
-The sensitivity of the method to the number of pixels in the regions of interest was compared to the burst-replenishment method in terms of mean transit time.
+The estimates of the mean time obtained using proposed method proved less sensitive to the number of pixels in the regions of interest than the estimates of the destruction-replenishment method in terms of accuracy and precision.
 
 
 \section{Compartmental models}
@@ -798,7 +815,7 @@ If the non-specific binding compartment is in equilibrium with the free compartm
 Similarly, the simple one-compartment model, that only considers the exchanges between plasma and tissue through two rate constant parameters, can be used in flow limiting conditions, i.e.~when a quick equilibrium is reached between the free compartment and the binding compartment, or when using non-binding intravascular tracers.
 It was first proposed by~\citet{Kety:1948je} in~\citeyear{Kety:1948je} to quantify blood flow using $^{15}O$ labelled water as a tracer.
 
-\subsection{X-rays}
+\subsection{X-ray}
 
 % Yeung:1992wy, In vivo CT measurement of blood-brain transfer constant of iopamidol in human brain tumors.
 \citet{Yeung:1992wy} used a two-compartement model to quantify the blood-to-brain transfer constant of iopadimol, as well as plasmatic blood volume, using dynamic X-ray computed tomography in a clinical study of brain tumors.
@@ -916,7 +933,7 @@ Therefore quantifying perfusion using parameters dependant on the peak-intensity
 In pioneering cardiac studies, sampling frequencies were low and did not allow accurate characterization of the high-frequency wash-in resulting from bolus injection, therefore numerous studies focused on contrast-agent wash-out.
 
 Following methodological and computational developements, model-based quantification was proposed to fit time-intensity curves, and allowed the estimation of many semi-quantative parameters. 
-While physical explainations were found for some explicit models, most studies merely used the models for noise filtering, correction of recirculation and time interpolation.
+While physical explanations were found for some explicit models, most studies merely used the models for noise filtering, correction of recirculation and time interpolation.
 Indeed, semi-quantitative parameters were estimated from fitted curves, then blood flow and blood volume estimates were derived from indicator dilution theory.
 
 Whether extracted directly from the time-intensity curve or from the modeled curve, semi-quantitative parameters are inherently sensitive to experimental conditions.

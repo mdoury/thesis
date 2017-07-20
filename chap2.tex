@@ -17,7 +17,7 @@ Therefore, an image-based measurement is really a mixture of multiple signals co
 
 Realistically, this review of perfusion quantification techniques cannot be close to comprehensive, instead it tackles the subject from the three angles mentioned thereafter, and emphasis the major landmarks of the perfusion quantification landscape.
 Section~\ref{sec:SQMethods} presents semi-quantitative methods, extracting parameters directly either from raw or noise-filtered enhancement curves. 
-Then Section~\ref{sec:DeconvolutionMethods} presents deconvolution-based quantification methods, estimating the vascular impulse response in the tissue of interest by means of blind or regularized deconvolution.
+Then Section~\ref{sec:DeconvolutionMethods} presents deconvolution-based quantification methods, estimating the impulse response in the tissue of interest by means of blind or regularized deconvolution.
 Finally, compartmental models accounting for the various interactions of the contrast agent with the tissue are presented in Section~\ref{sec:CompartmentalModels}. 
 
 \section{Semi-quantitative methods}
@@ -463,7 +463,7 @@ The authors compared their estimates of mean and standard deviation of transit t
 Despite the reported parametric overlap, authors observed a rise of the relative variation of transit times correlated with the complexity of the vascular structures, which they justified by reminding that different pathways have different mean transit times and flows.
 
 % Gamel:1973uz, Pitfalls in digital computation of the impulse response of vascular beds from indicator-dilution curves
-As soon as \citeyear{Gamel:1973uz}, \citet{Gamel:1973uz} published a review of the various pitfalls affecting the deconvolution process when estimating vascular impulse responses from indicator-dilution curves. 
+As soon as \citeyear{Gamel:1973uz}, \citet{Gamel:1973uz} published a review of the various pitfalls affecting the deconvolution process when estimating tissue impulse responses from indicator-dilution curves. 
 The impact of noise on the estimation of the impulse response by the direct method was first demonstrated on simulated data, establishing the necessity of either using an appropriate noise filtering technique, enforcing some predetermined form to the impulse response, or applying some kind of regularization to the estimation process in order to avoid oscillations and negative values.
 Six estimation methods enforcing either of the above mentioned strategies were then investigated regarding various considerations.
 The impact of the data starting point was investigated, especially in the output curve which is usually widely spread and delayed.
@@ -605,7 +605,7 @@ The authors report an overall decrease of both perfusion parameters with age, an
 
 % Wilke:1995dt, Regional myocardial blood volume and flow: First-pass MR imaging with polylysine-Gd-DTPA
 % King:1993uj, A vascular transport operator.
-\citet{Wilke:1995dt} used a low-order vascular transport operator, presented in~\cite{King:1993uj}, to model the vascular impulse response using magnetic resonance imaging with bolus injection of an intravascular contrast agent, i.e.~polylysine-Gd-DTPA. 
+\citet{Wilke:1995dt} used a low-order vascular transport operator, presented in~\cite{King:1993uj}, to model the tissue impulse response using magnetic resonance imaging with bolus injection of an intravascular contrast agent, i.e.~polylysine-Gd-DTPA. 
 They compared their perfusion estimates in the myocardium of dogs, with and without induced coronary stenosis, to the perfusion parameters obtained using radiolabelled microspheres.
 Contrast signal intensities were normalized according to the pre-contrast values, as well as from the signal intensities observed in an oil phantom placed under the chest of the dogs.
 The vascular transport operator accounts for the pure delay of the contrast agent, but also for the dispersion of the bolus by means of a fourth-order linear differential operator, resulting from the combination of two attenuated second-order operators in series.
@@ -713,11 +713,15 @@ The estimates of the mean time obtained using proposed method proved less sensit
 \label{sec:CompartmentalModels}
 
 \subsection{Generalities}
-The major assumption underlying compartmental modeling is that the tissue under investigation consists of three well-mixed subcompartments: a vascular space, an interstitial space, and a cellular space.
-Compartmental models estimate the vascular impulse response of a tissue making assumptions on its shape, depending on the characteristics of the tissue, as well as the characteritics of the contrast agent, i.e.~flow limitation, membrane limitation, transport mechanism, binding, excretion, metabolism~\cite{Gerlowski:1983tz}.
-The exchanges of tracer between the compartments are modeled using differential equations, establishing the relations between the concentration of tracer in each compartment in terms of physiological parameters, i.e.~blood flow rates, tissue volumes, transfer constants. 
-Resolving the differential equations yields explicit parametric formulations for the vascular impulse response, allowing direct estimation of the physiological parameters.
-The explicit formulation of the impulse response function improves the stability of the estimation by reducing the number of degrees of freedom.
+The major assumption underlying compartmental modeling used to model contrast agents time-concentration curves is that the tissue under investigation consists of three well-mixed subcompartments: a vascular space fed by an \"input function\", an interstitial space, and a cellular space.
+The other assumptions are that the quantity of contrast agent inside the system is conserved, and that the quantity of contrast agent leaving a compartment is proportional to the quantity inside it.
+The exchanges of contrast agent between the compartments are modeled using first-order differential equations, establishing the relations between the concentration of contrast agent in each compartment in terms of physiological parameters, i.e.~blood flow rates, tissue volumes, transfer constants. 
+
+Compartmental models estimate the tissue impulse response of a tissue making assumptions on its shape, depending on the characteristics of the tissue, as well as the characteritics of the contrast agent, i.e.~flow limitation, membrane limitation, transport mechanism, binding, excretion, metabolism~\cite{Gerlowski:1983tz}.
+Resolving the differential equations yields explicit parametric formulations for the tissue impulse response, and allows direct estimation of the physiological parameters.
+The explicit formulation of the impulse response function improves the stability of the estimation by reducing the number of degrees of freedom compared to deconvolution.
+
+\textbf{FIGURE: EXAMPLE COMPARTMENTAL MODELS AND IMPULSE RESPONSE FUNCTION}
 
 % Kety:1944iv, The Quantitative Determination of Cerebral Blood Flow in Man by the Use of Nitrous Oxide in Low Concentrations
 % Kety:1948je, The nitrous oxide method for the quantitative determination of cerebral blood flow in man: theory, procedure and normal values
@@ -727,17 +731,14 @@ The method corrected for the rise of the time-concentration curve using a fixed 
 % Kety:1951tp, The theory and applications of the exchange of inert gas at the lungs and tissues.
 Following these developments, the authors proposed a one-compartment model based on the same principle to assess fractional blood flow and fractional blood volume assuming a perfectly diffusible tracer~\cite{Kety:1951tp}.
 
-% Pappenheimer:1953tx, Passage of molecules through capillary walls
-In \citeyear{Pappenheimer:1953tx}, \citet{Pappenheimer:1953tx} addressed the subject of the passage of molecules through capillary walls and proposed a method for the quantification of capillary permeability using a two-compartment model assuming free diffusion of the tracer based on Fick's law.
-
 % Renkin:1959te, Transport of potassium-42 from blood to tissue in isolated mammalian skeletal muscles.
-\citet{Renkin:1959te} studied capillary permeability to K$^{42}$ in skeletal muscles using another diffusion model based on Fick's law.
+\citet{Renkin:1959te} studied capillary permeability to $^{42}$K in skeletal muscles using another diffusion model based on Fick's law through radioactivity measurements of the arterial and venous blood.
 The authors used the permeability surface product as a combined parameter of the model, and established its correspondance to the maximum capillary clearance possible for a given substance assuming an infinite flow.
 However they proposed a method to quantify the clearance at any flow rate assuming the permeability surface product is known.
 They explained the variations of the estimated permeability surface product by hemodynamic factors, i.e.~arteriovenous shunting, inhomogeneous flow distribution, flow-dependant perfusion network.
 
 % Crone:1963cz, The Permeability of Capillaries in Various Organs as Determined by Use of the ‘Indicator Diffusion’ Method
-\citet{Crone:1963cz} developped the indicator diffusion method that relates the cappillary permeability to blood flow, cappillary surface area, and initial extraction which corresponds to the fractional reduction of the arterial concentration, however litterature values for the two first parameters were used and only the initial extraction was estimated.
+\citet{Crone:1963cz} developped the indicator diffusion method that relates the capillary permeability to blood flow, capillary surface area, and initial extraction which corresponds to the fractional reduction of the arterial concentration, however litterature values for the two first parameters were used and only the initial extraction was estimated.
 The authors performed blood sampling experiments in dogs with injection of Evan's blue dye or a combination of insulin and sucrose to study the capillary permeability of these substances in multiple tissues, i.e.~brain, kidney, liver, lung, hind limb.
 
 \subsection{Nuclear medicine}

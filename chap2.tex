@@ -42,7 +42,7 @@ On the other hand, Peters et al.~defined the perfusion index as the ratio of the
 Nally et al.~reported significant differences in the wash-in rate, curve width at 75\% of the peak enhancement, and maximum enhancement in normal and stenosed kidney in a canine model~\cite{Nally:1985te}. 
 
 
-\subsection{X-ray}
+\subsection{X-ray imaging}
 \label{sec:SQRadiography}
 Derived from the work of Peters et al., semi-quantitative parameters were also proposed by Miles et al.~in \citeyear{Miles:1991et} to quantify renal cortical and medullary perfusion in X-ray computed tomography with bolus injection of Iodine~\cite{Miles:1991et,Miles:1991ei}. 
 The proposed perfusion index was defined as the ratio of the maximum slope in the tissue curve and the peak enhancement of the arterial curve. 
@@ -506,7 +506,7 @@ The ability of the technique to estimate the impulse response in case of either 
 The technique was able to significantly improve the accuracy of the shunt estimation in case of prolonged bolus, and while time-domain smoothing improved the accuracy of the estimates, frequency domain filtering proved more efficient.
 However none of the techniques yielded satisfactory results in case of fragmented bolus.
 
-\subsection{X-ray}
+\subsection{X-ray imaging}
 % Axel:1982wu, Tissue mean transit time from dynamic computed tomography by a simple deconvolution technique.
 In \citeyear{Axel:1982wu}, \citet{Axel:1982wu} proposed a deconvolution technique to estimate the mean transit time of contrast-enhanced X-ray computed tomography acquired in the brain, where iodinated tracers do not diffuse in the extravascular space. 
 Because the only considered parameter under investigation is the mean transit time, the authors consider the shape of the impulse response unimportant, with only a measure of its width being required.
@@ -543,7 +543,7 @@ The authors report good agreement of the measured regional cerebral blood flow a
 When repeated studies were performed, i.e.~in five of the six rabbits included in the study due to sudden death of the sixth rabbit, no significant differences were found between the parameters from the various acquisitions, however the computed-tomography estimates of regional blood flow were ten percent more variable than the one estimated using microspheres.
 
 % Wintermark:2001bm, Simultaneous measurement of regional cerebral blood flow by perfusion CT and stable xenon CT: a validation study. 
-\citet{Wintermark:2001bm} compared the results of two deconvolution methods to quantify perfusion computed-tomography exams, using stable xenon computed-tomography as a reference.
+In \citeyear{Wintermark:2001bm}, \citet{Wintermark:2001bm} compared the results of two deconvolution methods to quantify perfusion computed-tomography exams, using stable xenon computed-tomography as a reference.
 The first deconvolution is performed using a commercial software, known as \emph{CT~Perfusion} (GE Medical Systems).
 The software basically uses an improvement of the method proposed by \citet{Cenic:1999un}, allowing processing of pixel-by-pixel parametric maps with improved stability, by means of a singular value decomposition~\cite{Golub:2006bj} enforcing noise filtering through thresholding of the singular values. 
 Additionally, the computation time is considerably reduced using this method, which makes it usable in clinical routine.
@@ -554,7 +554,7 @@ Indeed, regions with arterial branches are filtered away using the commercial so
 Note that these regions with branches are neither visible in the reference method.
 
 % Eastwood:2002hx, CT perfusion scanning with deconvolution analysis: pilot study in patients with acute middle cerebral artery stroke.
-\citet{Eastwood:2002hx} used the commercial perfusion quantification software presented above to quantify brain perfusion in patients with acute stroke.
+In \citeyear{Eastwood:2002hx}, \citet{Eastwood:2002hx} used the commercial perfusion quantification software presented above to quantify brain perfusion in patients with acute stroke.
 % Hoeffner:2004hq, Cerebral Perfusion CT: Technique and Clinical Applications
 \citet{Hoeffner:2004hq} provided a review of the technique, as well as the various applications, and limitations of this quantification software.
 The larger anterior artery was used as an arterial input function, and the superior sagittal sinus was used as a venous outflow function.
@@ -565,7 +565,7 @@ They also observed significant differences between low-enhancement and normal-en
 Additionally, inter and intra observer variation were investigated and showed good agreement between and within observers.
 
 % Cuenod:2001ef, Early changes in liver perfusion caused by occult metastases in rats: detection with quantitative CT.
-\citet{Cuenod:2001ef} proposed a deconvolution-based method for the quantification of perfusion in rats with metastasis in the liver using contrast-enhanced computed tomography accounting for both arterial and portal supplies, with bolus injection of iobitridol, a iodinated contrast-agent.
+In \citeyear{Cuenod:2001ef}, \citet{Cuenod:2001ef} proposed a deconvolution-based method for the quantification of perfusion in rats with metastasis in the liver using contrast-enhanced computed tomography accounting for both arterial and portal supplies, with bolus injection of iobitridol, a iodinated contrast-agent.
 Because the arterial and portal components are totally mixed in the sinusoidal capillaries, the system assumes a common impulse response for both components shaped as a Weibul function, however the two inputs are weighted.
 This technique allows the estimation of the hepatic blood flow, which can be separated in two components, yielding the arterial and portal blood flows, and the tissue blood volume.
 The method differs from classical deconvolution because of the strong a priori on the shape of the impulse response, which is defined parametrically, considerably reducing the number of parameters to estimate but also the flexibility of the method.
@@ -593,7 +593,7 @@ The main goal the authors wanted to reach was the estimation of tissue blood flo
 They recommended estimating the mean transit time through deconvolution, suggesting the use of Fourier-based methods~\cite{Coulam:1966un}, and proposed the tissue blood volume as the ratio of the areas under the tissular and arterial curves, as proposed by \citet{Lassen:1979vj} for indicator-dilution theory, and \citet{Axel:1980jg} for perfusion computed-tomography imaging.
 
 % Rempp:1994kk, Quantification of regional cerebral blood flow and volume with dynamic susceptibility contrast-enhanced MR imaging.
-\citet{Rempp:1994kk} investigated susceptibility Gd-DTPA2-enhanced magnetic resonance imaging to quantify cerebral perfusion in a clinical study with twelve healthy patients with intact blood-brain barrier.
+In \citeyear{Rempp:1994kk}, \citet{Rempp:1994kk} investigated susceptibility Gd-DTPA2-enhanced magnetic resonance imaging to quantify cerebral perfusion in a clinical study with twelve healthy patients with intact blood-brain barrier.
 A dual FLASH sequence was used, allowing interleaved acquisition in two parallel sections, one being the section of interest, the other one containing the feeding arteries.
 The arterial input function was estimated directly in the imaging plane, either in the carotid or in the vertebral arteries, and the segmentation was performed on pixel-by-pixel maps of semi-quantitative parameters, i.e.~the full width at half maximum, peak intensity, and time to peak intensity.
 More precisely, adaptive thresholding was first performed on the full width at half maximum and peak intensity maps, and only pixels with peak intensities over 75\% of the maximum intensity in the image were retained.
@@ -605,7 +605,7 @@ The authors report an overall decrease of both perfusion parameters with age, an
 
 % Wilke:1995dt, Regional myocardial blood volume and flow: First-pass MR imaging with polylysine-Gd-DTPA
 % King:1993uj, A vascular transport operator.
-\citet{Wilke:1995dt} used a low-order vascular transport operator, presented in~\cite{King:1993uj}, to model the tissue impulse response using magnetic resonance imaging with bolus injection of an intravascular contrast agent, i.e.~polylysine-Gd-DTPA. 
+In \citeyear{Wilke:1995dt}, \citet{Wilke:1995dt} used a low-order vascular transport operator, presented in~\cite{King:1993uj}, to model the tissue impulse response using magnetic resonance imaging with bolus injection of an intravascular contrast agent, i.e.~polylysine-Gd-DTPA. 
 They compared their perfusion estimates in the myocardium of dogs, with and without induced coronary stenosis, to the perfusion parameters obtained using radiolabelled microspheres.
 Contrast signal intensities were normalized according to the pre-contrast values, as well as from the signal intensities observed in an oil phantom placed under the chest of the dogs.
 The vascular transport operator accounts for the pure delay of the contrast agent, but also for the dispersion of the bolus by means of a fourth-order linear differential operator, resulting from the combination of two attenuated second-order operators in series.
@@ -646,7 +646,7 @@ Strong differences, i.e.~almost 2-fold, were observed between the cerebral blood
 Moreover, the fit quality was considerably lower using the Gaussian model, suggesting that the exponential model is a better approximation to model cerebral impulse response.
 
 % JeroschHerold:1998gg, Magnetic resonance quantification of the myocardial perfusion reserve with a Fermi function model for constrained deconvolution
-Inspired by the work of \citet{Axel:1982wu} for quantification of perfusion computed-tomography, \citet{JeroschHerold:1998gg} proposed a Fermi function to model the myocardial impulse response in an attempt to quantify the myocardial perfusion reserve from the first pass of a bolus of Gd-DTPA imaged using a multislice magnetic resonance imaging technique.
+Inspired by the work of \citet{Axel:1982wu} for quantification of perfusion computed-tomography, in \citeyear{JeroschHerold:1998gg} \citet{JeroschHerold:1998gg} proposed a Fermi function to model the myocardial impulse response in an attempt to quantify the myocardial perfusion reserve from the first pass of a bolus of Gd-DTPA imaged using a multislice magnetic resonance imaging technique.
 Interestingly, the convolution operation was performed as a product in the frequency domain, following Fourier transform, but the non-linear least-square fitting was performed in the time-domain, following inverse Fourier transform of the convolved functions.
 Since two measurements are necessary to estimate myocardial perfusion reserve, two magnetic resonance sequences were acquired to assess this parameter in nine patients with suspected microvascular disease.
 The first acquisition was performed at rest, and the second was performed during adenosine-induced maximum hyperemia.
@@ -683,7 +683,7 @@ The results without deconvolution clearly underestimated the ejection fraction a
 However, using the deconvolution-based method an excellent agreement of the estimates is reported, indeed the correlation is high ($R^2 = 0.93$) with a mean bias of 1.6\%, and a standard deviation of 8\%, demonstrating the feasibility of the method.
 
 % Gauthier:2012vc, Assessment of quantitative perfusion parameters by dynamic contrast-enhanced sonography using a deconvolution method: an in vitro and in vivo study.
-\citet{Gauthier:2012vc} used a deconvolution method based on singular value decomposition, but enforcing Tikhonov regularization to reduce the rapid oscillations in the impulse response function, and finally the impulse response was fitted by the explicit model proposed by~\citet{Elie2014} and presented in Section~\ref{SQ:US:Bolus}.
+In \citeyear{Gauthier:2012vc}, \citet{Gauthier:2012vc} used a deconvolution method based on singular value decomposition, but enforcing Tikhonov regularization to reduce the rapid oscillations in the impulse response function, and finally the impulse response was fitted by the explicit model proposed by~\citet{Elie2014} and presented in Section~\ref{SQ:US:Bolus}.
 The blood flow and the blood volume were then derived from the model fitted to the estimated impulse response, and were respectively defined as the peak value, and the area under the curve.
 The additional regularization term was weighted, and the determination of this weighting parameter was determined using the L-curve method described in~\cite{Hansen:1992jx}.
 The reproducibility of the method was assessed through both in vitro and in vivo experiments, and was compared to the semi-quantitative parameters extracted from the time-intensity curve fitted with the same explicit model, without deconvolution.
@@ -694,7 +694,7 @@ In terms of reproducibility, the quantitative parameters obtained by deconvoluti
 Once again, only the variability of the parameters was reported, the estimated values were not reported, and no statistical analysis was performed.
 
 % Jirik:2013cla, Ultrasound perfusion analysis combining bolus-tracking and burst-replenishment.
-\citet{Jirik:2013cla} proposed a contrast-enhanced ultrasound acquisition scheme referred to as bolus-and-burst for it combines bolus injection and destruction-replenishment, as well as a blind deconvolution method, specific to their custom acquisition scheme, for simultaneous estimation of the arterial input function and the tissue impulse response.
+In \citeyear{Jirik:2013cla}, \citet{Jirik:2013cla} proposed a contrast-enhanced ultrasound acquisition scheme referred to as bolus-and-burst for it combines bolus injection and destruction-replenishment, as well as a blind deconvolution method, specific to their custom acquisition scheme, for simultaneous estimation of the arterial input function and the tissue impulse response.
 As the name suggests, the acquisition is divided in two main parts.
 The first part consists of a classical low mechanical index image acquisition to image the passage of a bolus of microbubbles injected intravenously.
 Then, at the end of the bolus-phase, when the concentration of contrast agent in the tissue decays rather slowly, a sequence of high mechanical index pulses are sent to disrupt the circulating microbubbles.
@@ -726,26 +726,39 @@ The explicit formulation of the impulse response function improves the stability
 % Kety:1944iv, The Quantitative Determination of Cerebral Blood Flow in Man by the Use of Nitrous Oxide in Low Concentrations
 % Kety:1948je, The nitrous oxide method for the quantitative determination of cerebral blood flow in man: theory, procedure and normal values
 Early use of compartmental models to fit indicator-dilution curves was based on the Fick\'s principle that relates the blood flow to the arterial and venous measurements~\cite{Kety:1944iv,Kety:1948je}.
-\citet{Kety:1944iv} derived a method to estimate cerebral blood flow from arterial and venous blood sampling during inhalation of nitrous oxyde, and assessed it in a clinical experiment with eleven subjects.
+In \citeyear{Kety:1944iv}, \citet{Kety:1944iv} derived a method to estimate cerebral blood flow from arterial and venous blood sampling during inhalation of nitrous oxyde, and assessed it in a clinical experiment with eleven subjects.
 The method corrected for the rise of the time-concentration curve using a fixed ratio of the amplitude of the monoexponential model fitted to the decay phase. 
 % Kety:1951tp, The theory and applications of the exchange of inert gas at the lungs and tissues.
 Following these developments, the authors proposed a one-compartment model based on the same principle to assess fractional blood flow and fractional blood volume assuming a perfectly diffusible tracer~\cite{Kety:1951tp}.
 
 % Renkin:1959te, Transport of potassium-42 from blood to tissue in isolated mammalian skeletal muscles.
-\citet{Renkin:1959te} studied capillary permeability to $^{42}$K in skeletal muscles using another diffusion model based on Fick's law through radioactivity measurements of the arterial and venous blood.
-The authors used the permeability surface product as a combined parameter of the model, and established its correspondance to the maximum capillary clearance possible for a given substance assuming an infinite flow.
+In \citeyear{Renkin:1959te}, \citet{Renkin:1959te} studied capillary permeability to $^{42}$K in skeletal muscles using another diffusion model based on Fick's law through in vivo radioactivity measurements of the arterial and venous blood.
+The authors were among the first to use the permeability surface product as a combined parameter of the model, and established its correspondance to the maximum capillary clearance possible for a given substance assuming an infinite flow.
 However they proposed a method to quantify the clearance at any flow rate assuming the permeability surface product is known.
-They explained the variations of the estimated permeability surface product by hemodynamic factors, i.e.~arteriovenous shunting, inhomogeneous flow distribution, flow-dependant perfusion network.
+They suggested that variations of the estimated permeability surface product were due to hemodynamic factors following either of the three following pattern: arteriovenous shunting, inhomogeneous flow distribution, or flow-dependant perfusion network.
+They were however unable to determine which pattern was actually explaining the correlation between blood flow and permeability surface product in their data.
 
 % Crone:1963cz, The Permeability of Capillaries in Various Organs as Determined by Use of the ‘Indicator Diffusion’ Method
-\citet{Crone:1963cz} developped the indicator diffusion method that relates the capillary permeability to blood flow, capillary surface area, and initial extraction which corresponds to the fractional reduction of the arterial concentration, however litterature values for the two first parameters were used and only the initial extraction was estimated.
-The authors performed blood sampling experiments in dogs with injection of Evan's blue dye or a combination of insulin and sucrose to study the capillary permeability of these substances in multiple tissues, i.e.~brain, kidney, liver, lung, hind limb.
+In \citeyear{Crone:1963cz}, \citet{Crone:1963cz} developped the indicator diffusion method that relates the capillary permeability to blood flow, capillary surface area, and initial extraction which corresponds to the fractional reduction of the arterial concentration, however litterature values for the two first parameters were used and only the initial extraction was estimated.
+The authors performed blood sampling experiments in dogs with injection of Evan's blue dye or a combination of inulin and sucrose to study the capillary permeability of these substances in multiple tissues, i.e.~brain, kidney, liver, lung, hind limb, by means of invasive catheterization.
+Their study contradicts the results of \citet{Renkin:1959te}, and suggest that the discrepencies are due to a conceptual difference between the two studies regarding the definition of \"extraction\".
+But also because in the approach proposed by \citet{Renkin:1959te}, the presence of tracer outside capillaries was neglected despite the steady state reached by the system during the experiment.
+Oppositely the approach proposed in this study relies on non-steady state measurements, ensuring lower extracapillary concentrations, and allowing accurate permeability estimates.
+
+The theoretical developments presented in the three approaches above served as the foundation for compartmental analysis of perfusion exams.
+The following sections present the adaptation of compartmental models to quantify perfusion in nuclear medicine, x-ray, magnetic resonance, and ultrasound imaging.
+When comparing approaches, one should consider the characteristics of the tracer (intravascular vs.~diffusing, reversible vs.~irreversible), the characteristics of the vasculature in the tissue of interest (single vs.~dual input), the estimation method (linear vs.~non-linear).
 
 \subsection{Nuclear medicine}
 
+Many compartmental analysis developments in the field of nuclear medicine, and in particular positron emission tomoraphy (PET), were motivated by metabolic studies such as the consumption of glucose.
+These metabolic measurements were permited by the development of labelled tracers, and in particular of labelled glucose.
+Indeed, at the cellular level high consumption of glucose is synonym of fast metabolism.
+Studying the consumption of glucose can reveal information on the cellular activity in the tissue, which is particularly relevant to study neuronal activity or to detect tumors and assess their malignancy.
+
 % Gjedde:1981ge, High- and low-affinity transport of D-glucose from blood to brain
-\citet{Gjedde:1981ge} used a formula from \citet{Crone:1963cz}, and the previous developments of the group presented in~\cite{Gjedde:1980kh}, to derive two integral methods to estimate rate constants of glucose from blood to brain tissues in rat experiments.
-The methods consider the exchanges between the capillary and extracellular space, as well as the metabolic pools reflecting consumption of glucose by brain cells.
+In \citeyear{Gjedde:1981ge}, \citet{Gjedde:1981ge} used a formula from \citet{Crone:1963cz}, and the previous developments of the group presented in~\cite{Gjedde:1980kh}, to derive two integral methods to estimate rate constants of glucose from blood to brain tissues in rats using scintigraphy measurements of blood sampled following the injection of a mixture of a $^{3}H$-labelled substance (D-glucose, L-glucose, D-mannitol, or sucrose), with $^{14}$C-butanol and $^{111}$InCl.
+The methods consider the exchanges between the capillary and extracellular spaces, as well as the metabolic pools reflecting consumption of glucose by brain cells.
 The first method estimated the initial rate constant as the difference of the total amount of tracer in the brain and the amount of plasma in brain twenty seconds after injection, normalized by the area under the arterial curve up to twenty seconds.
 The second method exploited dynamic measurements to derive a graphical method, allowing the conjoint estimation of initial rate constant, and plasma volume, respectively as the slope, and intercept in the linear regression analysis of the ratio of the total amount of tracer in the brain to the arterial concentration, and the ratio of the total amount of tracer that passed in the artery to the arterial concentration.
 Their experiments led them to the conclusion that the two methods estimated two different transfer rates, reflecting at least two transport mechanisms, i.e.~a high affinity system with low capacity, and a low affinity system with high capacity.
@@ -759,67 +772,72 @@ The slope of the fitted linear model yields the influx rate from plasma to tissu
 
 % Patlak:1985bc, Graphical evaluation of blood-to-brain transfer constants from multiple-time uptake data. Generalizations.
 \citet{Patlak:1985bc} then generalized the method to analyze time-intensity curves using a reversible reference tissue instead of the arterial measurement, yielding an estimate of the ratio of the influx rate of the tissue to the sum of the reversible and plasmatic fractional volumes.
-They also addressed cases when tracer binding is incomplete in the irreversible compartment, for both arterial and reference measurements, and presented specific applications of the method.
+They also addressed cases when tracer binding is incomplete in the irreversible compartment, for both arterial and reference measurements, and presented specific applications of the method in the case of one reversible region (with or without re­versible binding) and one irreversible region.
 
 % Graphical methods for reversible tracers
 % Logan:1990jg, Graphical analysis of reversible radioligand binding from time-activity measurements applied to [N-11C-methyl]-(-)-cocaine PET studies in human subjects.
-In \citeyear{Logan:1990jg}, \citet{Logan:1990jg} proposed a graphical analysis method to analyze the kinetics of reversible tracers, binding reversibly to receptors or enzyme, and applied it to estimate the parameters of the three-compartment model to characterize the binding of a radiolabeled cocaine complex in a positron emission tomography study.
+In \citeyear{Logan:1990jg}, \citet{Logan:1990jg} proposed a graphical analysis method to analyze the kinetics of reversible tracers, binding reversibly to receptors or enzyme, and applied it to estimate the parameters of the three-compartment model to characterize the binding of a radiolabeled cocaine complex in a PET study.
 This is an extension of the method proposed by \citet{Gjedde:1981ge} to account for rapid binding and unbinding of the tracer where the graphical analysis is performed similarly.
+Arterial blood was sampled throughout the experiment, and the arterial concentration in radiolabeled cocaine complex was used as an input of the model.
 In terms of two-compartment model, the distribution volume can be derived from the slope of the linear portion of the plot.
-In terms of three-comparmtent model, an additional measurement is necessary to determine the the ratio of binding to unbinding rate from the ratio of the slopes in a receptor tissue to a non-receptor tissue assuming the plasmatic volume is negligible. 
+In terms of three-compartment model, an additional measurement is necessary to determine the ratio of binding to unbinding rate from the ratio of the slopes in a receptor tissue to a non-receptor tissue assuming the plasmatic volume is negligible. 
 
 % Logan:1996be, Distribution Volume Ratios Without Blood Sampling from Graphical Analysis of PET Data
-The authors later extended the graphical analysis method to estimate distribution volume ratios, defined as the ratio of the distribution volume of a tracer in a receptor tissue to a receptor-free tissue. 
+The authors later extended the graphical analysis method to estimate distribution volume ratios~\cite{Logan:1996be}, defined as the ratio of the distribution volume of a tracer in a receptor tissue to a receptor-free tissue. 
 The method allows the estimation of the distribution volume ratio from studies without arterial blood sampling, using only the curves extracted from the image in two regions. 
-The direct distribution volume ratio estimation using the proposed method was compared to the ratio of the distribution volumes in the two tisues obtained using blood sampling data in a positron emission tomography study with injection of $^{11}$C-labelled raclopride or d-threo­ methylphenidate.
+The direct distribution volume ratio estimation using the proposed method was compared to the ratio of the distribution volumes in the two tisues obtained using blood sampling data in a PET study with injection of $^{11}$C-labelled raclopride or d-threo-methylphenidate.
 The method requires the knowledge of the average tissue to blood rate constant, as well as the determination of the initial time at which the slope should be estimated, which can be obtained from baseline experiments requiring blood sampling for calibration.
 
 % Logan:2001ip, A strategy for removing the bias in the graphical analysis method.
-In case of noisy data, the linear formulation of the compartment model can yield underestimated distribution volume estimates because the error are cumulative in the integral terms~\cite{Feng:1993cq}.
+In case of noisy data, this linear formulation of the compartmental modeling can yield underestimated distribution volume estimates because the errors are cumulative in the integral terms~\cite{Feng:1993cq}.
 \citet{Logan:2001ip} proposed a strategy to remove the bias in the graphical analysis method, using the generalized linear least-squares algorithm proposed by \citet{Feng:1996ic} to determine the distribution volume directly for one-compartment models or as a smoothing technique prior to graphical analysis for more complex model structures.
+The authors demonstrated the improved accuracy of the new estimation method, applied to evaluate either the distribution volume using an arterial input function, or the distribution volume ratio using a refrence tissue, in PET experiments following injection of $^{11}$C-labelled raclopride or d-threo-methylphenidate.
+To estimate the distribution volume, an arterial input function was measured (for both tracers) from sampled blood.
 
 % Non-linear formulation of compartmental models
 % Hawkins:1984da, A kinetic evaluation of blood-brain barrier permeability in human brain tumors with [68Ga]EDTA and positron computed tomography.
-In \citeyear{Hawkins:1984da}, \citet{Hawkins:1984da} used a two compartments model based on the equation of the graphical analysis with a vascular component, however they directly estimated the parameters of the model using a non-linear least-squares algorithm to fit the model, after resolution of the differential equations that relates the curve in the tissue of interest to the arterial measurement.
-The non-linear resolution of the equations yields a convolution formulation assuming a decaying monoexponential tissue impulse reponse function.
-The method was used to estimate influx and outflux rate constants, as well as the blood volume fraction from which estimates of the regional cerebral blood volume corrected for the differences in hematocrit were derived, and compared it to direct measurements obtained using a method previously described in~\cite{Phelps:1979tl}.
+In \citeyear{Hawkins:1984da}, \citet{Hawkins:1984da} used a two-compartment model based on the equation of the graphical analysis with a vascular component to evaluate the blood-brain barrier permeability in human brains using PET exams and $^{68}$Ga-EDTA as a tracer.
+However they directly estimated the parameters of the model using a non-linear least-squares algorithm to fit the model, after resolution of the differential equations that relates the curve in the tissue of interest to the arterial blood sampling measurements.
+The non-linear resolution of the equations yields a convolution formulation assuming a monoexponential decay in the tissue impulse reponse.
+The method was used to estimate influx and outflux rate constants, as well as the blood volume fraction from which estimates of the regional cerebral blood volume corrected for the differences in hematocrit were derived, and compared it to direct estimation obtained using a three-compartment model previously described by~\citet{Phelps:1979tl}.
 
 % Ziegler:1996cs, Measurement of liver blood flow using oxygen-15 labelled water and dynamic positron emission tomography: Limitations of model description
-\citet{Ziegler:1996cs} compared a dual-input and a single-input compartmental model and their ability to quantify blood flow in dog liver using dynamic positron emission tomography data following injection of a bolus of $^{15}$O-labelled water.
-On the one hand, the dual-input model accounts for the arterial and portal supplies of the liver using direct measurements resulting from blood sampling.
-On the other hand, in the single-input model the determination of the portal supply is part of the fitting procedure, and is derived from the arterial measurement resulting from blood sampling by considering a gut compartment, based on a one-compartment model, which distribution volume was fixed and derived from post-mortem experiments in dogs.
+In \citeyear{Ziegler:1996cs}, \citet{Ziegler:1996cs} compared a dual-input and a single-input one-compartment model regarding their ability to quantify blood flow in dog liver using dynamic PET data following injection of a bolus of $^{15}$O-labelled water.
+The dual-input model accounts for the arterial and portal supplies of the liver, using direct measurements resulting from blood sampling in the aorta and in the portal vein.
+In the single-input model the determination of the portal supply is part of the fitting procedure, and is derived from the arterial measurement resulting from blood sampling by considering a gut compartment, based on a one-compartment model, which distribution volume was fixed and derived from post-mortem experiments in dogs.
 Additionally the models correct for time-delays and dispersion using the method presented in~\cite{Meyer:1989vy}.
 Both models make the assumption that the blood supplies diffuse instantaneously from vasculature to the liver tissue, and that the volume of distribution of the tracer is the same for arterial and portal blood.
-The volume of distribution in the liver was fixed during the estimation process of both model, however the authors report high sensitivity of blood flow, dispersion and fit accuracy to the chosen value.
+For both models, the volume of distribution in the liver was not estimated but fixed for all experiments using the average value of the ratio of the arterial to liver concentrations in the late phase, assuming an equlibrium was reached.
+The authors investigated the impact of this parameter on the estimation process, and reported a high sensitivity of liver blood flow, dispersion and fit accuracy to the fixed distribution volume value.
 The single-input model additionally enforces a fixed ratio of gut tissue to liver tissue volume.
 Poor agreement of the blood flow estimates of the dual-input and single-input models was found with microsphere measurements, however the single-input model performed slighlty better.
 
 % Linear formulation of compartmental models
 % Blomqvist:1984jy, On the Construction of Functional Maps in Positron Emission Tomography
-In~\citeyear{Blomqvist:1984jy}, \citet{Blomqvist:1984jy} proposed a linear formulation of a three-compartment model presented by~\citet{Raichle:1975va} obtained by rearranging and integrating twice the second-order differential equations relating the arterial concentration to the tissue concentration.
-The method was used to derive functional maps from dynamic positron emission tomography data of tracers marked with $^{11}$C.
+In~\citeyear{Blomqvist:1984jy}, \citet{Blomqvist:1984jy} proposed a linear formulation of a three-compartment model, accounting for both metabolized and unmetabolized tracer, presented by~\citet{Raichle:1975va} obtained by rearranging and integrating twice the second-order differential equations relating the arterial concentration to the tissue concentration.
+The method was used to derive functional maps from dynamic PET data of various tracers labelled with $^{11}$C, i.e.~$^{11}$C-methionine, $^{11}$C-deoxyglucose, $^{11}$C-glucose.
+The authors did not report the method used to acces the arterial tracer concentration.
 The three-compartment model was composed of a vascular compartment, and two extravascular compartments, one representing the extravascular space exchanging with the plasma, where the tracer is unmetabolized, and the other representing the metabolized compartment.
-The authors estimated the tracer transfer rate constants from blood to tissue and from tissue to blood, as well as its metabolizing rate, by solving the system of equation using standard linear least-squares methods.
-The proposed linear estimation method was compared to the non-linear estimation of the three-compartment model using clinical positron emission tomography data, and good agreement were found between the estimates of the two methods, especially for blood to tissue transfer rate, and for the cerebral metabolic rate for glucose utilization, a composite index which definition can be found in~\cite{Reivich:1982ir}.
+The authors estimated the tracer transfer rate constants from blood to tissue and from tissue to blood, as well as its metabolizing rate, by solving the system of equations using a linear least-squares methods.
+The proposed linear estimation method was compared to the non-linear estimation of the three-compartment model, and good agreement were found between the estimates of the two methods, especially for blood to tissue transfer rate, and for the cerebral metabolic rate for glucose utilization, a composite index which definition can be found in~\cite{Reivich:1982ir}.
 
 % Review papers
-\citet{Gunn:2001cx} reviewed the compartmental models used for quantification of dynamic positron emission tomography data, whether assessing perfusion, metabolism or ligand binding.
+In \citeyear{Gunn:2001cx}, \citet{Gunn:2001cx} reviewed the compartmental models used for quantification of dynamic PET data, whether assessing perfusion, metabolism or ligand binding.
 This theoretical study investigates both models using arterial input functions and models using reference tissues, as well as reversible and irreversible tracers, regardless of the number of compartments involved. 
-General solutions for the impulse response are given in the form of sum of weighted exponential functions, which weight and rate constant are to be determined.
-The authors revealed that all the micro parameters of a perfusion model cannot be estimated individually, instead one should interpret the macro parameters that the authors defined in terms of the micro parameters, as the estimation of the latter is generally more stable.
+General solutions for the impulse response are given in the form of sum of weighted exponential functions, which weight and rate constant have to be determined.
+The authors differentiated micro parameters, i.e.~the actual rate constant parameterizing the model, from macro parameters, i.e.~global parameters defined as a function of the model rate constants, and showed that all the micro parameters of a perfusion model cannot be estimated individually, instead one should interpret the macro parameters in terms of the micro parameters, as the estimation of the latter was shown to be more stable.
 Additionally, investigating models using a reference tissue region they showed that the macro parameters are expressed relatively to the reference region, and proposed a correction for the bias in graphical estimation methods when the contribution of blood in the reference and studied tissues cannot be neglected.
 
-\citet{Watabe:2006uy} also proposed a review of compartmental models for quantification of dynamic positron emission tomography data, especially addressing the models for the quantification of binding tracers.
-The classical model counts four compartments, i.e.~an arterial compartment exchanging with a free compartment, that exhanche itself with a specific binding compartment, and a non-specific binding compartment.
+In \citeyear{Watabe:2006uy}, \citet{Watabe:2006uy} also proposed a review of compartmental models for quantification of dynamic PET data, especially addressing the models for the quantification of binding tracers.
+The classical model counts four compartments, i.e.~an arterial compartment exchanging with a free compartment, that exchanges with a specific binding compartment, and a non-specific binding compartment.
 The specific binding compartment is generally the compartment of interest when studying binding tracers.
-If the non-specific binding compartment is in equilibrium with the free compartmetn, then these compartment can be merged, reducing the number of parameters by two.
+If the non-specific binding compartment is in equilibrium with the free compartment, then these compartments can be merged, reducing the number of parameters by two.
 Similarly, the simple one-compartment model, that only considers the exchanges between plasma and tissue through two rate constant parameters, can be used in flow limiting conditions, i.e.~when a quick equilibrium is reached between the free compartment and the binding compartment, or when using non-binding intravascular tracers.
-It was first proposed by~\citet{Kety:1948je} in~\citeyear{Kety:1948je} to quantify blood flow using $^{15}O$ labelled water as a tracer.
 
-\subsection{X-ray}
+\subsection{X-ray imaging}
 
 % Yeung:1992wy, In vivo CT measurement of blood-brain transfer constant of iopamidol in human brain tumors.
-\citet{Yeung:1992wy} used a two-compartement model to quantify the blood-to-brain transfer constant of iopadimol, as well as plasmatic blood volume, using dynamic X-ray computed tomography in a clinical study of brain tumors.
+In \citeyear{Yeung:1992wy}, \citet{Yeung:1992wy} used a two-compartement model to quantify the blood-to-brain transfer constant of iopadimol, as well as plasmatic blood volume, using dynamic X-ray computed tomography in a clinical study of brain tumors.
 The two compartments correspond to the cerebral plasma space and the extravascular extracellular space, exchanging tracer with each other through the blood brain barrier assuming permeability limiting conditions.
 The arterial measurements resulted from blood sampling measurements in a radial artery.
 The clinical experiments revealed the ability of the estimated parameters to differentiate between healthy white and gray matter, tumor tissue, and metastatic tissue.
@@ -828,20 +846,20 @@ Additionally, parametric maps of blood to brain transfer constant and plasmatic 
 
 % Graphical analysis
 % Tsushima:1999ub, Functional CT of the kidney.
-\citet{Tsushima:1999ub} used a graphical analysis technique based on the work of \citet{Patlak:1983id} to estimate the fractional blood volume and the contrast clearance rate per unit volume of tissue which is closely related to glomerular filtration, using perfusion X-ray computed tomography of human kidney following the intravenous injection of a bolus of iodinated contrast agent. 
+In \citeyear{Tsushima:1999ub}, \citet{Tsushima:1999ub} used a graphical analysis technique based on the work of \citet{Patlak:1983id} to estimate the fractional blood volume and the contrast clearance rate per unit volume of tissue which is closely related to glomerular filtration, using perfusion X-ray computed tomography of human kidney following the intravenous injection of a bolus of iodinated contrast agent. 
 The authors reported a negative correlation of the patient age with the fractional clearance rate, but not with the fractional blood volume despite a tendency to decrease with age. 
 A linear relation was found between X-ray computed tomography estimates and the creatinine clearance rate obtained from urine sampling, which was the clinical reference method to estimate the glomerular filtration rate.
 
 % Harvey:1999wa, Imaging of tumour therapy responses by dynamic CT.
-\citet{Harvey:1999wa} used the same method to estimate the contrast clearance rate and the fractional blood volume of various tumor types in an attempt to assess tumor response to radiotherapy.
+In \citeyear{Harvey:1999wa}, \citet{Harvey:1999wa} used the same method to estimate the contrast clearance rate and the fractional blood volume of various tumor types in an attempt to assess tumor response to radiotherapy.
 Acquisition were performed before treatement for baseline, then early and late response exams were acquired one or two, and six to twelve weeks after treatement, respectively.
 Authors were able to reveal an increase in the clearance rate as well as in the fractional blood volume in the early response exams, indicating an hyperemic response to radiotherapy.
 Later exams revealed a decrease in parameter values compared to the early response, but still exhibited larger values compared to the baseline experiments.
 
 % Materne:2000gu, Non-invasive quantification of liver perfusion with dynamic computed tomography and a dual-input one-compartmental model.
-\citet{Materne:2000gu} used a dual-input compartmental model, similar to the model proposed by \citet{Ziegler:1996cs} for positron emission tomography, to characterize liver perfusion from dynamic contrast-enhanced X-ray computed tomography experiments accounting for both arterial and portal blood supplies.
+In \citeyear{Materne:2000gu}, \citet{Materne:2000gu} used a dual-input compartmental model, similar to the model proposed by \citet{Ziegler:1996cs} for PET, to characterize liver perfusion from dynamic contrast-enhanced X-ray computed tomography experiments accounting for both arterial and portal blood supplies.
 The proposed method accounted for time-delays, but not for dispersion as originally proposed by \citet{Ziegler:1996cs}. 
-The arterial and portal curves were extracted directly from the image, which was not possible with positron emission tomography data due to the poor spatial resolution of the imaging modality.
+The arterial and portal curves were extracted directly from the image, which was not possible with PET data due to the poor spatial resolution of the imaging modality.
 Two models were actually considered, in the first one only the liver tissue component was considered, and in the second one the measured kinetic was considered a linear combination of the tissular, arterial, and portal components.
 Hepatic, arterial, and portal perfusion indices were derived from the estimated model parameters.
 The perfusion obtained with the first approach exhibited a strong correlation with microsphere measurements, which was not true for the second approach.
@@ -850,7 +868,7 @@ The reproducibility of the first approach was then investigated in a clinical ex
 \subsection{Magnetic resonance}
 % Tofts:1999ih, Estimating kinetic parameters from dynamic contrast-enhanced T(1)-weighted MRI of a diffusable tracer: standardized quantities and symbols
 In \citeyear{Tofts:1999ih}, \citet{Tofts:1999ih} introduced compartmental models for the quantification of perfusion parameters using diffusible tracers in dynamic contrast-enhanced magnetic resonance imaging, as well as a set of standardized notations for these parameters.
-The authors adapted the methods developped for quantification of positron emission tomography using an arterial input function~\cite{Kety:1951tp,Renkin:1959te,Crone:1963cz} to magnetic resonance imaging assuming the contribution of intravascular tracer to signal intensity can be ignored.
+The authors adapted the methods developped for quantification of PET using an arterial input function~\cite{Kety:1951tp,Renkin:1959te,Crone:1963cz} to magnetic resonance imaging assuming the contribution of intravascular tracer to signal intensity can be ignored.
 They then derived a generalized model parameterized by the transfer constant from plasma to tissue noted $K_{trans}$, the extravascular extracellular space volume fraction noted $V_{e}$, and defined the rate constant as the ratio of these two parameters, noted $k_{ep}$.
 The transfer constant is equivalent to the permeability surface area product under permeability-limited conditions, to blood flow under flow-limited conditions, and to extraction ratio under mixed conditions.
 They also showed that the rate constant parameter is the decay rate of the exponential impulse response by solving the first-order differential equation of the generalized model.

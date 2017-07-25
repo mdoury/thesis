@@ -33,7 +33,9 @@ Then, because of the multiplicative nature of the noise in ultrasound data, a pa
 \label{sec:OVCModel}
 A vascularized tissue is considered an homogeneous compartment fed by an artery.
 The vascular compartment is parameterized by tissue blood volume $V$, and tissue blood flow $F$, since the distribution of microbubbles is restricted to the vascular space~\cite{Gunn:2001cx,Doury:2017fz}.
+Figure~\ref{fig:OVC_model} shows a diagram representing the structure of the model.
 An additional time-delay parameter $D$, reflecting the transit time of the contrast agent from the feeding artery to the tissue of interest, was introduced to describe experimental data more accurately, thus avoiding a bias in the estimation of the vascular parameter. 
+Figure~\ref{fig:OVCd_model} shows a diagram of the time-delayed one-compartment model.
 The mathematical expression of this model is given by Equation (\ref{eq:CM2}):
 % \begin{equation}
 % \label{eq:CM}
@@ -56,6 +58,32 @@ C \left( t \right) = F \int_{0}^{t} C_A \left( \tau \right) \mathrm{e}^{-\frac{F
 \end{equation}
 Given an AIF $C_A(t)$, and the set of three perfusion parameters $V$, $F$, and $D$, the associated TIC $C(t)$ can be simulated.
 
+\begin{subfigures}
+    \begin{figure}[bh]\centering
+    \includegraphics[width=0.5\linewidth]{OVC_diagram.eps}
+    \caption{One-compartment model.}
+    \label{fig:OVC_model}
+    \end{figure}
+    % 
+    \begin{figure}[bh]\centering
+    \includegraphics[width=0.5\linewidth]{OVCd_diagram.eps}
+    \caption{One-compartment model with additional time-delay parameter.}
+    \label{fig:OVC_model}
+    \end{figure}
+    % 
+    \begin{figure}[bh]\centering
+    \includegraphics[width=0.5\linewidth]{rOVC_diagram.eps}
+    \caption{Block diagram of the relative one-compartment model in case of a single region of interest.}
+    \label{fig:rOVC_model}
+    \end{figure}
+    % 
+    \begin{figure}[bh]\centering
+    \includegraphics[width=0.5\linewidth]{rOVC_regional_diagram.eps}
+    \caption{Block diagram of the relative one-compartment model for regional quantification.}
+    \label{fig:rOVC_regional}
+    \end{figure}
+\end{subfigures}
+
 \subsubsection{Multiplicative noise model}\label{sec:NoiseModel}
 A multiplicative noise model following a gamma distribution and enforcing unit mean was used, i.e.~$\mathrm{mean}_v~p\left(v\right) = 1$, inspired by \citet{Barrois:2013gw}.
 A unit mean distribution for a multiplicative noise is the equivalent of a centered distribution for additive noise.
@@ -75,7 +103,7 @@ The following methods are intended to estimate perfusion parameters from $N_T$ t
 The TIC in the i$^{th}$ tissue of interest is noted $C_T^i(t)$, where $i \in \left[\![1,N_T \right]\!]$, and the TIC in the chosen reference tissue is noted $C_R(t)$. All TICs are defined for $t \in \left[ 0, L \right]$ and count $N_S$ samples.
 
 \subsubsection{Relative OVC model (rOVC)}
-A relative OVCd model can be derived from the previously presented OVC model, considering conjointly one tissue of interest with TIC $C_T^i(t)$, and one reference tissue with TIC $C_R(t)$:
+A relative OVC model can be derived from the previously presented OVC model, considering conjointly one tissue of interest with TIC $C_T^i(t)$, and one reference tissue with TIC $C_R(t)$:
 \begin{equation}
 \left\{
 % \begin{array}{r c l}
@@ -101,6 +129,7 @@ C_A(t) &=&\frac{1}{F_{R}} \cdot \dot{C}_{R}(t - D_{R}) + \frac{1}{V_{R}} \cdot {
 \end{array}
 \label{eq:CACM}
 \end{equation}
+Figures~\ref{fig:rOVC_model} and~\ref{fig:rOVC_regional} respectively show a diagram of the \textbf{rOVC} model in case of a single tissue of interest, and in case of $N_T$ tissues of interest.
 
 Replacing $C_A(t)$ in the second equation of system (\ref{eq:RTCM}) by its expression in equation (\ref{eq:CACM}), $\dot{C}_T^i(t)$ can be expressed as
 \begin{equation}
@@ -137,6 +166,7 @@ Using such a formulation, Equation (\ref{eq:RTDEF4}) is not linearly solvable.
 A non-linear resolution method must therefore be used in order to estimate vascular parameters $rF^i$, $rV^i$, $k_T^i$, and $k_R$, in each of the $N_T$ tissues of interest, as well as the time-delay parameters $D_T^i$, and $D_R$.
 This approach has been investigated in Chapters~\ref{chapter:PMB} and~\ref{chapter:PMB2}, and was therefore not included in the study. 
 Instead we used the linear formulation presented in the following Section.
+\FloatBarrier
 
 \subsubsection{Linear resolution of the rOVC model (rLin)}\label{sec:rLin}
 Alternatively, under similar assumptions, $\dot{C}_T^i$ in Eq.~\ref{eq:RTDEF2} can be integrated over time, yielding the following expression of $C_T^i$~\cite{CardenasRodriguez:2013em}
@@ -281,6 +311,7 @@ The associated time-intensity curves simulated for each tumor region, as well as
 \caption{Time-intensity curves inside of each of the 32 tumor regions (top grid), and in the reference tissue (bottom), simulated using the \textbf{OVC}. Each plot shows the simulated noiseless curve (orange line) in the region, i.e.~$\sigma = 0$, as well as the curve with simulated multiplicative noise (blue dots), i.e.~$\sigma = 0.25$.}
 \label{fig:simCtCr}
 \end{figure}
+\FloatBarrier
 
 \subsubsection{Varying factors}
 \paragraph{Noise level}
@@ -324,6 +355,7 @@ The relative estimation error of parameter $\theta$, noted $rE_{\theta}$, is exp
 rE_{\theta} = 100 \times \frac{\theta_{est}-\theta_{sim}}{\theta_{sim}}
 \end{equation}
 i.e.~the difference between the estimated parameter $\theta_{est}$ and the simulated parameter $\theta_{sim}$, normalized by the simulated value.
+\FloatBarrier
 
 \section{Results}
 In this section we present the results of our simulation experiments.
@@ -337,6 +369,7 @@ In Figures~\ref{fig:noise_rV} to \ref{fig:sampling_kR}, each plot represents a t
 \caption{Correspondance of the regions between bullseye (left) and grid (right) representation.}
 \label{fig:gridIndices}
 \end{figure}
+\FloatBarrier
 
 \subsection{Noise level}
 Figures~\ref{fig:noise_rV} to \ref{fig:noise_kR} show the relative estimation error of the relative tissue blood volume (Figure~\ref{fig:noise_rV}), relative tissue blood flow (Figure~\ref{fig:noise_rF}), and rate constants in the tumor (Figure~\ref{fig:noise_kT}) and reference  (Figure~\ref{fig:noise_kR}) tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
@@ -376,6 +409,7 @@ Oppositely, the estimates of the \textbf{rLin} model were extremely inconsistent
         \label{fig:noise_kR}
     \end{figure}
 \end{subfigures}
+\FloatBarrier
 
 \subsection{Exam duration}
 Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR} show the impact of the exam duration on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:examDuration_rV}), relative tissue blood flow (Figure~\ref{fig:examDuration_rF}), and rate constants in the tumor (Figure~\ref{fig:examDuration_kT}) and in the reference tissue (Figure~\ref{fig:examDuration_kR}).
@@ -411,6 +445,7 @@ For both models, the bias in the estimation of $k_R$, the rate constant in the r
         \label{fig:examDuration_kR}
     \end{figure}
 \end{subfigures}
+\FloatBarrier
 
 \subsection{Sampling period}
 Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR} show the impact of the sampling period on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:sampling_rV}), relative tissue blood flow (Figure~\ref{fig:sampling_rF}), and rate constants in the tumor (Figure~\ref{fig:sampling_kT}) and in the reference tissue (Figure~\ref{fig:sampling_kR}).
@@ -447,6 +482,7 @@ Indeed, the estimation of $k_R$ using the \textbf{rLin} model was extremely impr
         \label{fig:sampling_kR}
     \end{figure}
 \end{subfigures}
+\FloatBarrier
 
 \subsection{Reference tissue}
 The effect of varying the characteristics of the reference tissue on the accuracy and precision of the estimation process are displayed in Figures~\ref{fig:referenceTissue_rV} to~\ref{fig:referenceTissue_kR}. 
@@ -498,7 +534,7 @@ In case of fixed $k_R$ values, using lower values of both $F_R$ and $V_R$ yielde
         \label{fig:referenceTissue_kR}
     \end{figure}
 \end{subfigures}
-
+\FloatBarrier
 
 \subsection{Number of regions}
 The impact of varying the number of regions on the accuracy and precision of the estimates of the \textbf{rLin} and \textbf{rReg} models is shown in Figures~\ref{fig:region_rV} to \ref{fig:region_kR}.
@@ -549,6 +585,7 @@ The $k_R$ estimates of the \textbf{rReg} model exhibit a slight negative bias, w
         \label{fig:region_kR}
         \end{figure}
 \end{subfigures}
+\FloatBarrier
 
 \section{Discussion}
 In \citeyear{Logan:2001ip}, \citet{Logan:2001ip} investigated strategies to remove the bias in the graphical analysis of positron emission tomography data, which is basically a resolution method for the \textbf{OVC} model, i.e.~with a known arterial input function, but the study was also extended to the \textbf{rOVC} model, i.e.~with a reference tissue.

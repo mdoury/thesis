@@ -473,13 +473,24 @@ on \@thesisdate, in partial fulfillment of the \\
 requirements for the \@degreeword\ of \\
 \@degree
 \end{center}
-\par
-\begin{abstract}}
+\par}
+
+\def\abstractEn{
+    \begin{abstract}}
+\def\endabstractEn{
+    \end{abstract}}
+
+\def\abstractFr{
+    \begin{otherlanguage}{french}
+    \begin{resume}}
+\def\endabstractFr{
+    \end{resume}
+    \end{otherlanguage}}
 
 %% Changed from \unvbox to \unvcopy for use with multiple copies of abstract
 %% page.
 %% Krishna Sethuraman (1990)
-\def\endabstractpage{\end{abstract}\noindent
+\def\endabstractpage{\noindent
  \unvcopy\@abstractsupervisor \newpage}
 
 %% This counter is used to save the page number for the second copy of
@@ -511,4 +522,7 @@ requirements for the \@degreeword\ of \\
 
 \def\abstract{\subsection*{Abstract}\small\def\baselinestretch{1}\@normalsize}
 \def\endabstract{\par}
+
+\def\resume{\subsection*{R\'esum\'e}\small\def\baselinestretch{1}\@normalsize}
+\def\endresume{\par}
 

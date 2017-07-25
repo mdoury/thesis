@@ -99,8 +99,14 @@ San Francisco, California, 94105, USA.
 \pagestyle{empty}
 % \setcounter{savepage}{\thepage}
 \begin{abstractpage}\addcontentsline{toc}{chapter}{Abstract}
-\input{abstract}
+\begin{abstractEn}
+\input{abstract_en}
+\end{abstractEn}
+\begin{abstractFr}
+\input{abstract_fr}
+\end{abstractFr}
 \end{abstractpage}
+
 
 % Additional copy: start a new page, and reset the page number.  This way,
 % the second copy of the abstract is not counted as separate pages.
@@ -110,10 +116,9 @@ San Francisco, California, 94105, USA.
 % \begin{abstractpage}
 % \input{abstract}
 % \end{abstractpage}
+\cleardoublepage
 
-% \cleardoublepage
-
-% \section*{Acknowledgments}\addcontentsline{toc}{chapter}{Acknowledgments}
+\section*{Acknowledgments}\addcontentsline{toc}{chapter}{Acknowledgments}
 
 
 % I am indebted to many people who both directly and indirectly
@@ -148,7 +153,11 @@ San Francisco, California, 94105, USA.
 % Finally, there are innumerable friends who contributed and to whom I
 % am greatly appreciative including Michael Raab, Joel Moxley, Bill
 % Schmitt, Vipin Guptda, and Jatin Misra.
+\cleardoublepage
 
+\section*{R\'esum\'e \'etendu de la th\`ese}
+\addcontentsline{toc}{chapter}{R\'esum\'e \'etendu de la th\`ese}
+\input{extended}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -*-latex-*-

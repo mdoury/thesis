@@ -481,7 +481,7 @@ requirements for the \@degreeword\ of \\
     \end{abstract}}
 
 \def\abstractFr{
-    \begin{otherlanguage}{french}
+    \begin{otherlanguage}{francais}
     \begin{resume}}
 \def\endabstractFr{
     \end{resume}

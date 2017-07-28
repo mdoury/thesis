@@ -10,6 +10,10 @@
 \chapter{Introduction}\label{chapter:intro}
 This thesis addresses the quantification of tumor perfusion using contrast-enhanced ultrasound imaging.
 In this chapter, we present the biological and technical context that motivated this thesis.
+The research was performed at the {\em Laboratoire d'Imagerie Biom\'edicale} (LIB), and was financed by the {\em Fondation pour la Recherche M\'edicale} (FRM) through grant DBS20131128436.
+The global project aims at developing a multiparametric tumor tissue classification tool, based on multiple ultrasound imaging modalities, including quantitative ultrasound, elastosonography, and contrast-enhanced ultrasound.
+The data should be used to develop a realistic tumor growth model, as well as an appropriate treatment response prediction model.
+The first step of this project was therefore the accurate estimation of parameters from ultrasound data in order to obtain reproducible results and use them in longitudinal studies.
 
 \section{Cancer and tumor microenvironment}
 \label{sec:IntroCancer}
@@ -20,10 +24,10 @@ Cancer is in fact synonym of malignant tumor.
 In \citeyear{Hanahan:2000hx}, \citet{Hanahan:2000hx} proposed the first generation of cancer hallmarks, i.e.~six acquired traits that differentiate cancerous cells from benign tumors and normal tissues:
 \begin{enumerate}
     \item Cancerous cells are able to generate their own mitogenic growth signals, and do not rely on the growth signals from the surrounding environment.
-    \item Cancerous cells are insensitive the anti-growth signals originating from the surrounding environment.
+    \item Cancerous cells are insensitive to the anti-growth signals originating from the surrounding environment.
     \item Cancerous cells are immune to apoptotic signals, emitted by the environment, and controlling the death of malfunctionning cells.
-    \item The number of replication cancerous cells can achive is unlimited.
-    \item After cancerous cells reached a point where further proliferation is limited by the supply in oxygen and nutrients, they switch to a angiogenic state that triggers the construction of a supplying vascular network, allowing rapid cell proliferation despite its chaotic structure.
+    \item The number of replication cancerous cells can achieve is unlimited.
+    \item After cancerous cells reached a point where further proliferation is limited by the supply in oxygen and nutrients, they switch to an angiogenic state that triggers the construction of a supplying vascular network, allowing rapid cell proliferation despite its chaotic structure.
     \item When nutrients and space become limiting growth factors, cancerous cells are able to migrate and invade surrounding tissues where nutrients and space are not limiting factors to create new cancerous cell colonies known as metastases.
 \end{enumerate}
 
@@ -32,7 +36,7 @@ Later, in \citeyear{Hanahan:2011gu}, \citet{Hanahan:2011gu} proposed a second ge
     \item Cancerous cells are able to modify their metabolism to most effectively support tumor proliferation.
     \item Cancerous cells are resistant to immunological destruction by lymphocytes and macrophages.
     \item Cancerous cells exhibit unstable genomes favoring genetic mutations, that often result in an accelerated tumor progression.
-    \item Immune cells fighting the proliferation of cancer calls cause tissue inflammation, which can contribute to the acquired traits presented in their first study.
+    \item Immune cells fighting the proliferation of cancer cells cause tissue inflammation, which can contribute to the acquired traits presented in their first paper.
 \end{enumerate}
 
 \paragraph{Treatment of cancer}
@@ -40,13 +44,13 @@ Later, in \citeyear{Hanahan:2011gu}, \citet{Hanahan:2011gu} proposed a second ge
 The three major treatments of cancer are surgery, radiotherapy, and chemotherapy.
 
 Surgery aims at removing the whole tumor, however this procedure is highly invasive.
-Radiotherapy consists in the irradiation of the tumor by strong doses of X-rays, damaging cancerous cells, but also the surrounding tissues. 
+Radiotherapy consists in the irradiation of the tumor by high-energy X-rays, gamma-rays or charged particles, damaging cancerous cells, but also the surrounding tissues. 
 These two techniques are only applicable to localized solid tumors, and some cancerous cells can remain after the treatment.
 
 If the cancer has spread throughout the body, chemotherapy is often used to eliminate remaining and migrating cells after removal of the primary tumor by means of surgery or radiotherapy.
 Chemotherapy relies on the injection of a cytotoxic agent, which main purpose is to eradicate the remaining cancerous cells.
 Cytotoxic agents however, are not specific of cancerous cells and are globally toxic for the patient, limiting the injected doses.
-Moreover, cancerous cells are highly prone to mutations and can develop a resistance to the cytotoxic agent.
+Moreover, since cancerous cells are highly prone to mutations, they can develop a resistance to the cytotoxic agent.
 
 Recently, anti-angiogenic treatments were proposed to disrupt or to limit the development of new vascular structures providing the tumor with the oxygen and nutrients necessary for cell division, therefore limiting further growth of the tumor. 
 These treatments were shown to normalize the chaotic neovascularization in tumors, allowing a more efficient delivery of cytotoxic therapies inside the tumor. % REF
@@ -55,10 +59,10 @@ However, since many pathways regulating angiogenesis exist, cancerous cells can 
 \paragraph{Cancer monitoring}
 Surgery, radiotherapy, and chemotherapy directly target cancerous cells, and an efficient treatment should have a direct impact on the size of the tumor.
 Therefore, morphological criteria were proposed to assess tumor response to therapy.
-The classical RECIST and WHO criteria are base on the changes in tumor diameter, and give an indication on the evolution of the disease, i.e.~stable, regressive, or progressive.
+The classical RECIST and WHO criteria are based on the changes in tumor diameter, and give an indication on the evolution of the disease, i.e.~stable, regressive, or progressive.
 
 Oppositely, anti-angiogenic treatments do not target cancerous cells, but rather the neovascularization of the tumor.
-They do not have a direct impact on the size of the tumor, especially the early stages of the treatment.
+They do not have a direct impact on the size of the tumor, especially at the early stages of the treatment.
 Therefore, classical morphological criteria fail to reveal the efficiency of such treatments.
 Quantification of tumor angiogenesis and of the response to anti-angiogenic treatments requires the development of functional criteria assessing the microvascularization of tumor tissues.
 Microvascularization can be observed in vivo using functional imaging, and in particular through perfusion imaging.
@@ -66,77 +70,94 @@ Microvascularization can be observed in vivo using functional imaging, and in pa
 \section{Perfusion imaging}
 \label{sec:IntroPerfusionImaging}
 Perfusion imaging is a branch of medical imaging that focuses on the visualization and characterization of tissue vascularization.
-A tracer is injected in the vascular network of the patient, either as a bolus or as an infusion, and the passage of the tracer in the tissue is observed using one of the various imaging modalities presented below.
+A tracer or contrast-agent is injected intravascularly, either as a bolus or as an infusion, and the passage of the tracer in the tissue is observed using one of the various imaging modalities presented below.
+Indeed, despite the various physical phenomena involved during image acquisition in the various contrast-enhanced imaging modalities, analysis of the passage of the contrast agent follows the same general principle.
 
 \paragraph{Nuclear medicine}
 \label{sec:IntroNM}
 Nuclear medicine regroups imaging modalities using radioactive tracers. 
-Scintigraphy uses gamma-emitting tracers and a single gamma camera, yielding projections images of the tracer concentration.
-Single-photon emission computed tomography (SPECT) uses the same tracers as scintigraphy, but uses a rotating pair of gamma cameras to create three-dimensional images of the tracer concentration.
-Positron emission tomography (PET) uses a positron-emitting tracer, and coincident detection of the two gamma rays resulting from the annihilation of the positron emitted during the fission of the radioactive isotope.
+Planar scintigraphy uses gamma-emitting tracers and a single gamma camera, yielding projections images of the tracer concentration.
+Single-photon emission computed tomography (SPECT) uses the same tracers as scintigraphy, but uses a rotating gamma camera to create three-dimensional volumes of the tracer concentration.
+Positron emission tomography (PET) uses a positron-emitting tracer, and a coincident detection of the two gamma rays resulting from the annihilation of the positron emitted during the beta decay of the radioactive isotope.
 
-Radioactive tracers are usually attached to a biologically active molecule, forming a radioligand that binds to a specific type of tissue, allowing the determination of the localization and density of specific binding sites.
-
-\paragraph{Magnetic resonance imaging}
-\label{sec:IntroMR}
-As the name suggests, magnetic resonance imaging is based on nuclear magnetic resonance that exploits the ability of certain atoms to absorb and emit radio frequencies when placed in an external magnetic field.
-Typically, the imaged nucleids are protons present in tissues composed of water molecules.
-In this case, magnetic resonance images are formed by measuring the spin-lattice (T1) and spin-spin (T2) relaxation times of the protons inside the studied tissue.
-
-Magnetic resonance contrast agents are usually paramagnetic substances that shorten the T1 relaxation time of the protons inside the observed tissues, for instance Gadolinium chelates are widely used.
-Most Gadolinium-based contrast agents diffuse from the blood pool to the interstitial space through the capillary surface, however intravascular contrast agents were also developed for magnetic resonance imaging.
+Radioactive isotopes are usually attached to a biological molecule, forming a radiotracer that follows the distribution of the biological molecule and enables its tracking in miological systems.
 
 \paragraph{X-ray computed tomography (CT)}
 \label{sec:IntroCT}
-X-ray computed tomography uses a combination of multiple planar X-ray measurements with varying angles to produce three-dimensional images.
-The images give information about the ability of the tissue to absorb X-rays, also known as the radiodensity of the tissue. 
+X-ray computed tomography uses a combination of multiple planar X-ray projections with varying angles to produce three-dimensional images, the resulting volumes show the absorption of X-rays. 
+The contrast agents used for X-ray computed tomography are usually iodinated compounds that were chosen for their high radiodensity, resulting in a strong absorption of the X-ray beams, and for their fast renal elimination.
+Additionally, they exhibit a linear relation between the X-ray attenuation and the concentration of contrast-agent.
 
-The contrast agents used for X-ray computed tomography are usually iodinated compounds that were chosen for they high radiodensity, resulting in a strong absorbtion of the X-ray beams used for image formation.
-But also for their intravascular characteristics, that allow specific imaging of the vascular network when the injection is performed intravenously.
+\paragraph{Magnetic resonance imaging (MRI)}
+\label{sec:IntroMR}
+MRI is based on nuclear magnetic resonance that exploits the ability of some atoms to absorb and emit radio frequencies when placed in an external magnetic field.
+Typically, the imaged nuclides are protons present in tissues composed of water molecules.
+In this case, magnetic resonance images are formed by measuring the spin-lattice (T1) and spin-spin (T2) relaxation times of the protons inside the studied tissue.
+
+Magnetic resonance contrast agents are usually paramagnetic substances that shorten the T1 relaxation time of the protons inside the observed tissues, for instance Gadolinium chelates are widely used.
+Most Gadolinium-based contrast agents diffuse from the blood pool to the interstitial space through the capillary surface.
+However intravascular contrast agents were also developed for magnetic resonance imaging, but their usage is mainly restricted to research.
+Endogenous tracers are also being developed for MRI, for instance arterial spin labelling (ASL) allows tracking of spin-labelled arterial blood and alleviates the need for injection of a exogenous contrast agent.
 
 \paragraph{Contrast-enhanced ultrasound (CEUS)}
 \label{sec:IntroCEUS}
 Ultrasound images are formed by sending sequences of ultrasound pulses inside the tissue using a transducer, the ultrasound pulses are reflected by scatterers in the tissue, and the reflected pulses are then recorded by the transducer.
-The recorded signals are finally processed to retrieve the time of flight of the echo, determining the location of the scaterrer in the image, as well as the strength of the echo, determining the image intensity associated to the scaterrer.
+The recorded signals are processed to retrieve the time of flight of the echo, determining the location of the scatterer in the image, as well as the strength of the echo, determining the image intensity associated to the scatterer.
 
-Coated gas-filled microbubbles are used as ultrasound contrast agents for their ability to oscillate asymetrically when exposed to acoustic waves, but also for their size that makes them resonate in the ultrasound frequency domain.
-Their size being nearly the same as a red blood cell, it also ensures they can go everywhere in the vascular system, from the largest arteries to the smallest capillaries, but do not leak in the interstitial space.
-Microbubbles exhibit a strong and specific non-linear response to ultrasounds, and this non-linearity is exploited by ultrasound scanners using specific background-cancelling sequences to produce contrast-specific images.
+Coated gas-filled microbubbles are used as ultrasound contrast agents for their ability to oscillate asymetrically when exposed to acoustic waves, and for their size that makes them resonate in the ultrasound frequency domain~\cite{Greis:2004ub}.
+Their size being nearly the same as the size of a red blood cell, they can go everywhere in the vascular system, from the largest arteries to the smallest capillaries, and they do not leak in the interstitial space.
+Microbubbles exhibit a strong and specific non-linear response to ultrasound pulses.
+This non-linearity is exploited by ultrasound scanners using specific background-cancelling sequences to produce contrast-specific images, e.g.~harmonic imaging~\cite{Meairs:2000eq}, subharmonic imaging~\cite{Eisenbrey:2015gk}, contrast pulse sequencing (CPS)~\cite{Phillips:2004ke}.
 
-Microbubbles can be disrupted using ultrasound pulses with high mechanical indices.
-This phenomenon allows a type of acquisition specific of contrast-enhanced ultrasound. 
+Microbubbles can be disrupted using ultrasound pulses with high mechanical indices~\cite{Tiemann:1999vy}.
+This phenomenon allows a type of acquisition specific of contrast-enhanced ultrasound in addition to conventional approaches. 
 Indeed, after a continuous infusion of microbubbles reached its steady-state, a series of disruptive pulses is sent, then the refillment of the microbubbles in the tissue is observed in real-time using a low mechanical contrast-specific sequence to ensure minimum destruction of the microbubbles.
 
-% Advantages and drawbacks of CEUS
+Indeed, the spatial resolution of contrast-enhanced ultrasound images depends on the central frequency of the ultrasound probe, but is usually of about 100~$\mu$m.
+The spatial resolution of nuclear medicine images is generally much coarser, for instance the resolution of PET images is typically about 0.5~cm.
+Additionally, ultrasound images can be acquired at high frame rates, i.e.~ranging from 1~Hz to more than 1~kHz using plane wave imaging.
+These fine temporal resolutions can however be obtained without sacrificing the image spatial resolution or quality. 
+This is for instance not true in MRI where a compromise must be made between the temporal resolution, the spatial resolution, and the signal to noise ratio.
+
+Contrast-enhanced ultrasound is a non-ionizing imaging modalities, enabling repeated acquisitions without exposing the patient to radiations.
+This is especially important in pathology monitoring and treatment response monitoring applications.
+Contrast-enhanced ultrasound is the only real-time perfusion imaging modality available in clinical routine, allowing direct visualization of the passage of microbubbles in the imaging plane on the scanner terminal, whereas tomographic imaging modalities, i.e.~SPECT, PET, X-ray CT or MRI, usually require offline precessing to generate the dynamic perfusion volume.
+Ultrasound scanners are smaller than other imaging apparatuses, most scanners are actually designed to be moved around the patient and are therefore mounted on wheels.
+Some miniature scanners, specifically designed for mobility applications, even include batteries for autonomous usage.
+Additionally, ultrasound scanners are much cheaper than other imaging apparatus, and do not require expensive or short-lived consumables.
 
 \section{Aims and outline}
 \label{sec:IntroAimsOutline}
-\subsection{Context}
-This thesis was financed by the {\em Fondation pour la Recherche M\'edicale} (FRM) through grant DBS20131128436.
-The project aims at developing a multiparametric tumor tissue calssification tool, based on multiple ultrasound imaging modalities, including quantitative ultrasound, elastosonography, and contrast-enhanced ultrasound, in order to develop a tumor growth and treatment response prediction model.
-The first step of this project is therefore the accurate estimation of parameters from ultrasound data to train the tissue classification tool.
-
 \subsection{Aims}
 Reliable quantification of tumor perfusion is a challenging yet necessary task to establish cancer diagnosis and monitor tumors undergoing therapy.
 Contrast-enhanced imaging is a great tool to assess perfusion, however quantitative exam comparison remains difficult because of the poor reproducibility of the acquisitions.
 Moreover, most of the perfusion quantification methods are developped to estimate parameters at a global scale, therefore either hiding the local variations in tissue perfusion or not accounting for the relations between the local estimates.
 This thesis aims at making the estimation of perfusion parameters robust to inter-exam changes, in order to enable exam comparison while revealing the spatial heterogeneity of the tissue vascular function.
-Our study primarily focuses on contrast-enhanced ultrasound data, however the use of the proposed quantification methods to other perfusion imaging modalities could be investigated.
+Various quantification approaches will therefore be investigated in this thesis, including semi-quantitative approaches, and compartmental models using either an arterial input function or a reference tissue.
+Additionally, various estimation methods and their impact on the estimated parameters will be investigated.
+Our study focused on contrast-enhanced ultrasound data, however the proposed quantification methods could be investigated in other perfusion imaging modalities.
 
 \subsection{Outline}
-\paragraph{Part I - Quanti cation of perfusion: state of the art}
-Chapter~\ref{chapter:review} presents the state of the art methods for the quantification of perfusion.
-Quantification approaches are classified according to whether they are semi-quantitative, based on deconvolution, or based on compartmental models.
-Major studies from the litterature were reviewed, however the study is far from being exhaustive.
+The document is divided into three parts. 
+In the first part we establish a state of the art of the methods for quantification of perfusion.
+In the second part we assess the reproducibility of existing quantification methods.
+And in the third part we propose a new quantification method, and then assess its reproducibility and its sensitivity to various factors.
 
-\paragraph{Part II - Reproducibility of the existing methods and the relations between them}
+\paragraph{Part I - Quantification of perfusion: state of the art}\\
+Chapter~\ref{chapter:review} presents a state of the art of the methods that have been proposed for the quantification of perfusion, and in particular using medical imaging.
+Quantification approaches are classified into three categories: semi-quantitative, deconvolution-based, or compartmental models.
+Indeed, the two last categories consider an arterial input function, and compartmental modeling is a specific case of deconvolution.
+Some main studies from the litterature were reviewed, focusing on earlier work at the origin of methodological developments.
+
+
+\paragraph{Part II - Reproducibility of the existing methods and the relations between them}\\
 Chapter~\ref{chapter:PMB} studies the impact of mathematical modeling on the reproducibility of perfusion parameters through preclinical test-retest experiments.
 This study revealed the sensitivity of absolute semi-quantitative parameters to inter-exam variations in experimental or physiological conditions.
 It also showed the superiority of of normalized parameters, and more precisely of the reference tissue model, in terms of reproducibility.
 Chapter~\ref{chapter:PMB2} extends the work from Chapter~\ref{chapter:PMB} by first establishing theoretically and then verifying experimentally the relations between the parameters of the various models.
 The existence of these relations shows the ability of semi-quantitative parameters to reveal relative variations of the vascular function.
 
-\paragraph{Part III - Proposition and assessment of a new quantification method}
+\paragraph{Part III - Proposition and assessment of a new quantification method}\\
 Chapter~\ref{chapter:IUS} first presents a new regularized linear estimation method for the reference tissue model, and compares its parameters to those obtained using the classical linear estimation method in terms of reproducibility.
 This study proves the superior robustness of the regularized estimates to inter-exam variations.
 Then Chapter~\ref{chapter:IRBM} compares the robustness of the two models to contrast-agent recirculation through simulation experiments.

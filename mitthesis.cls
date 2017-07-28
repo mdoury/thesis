@@ -346,6 +346,7 @@
 %% Define all the pieces that go on the title page and the abstract.
 
 % \title and \author already exist
+\def\titleFr#1{\gdef\@titleFr{#1}}
 
 \def\prevdegrees#1{\gdef\@prevdegrees{#1}}
 \def\@prevdegrees{}
@@ -414,7 +415,7 @@ reserved.\par\permission}}
 % we build the appropriate boxes for the titlepage and
 % the abstractpage as the user makes multiple calls
 % to \supervisor
-\newbox\@titlesupervisor 	\newbox\@abstractsupervisor
+\newbox\@titlesupervisor 	\newbox\@abstractsupervisor     \newbox\@abstractsupervisorFr
 
 \def\supervisor#1#2{\setbox\@titlesupervisor\vbox
   {\unvbox\@titlesupervisor \vskip 10pt% plus 1fil minus 1fil
@@ -422,7 +423,21 @@ reserved.\par\permission}}
   \signature{Certified by}{#1 \\ #2 \\ Thesis Supervisor}}
   \setbox\@abstractsupervisor\vbox{\unvbox\@abstractsupervisor
   \vskip\baselineskip \def\baselinestretch{1}\@normalsize 
-  \par\noindent Thesis Supervisor: #1 \\ Title: #2}}
+  \par\noindent Thesis Supervisor: #1 \\ Affiliations: #2}
+  \setbox\@abstractsupervisorFr\vbox{\unvbox\@abstractsupervisorFr
+  \vskip\baselineskip \def\baselinestretch{1}\@normalsize 
+  \par\noindent Directeur de th\`ese: #1 \\ Affiliations: #2}}
+
+  \def\cosupervisor#1#2{\setbox\@titlesupervisor\vbox
+  {\unvbox\@titlesupervisor \vskip 10pt% plus 1fil minus 1fil
+  \def\baselinestretch{1}\large
+  \signature{Certified by}{#1 \\ #2 \\ Thesis Supervisor}}
+  \setbox\@abstractsupervisor\vbox{\unvbox\@abstractsupervisor
+  \vskip\baselineskip \def\baselinestretch{1}\@normalsize 
+  \par\noindent Thesis Supervisor: #1 \\ Affiliations: #2}
+  \setbox\@abstractsupervisorFr\vbox{\unvbox\@abstractsupervisorFr
+  \vskip\baselineskip \def\baselinestretch{1}\@normalsize 
+  \par\noindent Co-encadrant de th\`ese: #1 \\ Affiliations: #2}}
 
 % department chairman, not thesis committee chairman
 \def\chairman#1#2{\gdef\@chairmanname{#1}\gdef\@chairmantitle{#2}}
@@ -466,16 +481,23 @@ by\par
 \begin{center}{\large{\bf \@title} \\
 by \\
 \@author \\[\baselineskip]}
-\par
-\def\baselinestretch{1}\@normalsize
-Submitted to the \Mit \\
-on \@thesisdate, in partial fulfillment of the \\
-requirements for the \@degreeword\ of \\
-\@degree
 \end{center}
 \par}
 
-\def\abstractEn{
+\def\abstractpageFr{
+\begin{center}{\large{\bf \@titleFr} \\
+par \\
+\@author \\[\baselineskip]}
+\end{center}
+\par}
+
+%% Changed from \unvbox to \unvcopy for use with multiple copies of abstract
+%% page.
+%% Krishna Sethuraman (1990)
+\def\endabstractpage{\newpage}
+\def\endabstractpageFr{\newpage}
+
+ \def\abstractEn{
     \begin{abstract}}
 \def\endabstractEn{
     \end{abstract}}
@@ -486,12 +508,6 @@ requirements for the \@degreeword\ of \\
 \def\endabstractFr{
     \end{resume}
     \end{otherlanguage}}
-
-%% Changed from \unvbox to \unvcopy for use with multiple copies of abstract
-%% page.
-%% Krishna Sethuraman (1990)
-\def\endabstractpage{\noindent
- \unvcopy\@abstractsupervisor \newpage}
 
 %% This counter is used to save the page number for the second copy of
 %% the abstract.

@@ -91,7 +91,7 @@ Coefficients of determination $R^2_{\theta_{i},\theta_{j}}$ were estimated from 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\linewidth]{R2HeatMap.eps}
-  \caption{(a-b) Median (of $16$ values) coefficient of determination ($R^2$) of the least-squares linear regression between pairs of parameters $\left(\theta_i, \theta_j\right)$ computed for the 32 sub-regions of one exam: (a)~parameters derived from the \textbf{aLN} approach; (b)~volume ($AUC$, $V$ and $rV_{RT}$ ), flow ($WIR$, $F$ and $rF_{RT}$) and time delay ($\Delta_T$ , $d_t$ and $D_{RT}$) parameters respectively computed with \textbf{aLN}, \textbf{aAIFd}  and \textbf{RTd} models. (c-d) Coefficients of determination ($R^2$) of the least-squares linear regression computed when pooling the 512 sub-regions  together: (c) $R^2$ between pairs of volume parameters computed with \textbf{aLN}, \textbf{aAIFd}, \textbf{rLN}, \textbf{rAIFd}  and \textbf{RTd} models, (d) $R^2$ between pairs of flow parameters computed with \textbf{aLN}, \textbf{aAIFd}, \textbf{rLN}, \textbf{rAIFd} and \textbf{RTd} models.}
+  \caption{(a-b) Median (of $16$ values) coefficient of determination ($R^2$) of the least-squares linear regression between pairs of parameters $\left(\theta_i, \theta_j\right)$ computed for the 32 sub-regions of one exam: (a)~parameters derived from the \textbf{aLN} approach; (b)~volume ($AUC$, $V$ and $rV_{RT}$), flow ($WIR$, $F$ and $rF_{RT}$) and time delay ($\Delta_T$ , $d_t$ and $D_{RT}$) parameters respectively computed with \textbf{aLN}, \textbf{aAIFd}  and \textbf{RTd} models. (c-d) Coefficients of determination ($R^2$) of the least-squares linear regression computed when pooling the 512 sub-regions  together: (c) $R^2$ between pairs of volume parameters computed with \textbf{aLN}, \textbf{aAIFd}, \textbf{rLN}, \textbf{rAIFd}  and \textbf{RTd} models, (d) $R^2$ between pairs of flow parameters computed with \textbf{aLN}, \textbf{aAIFd}, \textbf{rLN}, \textbf{rAIFd} and \textbf{RTd} models.}
   \label{fig:R2HeatMaps}
 \end{figure}
 
@@ -99,6 +99,8 @@ The heatmaps shown in Figure~\ref{fig:R2HeatMaps} correspond to $R^2_{\theta_{i}
 
 Figure~\ref{fig:R2HeatMaps}~(c) and Figure~\ref{fig:R2HeatMaps}~(d) show the trends observed on flow and volume parameters when pooling parameters issued from all the exams. 
 There is a very high correlation ($R^2 > 0.95$) between the relative volume parameters $rAUC$, $rV_{AIF}$, and $rV_{RT}$ and a high correlation ($R^2 > 0.75$) between the relative flow parameters $rWIR$, $rF_{AIF}$, and $rF_{RT}$. Correlations are poor ($R^2 < 0.20$) between absolute and relative volume parameters, and medium between absolute and relative flow parameters ($R^2< 0.55$). Since the intra-exam correlations between volume (resp.~flow) parameters are high, the correlation over pooled data reflects the inter-exam consistency of linear regression slopes: it is much higher for relative volumes (or flows) than for absolute volumes (or flows). Figure \ref{fig:Slopes} from Chapter~\ref{chapter:PMB} illustrates this trend for one specific mouse ($m_1$). 
+\FloatBarrier
+
 
 \section{Discussion}
 The equations given in Table~\ref{tab:AnalyticRelation} were used in Chapter~\ref{chapter:PMB}, and later in this thesis, to analytically derive the perfusion parameter values from the fitted Log-Normal model, therefore avoiding numerical approximations.

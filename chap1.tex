@@ -10,7 +10,7 @@
 \chapter{Introduction}\label{chapter:intro}
 This thesis addresses the quantification of tumor perfusion using contrast-enhanced ultrasound imaging.
 In this chapter, we present the biological and technical context that motivated this thesis.
-The research was performed at the {\em Laboratoire d'Imagerie Biom\'edicale} (LIB), and was financed by the {\em Fondation pour la Recherche M\'edicale} (FRM) through grant DBS20131128436.
+The research was performmed at the {\em Laboratoire d'Imagerie Biom\'edicale} (LIB), and was financed by the {\em Fondation pour la Recherche M\'edicale} (FRM) through grant DBS20131128436.
 The global project aims at developing a multiparametric tumor tissue classification tool, based on multiple ultrasound imaging modalities, including quantitative ultrasound, elastosonography, and contrast-enhanced ultrasound.
 The data should be used to develop a realistic tumor growth model, as well as an appropriate treatment response prediction model~\cite{Ribba:2011cl}.
 The first step of this project was therefore the accurate estimation of parameters from ultrasound data in order to obtain reproducible results and use them in longitudinal studies.
@@ -18,14 +18,14 @@ The first step of this project was therefore the accurate estimation of paramete
 \section{Cancer and tumor microenvironment}
 \label{sec:IntroCancer}
 A tumor is a neoplasm composed of mutated cells undergoing abnormal growth.
-All tumors are not cancers, in particular benign tumors are not cancers, they are not invasive and usually not life-thretening.
+All tumors are not cancers, in particular benign tumors are not cancers, they are not invasive and usually not life-threatening.
 Cancer is in fact synonym of malignant tumor.
 
 In \citeyear{Hanahan:2000hx}, \citet{Hanahan:2000hx} proposed the first generation of cancer hallmarks, i.e.~six acquired traits that differentiate cancerous cells from benign tumors and normal tissues:
 \begin{enumerate}
     \item Cancerous cells are able to generate their own mitogenic growth signals, and do not rely on the growth signals from the surrounding environment.
     \item Cancerous cells are insensitive to the anti-growth signals originating from the surrounding environment.
-    \item Cancerous cells are immune to apoptotic signals, emitted by the environment, and controlling the death of malfunctionning cells.
+    \item Cancerous cells are immune to apoptotic signals, emitted by the environment, and controlling the death of malfunctioning cells.
     \item The number of replication cancerous cells can achieve is unlimited.
     \item After cancerous cells reached a point where further proliferation is limited by the supply in oxygen and nutrients, they switch to an angiogenic state that triggers the construction of a supplying vascular network, allowing rapid cell proliferation despite its chaotic structure.
     \item When nutrients and space become limiting growth factors, cancerous cells are able to migrate and invade surrounding tissues where nutrients and space are not limiting factors to create new cancerous cell colonies known as metastases.
@@ -80,7 +80,7 @@ Planar scintigraphy uses gamma-emitting tracers and a single gamma camera, yield
 Single-photon emission computed tomography (SPECT) uses the same tracers as scintigraphy, but uses a rotating gamma camera to create three-dimensional volumes of the tracer concentration.
 Positron emission tomography (PET) uses a positron-emitting tracer, and a coincident detection of the two gamma rays resulting from the annihilation of the positron emitted during the beta decay of the radioactive isotope.
 
-Radioactive isotopes are usually attached to a biological molecule, forming a radiotracer that follows the distribution of the biological molecule and enables its tracking in miological systems.
+Radioactive isotopes are usually attached to a biological molecule, forming a radiotracer that follows the distribution of the biological molecule and enables its tracking in biological systems.
 
 \paragraph{X-ray computed tomography (CT)}
 \label{sec:IntroCT}
@@ -104,14 +104,14 @@ Endogenous tracers are also being developed for MRI, for instance arterial spin 
 Ultrasound images are formed by sending sequences of ultrasound pulses inside the tissue using a transducer, the ultrasound pulses are reflected by scatterers in the tissue, and the reflected pulses are then recorded by the transducer.
 The recorded signals are processed to retrieve the time of flight of the echo, determining the location of the scatterer in the image, as well as the strength of the echo, determining the image intensity associated to the scatterer.
 
-Coated gas-filled microbubbles are used as ultrasound contrast agents for their ability to oscillate asymetrically when exposed to acoustic waves, and for their size that makes them resonate in the ultrasound frequency domain~\cite{Greis:2004ub}.
+Coated gas-filled microbubbles are used as ultrasound contrast agents for their ability to oscillate asymmetrically when exposed to acoustic waves, and for their size that makes them resonate in the ultrasound frequency domain~\cite{Greis:2004ub}.
 Their size being nearly the same as the size of a red blood cell, they can go everywhere in the vascular system, from the largest arteries to the smallest capillaries, and they do not leak in the interstitial space.
 Microbubbles exhibit a strong and specific non-linear response to ultrasound pulses.
 This non-linearity is exploited by ultrasound scanners using specific background-cancelling sequences to produce contrast-specific images, e.g.~harmonic imaging~\cite{Meairs:2000eq}, subharmonic imaging~\cite{Eisenbrey:2015gk}, contrast pulse sequencing (CPS)~\cite{Phillips:2004ke}.
 
 Microbubbles can be disrupted using ultrasound pulses with high mechanical indices~\cite{Tiemann:1999vy}.
 This phenomenon allows a type of acquisition specific of contrast-enhanced ultrasound in addition to conventional approaches. 
-Indeed, after a continuous infusion of microbubbles reached its steady-state, a series of disruptive pulses is sent, then the refillment of the microbubbles in the tissue is observed in real-time using a low mechanical contrast-specific sequence to ensure minimum destruction of the microbubbles.
+Indeed, after a continuous infusion of microbubbles reached its steady-state, a series of disruptive pulses is sent, then the refilling of the microbubbles in the tissue is observed in real-time using a low mechanical contrast-specific sequence to ensure minimum destruction of the microbubbles.
 
 Indeed, the spatial resolution of contrast-enhanced ultrasound images depends on the central frequency of the ultrasound probe, but is usually of about 100~$\mu$m.
 The spatial resolution of nuclear medicine images is generally much coarser, for instance the resolution of PET images is typically about 0.5~cm.
@@ -131,7 +131,7 @@ Additionally, ultrasound scanners are much cheaper than other imaging apparatus,
 \subsection{Aims}
 Reliable quantification of tumor perfusion is a challenging yet necessary task to establish cancer diagnosis and monitor tumors undergoing therapy.
 Contrast-enhanced imaging is a great tool to assess perfusion, however quantitative exam comparison remains difficult because of the poor reproducibility of the acquisitions.
-Moreover, most of the perfusion quantification methods are developped to estimate parameters at a global scale, therefore either hiding the local variations in tissue perfusion or not accounting for the relations between the local estimates.
+Moreover, most of the perfusion quantification methods are developed to estimate parameters at a global scale, therefore either hiding the local variations in tissue perfusion or not accounting for the relations between the local estimates.
 This thesis aims at making the estimation of perfusion parameters robust to inter-exam changes, in order to enable exam comparison while revealing the spatial heterogeneity of the tissue vascular function.
 Various quantification approaches will therefore be investigated in this thesis, including semi-quantitative approaches, and compartmental models using either an arterial input function or a reference tissue.
 Additionally, various estimation methods and their impact on the estimated parameters will be investigated.
@@ -147,7 +147,7 @@ And in the third part we propose a new quantification method, and then assess it
 Chapter~\ref{chapter:review} presents a state of the art of the methods that have been proposed for the quantification of perfusion, and in particular using medical imaging.
 Quantification approaches are classified into three categories: semi-quantitative, deconvolution-based, or compartmental models.
 Indeed, the two last categories consider an arterial input function, and compartmental modeling is a specific case of deconvolution.
-Some main studies from the litterature were reviewed, focusing on earlier work at the origin of methodological developments.
+Some main studies from the literature were reviewed, focusing on earlier work at the origin of methodological developments.
 
 
 \paragraph{Part II - Reproducibility of the existing methods and the relations between them}

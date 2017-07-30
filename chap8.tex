@@ -7,7 +7,7 @@
 %% prompt when you run the file main.tex through LaTeX.
 % \cleardoublepage
 \chapter{Conclusion}\label{chapter:conclusion}
-The review of the semi-quantitative, deconvolution, and compartmental methods used to quantify tissue perfusion enables us to identiy some common methods which are used in various imaging modalities.
+The review of the semi-quantitative, deconvolution, and compartmental methods used to quantify tissue perfusion enables us to identify some common methods which are used in various imaging modalities.
 Semi-quantitative approaches are often used as perfusion indicators, especially in combination with indicator dilution theory, indeed they are easily derived from contrast enhancement curve in the tissue of interest only.
 Deconvolution methods and classical compartmental models require the knowledge of the input function, which is an arterial input function and can either be obtained through blood sampling or from the image.
 However blood sampling is invasive, especially when arterial blood samples are drawn. 
@@ -18,7 +18,7 @@ While compartmental models and reference tissue models were used to quantify per
 
 In Chapter~\ref{chapter:PMB} we compared a semi-quantitative approach based on the log-normal model \textbf{LN} to a one-compartment model using an arterial input function (\textbf{AIF}) in terms of reproducibility through preclinical test-retest contrast-enhanced ultrasound experiments.
 This study revealed the higher reproducibility of \textbf{AIF} model compared to the semi-quantitative parameters of the \textbf{LN} model.
-But the study also revealed the difficulties encontered in the estimation of the arterial input function and the impact of these variations on the estimated perfusion parameters.
+But the study also revealed the difficulties encountered in the estimation of the arterial input function and the impact of these variations on the estimated perfusion parameters.
 Normalizing perfusion parameters of the \textbf{LN} and \textbf{AIF} models according to a reference tissue improved inter-exam reproducibility.
 The direct estimation of relative perfusion parameters using a one-compartment reference tissue (\textbf{RT}) yielded the most reproducible parameters in our test-retest study.
 Moreover, the quality of fit of the model was assessed for the three models, and regions with bad fit quality were removed from further statistical analysis.
@@ -59,9 +59,9 @@ Overall, the \textbf{rReg} model proved a promising perfusion quantification too
 The main outcome of this work is to take into account some redundancies when dealing with multiple regions which can be used to improve the estimation.
 The \textbf{rReg} model could be applied to reveal tumor functional heterogeneity at a finer scale, considering pixels or macro-pixels as regions for instance.
 In order to alleviate the impact of noise in local contrast enhancement curves on the robustness of the estimation, one should consider noise-filtering techniques, or alternatively estimating the local perfusion parameters with a fixed value of parameter $k_R$ resulting from prior regional analysis.
-The lack of pixel-to-pixel correspondance in our test-retest experiments motivated the regional cutout used in this work to ensure meaningful inter-exam parameter comparison.
+The lack of pixel-to-pixel correspondence in our test-retest experiments motivated the regional cutout used in this work to ensure meaningful inter-exam parameter comparison.
 
-Two-dimensional data still represents the majority of contrast-enahced ultrasound exams nowadays, making inter-exam comparison on the same individual difficult.
+Two-dimensional data still represents the majority of contrast-enhanced ultrasound exams nowadays, making inter-exam comparison on the same individual difficult.
 Indeed it is particularly difficult to ensure that the exact same imaging plane is selected in two exams performed days apart, and this is especially true when monitoring evolving tissues where structures change in shape and size, e.g.~tumor growth, treatment response.
 Therefore we would highly recommend the use of three-dimensional perfusion imaging whenever possible, in particular when it comes to exam comparison.
 The recent performance improvements of three-dimensional ultrasound scanners is therefore promising for tumor monitoring.
@@ -72,15 +72,15 @@ The application of the \textbf{rReg} model to other perfusion imaging modalities
 Of course it would require some adaptations to account for the underlying compartmental model (with multiple compartments instead of a single compartment).
 Further adaptation would also be necessary in order to study perfusion in the liver, an appropriate model would account for both the arterial and portal blood supplies of the tissue.
 Similarly, the vascular network of the kidney is complex and results in multiple perfusion phases.
-Using the kidney as a reference tissue without taking this spatial heterogeneity into account may provide erroneous clonclusions.
-The incorporation of the multiple phases in the kidey remains to be fully developped.
+Using the kidney as a reference tissue without taking this spatial heterogeneity into account may provide erroneous conclusions.
+The incorporation of the multiple phases in the kidney remains to be fully developed.
 
-The impact of the reference tissue on the perfusion parameters of the \textbf{rReg} model was shown in Chapter~\ref{chapter:PLOSONE}, however a finer study is necessary to better define the characteristics of the ideal reference tissue and characterize the impact of an unideal reference tissue. 
+The impact of the reference tissue on the perfusion parameters of the \textbf{rReg} model was shown in Chapter~\ref{chapter:PLOSONE}, however a finer study is necessary to better define the characteristics of the ideal reference tissue and characterize the impact of an non-ideal reference tissue. 
 Accounting for multiple reference tissues may alleviate the sensitivity of the model estimates to the characteristics of the reference tissues. 
 For instance, \citet{Yang:2007ki} used multiple reference tissues to estimate the arterial input function in contrast-enhanced magnetic resonance exams.
 
 Choosing the appropriate quantification method to assess tissue perfusion through contrast-enhanced exams remains a complex problem that heavily depends on the data and on the goal of the study.
-Exam comparison is particularly difficult because of variations occuring between exams at both the experimental and physiological levels.
+Exam comparison is particularly difficult because of variations occurring between exams at both the experimental and physiological levels.
 This thesis demonstrated the ability of one-compartment models to quantify contrast-enhanced ultrasound exams reproducibly and robustly at a regional scale when using a reference tissue to overcome the difficulties in the estimation of the arterial input function.
 Indeed, reference tissue models proved more reproducible and robust than arterial input function models overall, however this may not hold if accurate image-based estimation of the arterial input function is achievable. 
 We emphasis the necessity to consider the relations between the perfusion parameters of various tissues, or tissue regions, as this proved to considerably improve the accuracy, robustness, and reproducibility of perfusion parameters in the \textbf{rReg} approach.

@@ -4,7 +4,7 @@
 Generally speaking, quantification of perfusion consists in deriving parameters from blood flow measurements, regardless of the method used for the measure. 
 This topic has been on the table, and continuously evolving, long before perfusion imaging existed. 
 Indeed, G.N.~Stewart introduced indicator dilution theory, starting with the founding paper published in the Journal of Physiology in 1897~\cite{Stewart:1897dz}. 
-Indicator dilution theory was originally developped to quantify perfusion using blood sampling data.
+Indicator dilution theory was originally developed to quantify perfusion using blood sampling data.
 It relates tracer concentration curves to physical measurements, i.e.~blood flow, blood volume, and mean transit time, assuming a stationary flow system and an instantaneous injection of a known quantity of tracer.
 W.F.~Hamilton went further, corrected some approximations made by Stewart.
 Even before Stewart and Hamilton, hemodynamics of the heart had been studied  through indirect measurements and reported in German language by \citet{Volkmann:1850us} and \citet{Vierordt:82xUDMVI} in the 1850s, and later through direct measurements by \citet{Stolnikow:1886wm} and \citet{Tigerstedt:1891wn}.
@@ -29,7 +29,14 @@ They are therefore often used as relative indicators of perfusion and contrast a
 
 Examples of semi-quantitative parameters include the peak enhancement~\cite{Norman:1978ji,Nally:1985te,Pettersson:1987ft,Erlemann:1989ib}, the time to peak enhancement~\cite{Norman:1978ji,Erlemann:1989ib,Dietrich:2012kw}, maximum upslope gradient, also known as wash-in rate~\cite{Nally:1985te,Erlemann:1989ib}, the area under the enhancement curve~\cite{Dietrich:2012kw}. 
 We also considered semi-quantitative the perfusion parameters based on indicator dilution theory that were derived from the previously cited parameters~\cite{Hilson:1978us,Peters:1987fa,Peters:1987vx,Miles:1991et,Miles:1991ei,Miles:1993cq,Blomley:1995vs,Koenig:1998ir}.
-% Figure~\ref{fig:SQParameters} shows graphical representations of the above mentioned semi-quantitative parameters. 
+Figure~\ref{fig:SQParameters} shows graphical representations of the above mentioned semi-quantitative parameters. 
+
+\begin{figure}[ht]
+  	\centering
+  	\includegraphics[width=0.6\textwidth]{SQParameters.eps}
+	\caption{Examples of semi-quantitative parameters are illustrated on the mean kinetics (black dots) inside the perfused area of a murine tumor observed in contrast-enhanced ultrasound and fitted with a log-normal model (red dashed line): the wash-in rate ($WIR$, in green), the time-to-peak ($TTP$, in cyan), the peak enhancement ($PE$, in orange), and the area under the curve ($AUC$, in dark blue).} 
+  	\label{fig:SQParameters}
+\end{figure}
 
 \subsection{Nuclear medicine}
 \label{sec:SQNM}
@@ -102,7 +109,7 @@ They also reported lower peak intensity ratios and wash-in rates in areas with n
 % Wilke:1993wu, Contrast-enhanced first pass myocardial perfusion imaging: correlation between myocardial blood flow in dogs at rest and during hyperemia.
 \citet{Wilke:1993wu} investigated the use of contrast-enhanced magnetic-resonance imaging for the quantification of myocardial perfusion in a canine study, and compared the estimated parameters to the blood flow obtained using radiolabelled microspheres.
 A bolus of Gd-DTPA was injected during Turbo-FLASH acquisition, and a six circular regions of interest were delineated in the myocardium, as well as one region of interest in each ventricular cavity, yielding a total of nine regional time-intensity curves.
-All the time-intensity curves were fitted with a gamma-variate curve to both correct for recirculation, and limit the impact of extravascular diffusion, using only the samples occuring before the curves decreases to 70\% of its peak value.
+All the time-intensity curves were fitted with a gamma-variate curve to both correct for recirculation, and limit the impact of extravascular diffusion, using only the samples occurring before the curves decreases to 70\% of its peak value.
 The mean transit time of each curve was calculated numerically, and the correlation of its inverse, of the time of peak intensity, as well as the initial slope (defined as the ratio of the peak intensity to the time of peak intensity) with absolute myocardial blood flow estimates from radiolabelled microspheres were investigated.
 Good correlations with the ground truth ($r \geq 0.89$) were reported for the three semi-quantitative parameters cited above.
 
@@ -140,7 +147,7 @@ From an historical standpoint, \citet{Bommer:1978eu} were the first to report in
 Authors used a photometer to quantify the evolution of signal intensity, as visualized on the screen of the monitor.
 The enhancement resulted from the venous injection of a bolus of microbubbles, obtained by microcavitations through rapid injection of dextrose in water. 
 The indicator-dilution curves were quantified in terms of time from peak enhancement to 50\% decay, and to 90\% decay. 
-The latter was found correlated to the cardiac-output, and enabled the differenciation of patients with low and normal cardiac index. 
+The latter was found correlated to the cardiac-output, and enabled the differentiation of patients with low and normal cardiac index. 
 In the same issue of The American Journal of Cardiology, the same group applied the same technique to produce indicator-dilution curves in another cardiac study~\cite{DeMaria:1978il}. % DeMaria:1978il, Combined peripheral venous injection and cross-sectional echocardiography in the evaluation of cardiac disease
 They used the ultrasound images themselves to identify patients with intracardiac shunts, but also the mean clearance time of the indicator-dilution curves to identify patients with tricuspid regurgitation, and severe congestive failure.
 
@@ -148,7 +155,7 @@ At the same period, \citet{Hagler:1982hs} presented early data of videodensitome
 They estimated the ratio of left-to-right shunt, which they defined as the ratio of the area under the curve in the right ventricle to the area under the curve in the left ventricle, and showed an strong correlation of echographic measurements with both indicator-dilution and dye measurements.
 \citet{Meltzer:1982vt} extended this work and investigated the relevance of a mono-exponential model to fit the wash-out curve, as suggested by indicator-dilution theory. % Meltzer:1982vt, Videodensitometric processing of contrast two-dimensional echocardiographic data.
 This was assessed by fitting a linear model to the log-transformed time-density wash-out curve, exhibiting excellent correlation with experimental data. 
-They therefore concluded on the relevance of the log wash-out slope, and established its relation to the contrast agent disapearance rate. 
+They therefore concluded on the relevance of the log wash-out slope, and established its relation to the contrast agent disappearance rate. 
 
 Following the early work of \citet{Armstrong:1982tq} and \citet{Tei:1983ul}, \citet{TenCate:1984hl} investigated the use of contrast-enhanced echography for the assessment of myocardial perfusion following intracoronary injection of a bolus injection of microbubbles in a canine study with varying coronary artery flow (using a hydraulic occluder) to simulate ischemia, and with injection of Dipyridamole to dilate the coronary bed and therefore simulate hyperemia.
 % Armstrong:1982tq, Assessment of myocardial perfusion abnormalities with contrast-enhanced two-dimensional echocardiography.
@@ -278,7 +285,7 @@ They believe it could be a relevant indicator to help characterize lesions in pa
 
 % Elie2014, Method and system for quantification of tumoral vascularization (US PATENT: US 8847960 B2)
 % IGR custom model
-In 2006, \citet{Elie2014} filed a patent application for quantification approach developped specifically for contrast-enhanced ultrasound.
+In 2006, \citet{Elie2014} filed a patent application for quantification approach developed specifically for contrast-enhanced ultrasound.
 The formulation of the mathematical medel is empirical, and is inspired from the model first proposed by \citet{Eyding:2003bo}, replacing both the numerator and the denominator terms by sigmoid functions. 
 A dozen of semi-quantitative parameters that can be derived from the fitted model for vascularization and tumoral angiogenesis detection are listed by the authors, i.e.~peak time, peak value, wash-in time, mean transit time, area under the curve, wash-in rate, area under the wash-in, and under the wash-out. 
 
@@ -333,7 +340,7 @@ However, when considering curves with recirculation and therefore fitting the mo
 Clinical relevance of the method was assessed in a preliminary study including five datasets from four patients with confirmed prostate cancer, that were referred for radical ablation of the prostate. 
 Parametric maps of $\kappa$ were compared to histology-based tissue classification, i.e.~based on the level of cell differenciation.
 In all patients, authors were able to discriminate cancerous from healthy tissue, i.e.~cancerous regions were associated with high $\kappa$ values.
-The tissue classification power of both classical semi-quantative parameters and the parameters of the proposed model was investigated. 
+The tissue classification power of both classical semi-quantitative parameters and the parameters of the proposed model was investigated. 
 Optimal threshold values used for classification were estimated through histogram analysis.
 The authors acknowledge that the proposed diffusion-related parameter, $\kappa$, was not the most sensitive investigated parameter, however it was the only one with both sensitivity and specificity above 80\%.
 It also exhibited the highest area under the receiver operating characteristic curve with a value of 0.909. 
@@ -350,7 +357,7 @@ Major findings include the ability to discriminate good from bad responders to t
 Indeed, four out of five good responders exhibited a significant rise of the wash-in time ratio after the first therapy cycle, revealing the early normalization of the lesion microvascularity, and the mean increase in wash-in time ratio among the good responders at the end of the treatment was 75\%.
 
 \subsubsection{Infusion injection}
-In 1998, \citet{Wei:1998jd} proposed an explicit model to quantify myocardial perfusion. % Wei:1998jd, Quantificatin of myocardial blood flow with ultrasound-induced destruction of microbubbles administered as a constant venous infusion
+In 1998, \citet{Wei:1998jd} proposed an explicit model to quantify myocardial perfusion. % Wei:1998jd, Quantification of myocardial blood flow with ultrasound-induced destruction of microbubbles administered as a constant venous infusion
 For this method, microbubbles were injected as a continuous infusion.
 When the micro-bubble concentration reached a steady state, high mechanical index ultrasound pulses were used to disrupt microbubbles in the myocardium with increasing pulsing interval.
 This technique is known as intermittent imaging.
@@ -581,7 +588,7 @@ The method proved robust to recirculation, which alleviates the necessity for ga
 This is particulary important in the liver, since arterial and portal components partially overlap.
 
 % Kudo:2009hy, Difference in Tracer Delay–induced Effect among Deconvolution Algorithms in CT Perfusion Analysis: Quantitative Evaluation with Digital Phantoms
-In \citeyear{Kudo:2009hy}, \citet{Kudo:2009hy} investigated variants of the singular value decomposition deconvolution method, first developped for delay-insensitive deconvolution of magnetic resonance data, and their sensitivity to the tracer time delay for quantification of contrast-enhanced computed tomography data. 
+In \citeyear{Kudo:2009hy}, \citet{Kudo:2009hy} investigated variants of the singular value decomposition deconvolution method, first developed for delay-insensitive deconvolution of magnetic resonance data, and their sensitivity to the tracer time delay for quantification of contrast-enhanced computed tomography data. 
 The authors compared regional blood flow, regional blood volume, and mean transit time estimates of the standard singular value decomposition algorithm, to the estimates of a delay-insensitive block-circulant deconvolution method introduced by \citet{Wu:2003du}, as well as a delay-corrected deconvolution method proposed by \citet{Ibaraki:2005fn}.
 The three methods were investigated on synthetic datasets varying the tracer delay in the left hemisphere.
 The block-circulant approach was the most insensitive to tracer delay while the standard method was the most sensitive, and the delay-corrected method yielded intermediate results.
@@ -721,12 +728,36 @@ Compartmental models estimate the tissue impulse response of a tissue making ass
 Resolving the differential equations yields explicit parametric formulations for the tissue impulse response, and allows direct estimation of the physiological parameters.
 The explicit formulation of the impulse response function improves the stability of the estimation by reducing the number of degrees of freedom compared to deconvolution.
 
-\textbf{FIGURE: EXAMPLE COMPARTMENTAL MODELS AND IMPULSE RESPONSE FUNCTION}
+\begin{figure}
+    \RawFloats 
+    \begin{minipage}{0.47\linewidth}
+        \centering 
+        \includegraphics[width=\linewidth]{CompartmentalModels.eps}
+    \end{minipage}
+    \begin{minipage}{0.53\linewidth}
+        \centering 
+        \begin{tabular}{l} 
+            \toprule
+            $\frac{dC_{1}(t)}{dt} = K_{1} C_{0}(t) - k_{2} C_{1}(t)$ \hfill (a) \\ 
+            \midrule
+            $\frac{dC_{1}(t)}{dt} = K_{1} C_{0}(t) - (k_{2} + k_{3}) C_{1}(t) + k_{4} C_{2}(t)$ \\ 
+            $\frac{dC_{2}(t)}{dt} = k_{3} C_{1}(t) - k_{4} C_{2}(t)$ \hfill (b) \\ 
+            \midrule
+            $\frac{dC_{1}(t)}{dt} = K_{1} C_{0}(t) - (k_{2} + k_{3}) C_{1}(t) + k_{4} C_{2}(t)$ \\ 
+            $\frac{dC_{2}(t)}{dt} = k_{3} C_{1}(t) - (k_{4} + k_{5}) C_{2}(t) + k_{6} C_{3}(t)$ \\
+            $\frac{dC_{3}(t)}{dt} = k_{5} C_{2}(t) - k_{6} C_{3}(t)$ \hfill (c) \\ 
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+    \caption{Block diagrams and first-order differential equations of compartmental models with (a)~one tissue compartment, (b)~two tissue compartments, (c)~three tissue compartments. $C_{0}(t)$ is the contrast-agent concentration in blood, $C_{1}(t)$ is the tissue intravascular concentration, $C_{2}(t)$ is the tissue interstitial concentration, $C_{3}(t)$ is the tissue intracellular concentration. $K_{1}$ is the unidirectional transfer rate of contrast-agent from blood to tissue vascular space, and $k_{2}$ is the unidirectional transfer rate of contrast-agent from the tissue vascular space to blood. Similarly $k_{3}$ and $k_{4}$ are the unidirectional transfer rates of contrast-agent between tissue vascular space and interstitial space, and $k_{5}$ and $k_{6}$ are the unidirectional transfer rates of contrast-agent between interstitial space and intracellular space.}
+    \label{fig:compartmentalModels}
+\end{figure}
+
 
 % Kety:1944iv, The Quantitative Determination of Cerebral Blood Flow in Man by the Use of Nitrous Oxide in Low Concentrations
 % Kety:1948je, The nitrous oxide method for the quantitative determination of cerebral blood flow in man: theory, procedure and normal values
 Early use of compartmental models to fit indicator-dilution curves was based on the Fick\'s principle that relates the blood flow to the arterial and venous measurements~\cite{Kety:1944iv,Kety:1948je}.
-In \citeyear{Kety:1944iv}, \citet{Kety:1944iv} derived a method to estimate cerebral blood flow from arterial and venous blood sampling during inhalation of nitrous oxyde, and assessed it in a clinical experiment with eleven subjects.
+In \citeyear{Kety:1944iv}, \citet{Kety:1944iv} derived a method to estimate cerebral blood flow from arterial and ven`ous blood sampling during inhalation of nitrous oxyde, and assessed it in a clinical experiment with eleven subjects.
 The method corrected for the rise of the time-concentration curve using a fixed ratio of the amplitude of the monoexponential model fitted to the decay phase. 
 % Kety:1951tp, The theory and applications of the exchange of inert gas at the lungs and tissues.
 Following these developments, the authors proposed a one-compartment model based on the same principle to assess fractional blood flow and fractional blood volume assuming a perfectly diffusible tracer~\cite{Kety:1951tp}.
@@ -739,7 +770,7 @@ They suggested that variations of the estimated permeability surface product wer
 They were however unable to determine which pattern was actually explaining the correlation between blood flow and permeability surface product in their data.
 
 % Crone:1963cz, The Permeability of Capillaries in Various Organs as Determined by Use of the ‘Indicator Diffusion’ Method
-In \citeyear{Crone:1963cz}, \citet{Crone:1963cz} developped the indicator diffusion method that relates the capillary permeability to blood flow, capillary surface area, and initial extraction which corresponds to the fractional reduction of the arterial concentration, however litterature values for the two first parameters were used and only the initial extraction was estimated.
+In \citeyear{Crone:1963cz}, \citet{Crone:1963cz} developed the indicator diffusion method that relates the capillary permeability to blood flow, capillary surface area, and initial extraction which corresponds to the fractional reduction of the arterial concentration, however litterature values for the two first parameters were used and only the initial extraction was estimated.
 The authors performed blood sampling experiments in dogs with injection of Evan's blue dye or a combination of inulin and sucrose to study the capillary permeability of these substances in multiple tissues, i.e.~brain, kidney, liver, lung, hind limb, by means of invasive catheterization.
 Their study contradicts the results of \citet{Renkin:1959te}, and suggest that the discrepencies are due to a conceptual difference between the two studies regarding the definition of \``extraction\''.
 But also because in the approach proposed by \citet{Renkin:1959te}, the presence of tracer outside capillaries was neglected despite the steady state reached by the system during the experiment.
@@ -869,7 +900,7 @@ The reproducibility of the first approach was then investigated in a clinical ex
 \subsection{Magnetic resonance imaging}
 % Tofts:1999ih, Estimating kinetic parameters from dynamic contrast-enhanced T(1)-weighted MRI of a diffusable tracer: standardized quantities and symbols
 In \citeyear{Tofts:1999ih}, \citet{Tofts:1999ih} introduced compartmental models for the quantification of perfusion parameters using diffusible tracers in dynamic contrast-enhanced MRI, as well as a set of standardized notations for these parameters.
-The authors adapted the methods developped for quantification of PET based on an arterial input function~\cite{Kety:1951tp,Renkin:1959te,Crone:1963cz} to MRI assuming the contribution of intravascular contrast-agent to signal intensity can be ignored.
+The authors adapted the methods developed for quantification of PET based on an arterial input function~\cite{Kety:1951tp,Renkin:1959te,Crone:1963cz} to MRI assuming the contribution of intravascular contrast-agent to signal intensity can be ignored.
 They then derived a generalized model parameterized by the transfer constant from plasma to tissue noted $K_{trans}$, the extravascular extracellular space volume fraction noted $V_{e}$, and defined the rate constant as the ratio of these two parameters, noted $k_{ep}$.
 The transfer constant is equivalent to the permeability surface area product under permeability-limited conditions, to blood flow under flow-limited conditions, and to extraction ratio under mixed conditions.
 They also showed that the rate constant parameter is the decay rate of the exponential impulse response by solving the first-order differential equation of the generalized model.
@@ -891,7 +922,7 @@ The one-compartment model was not able to accurately fit the full-length mean en
 
 % Kovar:1998bt, A new method for imaging perfusion and contrast extraction fraction: input functions derived from reference tissues.
 In \citeyear{Kovar:1998bt}, \citet{Kovar:1998bt} faced limitations regarding the duration of their contrast-enhanced MRI acquisitions, and proposed a compartmental model using the contrast-agent kinetics in a reference tissue, such as a muscle, as well as litterature values of perfusion rate, extraction fraction, and extracellular volume in the chosen reference tissue to estimate the vascular input function.
-This scheme was developped to reduce the high sampling frequency necessary to obtain a well resolved arterial input function, while avoiding invasive procedures, e.g.~blood sampling.
+This scheme was developed to reduce the high sampling frequency necessary to obtain a well resolved arterial input function, while avoiding invasive procedures, e.g.~blood sampling.
 They then used the estimated input function to estimate the product of the perfusion rate and the extraction fraction in the tissue of interest.
 The equations of the model were derived from the differential form of the model proposed by \citet{Kety:1951tp}.
 The method was investigated in a preclinical magnetic resonance study of rats with implanted mammary and prostate tumors to assess the distribution of a diffusible paramagnetic tracer.
@@ -948,7 +979,7 @@ Intermittent, or transient, imaging accounted for the disruptive nature of the h
 While microbubbles increased the sensitivity of Doppler techniques, allowing visualization of small and deep vessels, it fails to image the capillaries, and was generally of poor help to characterize moving structures.
 Real-time non-destructive contrast-specific ultrasound imaging only arose with the development of pulse inversion sequences using low mechanical index in the late 1990s.
 
-Most quantification approaches developped for contrast-enhanced ultrasound rely on indicator-dilution theory.
+Most quantification approaches developed for contrast-enhanced ultrasound rely on indicator-dilution theory.
 One of the main assumption underlying indicator-dilution theory is that the mass of the indicator is conserved throughout the experiment.
 In vitro studies usually approximatively respect this condition when low mechanical index imaging is used, this is why these experiments are often extremely conclusive, and yield perfusion parameters in good agreement with the ground truth. 
 However, in vivo, in addition to the natural and induced disruption, circulating microbubbles are partially filtrated through the lungs and liver, the mass conservation principle is therefore not respected.
@@ -957,7 +988,7 @@ Model-free quantification was common in early studies, it is however inherently 
 Therefore quantifying perfusion using parameters dependant on the peak-intensity is extremely unreliable, as it corresponds to the highest noise amplitude.
 In pioneering cardiac studies, sampling frequencies were low and did not allow accurate characterization of the high-frequency wash-in resulting from bolus injection, therefore numerous studies focused on contrast-agent wash-out.
 
-Following methodological and computational developements, model-based quantification was proposed to fit time-intensity curves, and allowed the estimation of many semi-quantative parameters. 
+Following methodological and computational developements, model-based quantification was proposed to fit time-intensity curves, and allowed the estimation of many semi-quantitative parameters. 
 While physical explanations were found for some explicit models, most studies merely used the models for noise filtering, correction of recirculation and time interpolation.
 Indeed, semi-quantitative parameters were estimated from fitted curves, then blood flow and blood volume estimates were derived from indicator dilution theory.
 
@@ -986,7 +1017,7 @@ Linear formulations of these models can alleviate the need for initialization, b
 An arterial measurement is required for some semi-quantitative approaches, by almost all deconvolution approaches, and by most compartmental models. 
 Accurate arterial measurement allows the normalization of the tissue measurement and the estimation of perfusion parameters that are independant of the injection.
 
-Arterial measurement can be performed through blood sampling, this technique is especially popular in the fields of nuclear medicine and radiology as continuous radioactivity measurements apparatus have been extensively developped and commercialized.
+Arterial measurement can be performed through blood sampling, this technique is especially popular in the fields of nuclear medicine and radiology as continuous radioactivity measurements apparatus have been extensively developed and commercialized.
 Nonetheless, patient needs to be catheterized and this procedure remains invasive. 
 
 Image-based arterial measurements are extremely unreliable regardless of the imaging modality. 

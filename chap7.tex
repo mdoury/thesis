@@ -1,20 +1,6 @@
 \chapter{Error Sources Affecting Relative Quantification of CEUS}
 \label{chapter:PLOSONE}
 
-% \section{Abstract}
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
-
-% \section{Introduction}
-% CEUS is a cheap, fast, and non-invasive imaging modality, enabling both diagnosis and monitoring of cancer, and revealing the vascular function of tissues.
-% Reproducible acquisition and accurate quantification of CEUS data is of the essence to monitor cancer development, along with their vascular network.
-% This is especially true when it comes to exam comparison, and in particular to compare longitudinal exams of tumors undergoing vascular-targeting therapy, i.e.~anti-angiogenic treatments. 
-% Indeed, assessment of the efficiency of a therapy heavily depends on the methodology at use.
-% In order to compare CEUS exams, quantification schemes should be robust to inter-exam changes, but also to acquisition context and settings.
-% In a previous study, we studied the impact of inter-exam changes on perfusion parameters estimated from CEUS data, whether occurring at the experimental or physiological level.
-% Additionally, a previous simulation study addressed the issue of recirculation in CEUS quantification.
-% In this paper we study other sources of error, potentially affecting quantification, through a series of simulation experiment with varying factors.
-% These include data intrinsic characteristics, i.e.~noise level, exam duration, sampling time; as well as quantification strategy, i.e.~analysis scale, estimation method, reference tissue selection.
-
 \section{Introduction}
 In Chapter~\ref{chapter:IUS} we studied the impact of inter-exam changes on perfusion parameters estimated from CEUS data, whether occurring at the experimental or physiological level.
 Additionally, a simulation study addressing the issue of recirculation in CEUS quantification was presented in Chapter~\ref{chapter:IRBM}.
@@ -232,7 +218,7 @@ k_R = \frac{F_R}{F_T^i}\frac{F_T^i}{V_T^i}\frac{V_T^i}{V_R} = \frac{rV^i \cdot k
 
 When there are more than one tissue of interest ($N_T > 1$), $N_T$ values of parameter $k_R$ can be derived from the parameters of the \textbf{rLin} model. 
 However, these $N_T$ values of $k_R$ characterize the same reference tissue, associated to a single reference TIC $C_R\left(t\right)$. 
-A unique value of $k_R$ should therefore be estimated per exams in order to avoir discrepancies between the $N_T$ tissues of interest.
+A unique value of $k_R$ should therefore be estimated per exams in order to avoid discrepancies between the $N_T$ tissues of interest.
 
 The linear relation between parameters of the \textbf{rLin} model provided by Eq.~\ref{eq:KR} can be used as a constraint to ensure the $N_T$ derived values of $k_R$ are consistent across tissues.
 Substituting in Eq.~\ref{eq:RTLINF} yields 
@@ -320,7 +306,7 @@ $\sigma$ was varied linearly with increments of 0.05 from 0, corresponding to a 
 For each noise level, 150 random noise sets following the multiplicative gamma noise model were generated.
 
 \paragraph{Exam duration}
-Various exam durations were investigateds by varying the number of samples in the simulated data.
+Various exam durations were investigated by varying the number of samples in the simulated data.
 The exam duration was varied from 50 seconds to 165 seconds with 5 seconds increments.
 
 \paragraph{Sampling period}
@@ -366,7 +352,7 @@ In Figures~\ref{fig:noise_rV} to \ref{fig:sampling_kR}, each plot represents a t
 
 \begin{figure}
 \includegraphics[width=\linewidth]{gridIndices.eps}
-\caption{Correspondance of the regions between bullseye (left) and grid (right) representation.}
+\caption{Correspondence of the regions between bullseye (left) and grid (right) representation.}
 \label{fig:gridIndices}
 \end{figure}
 \FloatBarrier
@@ -375,7 +361,7 @@ In Figures~\ref{fig:noise_rV} to \ref{fig:sampling_kR}, each plot represents a t
 Figures~\ref{fig:noise_rV} to \ref{fig:noise_kR} show the relative estimation error of the relative tissue blood volume (Figure~\ref{fig:noise_rV}), relative tissue blood flow (Figure~\ref{fig:noise_rF}), and rate constants in the tumor (Figure~\ref{fig:noise_kT}) and reference  (Figure~\ref{fig:noise_kR}) tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
 
 Expectedly, for the four parameters of both models, the interquartile range of the relative estimation bias increased with the noise level, and no relation was found between the noise level and the median value of the relative estimation error.
-In terms of relative tissue blood volume (see Figure~\ref{fig:noise_rV}), the two models were hardly differenciable.
+In terms of relative tissue blood volume (see Figure~\ref{fig:noise_rV}), the two models were hardly differentiable.
 Inside a given region, the median relative estimation error value can be different with a slight advantage for the \textbf{rLin} model, but the precision of the estimation is however generally comparable.
 Additionally, the \textbf{rReg} model makes the estimation bias of $rV$ more consistent across regions.
 Regarding relative blood flow (see Figure~\ref{fig:noise_rF}), the \textbf{rLin} model was generally more accurate than the \textbf{rReg} model. 
@@ -419,7 +405,7 @@ Oppositely, the \textbf{rLin} model only yielded accurate estimates using the wh
 Comparably, the relative blood flow (see Figure~\ref{fig:examDuration_rF}) was steadily estimated using the \textbf{rReg} model with exams as short as 50 seconds, despite an average overestimation of less than 4\%.
 The estimates of $rF$ given by the \textbf{rLin} were found more sensitive to the duration of the exam, and generally overestimated $rF$ for very short exams, the estimates first decreasing and then increasing linearly with the exam duration.
 Regarding the rate constant in the tumor (see Figure~\ref{fig:examDuration_kT}), the \textbf{rLin} model was unable to accurately estimate the parameter for incomplete exams, and exhibited strong biases in short exams, again varying from one exam to another. 
-The \textbf{rReg} model was able to steadily and uniformely estimate parameter $k_T$, despite the tendency of the median relative estimation error to slightly decrease with the exam duration for exams lasting more than 100 seconds.
+The \textbf{rReg} model was able to steadily and uniformly estimate parameter $k_T$, despite the tendency of the median relative estimation error to slightly decrease with the exam duration for exams lasting more than 100 seconds.
 Moreover, the estimation of $k_T$ was more precise using the \textbf{rReg} model.
 For both models, the bias in the estimation of $k_R$, the rate constant in the reference tissue (see Figure~\ref{fig:examDuration_kR}), was strongly correlated to the bias in the estimation of $k_T$.
 
@@ -499,7 +485,7 @@ The smallest biases in the estimation of $rF$ were found for two thirds of the o
 In case of fixed $k_R$ values, using lower values of both $F_R$ and $V_R$ yielded slightly overestimated $rV$ and $rF$ values using both models.
 Regarding the rate constant in the tumor (see Figure~\ref{fig:referenceTissue_kT}), $k_T$, large discrepancies can be observed using the \textbf{rLin} model, and they tend to increase with decreasing values of $k_R$.
 Using the \textbf{rReg} model, the bias in the estimation of $k_T$ increased for lower values of $k_R$.
-Additionally, discrepancies across regions are almost inexistant using the \textbf{rReg} model, except in regions with large simulated $k_T$ values, revealing the effect of regularization.
+Additionally, discrepancies across regions are almost inexistent using the \textbf{rReg} model, except in regions with large simulated $k_T$ values, revealing the effect of regularization.
 Biases close to zero were found in most regions simulating the reference tissue curve using two thirds of the original $k_R$ value.
 The rate constant in the reference tissue (see Figure~\ref{fig:referenceTissue_kR}), $k_R$, exhibited behaviors extremely similar to those of $k_T$, whether estimated using the \textbf{rLin} model or the \textbf{rReg} model.
 In case of fixed $k_R$ values, using lower values of both $F_R$ and $V_R$ yielded slightly underestimated $kT$ and $kR$ values using both models.
@@ -617,7 +603,7 @@ A deeper and finer understanding of the relations between the characteristics of
 Our study reveals that halving $V_R$ or doubling $F_R$, which both result in doubling $k_R$, has almost the same impact on the estimation bias.
 Actually, the least biased estimation overall was obtained using two thirds of the original $k_R$ value, i.e.~$k_R = \frac{2}{3} \times 0.0693 = 0.0462$.
 Additionally, increasing the values of both $V_R$ and $F_R$, while enforcing fixed values of $k_R$, increased the accuracy of the estimates of the \textbf{rReg} model.
-This suggests that a well perfused tissue should be prefered, i.e.~a tissue with a high tissue blood flow and high tissue blood volume.
+This suggests that a well perfused tissue should be preferred, i.e.~a tissue with a high tissue blood flow and high tissue blood volume.
 
 Different simulation studies should be conducted to investigate the applicability of the \textbf{rReg} models to contrast-enhanced images acquired using other imaging modalities in case of intravascular tracers, or in permeability-limited and flow-limited conditions with diffusing tracers, i.e.~when permeability or blood flow is much larger than the other one~\cite{Tofts:1999ih}, or when the data only reflects one of the processes~\cite{Balvay:2005ca}. 
 Indeed, the range of investigated parameters should be adapted to the imaging modality of interest, for instance the sampling period and the exam duration are usually longer in other modalities than in ultrasound.
@@ -632,7 +618,7 @@ However, since the same reference tissue is used to analyse all the regions, thi
 The \textbf{rReg} model is based on the \textbf{rLin} model, but it takes advantage of the functional diversity of the regions under analysis, and ensures that the rate constant of the reference tissue is the same across all the regions.
 
 These simulation studies demonstrated the superiority of the \textbf{rReg} model in terms of accuracy and precision.
-The regularization of $k_R$ also made the biases more homogeneouse across regions, making comparison of regional parameters more meaningful.
+The regularization of $k_R$ also made the biases more homogeneous across regions, making comparison of regional parameters more meaningful.
 Additionally, the \textbf{rReg} model relaxes the requirements for temporal resolution and exam duration, allowing accurate estimation of perfusion parameters in shorter acquisitions with low temporal resolution.
 Our experiments suggest that the regularization improve the accuracy and precision of the estimation if at least four regions are included in the analysis.
 Regarding the number and the size of the regions under analysis, a compromise should be made to reveal the spatial heterogeneity of the tissue, while limiting the noise level to ensure accurate estimation of the perfusion parameters.
@@ -640,5 +626,5 @@ Regarding the number and the size of the regions under analysis, a compromise sh
 Indeed the choice of the reference tissue is crucial as it has a significant impact on the accuracy of the estimation, and should be further investigated.
 We were however able to draw some recommendations regarding its selection.
 The rate constant parameter is critical when selecting the reference tissue, a region exhibiting a rate constant larger than the rate constants in the regions of analysis yielded more accurate parameters in our experiments.
-Hhowever an optimal value of $k_R$ seems to exist, and this issue needs to be further investigated on real examples.
+However an optimal value of $k_R$ seems to exist, and this issue needs to be further investigated on real examples.
 Furthermore, using a well perfused reference tissue, i.e.~a tissue with high tissue blood volume and tissue blood flow, appears to provide more accurate perfusion parameters.

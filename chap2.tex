@@ -723,10 +723,7 @@ The estimates of the mean time obtained using proposed method proved less sensit
 The major assumption underlying compartmental modeling used to model contrast agents time-concentration curves is that the tissue under investigation consists of three well-mixed subcompartments: a vascular space fed by an \``input function\'', an interstitial space, and a cellular space.
 The other assumptions are that the quantity of contrast agent inside the system is conserved, and that the quantity of contrast agent leaving a compartment is proportional to the quantity inside it.
 The exchanges of contrast agent between the compartments are modeled using first-order differential equations, establishing the relations between the concentration of contrast agent in each compartment in terms of physiological parameters, i.e.~blood flow rates, tissue volumes, transfer constants. 
-
-Compartmental models estimate the tissue impulse response of a tissue making assumptions on its shape, depending on the characteristics of the tissue, as well as the characteritics of the contrast agent, i.e.~flow limitation, membrane limitation, transport mechanism, binding, excretion, metabolism~\cite{Gerlowski:1983tz}.
-Resolving the differential equations yields explicit parametric formulations for the tissue impulse response, and allows direct estimation of the physiological parameters.
-The explicit formulation of the impulse response function improves the stability of the estimation by reducing the number of degrees of freedom compared to deconvolution.
+Figure~\ref{fig:compartmentalModels} shows examples of classical compartmental tissue models with increasing number of compartments, along with the associated first-order differential equations defining the transport of contrast-agent between compartments in terms of transfer constants.
 
 \begin{figure}
     \RawFloats 
@@ -738,21 +735,24 @@ The explicit formulation of the impulse response function improves the stability
         \centering 
         \begin{tabular}{l} 
             \toprule
-            $\frac{dC_{1}(t)}{dt} = K_{1} C_{0}(t) - k_{2} C_{1}(t)$ \hfill (a) \\ 
+            $\frac{dC_{V}(t)}{dt} = K_{1} C_{A}(t) - k_{2} C_{V}(t)$ \hfill (a) \\ 
             \midrule
-            $\frac{dC_{1}(t)}{dt} = K_{1} C_{0}(t) - (k_{2} + k_{3}) C_{1}(t) + k_{4} C_{2}(t)$ \\ 
-            $\frac{dC_{2}(t)}{dt} = k_{3} C_{1}(t) - k_{4} C_{2}(t)$ \hfill (b) \\ 
+            $\frac{dC_{V}(t)}{dt} = K_{1} C_{A}(t) - (k_{2} + k_{3}) C_{V}(t) + k_{4} C_{I}(t)$ \\ 
+            $\frac{dC_{I}(t)}{dt} = k_{3} C_{V}(t) - k_{4} C_{I}(t)$ \hfill (b) \\ 
             \midrule
-            $\frac{dC_{1}(t)}{dt} = K_{1} C_{0}(t) - (k_{2} + k_{3}) C_{1}(t) + k_{4} C_{2}(t)$ \\ 
-            $\frac{dC_{2}(t)}{dt} = k_{3} C_{1}(t) - (k_{4} + k_{5}) C_{2}(t) + k_{6} C_{3}(t)$ \\
-            $\frac{dC_{3}(t)}{dt} = k_{5} C_{2}(t) - k_{6} C_{3}(t)$ \hfill (c) \\ 
+            $\frac{dC_{V}(t)}{dt} = K_{1} C_{A}(t) - (k_{2} + k_{3}) C_{V}(t) + k_{4} C_{I}(t)$ \\ 
+            $\frac{dC_{I}(t)}{dt} = k_{3} C_{V}(t) - (k_{4} + k_{5}) C_{I}(t) + k_{6} C_{C}(t)$ \\
+            $\frac{dC_{C}(t)}{dt} = k_{5} C_{I}(t) - k_{6} C_{C}(t)$ \hfill (c) \\ 
             \bottomrule
         \end{tabular}
     \end{minipage}
-    \caption{Block diagrams and first-order differential equations of compartmental models with (a)~one tissue compartment, (b)~two tissue compartments, (c)~three tissue compartments. $C_{0}(t)$ is the contrast-agent concentration in blood, $C_{1}(t)$ is the tissue intravascular concentration, $C_{2}(t)$ is the tissue interstitial concentration, $C_{3}(t)$ is the tissue intracellular concentration. $K_{1}$ is the unidirectional transfer rate of contrast-agent from blood to tissue vascular space, and $k_{2}$ is the unidirectional transfer rate of contrast-agent from the tissue vascular space to blood. Similarly $k_{3}$ and $k_{4}$ are the unidirectional transfer rates of contrast-agent between tissue vascular space and interstitial space, and $k_{5}$ and $k_{6}$ are the unidirectional transfer rates of contrast-agent between interstitial space and intracellular space.}
+    \caption{Block diagrams and first-order differential equations of compartmental models with (a)~one tissue compartment, (b)~two tissue compartments, (c)~three tissue compartments. $C_{A}(t)$ is the contrast-agent concentration in arterial blood, $C_{V}(t)$ is the tissue vascular concentration, $C_{I}(t)$ is the tissue interstitial concentration, $C_{C}(t)$ is the tissue cellular concentration. $K_{1}$ is the unidirectional transfer rate of contrast-agent from blood to tissue vascular space and is related to blood flow and capillary permeability. $k_{2}$ is the unidirectional transfer rate of contrast-agent from the tissue vascular space to blood and is defined as $\frac{K_{1}}{V_{D}}$, where $V_{D}$ is the  contrast-agent fractional distribution volume. Similarly $k_{3}$ and $k_{4}$ are the unidirectional transfer rates of contrast-agent between tissue vascular space and interstitial space, and $k_{5}$ and $k_{6}$ are the unidirectional transfer rates of contrast-agent between interstitial space and intracellular space. $K_{1}$ is classically expressed in milliliter of blood per minute per milliliter of tissue (mL.min$^{-1}$.mL$^{-1}$), and the other rate constants $k_{2}, k_{3}, \dots, k_{6}$ in fraction of contrast-agent per minute (min$^{-1}$).}
     \label{fig:compartmentalModels}
 \end{figure}
 
+Compartmental models estimate the tissue impulse response of a tissue making assumptions on its shape, depending on the characteristics of the tissue, as well as the characteritics of the contrast agent, i.e.~flow limitation, membrane limitation, transport mechanism, binding, excretion, metabolism~\cite{Gerlowski:1983tz}.
+Resolving the differential equations yields explicit parametric formulations for the tissue impulse response, and allows direct estimation of the physiological parameters.
+The explicit formulation of the impulse response function improves the stability of the estimation by reducing the number of degrees of freedom compared to deconvolution.
 
 % Kety:1944iv, The Quantitative Determination of Cerebral Blood Flow in Man by the Use of Nitrous Oxide in Low Concentrations
 % Kety:1948je, The nitrous oxide method for the quantitative determination of cerebral blood flow in man: theory, procedure and normal values

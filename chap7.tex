@@ -274,6 +274,15 @@ Finally, assuming no oscillation occurred in the TIC prior to bolus arrival, $D$
 \begin{equation}
 D \leq t_{20\%}\,\wedge\,\dot{C}_{f}\left(D\right) = 0.2 \times \dot{C}_{f}\left(t_{20\%}\right).
 \end{equation}
+Figure~\ref{fig:delayEstimation} illustrates the time-delay estimation process on an example contrast-enhanced ultrasound time-intensity curve.
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{DelayEstimation.eps}
+\caption{Top: original $C(t)$ (blue dots) and noise filtered $C_{f}(t)$ (orange line) time-intensity curves, the horizontal line shows the 20\% of maximum intensity threshold, and the vertical line shows $t_{20\%}$. Middle: filtered time-intensity curve $C_{f}(t)$ (orange line) cropped to $t \leq 20\%$, and the tangent to $C_{f}(t)$ with maximum upslope gradient for $t \leq t_{20\%}$, and the vertical line shows the estimated time delay $D$. Bottom: gradient of the cropped noise filtered time-intensity curve $\dot{C}_{f}\left(t\right)$ (pink line), the horizontal black line shows the 20\% of maximum gradient threshold, and the vertical line shows the estimated time-delay $D$.}
+\label{fig:delayEstimation}
+\end{figure}
+
 
 \section{Materials and Methods}
 \subsection{Simulations of CEUS data}
@@ -341,6 +350,7 @@ The relative estimation error of parameter $\theta$, noted $rE_{\theta}$, is exp
 rE_{\theta} = 100 \times \frac{\theta_{est}-\theta_{sim}}{\theta_{sim}}
 \end{equation}
 i.e.~the difference between the estimated parameter $\theta_{est}$ and the simulated parameter $\theta_{sim}$, normalized by the simulated value.
+The estimation error $E_{D} = D_{est}-D_{sim}$ is used to assess the estimation of the relative time-delay parameter.
 \FloatBarrier
 
 \section{Results}
@@ -348,7 +358,7 @@ In this section we present the results of our simulation experiments.
 Figure~\ref{fig:gridIndices} provides the correspondance between regions, depending on the type of data to be presented.
 Indeed, color-coded bullseyes were used when a single value had to be represented per region, but grids of plots were used to show the regional results as a function of a simulation parameter, i.e.~noise level, exam duration, and sampling period.
 
-In Figures~\ref{fig:noise_rV} to \ref{fig:sampling_kR}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
+In Figures~\ref{fig:noise_rV} to \ref{fig:sampling_D}, each plot represents a tumor region, i.e.~the top row corresponds to the outer rim and the bottom row to the inner rim, the columns correspond to the clockwise ordering of the regions on a rim starting with the left region above the horizontal line.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{gridIndices.eps}
@@ -358,7 +368,7 @@ In Figures~\ref{fig:noise_rV} to \ref{fig:sampling_kR}, each plot represents a t
 \FloatBarrier
 
 \subsection{Noise level}
-Figures~\ref{fig:noise_rV} to \ref{fig:noise_kR} show the relative estimation error of the relative tissue blood volume (Figure~\ref{fig:noise_rV}), relative tissue blood flow (Figure~\ref{fig:noise_rF}), and rate constants in the tumor (Figure~\ref{fig:noise_kT}) and reference  (Figure~\ref{fig:noise_kR}) tissues obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
+Figures~\ref{fig:noise_rV} to \ref{fig:noise_D} show the relative estimation error of the relative tissue blood volume (Figure~\ref{fig:noise_rV}), relative tissue blood flow (Figure~\ref{fig:noise_rF}), the rate constants in the tumor (Figure~\ref{fig:noise_kT}) and reference (Figure~\ref{fig:noise_kR}) tissues, and the relative time-delay (Figure~\ref{fig:noise_D}) obtained using the \textbf{rLin} and \textbf{rReg} models, as a function of the noise level simulated in the data, i.e.~the standard deviation of the multiplicative noise model.
 
 Expectedly, for the four parameters of both models, the interquartile range of the relative estimation bias increased with the noise level, and no relation was found between the noise level and the median value of the relative estimation error.
 In terms of relative tissue blood volume (see Figure~\ref{fig:noise_rV}), the two models were hardly differentiable.
@@ -394,11 +404,16 @@ Oppositely, the estimates of the \textbf{rLin} model were extremely inconsistent
         \caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated in the 32 tumor regions using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
         \label{fig:noise_kR}
     \end{figure}
+    \begin{figure}\centering
+        \includegraphics[width=0.95\linewidth]{simNoise_D.eps}
+        \caption{Median (large symbols) and first and third quartiles (small symbols) of the estimation error (in seconds) for the relative time-delay ($D$) estimated in the 32 tumor regions using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the noise level.}
+        \label{fig:noise_D}
+    \end{figure}
 \end{subfigures}
 \FloatBarrier
 
 \subsection{Exam duration}
-Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_kR} show the impact of the exam duration on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:examDuration_rV}), relative tissue blood flow (Figure~\ref{fig:examDuration_rF}), and rate constants in the tumor (Figure~\ref{fig:examDuration_kT}) and in the reference tissue (Figure~\ref{fig:examDuration_kR}).
+Figures~\ref{fig:examDuration_rV} to \ref{fig:examDuration_D} show the impact of the exam duration on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:examDuration_rV}), relative tissue blood flow (Figure~\ref{fig:examDuration_rF}), the rate constants in the tumor (Figure~\ref{fig:examDuration_kT}) and in the reference tissue (Figure~\ref{fig:examDuration_kR}), and the relative time-delay (Figure~\ref{fig:examDuration_D}).
 
 Regarding relative blood volume (see Figure~\ref{fig:examDuration_rV}), the \textbf{rReg} model was able to estimate the parameter accurately, and to reach a steady state with exams as short as 80 seconds for the simulated noise level, i.e.~$\sigma = 0.25$.
 Oppositely, the \textbf{rLin} model only yielded accurate estimates using the whole exam duration, i.e.~165 seconds, and at the exception of one region it overall underestimated $rV$.
@@ -430,11 +445,16 @@ For both models, the bias in the estimation of $k_R$, the rate constant in the r
         \caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration.}
         \label{fig:examDuration_kR}
     \end{figure}
+    \begin{figure}\centering
+        \includegraphics[width=0.95\linewidth]{simSamples_D.eps}
+        \caption{Median (large symbols) and first and third quartiles (small symbols) of the estimation error (in seconds) for the relative time-delay ($D$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, as a function of the exam duration.}
+        \label{fig:examDuration_D}
+    \end{figure}
 \end{subfigures}
 \FloatBarrier
 
 \subsection{Sampling period}
-Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_kR} show the impact of the sampling period on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:sampling_rV}), relative tissue blood flow (Figure~\ref{fig:sampling_rF}), and rate constants in the tumor (Figure~\ref{fig:sampling_kT}) and in the reference tissue (Figure~\ref{fig:sampling_kR}).
+Figures~\ref{fig:sampling_rV} to \ref{fig:sampling_D} show the impact of the sampling period on the relative estimation error of the perfusion parameters of the \textbf{rLin} and \textbf{rReg} models, i.e.~relative tissue blood volume (Figure~\ref{fig:sampling_rV}), relative tissue blood flow (Figure~\ref{fig:sampling_rF}), the rate constants in the tumor (Figure~\ref{fig:sampling_kT}) and in the reference tissue (Figure~\ref{fig:sampling_kR}), and the relative time-delay (Figure~\ref{fig:sampling_D}).
 
 Varying the sampling period over the investigated range, i.e.~from 0.1 to 1 second, did not have a significant impact on the accuracy of the estimation of the relative tissue blood volume parameter using both the \textbf{rLin} and \textbf{rReg} models (see Figure~\ref{fig:sampling_rV}), and only a slight decrease in precision was observed for larger sampling period.
 Similarly to the varying noise level experiments, the bias in the estimation bias of $rV$ was more consistent across regions using the \textbf{rReg} model, with the median relative estimation errors generally inferior to 4\%.
@@ -466,6 +486,11 @@ Indeed, the estimation of $k_R$ using the \textbf{rLin} model was extremely impr
         \includegraphics[width=\linewidth]{simSampling_kR.eps}
         \caption{Median (large symbols) and first and third quartiles (small symbols) of the relative estimation error for the rate constant in the reference tissue ($k_R$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
         \label{fig:sampling_kR}
+    \end{figure}
+    \begin{figure}
+        \includegraphics[width=\linewidth]{simSampling_D.eps}
+        \caption{Median (large symbols) and first and third quartiles (small symbols) of the estimation error (in seconds) for the relative time-delay ($D$) estimated using the \textbf{rLin} (yellow diamonds) and \textbf{rReg} (purple squares) models, depending on the sampling period used for simulation.}
+        \label{fig:sampling_D}
     \end{figure}
 \end{subfigures}
 \FloatBarrier
